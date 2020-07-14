@@ -41,6 +41,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AF84C4D24BDDA7B00239497 /* Intro & Garden */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Intro & Garden";
+			sourceTree = "<group>";
+		};
+		2AF84C5124BDDB1A00239497 /* Animal Room */ = {
+			isa = PBXGroup;
+			children = (
+				2AF84C5524BDDC8A00239497 /* Faruuq */,
+				2AF84C5424BDDC7F00239497 /* Rahmat */,
+			);
+			path = "Animal Room";
+			sourceTree = "<group>";
+		};
+		2AF84C5224BDDB2800239497 /* Settings & Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Settings & Profile";
+			sourceTree = "<group>";
+		};
+		2AF84C5324BDDB3900239497 /* Rewards & Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Rewards & Shop";
+			sourceTree = "<group>";
+		};
+		2AF84C5424BDDC7F00239497 /* Rahmat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rahmat;
+			sourceTree = "<group>";
+		};
+		2AF84C5524BDDC8A00239497 /* Faruuq */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Faruuq;
+			sourceTree = "<group>";
+		};
 		4F55F90F24BDBB9B000739E6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +104,10 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				2AF84C4D24BDDA7B00239497 /* Intro & Garden */,
+				2AF84C5224BDDB2800239497 /* Settings & Profile */,
+				2AF84C5124BDDB1A00239497 /* Animal Room */,
+				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
 				4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
@@ -302,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
