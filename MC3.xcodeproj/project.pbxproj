@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44C7C37224BFDA5E003D2166 /* TestSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7C37124BFDA5E003D2166 /* TestSettingViewController.swift */; };
+		44C7C37424BFDAB5003D2166 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7C37324BFDAB5003D2166 /* SettingsViewController.swift */; };
 		4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */; };
 		4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91D24BDBB9B000739E6 /* GameScene.sks */; };
 		4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91F24BDBB9B000739E6 /* Actions.sks */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C7C37124BFDA5E003D2166 /* TestSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingViewController.swift; sourceTree = "<group>"; };
+		44C7C37324BFDAB5003D2166 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F55F91D24BDBB9B000739E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44C7C37024BFDA35003D2166 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44C7C37124BFDA5E003D2166 /* TestSettingViewController.swift */,
+				44C7C37324BFDAB5003D2166 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4F55F90F24BDBB9B000739E6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				44C7C37024BFDA35003D2166 /* Controllers */,
 				4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
@@ -149,6 +163,8 @@
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
+				44C7C37424BFDAB5003D2166 /* SettingsViewController.swift in Sources */,
+				44C7C37224BFDA5E003D2166 /* TestSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
