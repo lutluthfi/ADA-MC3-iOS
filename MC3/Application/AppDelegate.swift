@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
+        let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
         let viewController = storyboard
-            .instantiateViewController(identifier: SplashViewController.identifier)
+            .instantiateViewController(identifier: AgreementViewController.identifier)
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
 

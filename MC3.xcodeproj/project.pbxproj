@@ -11,6 +11,9 @@
 		4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177424C020A6000E5E19 /* SplashViewController.storyboard */; };
 		4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */; };
 		4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35177D24C065D7000E5E19 /* IntroViewController.swift */; };
+		4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35178424C1A2E7000E5E19 /* AgreementViewController.swift */; };
+		4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35178624C1A2F4000E5E19 /* AgreementViewController.storyboard */; };
+		4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F35178224C0681F000E5E19 /* HappyMonkey-Regular.ttf */; };
 		4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */; };
 		4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91D24BDBB9B000739E6 /* GameScene.sks */; };
 		4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91F24BDBB9B000739E6 /* Actions.sks */; };
@@ -27,6 +30,8 @@
 		4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroViewController.storyboard; sourceTree = "<group>"; };
 		4F35177D24C065D7000E5E19 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4F35178224C0681F000E5E19 /* HappyMonkey-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HappyMonkey-Regular.ttf"; sourceTree = "<group>"; };
+		4F35178424C1A2E7000E5E19 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		4F35178624C1A2F4000E5E19 /* AgreementViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AgreementViewController.storyboard; sourceTree = "<group>"; };
 		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F55F91D24BDBB9B000739E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -132,6 +137,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		4F35178324C1A2D0000E5E19 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				4F35178424C1A2E7000E5E19 /* AgreementViewController.swift */,
+				4F35178624C1A2F4000E5E19 /* AgreementViewController.storyboard */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
 		4F55F90F24BDBB9B000739E6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +169,7 @@
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
 				4F55F92324BDBB9B000739E6 /* GameViewController.swift */,
+				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
 				4F35177A24C065AD000E5E19 /* Intro */,
@@ -225,6 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */,
+				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
 				4F55F92724BDBB9B000739E6 /* Main.storyboard in Resources */,
 				4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
@@ -245,6 +262,7 @@
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
+				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 			);
