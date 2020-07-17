@@ -26,6 +26,7 @@
 		4F35177424C020A6000E5E19 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroViewController.storyboard; sourceTree = "<group>"; };
 		4F35177D24C065D7000E5E19 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4F35178224C0681F000E5E19 /* HappyMonkey-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HappyMonkey-Regular.ttf"; sourceTree = "<group>"; };
 		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F55F91D24BDBB9B000739E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -104,6 +105,33 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		4F35177F24C0675D000E5E19 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4F35178024C0676E000E5E19 /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				4F55F92D24BDBB9D000739E6 /* Info.plist */,
+				4F55F92824BDBB9D000739E6 /* Assets.xcassets */,
+				4F35178124C067CF000E5E19 /* Fonts */,
+				4F55F92A24BDBB9D000739E6 /* LaunchScreen.storyboard */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
+		4F35178124C067CF000E5E19 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F35178224C0681F000E5E19 /* HappyMonkey-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		4F55F90F24BDBB9B000739E6 = {
 			isa = PBXGroup;
 			children = (
@@ -123,20 +151,18 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				4F35177A24C065AD000E5E19 /* Intro */,
-				4F35176F24C01EB4000E5E19 /* Splash */,
-				2AF84C5224BDDB2800239497 /* Settings & Profile */,
-				2AF84C5124BDDB1A00239497 /* Animal Room */,
-				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
-				4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */,
-				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
+				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
 				4F55F92324BDBB9B000739E6 /* GameViewController.swift */,
+				2AF84C5124BDDB1A00239497 /* Animal Room */,
+				4F35177F24C0675D000E5E19 /* Application */,
+				4F35177A24C065AD000E5E19 /* Intro */,
 				4F55F92524BDBB9B000739E6 /* Main.storyboard */,
-				4F55F92824BDBB9D000739E6 /* Assets.xcassets */,
-				4F55F92A24BDBB9D000739E6 /* LaunchScreen.storyboard */,
-				4F55F92D24BDBB9D000739E6 /* Info.plist */,
+				4F35178024C0676E000E5E19 /* Resoures */,
+				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
+				2AF84C5224BDDB2800239497 /* Settings & Profile */,
+				4F35176F24C01EB4000E5E19 /* Splash */,
 			);
 			path = MC3;
 			sourceTree = "<group>";
@@ -366,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5U7M39KWXM;
-				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5U7M39KWXM;
-				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

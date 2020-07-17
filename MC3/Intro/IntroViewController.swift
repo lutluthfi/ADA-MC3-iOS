@@ -12,8 +12,22 @@ class IntroViewController: UIViewController {
 
     static let identifier = String(describing: IntroViewController.self)
 
+    // MARK: - @IBOutlet
+    @IBOutlet weak var startButton: UIButton!
+
+    // MARK: - Lifecycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    private func setupViewDidLoad() {
+        self.startButton.layer.cornerRadius = 5
+        self.startButton.addTarget(self, action: #selector(self.onStartButtonTouchedUpInside(_:)), for: .touchUpInside)
+    }
+
+    // MARK: - @objc Function
+    @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+
     }
 
 }

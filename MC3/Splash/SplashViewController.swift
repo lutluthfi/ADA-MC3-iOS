@@ -23,6 +23,7 @@ class SplashViewController: UIViewController {
 
     static let identifier = String(describing: SplashViewController.self)
 
+    // MARK: - Component View
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,6 +91,17 @@ extension SplashViewController {
             centerYLogoImageViewConstraint
         ])
         self.view.layoutIfNeeded()
+    }
+
+}
+
+// MARK: - Task Function
+extension SplashViewController {
+
+    private func showIntroScene() {
+        let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: IntroViewController.identifier)
+        
     }
 
 }
