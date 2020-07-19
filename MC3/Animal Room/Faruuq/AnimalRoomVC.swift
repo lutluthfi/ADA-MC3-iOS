@@ -10,8 +10,10 @@ import UIKit
 
 class AnimalRoomVC: UIViewController {
     
-    var rewards: Int = 35000
-    let foodIcons: [UIImage] = [#imageLiteral(resourceName: "Bowl-Empty"), #imageLiteral(resourceName: "Bowl-Half"), #imageLiteral(resourceName: "Bowl-Full"), #imageLiteral(resourceName: "Bowl-Excess")]
+    var rewardsValue: Int = 35000
+    let bowlIcons: [UIImage] = [#imageLiteral(resourceName: "Bowl-Empty"), #imageLiteral(resourceName: "Bowl-Half"), #imageLiteral(resourceName: "Bowl-Full"), #imageLiteral(resourceName: "Bowl-Excess")]
+    let bowlStatus: [String] = ["initiate", "half", "full", "excess"]
+    var currentBowl: String = "initiate"
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -29,14 +31,34 @@ class AnimalRoomVC: UIViewController {
         return img
     }()
     
-    //MARK: - Cat Item
-    let cat: UIImageView = {
+    //MARK: - Cat Items
+    let catNormal: UIImageView = {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Cat-Normal-1")
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
+    let catSleeping: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Cat-Sleeping")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let catSleepingZzz: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Zzz")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let catSick: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Cat-Awake")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
     //MARK: - Rewards Container
     let rewardsContainer: UIImageView = {
         let box = UIImageView()
@@ -48,7 +70,6 @@ class AnimalRoomVC: UIViewController {
     
     let rewardsLabel: UILabel = {
         let label = UILabel()
-        label.text = "35000"
         label.textColor = .black
         label.textAlignment = .right
         label.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
@@ -65,12 +86,13 @@ class AnimalRoomVC: UIViewController {
     }()
     
     //MARK: - Bowl Item
-    let bowl: UIImageView = {
+    var bowl: UIImageView = {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Bowl-Half")
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
+    
     //MARK: - Back Button
     let backBtn: UIButton = {
         let btn = UIButton()
@@ -96,27 +118,29 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func foodBtnAction(sender: UIButton) {
-        print("food button tapped")
-        UIView.animate(
-            withDuration: 1,
-            delay: 0,
-            options: .curveEaseInOut,
-            animations: {
-                print("foodicon position : \(self.bowl.layer.frame)")
-                self.bowl.layer.frame = CGRect(x: 64, y: 280, width: self.bowl.frame.width, height: self.bowl.frame.height)
-        }) { (foodIconCompletedAction) in
-            print("food completion handler")
-        }
-        UIView.animate(
-            withDuration: 1,
-            delay: 0,
-            options: [.curveEaseInOut, .autoreverse],
-            animations: {
-                print("cathand position : \(self.catHand.layer.frame)")
-                self.catHand.layer.frame = CGRect(x: 84, y: 300, width: self.catHand.frame.width, height: self.catHand.frame.height)
-        }) { (catHandCompletedAction) in
-            print("cat completion handler")
-            self.catHand.layer.frame = CGRect(x: 84, y: 486, width: self.catHand.frame.width, height: self.catHand.frame.height)
+        catNormal.isHidden = false
+        catSleepingZzz.isHidden = true
+        catSleeping.isHidden = true
+        
+        switch self.currentBowl {
+        case bowlStatus[0]:
+            catHandAnimation(delay: 0)
+            bowlAnimationUp(duration: 1, delay: 0)
+            currentBowl = bowlStatus[1]
+        case bowlStatus[1]:
+            catHandAnimation(delay: 0)
+            bowlAnimationDown(image: bowlIcons[2])
+            currentBowl = bowlStatus[2]
+        case bowlStatus[2]:
+            catHandAnimation(delay: 0)
+            bowlAnimationDown(image: bowlIcons[3])
+            currentBowl = bowlStatus[3]
+        case bowlStatus[3]:
+            catHandAnimation(delay: 0)
+            bowlAnimationDown(image: bowlIcons[1])
+            currentBowl = bowlStatus[1]
+        default:
+            break
         }
     }
     
@@ -132,6 +156,9 @@ class AnimalRoomVC: UIViewController {
     
     @objc func zzzBtnAction(sender: UIButton) {
         print("zzz button tapped")
+        catNormal.isHidden = true
+        catSleeping.isHidden = false
+        catSleepingZzz.isHidden = false
     }
     
     //MARK: - Medical Button
@@ -181,12 +208,57 @@ class AnimalRoomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
+        rewardsLabel.text = ("\(rewardsValue)")
+        catSleeping.isHidden = true
+        catSleepingZzz.isHidden = true
+    }
+    
+    //MARK: - Functions
+    func bowlAnimationUp(duration: Double, delay: Double) {
+        UIView.animate(
+            withDuration: duration,
+            delay: delay,
+            options: [.curveEaseInOut],
+            animations: {
+                self.bowl.transform = CGAffineTransform(translationX: 0, y: -160)
+        },
+            completion: nil)
+    }
+    
+    func bowlAnimationDown(image: UIImage) {
+        UIView.animate(
+            withDuration: 1.2,
+            delay: 1.05,
+            options: [.curveEaseIn],
+            animations: {
+                self.bowl.transform = CGAffineTransform(translationX: 0, y: 160)
+        },
+            completion: { done in
+                self.bowl.image = image
+                self.catHandAnimation(delay: 0.5)
+                self.bowlAnimationUp(duration: 1.5, delay: 0)
+                
+        })
+    }
+    
+    func catHandAnimation(delay: Double) {
+        UIView.animate(
+            withDuration: 1,
+            delay: delay,
+            options: [.autoreverse],
+            animations: {
+                self.catHand.transform = CGAffineTransform(translationX: 0, y: -160)
+        }) { (catHandCompletedAction) in
+            self.catHand.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
     
     func layout() {
         view.addSubview(background)
         view.addSubview(basket)
-        view.addSubview(cat)
+        view.addSubview(catNormal)
+        view.addSubview(catSleeping)
+        view.addSubview(catSleepingZzz)
         view.addSubview(backBtn)
         view.addSubview(rewardsContainer)
         view.addSubview(rewardsLabel)
@@ -208,10 +280,15 @@ class AnimalRoomVC: UIViewController {
             basket.widthAnchor.constraint(equalToConstant: 395),
             basket.heightAnchor.constraint(equalToConstant: 235),
             
-            cat.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cat.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
-            cat.widthAnchor.constraint(equalToConstant: 176),
-            cat.heightAnchor.constraint(equalToConstant: 223),
+            catNormal.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            catNormal.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
+            
+            catSleeping.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            catSleeping.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
+            catSleepingZzz.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 30),
+            catSleepingZzz.bottomAnchor.constraint(equalTo: basket.topAnchor),
+            catSleepingZzz.heightAnchor.constraint(equalToConstant: 107),
+            catSleepingZzz.widthAnchor.constraint(equalToConstant: 159),
             
             backBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             backBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -223,7 +300,7 @@ class AnimalRoomVC: UIViewController {
             rewardsLabel.trailingAnchor.constraint(equalTo: rewardsContainer.trailingAnchor, constant: -15),
             
             catHand.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
-            catHand.topAnchor.constraint(equalTo: bowl.bottomAnchor, constant: -20),
+            catHand.topAnchor.constraint(equalTo: view.bottomAnchor),
             
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
             bowl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
@@ -247,5 +324,5 @@ class AnimalRoomVC: UIViewController {
             careBtn.trailingAnchor.constraint(equalTo: foodBtn.trailingAnchor)
         ])
     }
-
+    
 }
