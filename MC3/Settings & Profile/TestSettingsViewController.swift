@@ -10,13 +10,18 @@ import UIKit
 
 class TestSettingsViewController: UIViewController {
 
+    static let identifier = String(describing: TestSettingsViewController.self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onPressButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "showSettings", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

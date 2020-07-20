@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
+        let storyboard = UIStoryboard(name: TestSettingsViewController.identifier, bundle: nil)
         let viewController = storyboard
-            .instantiateViewController(identifier: AgreementViewController.identifier)
+            .instantiateViewController(identifier: TestSettingsViewController.identifier)
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
 
