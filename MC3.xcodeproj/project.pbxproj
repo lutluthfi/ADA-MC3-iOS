@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF84C5524BDDC8A00239497 /* Faruuq */,
-				2AF84C5424BDDC7F00239497 /* Rahmat */,
+				2AF84C5424BDDC7F00239497 /* Jeremy */,
 			);
 			path = "Animal Room";
 			sourceTree = "<group>";
@@ -78,11 +78,11 @@
 			path = "Rewards & Shop";
 			sourceTree = "<group>";
 		};
-		2AF84C5424BDDC7F00239497 /* Rahmat */ = {
+		2AF84C5424BDDC7F00239497 /* Jeremy */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Rahmat;
+			path = Jeremy;
 			sourceTree = "<group>";
 		};
 		2AF84C5524BDDC8A00239497 /* Faruuq */ = {
