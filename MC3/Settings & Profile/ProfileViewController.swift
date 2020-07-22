@@ -11,6 +11,14 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet var homeBtn: UIButton!
+    @IBOutlet var ownerNameLabel: UILabel!
+    @IBOutlet var ownerPhotoImg: UIImageView!
+    @IBOutlet var signoutBtn: UIButton!
+    @IBOutlet var catBtn: UIButton!
+    @IBOutlet var catArticles1Btn: UIButton!
+    @IBOutlet var catArticles2Btn: UIButton!
+    @IBOutlet var catArticles1Label: UILabel!
+    @IBOutlet var catArticles2Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +36,16 @@ class ProfileViewController: UIViewController {
         switch sender {
         case homeBtn:
             dismiss(animated: true, completion: nil)
+            break
+        case signoutBtn:
+            break
+        case catBtn:
+            performSegue(withIdentifier: "profile2pet", sender: nil)
+            break
+        case catArticles1Btn:
+            performSegue(withIdentifier: "profile2articles", sender: nil)
+            break
+        case catArticles2Btn:
             break
         default:
             break

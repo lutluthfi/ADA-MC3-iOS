@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
     }
     
     func prepareScreen() {
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
+//        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
         view.isOpaque = false
         
         contentView.layer.cornerRadius = 10
@@ -70,6 +70,8 @@ class SettingsViewController: UIViewController {
             break
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 

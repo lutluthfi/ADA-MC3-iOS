@@ -27,7 +27,7 @@ class HelpViewController: UIViewController {
     }
     
     func prepareScreen() {
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+//        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         view.isOpaque = false
         
         prepareHelpContent(index: 0)
