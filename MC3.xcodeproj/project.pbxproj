@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A73B53F24BE189600F1427A /* AnimalRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73B53E24BE189600F1427A /* AnimalRoom.swift */; };
 		2A73B56524BEC47200F1427A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73B56424BEC47200F1427A /* GameViewController.swift */; };
 		2A772EED24C69FA000091E62 /* HappyMonkey-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A772EEC24C69FA000091E62 /* HappyMonkey-Regular.ttf */; };
 		2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A73B53E24BE189600F1427A /* AnimalRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoom.swift; sourceTree = "<group>"; };
 		2A73B56424BEC47200F1427A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2A772EEC24C69FA000091E62 /* HappyMonkey-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HappyMonkey-Regular.ttf"; sourceTree = "<group>"; };
 		2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoomVC.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		2AF84C5524BDDC8A00239497 /* Faruuq */ = {
 			isa = PBXGroup;
 			children = (
-				2A73B53E24BE189600F1427A /* AnimalRoom.swift */,
 				2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */,
 			);
 			path = Faruuq;
@@ -217,7 +214,6 @@
 			files = (
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController1.swift in Sources */,
-				2A73B53F24BE189600F1427A /* AnimalRoom.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				2A73B56524BEC47200F1427A /* GameViewController.swift in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,

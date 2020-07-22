@@ -345,6 +345,8 @@ class AnimalRoomVC: UIViewController {
     
         let pan = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
         bowl.addGestureRecognizer(pan)
+        
+        emitter()
     }
     
     //MARK: - Functions
@@ -418,6 +420,25 @@ class AnimalRoomVC: UIViewController {
                 self.stackView.isHidden = false
         },
             completion: nil)
+    }
+    
+    fileprivate func emitter() {
+        let emitterLayer = CAEmitterLayer()
+        emitterLayer.emitterPosition = CGPoint(x: 320, y: 320)
+        
+        let cell = CAEmitterCell()
+        cell.birthRate = 70
+        cell.lifetime = 5
+        cell.velocity = 100
+        cell.scale = 0.1
+        cell.emissionLongitude = (180 * (.pi / 180))
+        cell.emissionRange = (45 * (.pi / 180))
+        cell.contents = UIImage(named: "Baloon")!.cgImage
+        
+        emitterLayer.emitterShape = CAEmitterLayerEmitterShape.line
+        emitterLayer.emitterCells = [cell]
+        
+        view.layer.addSublayer(emitterLayer)
     }
     
     func layout() {
