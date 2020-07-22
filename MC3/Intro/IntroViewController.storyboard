@@ -17,7 +17,7 @@
         <!--Intro View Controller-->
         <scene sceneID="xQq-BF-1rE">
             <objects>
-                <viewController id="RAN-f0-b17" customClass="IntroViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RAN-f0-b17" customClass="IntroViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlt-WN-FwC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

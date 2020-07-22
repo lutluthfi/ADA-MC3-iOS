@@ -11,6 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    lazy var navigationController: UINavigationController = {
+        let controller = UINavigationController()
+        controller.enableMCTransitioning()
+        controller.setNavigationBarHidden(true, animated: false)
+        return controller
+    }()
     var window: UIWindow?
 
     func application(
@@ -19,10 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
+        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
         let viewController = storyboard
-            .instantiateViewController(identifier: AgreementViewController.identifier)
-        self.window?.rootViewController = viewController
+            .instantiateViewController(identifier: SplashViewController.identifier)
+        self.navigationController.setViewControllers(
+            [ viewController ],
+            animated: true
+        )
+        self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
 
         return true

@@ -25,6 +25,9 @@
 		4F3517B124C6A4FE000E5E19 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517B024C6A4FE000E5E19 /* Animal.swift */; };
 		4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517B224C6CC68000E5E19 /* PetDisease.swift */; };
 		4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517B424C6CD1F000E5E19 /* PetActivity.swift */; };
+		4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517BA24C6E034000E5E19 /* MCTransitionAnimator.swift */; };
+		4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517BC24C6E2A6000E5E19 /* MCTransitionCoordinator.swift */; };
+		4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */; };
 		4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */; };
 		4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91D24BDBB9B000739E6 /* GameScene.sks */; };
 		4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91F24BDBB9B000739E6 /* Actions.sks */; };
@@ -54,6 +57,9 @@
 		4F3517B024C6A4FE000E5E19 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		4F3517B224C6CC68000E5E19 /* PetDisease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDisease.swift; sourceTree = "<group>"; };
 		4F3517B424C6CD1F000E5E19 /* PetActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivity.swift; sourceTree = "<group>"; };
+		4F3517BA24C6E034000E5E19 /* MCTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTransitionAnimator.swift; sourceTree = "<group>"; };
+		4F3517BC24C6E2A6000E5E19 /* MCTransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTransitionCoordinator.swift; sourceTree = "<group>"; };
+		4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MCTransition.swift"; sourceTree = "<group>"; };
 		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F55F91D24BDBB9B000739E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -225,6 +231,24 @@
 			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
+		4F3517B624C6DF54000E5E19 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4F3517B724C6DF74000E5E19 /* Transition */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4F3517B724C6DF74000E5E19 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				4F3517BA24C6E034000E5E19 /* MCTransitionAnimator.swift */,
+				4F3517BC24C6E2A6000E5E19 /* MCTransitionCoordinator.swift */,
+				4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		4F55F90F24BDBB9B000739E6 = {
 			isa = PBXGroup;
 			children = (
@@ -244,8 +268,6 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				4F35179224C36969000E5E19 /* Domain */,
-				4F35178924C1BDA0000E5E19 /* CoreData */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
@@ -253,12 +275,15 @@
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
+				4F35178924C1BDA0000E5E19 /* CoreData */,
+				4F35179224C36969000E5E19 /* Domain */,
 				4F35177A24C065AD000E5E19 /* Intro */,
 				4F55F92524BDBB9B000739E6 /* Main.storyboard */,
 				4F35178024C0676E000E5E19 /* Resoures */,
 				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
 				2AF84C5224BDDB2800239497 /* Settings & Profile */,
 				4F35176F24C01EB4000E5E19 /* Splash */,
+				4F3517B624C6DF54000E5E19 /* Utils */,
 			);
 			path = MC3;
 			sourceTree = "<group>";
@@ -342,7 +367,9 @@
 			files = (
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
+				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
+				4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */,
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
@@ -351,6 +378,7 @@
 				4F3517AF24C373C7000E5E19 /* CoreDataGameplayStorage.swift in Sources */,
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
+				4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,

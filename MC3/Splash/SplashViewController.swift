@@ -28,6 +28,10 @@ class SplashViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
+        imageView.isUserInteractionEnabled = true
+        imageView.gestureRecognizers = [
+            UITapGestureRecognizer(target: self, action: #selector(self.onLogoImageViewTapped(_:)))
+        ]
         return imageView
     }()
 
@@ -46,7 +50,16 @@ class SplashViewController: UIViewController {
 
 }
 
-// MARK: - Override UIViewController
+// MARK: - @objc Function
+extension SplashViewController {
+
+    @objc private func onLogoImageViewTapped(_ sender: UITapGestureRecognizer) {
+        self.showIntroScene()
+    }
+
+}
+
+// MARK: - UIViewController Function
 extension SplashViewController {
 
     override var prefersStatusBarHidden: Bool {
@@ -101,7 +114,7 @@ extension SplashViewController {
     private func showIntroScene() {
         let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: IntroViewController.identifier)
-        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
