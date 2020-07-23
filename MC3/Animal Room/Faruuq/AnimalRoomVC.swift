@@ -141,41 +141,48 @@ class AnimalRoomVC: UIViewController {
             sender.setTranslation(CGPoint.zero, in: self.view)
             
             if bowl.frame.intersects(catNormal.frame) {
-                switch bowl.image {
-                case bowlIcons[1]:
-                    hunger += 10
-                    rewardsValue += 10
-                    DispatchQueue.main.async {
-                        self.rewardsLabel.text = ("\(self.rewardsValue)")
+                if hunger < 30 {
+                    switch bowl.image {
+                    case bowlIcons[1]:
+                        hunger += 10
+                        DispatchQueue.main.async {
+                            self.rewardsLabel.text = ("\(self.rewardsValue)")
+                        }
+                    case bowlIcons[2]:
+                        hunger += 20
+                        DispatchQueue.main.async {
+                            self.rewardsLabel.text = ("\(self.rewardsValue)")
+                        }
+                    case bowlIcons[3]:
+                        hunger += 30
+                        DispatchQueue.main.async {
+                            self.rewardsLabel.text = ("\(self.rewardsValue)")
+                        }
+                    default:
+                        break
                     }
-                case bowlIcons[2]:
-                    hunger += 20
-                    rewardsValue += 10
-                    DispatchQueue.main.async {
-                        self.rewardsLabel.text = ("\(self.rewardsValue)")
+                    
+                    bowl.image = bowlIcons[0]
+                    if hunger >= 30 {
+                        rewardsValue += 10
                     }
-                case bowlIcons[3]:
-                    hunger += 30
-                    rewardsValue += 10
-                    DispatchQueue.main.async {
-                        self.rewardsLabel.text = ("\(self.rewardsValue)")
-                    }
-                default:
-                    break
+                    
+                    UIView.animate(
+                        withDuration: 0.5,
+                        delay: 0,
+                        options: .curveEaseOut,
+                        animations: {
+                            self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
+                    },
+                        completion: nil)
+                } else {
+                    let attributedTextFull = NSMutableAttributedString(string: "Meoww is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of food. Play game with Meoww to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                    overlayText.attributedText = attributedTextFull
+                    overlayText.textAlignment = .center
+                    overlayAnimation()
                 }
                 
-                intersectNumber += 1
-                print("intersects \(intersectNumber)")
-                bowl.image = bowlIcons[0]
-                
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    options: .curveEaseOut,
-                    animations: {
-                        self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
-                },
-                    completion: nil)
             }
         case .ended:
             print("touch ended")
@@ -231,7 +238,7 @@ class AnimalRoomVC: UIViewController {
         return box
     }()
     
-    let overlayText: UITextView = {
+    var overlayText: UITextView = {
         let txt = UITextView()
         let attributedText = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
         attributedText.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for Meoww.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
