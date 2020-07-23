@@ -10,11 +10,20 @@ import UIKit
 
 class AnimalRoomVC: UIViewController {
     
-    var rewardsValue: Int = 35000
+    var rewardsValue: Int = 100
     let bowlIcons: [UIImage] = [#imageLiteral(resourceName: "Bowl-Empty"), #imageLiteral(resourceName: "Bowl-Half"), #imageLiteral(resourceName: "Bowl-Full"), #imageLiteral(resourceName: "Bowl-Excess")]
-    let bowlStatus: [String] = ["initiate", "half", "full", "excess"]
-    var currentBowl: String = "initiate"
+    var bowlPresent: Bool = false
+    var timer: Timer?
+    var currentTimer: Int = 0
+    let emitterLayer = CAEmitterLayer()
+    var intersectNumber: Int = 0
     
+    //MARK: Logic
+    var hunger: Int = 0
+    var sleep: Int = 0
+    var health: Int = 0
+    var fun: Int = 0
+    var love: Int = 0
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -67,25 +76,120 @@ class AnimalRoomVC: UIViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
+    
+    //MARK: Cat Food
+    let catFood: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Cat-Food-Box")
+        img.alpha = 0
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.isUserInteractionEnabled = true
+        return img
+    }()
+    
+    @objc func catFoodTap(sender: UILongPressGestureRecognizer) {
+        print("catFood got pressed")
+        switch sender.state {
+            
+        case .began:
+            catFoodAnimateStart()
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEnds), userInfo: nil, repeats: true)
+        case .ended:
+            catFoodAnimateStop()
+            timer?.invalidate()
+            emitterLayer.removeFromSuperlayer()
+        default:
+            break
+        }
+    }
+    
+    @objc func timerEnds() {
+        currentTimer += 1
+        switch currentTimer {
+        case 2:
+            DispatchQueue.main.async {
+                self.bowl.image = self.bowlIcons[1]
+            }
+        case 4:
+            DispatchQueue.main.async {
+                self.bowl.image = self.bowlIcons[2]
+            }
+        case 6:
+            DispatchQueue.main.async {
+                self.bowl.image = self.bowlIcons[3]
+            }
+        default:
+            break
+        }
+    }
 
     //MARK: Bowl
     var bowl: UIImageView = {
         let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "Bowl-Half")
+        img.image = #imageLiteral(resourceName: "Bowl-Empty")
         img.isUserInteractionEnabled = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     @objc func bowlPan(sender: UIPanGestureRecognizer) {
-        view.bringSubviewToFront(bowl)
         let translation = sender.translation(in: self.view)
         switch sender.state {
+            
         case .began, .changed:
             bowl.center = CGPoint(x: bowl.center.x + translation.x, y: bowl.center.y + translation.y)
             sender.setTranslation(CGPoint.zero, in: self.view)
+            
+            if bowl.frame.intersects(catNormal.frame) {
+                switch bowl.image {
+                case bowlIcons[1]:
+                    hunger += 10
+                    rewardsValue += 10
+                    DispatchQueue.main.async {
+                        self.rewardsLabel.text = ("\(self.rewardsValue)")
+                    }
+                case bowlIcons[2]:
+                    hunger += 20
+                    rewardsValue += 10
+                    DispatchQueue.main.async {
+                        self.rewardsLabel.text = ("\(self.rewardsValue)")
+                    }
+                case bowlIcons[3]:
+                    hunger += 30
+                    rewardsValue += 10
+                    DispatchQueue.main.async {
+                        self.rewardsLabel.text = ("\(self.rewardsValue)")
+                    }
+                default:
+                    break
+                }
+                
+                intersectNumber += 1
+                print("intersects \(intersectNumber)")
+                bowl.image = bowlIcons[0]
+                
+                UIView.animate(
+                    withDuration: 0.5,
+                    delay: 0,
+                    options: .curveEaseOut,
+                    animations: {
+                        self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
+                },
+                    completion: nil)
+            }
         case .ended:
             print("touch ended")
+            currentTimer = 0
+            if bowl.layer.position != CGPoint(x: 165.5, y: 460) {
+                UIView.animate(
+                    withDuration: 0.5,
+                    delay: 0,
+                    options: .curveEaseOut,
+                    animations: {
+                        self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
+                },
+                    completion: nil)
+            }
         default:
             break
         }
@@ -104,7 +208,7 @@ class AnimalRoomVC: UIViewController {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
+        label.font = UIFont(name: "HappyMonkey-Regular", size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -129,7 +233,7 @@ class AnimalRoomVC: UIViewController {
     
     let overlayText: UITextView = {
         let txt = UITextView()
-        let attributedText = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 20)!])
+        let attributedText = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
         attributedText.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for Meoww.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
         txt.attributedText = attributedText
         txt.textAlignment = .center
@@ -144,22 +248,22 @@ class AnimalRoomVC: UIViewController {
         let btn = UIButton()
         btn.backgroundColor = UIColor(named: "413834")
         btn.setTitle("Okay", for: .normal)
-        btn.titleLabel?.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
+        btn.titleLabel?.font = UIFont(name: "HappyMonkey-Regular", size: 20)
         btn.tintColor = .white
         btn.layer.cornerRadius = 5
         //TODO: How to adjust the button size to be smaller than the stackview size
 //        btn.frame = CGRect(x: 0, y: 0, width: 128, height: 39)
 //        btn.sizeThatFits(CGSize(width: 128, height: 39))
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(overlayAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(overlayDismiss), for: .touchUpInside)
         return btn
     }()
     
-    @objc func overlayAction(sender: UIButton) {
-        overlay.isHidden = true
-        overlayView.isHidden = true
+    @objc func overlayDismiss(sender: UIButton) {
+        overlay.alpha = 0
+        overlayView.alpha = 0
         overlayView.transform = .identity
-        stackView.isHidden = true
+        stackView.alpha = 0
     }
     
     let stackView: UIStackView = {
@@ -200,30 +304,22 @@ class AnimalRoomVC: UIViewController {
         catNormal.isHidden = false
         catHand.isHidden = false
         bowl.isHidden = false
+        catFood.isHidden = false
         catPopUp.isHidden = true
         catSleeping.isHidden = true
         phone.isHidden = true
         phone.transform = .identity
         
-        switch self.currentBowl {
-        case bowlStatus[0]:
-            catHandAnimation(delay: 0)
-            bowlAnimationUp(duration: 1, delay: 0)
-            currentBowl = bowlStatus[1]
-        case bowlStatus[1]:
-            catHandAnimation(delay: 0)
-            bowlAnimationDown(image: bowlIcons[2])
-            currentBowl = bowlStatus[2]
-        case bowlStatus[2]:
-            catHandAnimation(delay: 0)
-            bowlAnimationDown(image: bowlIcons[3])
-            currentBowl = bowlStatus[3]
-        case bowlStatus[3]:
-            catHandAnimation(delay: 0)
-            bowlAnimationDown(image: bowlIcons[1])
-            currentBowl = bowlStatus[1]
+        switch bowlPresent {
+        case true:
+            catHandAnimation()
+            bowlDown()
+            bowlPresent = false
         default:
-            break
+            catHandAnimation()
+            bowlUp()
+            bowlPresent = true
+            currentTimer = 0
         }
     }
     
@@ -241,6 +337,7 @@ class AnimalRoomVC: UIViewController {
         print("zzz button tapped")
         catNormal.isHidden = true
         bowl.isHidden = true
+        catFood.isHidden = true
         catHand.isHidden = true
         phone.isHidden = true
         phone.transform = .identity
@@ -269,6 +366,7 @@ class AnimalRoomVC: UIViewController {
         print("medical button tapped")
         catNormal.isHidden = true
         bowl.isHidden = true
+        catFood.isHidden = true
         catHand.isHidden = true
         catPopUp.isHidden = false
         catSleeping.isHidden = false
@@ -281,7 +379,6 @@ class AnimalRoomVC: UIViewController {
          catSleepingZzz.heightAnchor.constraint(equalToConstant: 66).isActive = true
          catSleepingZzz.frame.size = CGSize(width: 87, height: 66)
          catSleepingZzz.layer.frame.size = CGSize(width: 87, height: 66)*/
-        
     }
     
     //MARK: Phone Button
@@ -338,55 +435,84 @@ class AnimalRoomVC: UIViewController {
         catSleeping.isHidden = true
         catPopUp.isHidden = true
         phone.isHidden = true
-        
-        overlay.isHidden = true
-        overlayView.isHidden = true
-        stackView.isHidden = true
-    
+        let tap = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
+        tap.minimumPressDuration = 0.1
+        catFood.addGestureRecognizer(tap)
         let pan = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
         bowl.addGestureRecognizer(pan)
-        
-        emitter()
     }
     
     //MARK: - Functions
-    fileprivate func bowlAnimationUp(duration: Double, delay: Double) {
+    
+    fileprivate func bowlUp() {
         UIView.animate(
-            withDuration: duration,
-            delay: delay,
+            withDuration: 0.5,
+            delay: 0,
             options: [.curveEaseInOut],
             animations: {
-                self.bowl.transform = CGAffineTransform(translationX: 0, y: -160)
+                self.bowl.transform = CGAffineTransform(translationX: 0, y: -120)
+                self.catFood.alpha = 1
         },
             completion: nil)
-        //TODO: How to make it collision
+//        print("bowl position = \(bowl.layer.position)") (165.5, 460.0)
     }
     
-    fileprivate func bowlAnimationDown(image: UIImage) {
+    fileprivate func bowlDown() {
         UIView.animate(
-            withDuration: 1.2,
-            delay: 1.05,
-            options: [.curveEaseIn],
+            withDuration: 0.5,
+            delay: 0.5,
+            options: [.curveEaseInOut],
             animations: {
-                self.bowl.transform = CGAffineTransform(translationX: 0, y: 160)
+                self.bowl.transform = .identity
         },
-            completion: { done in
-                self.bowl.image = image
-                self.catHandAnimation(delay: 0.5)
-                self.bowlAnimationUp(duration: 1.5, delay: 0)
-        })
+            completion: nil)
     }
     
-    fileprivate func catHandAnimation(delay: Double) {
-        UIView.animate(
-            withDuration: 1,
-            delay: delay,
-            options: [.autoreverse],
-            animations: {
-                self.catHand.transform = CGAffineTransform(translationX: 0, y: -160)
-        }) { (catHandCompletedAction) in
-            self.catHand.transform = .identity
+    fileprivate func catHandAnimation() {
+        switch bowlPresent {
+        case false:
+            bowl.image = bowlIcons[0]
+        default:
+            break
         }
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            options: [.curveEaseInOut],
+            animations: {
+                self.catHand.transform = CGAffineTransform(translationX: 0, y: -100)
+        }) { (finished) in
+            UIView.animate(
+                withDuration: 0.5,
+                delay: 0,
+                options: [.curveEaseInOut],
+                animations: {
+                    self.catHand.transform = .identity
+            },
+                completion: nil)
+        }
+    }
+    
+    fileprivate func catFoodAnimateStart() {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            options: [.curveEaseInOut],
+            animations: {
+                self.catFood.transform = CGAffineTransform(rotationAngle: 20)
+        }) { (finished) in
+            self.emitter()
+        }
+    }
+    
+    fileprivate func catFoodAnimateStop() {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            options: [.curveEaseInOut],
+            animations: {
+                self.catFood.transform = .identity
+        }, completion: nil)
     }
     
     fileprivate func phoneAnimation() {
@@ -411,32 +537,44 @@ class AnimalRoomVC: UIViewController {
             initialSpringVelocity: 5,
             options: [],
             animations: {
-                self.overlay.isHidden = false
                 self.overlay.alpha = 1
-                self.overlayView.isHidden = false
                 self.overlayView.alpha = 1
                 self.overlayView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5) //scale size (264.25, 68.25, 367.5, 277.5)
                 self.stackView.alpha = 1
-                self.stackView.isHidden = false
         },
             completion: nil)
     }
     
     fileprivate func emitter() {
-        let emitterLayer = CAEmitterLayer()
-        emitterLayer.emitterPosition = CGPoint(x: 320, y: 320)
+        emitterLayer.emitterPosition = CGPoint(x: catFood.frame.maxX - 20, y: catFood.frame.midY)
         
         let cell = CAEmitterCell()
-        cell.birthRate = 70
-        cell.lifetime = 5
-        cell.velocity = 100
-        cell.scale = 0.1
+        cell.birthRate = 1
+        cell.lifetime = 10
+        cell.velocity = 60
         cell.emissionLongitude = (180 * (.pi / 180))
         cell.emissionRange = (45 * (.pi / 180))
-        cell.contents = UIImage(named: "Baloon")!.cgImage
+        cell.contents = UIImage(named: "Cat-Food-1")!.cgImage
+        
+        let cell2 = CAEmitterCell()
+        cell2.birthRate = 2
+        cell2.lifetime = 10
+        cell2.velocity = 100
+        cell2.emissionLongitude = (180 * (.pi / 180))
+        cell2.emissionRange = (45 * (.pi / 180))
+        cell2.contents = UIImage(named: "Cat-Food-2")!.cgImage
+        
+        let cell3 = CAEmitterCell()
+        cell3.birthRate = 5
+        cell3.lifetime = 10
+        cell3.velocity = 150
+        cell3.scale = 0.8
+        cell3.emissionLongitude = (180 * (.pi / 180))
+        cell3.emissionRange = (45 * (.pi / 180))
+        cell3.contents = UIImage(named: "Cat-Food-4")!.cgImage
         
         emitterLayer.emitterShape = CAEmitterLayerEmitterShape.line
-        emitterLayer.emitterCells = [cell]
+        emitterLayer.emitterCells = [cell, cell2, cell3]
         
         view.layer.addSublayer(emitterLayer)
     }
@@ -451,6 +589,7 @@ class AnimalRoomVC: UIViewController {
         view.addSubview(rewardsContainer)
         view.addSubview(rewardsLabel)
         view.addSubview(bowl)
+        view.addSubview(catFood)
         view.addSubview(phone)
         view.addSubview(catHand)
         view.addSubview(foodBtn)
@@ -464,25 +603,23 @@ class AnimalRoomVC: UIViewController {
         view.addSubview(stackView)
         stackView.addArrangedSubview(overlayText)
         stackView.addArrangedSubview(overlayBtn)
-        
-        
-        
+
         NSLayoutConstraint.activate([
             //MARK: - Item layout
             background.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             background.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            basket.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            basket.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40),
             basket.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: +50),
             basket.widthAnchor.constraint(equalToConstant: 395),
             basket.heightAnchor.constraint(equalToConstant: 235),
             
-            catNormal.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            catNormal.centerXAnchor.constraint(equalTo: basket.centerXAnchor),
             catNormal.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
             
-            catSleeping.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            catSleeping.centerXAnchor.constraint(equalTo: catNormal.centerXAnchor),
             catSleeping.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
-            catPopUp.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 30),
+            catPopUp.centerXAnchor.constraint(equalTo: basket.centerXAnchor, constant: 30),
             catPopUp.bottomAnchor.constraint(equalTo: basket.topAnchor),
             //TODO: Setting constrains for catPopUp properly
 //            catSleepingZzz.heightAnchor.constraint(equalToConstant: 107),
@@ -497,11 +634,16 @@ class AnimalRoomVC: UIViewController {
             rewardsLabel.centerYAnchor.constraint(equalTo: rewardsContainer.centerYAnchor),
             rewardsLabel.trailingAnchor.constraint(equalTo: rewardsContainer.trailingAnchor, constant: -15),
             
-            catHand.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40),
+            catHand.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
             catHand.topAnchor.constraint(equalTo: view.bottomAnchor),
             
+            catFood.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -25),
+            catFood.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            catFood.widthAnchor.constraint(equalToConstant: 123.08),
+            catFood.heightAnchor.constraint(equalToConstant: 136.6),
+            
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
-            bowl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            bowl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
             bowl.widthAnchor.constraint(equalToConstant: 163),
             bowl.heightAnchor.constraint(equalToConstant: 92),
             
@@ -543,5 +685,4 @@ class AnimalRoomVC: UIViewController {
             stackView.heightAnchor.constraint(equalToConstant: 210)
         ])
     }
-    
 }
