@@ -62,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
+                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -399,7 +399,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
+                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -448,7 +448,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="48" height="28"/>
+                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -536,7 +536,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Ue-HcY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" pagingEnabled="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Ue-HcY">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-b4-gxK">
@@ -589,8 +589,32 @@
                                             <constraint firstItem="tex-CP-y8L" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="z9J-Fb-G2u"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSk-JD-HhL">
+                                        <rect key="frame" x="800" y="21" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="KfL-IG-VUt"/>
+                                            <constraint firstAttribute="height" constant="35" id="b5f-t2-AAW"/>
+                                        </constraints>
+                                        <color key="tintColor" name="413834"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="multiply" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="18" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPressButton:" destination="Gjs-IG-KXl" eventType="touchUpInside" id="GQT-np-81F"/>
+                                            <action selector="onPressButton:" destination="7Bt-Pn-MPU" eventType="touchUpInside" id="J7B-nw-wIc"/>
+                                            <action selector="onPressClose:" destination="NIa-Ua-bvi" eventType="touchUpInside" id="G1U-BO-WPG"/>
+                                        </connections>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="7" translatesAutoresizingMaskIntoConstraints="NO" id="8po-eo-Ku4">
+                                        <rect key="frame" x="20" y="188.5" width="103" height="37"/>
+                                    </pageControl>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="8po-eo-Ku4" firstAttribute="centerY" secondItem="k1i-XF-NXU" secondAttribute="centerY" id="6V4-Sn-Cnf"/>
+                                    <constraint firstItem="8po-eo-Ku4" firstAttribute="leading" secondItem="fHJ-PF-unY" secondAttribute="leading" constant="20" id="C7w-rC-g0k"/>
+                                    <constraint firstItem="xSk-JD-HhL" firstAttribute="top" secondItem="k1i-XF-NXU" secondAttribute="top" constant="21" id="IRL-mZ-fji"/>
+                                    <constraint firstItem="k1i-XF-NXU" firstAttribute="trailing" secondItem="xSk-JD-HhL" secondAttribute="trailing" constant="61" id="QPI-be-rCw"/>
                                     <constraint firstItem="DuQ-b4-gxK" firstAttribute="width" secondItem="k1i-XF-NXU" secondAttribute="width" id="Wy2-tG-8ku"/>
                                     <constraint firstItem="DuQ-b4-gxK" firstAttribute="trailing" secondItem="fHJ-PF-unY" secondAttribute="trailing" id="e2w-OS-O2m"/>
                                     <constraint firstItem="DuQ-b4-gxK" firstAttribute="top" secondItem="fHJ-PF-unY" secondAttribute="top" id="qLl-au-t45"/>
@@ -609,10 +633,15 @@
                             <constraint firstAttribute="bottom" secondItem="cxG-Ue-HcY" secondAttribute="bottom" id="kQW-UG-NTd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="closeBtn" destination="xSk-JD-HhL" id="wOw-C7-OUB"/>
+                        <outlet property="pageControl" destination="8po-eo-Ku4" id="1nh-UW-wve"/>
+                        <outlet property="scrollView" destination="cxG-Ue-HcY" id="xOW-4s-ivG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIy-Z7-m7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287.5" y="-630.43478260869574"/>
+            <point key="canvasLocation" x="1645.9821428571429" y="-630.43478260869574"/>
         </scene>
         <!--Profile Pet View Controller-->
         <scene sceneID="i5j-e2-sgd">
@@ -661,25 +690,25 @@
                                 <rect key="frame" x="346" y="2" width="1" height="414"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
-                                <rect key="frame" x="135" y="293" width="106.5" height="28"/>
+                                <rect key="frame" x="131" y="293" width="114.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="351" width="32" height="18"/>
+                                <rect key="frame" x="172" y="352" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="34" width="79" height="28"/>
+                                <rect key="frame" x="556" y="34" width="92.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
