@@ -26,6 +26,8 @@
 		9ABF622524C458FE00E4F76F /* TikusStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABF622424C458FE00E4F76F /* TikusStoryboard.storyboard */; };
 		9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF622624C6FBDA00E4F76F /* SettingLauncher.swift */; };
 		9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF622824C7EE7100E4F76F /* CustomButton.swift */; };
+		F5CD072324C97AB600EE1D14 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CD072224C97AB600EE1D14 /* RewardViewController.swift */; };
+		F5CD072524C97AD900EE1D14 /* RewardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		9ABF622424C458FE00E4F76F /* TikusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TikusStoryboard.storyboard; path = MC3/TikusStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		9ABF622624C6FBDA00E4F76F /* SettingLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingLauncher.swift; path = Rahmat/SettingLauncher.swift; sourceTree = SOURCE_ROOT; };
 		9ABF622824C7EE7100E4F76F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Rahmat/CustomButton.swift; sourceTree = SOURCE_ROOT; };
+		F5CD072224C97AB600EE1D14 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardViewController.swift; path = MC3/RewardViewController.swift; sourceTree = SOURCE_ROOT; };
+		F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardStoryboard.storyboard; path = MC3/RewardStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		2AF84C5324BDDB3900239497 /* Rewards & Shop */ = {
 			isa = PBXGroup;
 			children = (
+				F5CD072224C97AB600EE1D14 /* RewardViewController.swift */,
+				F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */,
 			);
 			path = "Rewards & Shop";
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
 				4F55F92724BDBB9B000739E6 /* Main.storyboard in Resources */,
 				9ABF622524C458FE00E4F76F /* TikusStoryboard.storyboard in Resources */,
+				F5CD072524C97AD900EE1D14 /* RewardStoryboard.storyboard in Resources */,
 				4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F55F92924BDBB9D000739E6 /* Assets.xcassets in Resources */,
@@ -276,10 +283,9 @@
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
-
 				9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */,
+				F5CD072324C97AB600EE1D14 /* RewardViewController.swift in Sources */,
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
-
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
@@ -428,7 +434,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XSU8A6MK4;
-
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,9 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
 				DEVELOPMENT_TEAM = 6XSU8A6MK4;
-
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
