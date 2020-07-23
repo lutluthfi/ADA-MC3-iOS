@@ -41,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2ADE893A24C9900F00363A12 /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				4F55F92824BDBB9D000739E6 /* Assets.xcassets */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
 		2AF84C4D24BDDA7B00239497 /* Intro & Garden */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,13 +116,13 @@
 				2AF84C5224BDDB2800239497 /* Settings & Profile */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
+				2ADE893A24C9900F00363A12 /* Resoures */,
 				4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
 				4F55F92324BDBB9B000739E6 /* GameViewController.swift */,
 				4F55F92524BDBB9B000739E6 /* Main.storyboard */,
-				4F55F92824BDBB9D000739E6 /* Assets.xcassets */,
 				4F55F92A24BDBB9D000739E6 /* LaunchScreen.storyboard */,
 				4F55F92D24BDBB9D000739E6 /* Info.plist */,
 			);
