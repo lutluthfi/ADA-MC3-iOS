@@ -83,6 +83,7 @@
 		2AF84C5224BDDB2800239497 /* Settings & Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4423D62D24C8433A004A73D4 /* Components */,
 				448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */,
 				448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */,
 				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
@@ -113,6 +114,13 @@
 			children = (
 			);
 			path = Faruuq;
+			sourceTree = "<group>";
+		};
+		4423D62D24C8433A004A73D4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4F35176F24C01EB4000E5E19 /* Splash */ = {
