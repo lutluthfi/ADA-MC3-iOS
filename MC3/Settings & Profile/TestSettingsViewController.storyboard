@@ -62,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
+                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -399,7 +399,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
+                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -448,7 +448,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
+                                <rect key="frame" x="387" y="26" width="48" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -532,16 +532,87 @@
         <scene sceneID="hzw-M4-c8V">
             <objects>
                 <viewController id="NIa-Ua-bvi" customClass="ProfileArticlesViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VaS-n3-RUD" customClass="ProfileP">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VaS-n3-RUD" customClass="ProfileP">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-Ue-HcY">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuQ-b4-gxK">
+                                        <rect key="frame" x="0.0" y="0.0" width="896" height="2898"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-1" translatesAutoresizingMaskIntoConstraints="NO" id="cgB-vU-fI7">
+                                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-2" translatesAutoresizingMaskIntoConstraints="NO" id="6yd-W1-Pld">
+                                                <rect key="frame" x="0.0" y="414" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-3" translatesAutoresizingMaskIntoConstraints="NO" id="uQZ-0X-mEZ">
+                                                <rect key="frame" x="0.0" y="828" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-4" translatesAutoresizingMaskIntoConstraints="NO" id="OUs-XX-yvc">
+                                                <rect key="frame" x="0.0" y="1242" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-5" translatesAutoresizingMaskIntoConstraints="NO" id="tex-CP-y8L">
+                                                <rect key="frame" x="0.0" y="1656" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-6" translatesAutoresizingMaskIntoConstraints="NO" id="cnO-kO-OnD">
+                                                <rect key="frame" x="0.0" y="2070" width="896" height="414"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Profile-Article-7" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-kq-TUR">
+                                                <rect key="frame" x="0.0" y="2484" width="896" height="414"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Yeh-kq-TUR" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="0oC-yd-2ko"/>
+                                            <constraint firstItem="6yd-W1-Pld" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="40b-gk-tYy"/>
+                                            <constraint firstItem="cgB-vU-fI7" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="9zy-iG-6cl"/>
+                                            <constraint firstItem="6yd-W1-Pld" firstAttribute="top" secondItem="cgB-vU-fI7" secondAttribute="bottom" id="CPy-Ag-n3w"/>
+                                            <constraint firstItem="OUs-XX-yvc" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="DZy-cM-vcs"/>
+                                            <constraint firstAttribute="height" constant="2898" id="Hya-6m-z4P"/>
+                                            <constraint firstItem="cnO-kO-OnD" firstAttribute="top" secondItem="tex-CP-y8L" secondAttribute="bottom" id="ME8-LU-nBd"/>
+                                            <constraint firstItem="OUs-XX-yvc" firstAttribute="top" secondItem="uQZ-0X-mEZ" secondAttribute="bottom" id="OhF-ja-DVT"/>
+                                            <constraint firstItem="6yd-W1-Pld" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="VcM-Yp-fi3"/>
+                                            <constraint firstItem="tex-CP-y8L" firstAttribute="top" secondItem="OUs-XX-yvc" secondAttribute="bottom" id="Y60-s7-4gn"/>
+                                            <constraint firstItem="tex-CP-y8L" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="e1T-HC-vyv"/>
+                                            <constraint firstItem="6yd-W1-Pld" firstAttribute="baseline" secondItem="uQZ-0X-mEZ" secondAttribute="firstBaseline" id="gCh-6d-MBJ"/>
+                                            <constraint firstItem="Yeh-kq-TUR" firstAttribute="top" secondItem="cnO-kO-OnD" secondAttribute="bottom" id="gsS-nE-AWz"/>
+                                            <constraint firstItem="OUs-XX-yvc" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="i0o-jP-Kfd"/>
+                                            <constraint firstItem="cnO-kO-OnD" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="keL-2t-iW8"/>
+                                            <constraint firstItem="cnO-kO-OnD" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="ljz-W8-4Nk"/>
+                                            <constraint firstItem="cgB-vU-fI7" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="moK-t6-bon"/>
+                                            <constraint firstItem="uQZ-0X-mEZ" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="rOO-Dh-mnI"/>
+                                            <constraint firstItem="Yeh-kq-TUR" firstAttribute="height" secondItem="DuQ-b4-gxK" secondAttribute="height" multiplier="0.142857" id="yGe-1G-mIN"/>
+                                            <constraint firstItem="uQZ-0X-mEZ" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="z57-JS-56R"/>
+                                            <constraint firstItem="tex-CP-y8L" firstAttribute="width" secondItem="DuQ-b4-gxK" secondAttribute="width" id="z9J-Fb-G2u"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DuQ-b4-gxK" firstAttribute="width" secondItem="k1i-XF-NXU" secondAttribute="width" id="Wy2-tG-8ku"/>
+                                    <constraint firstItem="DuQ-b4-gxK" firstAttribute="trailing" secondItem="fHJ-PF-unY" secondAttribute="trailing" id="e2w-OS-O2m"/>
+                                    <constraint firstItem="DuQ-b4-gxK" firstAttribute="top" secondItem="fHJ-PF-unY" secondAttribute="top" id="qLl-au-t45"/>
+                                    <constraint firstItem="DuQ-b4-gxK" firstAttribute="bottom" secondItem="fHJ-PF-unY" secondAttribute="bottom" id="vQD-2A-lcz"/>
+                                    <constraint firstItem="DuQ-b4-gxK" firstAttribute="leading" secondItem="fHJ-PF-unY" secondAttribute="leading" id="wwx-aJ-BBg"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fHJ-PF-unY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="k1i-XF-NXU"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="45U-d7-97D"/>
+                        <constraints>
+                            <constraint firstItem="cxG-Ue-HcY" firstAttribute="top" secondItem="VaS-n3-RUD" secondAttribute="top" id="CeV-vC-1Ui"/>
+                            <constraint firstItem="cxG-Ue-HcY" firstAttribute="leading" secondItem="VaS-n3-RUD" secondAttribute="leading" id="Mzx-Ce-Bzc"/>
+                            <constraint firstAttribute="trailing" secondItem="cxG-Ue-HcY" secondAttribute="trailing" id="h2s-sG-c88"/>
+                            <constraint firstAttribute="bottom" secondItem="cxG-Ue-HcY" secondAttribute="bottom" id="kQW-UG-NTd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIy-Z7-m7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1630" y="-577"/>
+            <point key="canvasLocation" x="2287.5" y="-630.43478260869574"/>
         </scene>
         <!--Profile Pet View Controller-->
         <scene sceneID="i5j-e2-sgd">
@@ -590,25 +661,25 @@
                                 <rect key="frame" x="346" y="2" width="1" height="414"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
-                                <rect key="frame" x="131" y="293" width="114.5" height="29"/>
+                                <rect key="frame" x="135" y="293" width="106.5" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="352" width="32" height="18"/>
+                                <rect key="frame" x="172" y="351" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="34" width="92.5" height="29"/>
+                                <rect key="frame" x="556" y="34" width="79" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -681,6 +752,13 @@
         <image name="Help-1" width="687" height="213"/>
         <image name="Help-2" width="738" height="213"/>
         <image name="Help-3" width="726" height="248"/>
+        <image name="Profile-Article-1" width="896" height="414"/>
+        <image name="Profile-Article-2" width="896" height="414"/>
+        <image name="Profile-Article-3" width="896" height="414"/>
+        <image name="Profile-Article-4" width="896" height="414"/>
+        <image name="Profile-Article-5" width="896" height="414"/>
+        <image name="Profile-Article-6" width="896" height="414"/>
+        <image name="Profile-Article-7" width="896" height="414"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
