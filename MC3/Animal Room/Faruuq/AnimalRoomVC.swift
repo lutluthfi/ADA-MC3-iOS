@@ -65,6 +65,36 @@ class AnimalRoomVC: UIViewController {
         return img
     }()
     
+    //MARK: Lamp
+    let lamp: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "Lamp-2"), for: .normal)
+        btn.alpha = 0
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(lampAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func lampAction(sender: UIButton) {
+        lamp.alpha = 0
+        catNormal.isHidden = true
+        catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
+        catSleeping.isHidden = false
+        sleepingState = true
+        rewardsValue += 20
+        DispatchQueue.main.async {
+            self.rewardsLabel.text = "\(self.rewardsValue)"
+        }
+        z1Animation()
+        
+        let attributedTextFull = NSMutableAttributedString(string: "Meoww is sleeping!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+        attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+        overlayText.attributedText = attributedTextFull
+        overlayText.textAlignment = .center
+        overlayAnimation()
+    }
+
+    
     //MARK: Cat Pop Up
     let sickPopUp: UIImageView = {
         let img = UIImageView()
@@ -112,6 +142,10 @@ class AnimalRoomVC: UIViewController {
         if let phoneURL = NSURL(string: ("tel://911")) {
             UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
         }
+        let attributedTextFull = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+        attributedTextFull.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for Meoww.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+        overlayText.attributedText = attributedTextFull
+        overlayText.textAlignment = .center
         overlayAnimation()
     }
 
@@ -427,18 +461,24 @@ class AnimalRoomVC: UIViewController {
     
     @objc func zzzBtnAction(sender: UIButton) {
         print("zzz button tapped")
-        catNormal.isHidden = true
-        sickPopUp.isHidden = true
-        bowl.isHidden = true
-        catFood.isHidden = true
-        catHand.isHidden = true
-        handCare.isHidden = true
-        phone.alpha = 0
-        phone.transform = .identity
-        catSleeping.isHidden = false
-        catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
-
-        z1Animation()
+        if sleepingState == true {
+            let attributedTextFull = NSMutableAttributedString(string: "Meoww is sleeping!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+            attributedTextFull.append(NSAttributedString(string: "\n\nYou just earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+            overlayText.attributedText = attributedTextFull
+            overlayText.textAlignment = .center
+            overlayAnimation()
+        } else {
+            sickPopUp.isHidden = true
+            bowl.isHidden = true
+            catFood.isHidden = true
+            catHand.isHidden = true
+            handCare.isHidden = true
+            phone.alpha = 0
+            phone.transform = .identity
+            lampAnimation()
+        }
+        
+        
     }
     
     //MARK: Medical Button
@@ -461,12 +501,10 @@ class AnimalRoomVC: UIViewController {
         sickPopUp.isHidden = false
         catSleeping.isHidden = false
         catSleeping.image = #imageLiteral(resourceName: "Cat-Awake")
+        zPopUp2.alpha = 0
+        zPopUp1.alpha = 0
+        zPopUp3.alpha = 0
         phoneAnimation()
-        //TODO: fix the corresponding image sizes
-        /*catSleepingZzz.widthAnchor.constraint(equalToConstant: 87).isActive = true
-         catSleepingZzz.heightAnchor.constraint(equalToConstant: 66).isActive = true
-         catSleepingZzz.frame.size = CGSize(width: 87, height: 66)
-         catSleepingZzz.layer.frame.size = CGSize(width: 87, height: 66)*/
     }
     
     //MARK: Game Button
@@ -644,7 +682,7 @@ class AnimalRoomVC: UIViewController {
     fileprivate func zAnimationOff() {
         UIView.animate(
             withDuration: 1,
-            delay: 2,
+            delay: 1,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 5,
             options: [],
@@ -655,6 +693,20 @@ class AnimalRoomVC: UIViewController {
                 self.zPopUp2.alpha = 0
                 self.zPopUp3.transform = .identity
                 self.zPopUp3.alpha = 0
+        },
+            completion: nil)
+    }
+    
+    fileprivate func lampAnimation() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.lamp.alpha = 1
+                self.lamp.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         },
             completion: nil)
     }
@@ -739,6 +791,7 @@ class AnimalRoomVC: UIViewController {
         view.addSubview(basket)
         view.addSubview(catNormal)
         view.addSubview(catSleeping)
+        view.addSubview(lamp)
         view.addSubview(sickPopUp)
         view.addSubview(zPopUp1)
         view.addSubview(zPopUp2)
@@ -810,9 +863,13 @@ class AnimalRoomVC: UIViewController {
             catHand.topAnchor.constraint(equalTo: view.bottomAnchor),
             
             catFood.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -25),
-            catFood.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            catFood.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             catFood.widthAnchor.constraint(equalToConstant: 123.08),
             catFood.heightAnchor.constraint(equalToConstant: 136.6),
+            
+            lamp.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            lamp.leadingAnchor.constraint(equalTo: basket.leadingAnchor, constant: -40),
+            
             
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
             bowl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
