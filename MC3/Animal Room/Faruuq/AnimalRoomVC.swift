@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AnimalRoomVC: UIViewController {
     
@@ -17,13 +18,16 @@ class AnimalRoomVC: UIViewController {
     var currentTimer: Int = 0
     let emitterLayer = CAEmitterLayer()
     var intersectNumber: Int = 0
+    var catPurr: AVAudioPlayer?
+    let otherVC = OtherVC()
+    var sleepingState: Bool = false
     
     //MARK: Logic
-    var hunger: Int = 0
-    var sleep: Int = 0
-    var health: Int = 0
-    var fun: Int = 0
-    var love: Int = 0
+    var hunger: Double = 0
+    var sleep: Double = 0
+    var health: Double = 0
+    var fun: Double = 0
+    var love: Double = 0
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -56,18 +60,60 @@ class AnimalRoomVC: UIViewController {
     let catSleeping: UIImageView = {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Cat-Sleeping")
+        img.isHidden = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
     
     //MARK: Cat Pop Up
-    let catPopUp: UIImageView = {
+    let sickPopUp: UIImageView = {
         let img = UIImageView()
-        img.image = #imageLiteral(resourceName: "Zzz")
-        img.frame.size = CGSize(width: 39, height: 39)
+        img.image = #imageLiteral(resourceName: "Baloon-Energy")
+        img.isHidden = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
+    
+    let zPopUp1: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Z")
+        img.alpha = 0
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let zPopUp2: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Z")
+        img.alpha = 0
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let zPopUp3: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Z")
+        img.alpha = 0
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    //MARK: Phone Button
+    let phone: UIButton = {
+        let btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "Phone"), for: .normal)
+        btn.alpha = 0
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(phoneAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func phoneAction(sender: UIButton) {
+        if let phoneURL = NSURL(string: ("tel://911")) {
+            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+        }
+        overlayAnimation()
+    }
 
     //MARK: Cat Hand
     let catHand: UIImageView = {
@@ -135,36 +181,29 @@ class AnimalRoomVC: UIViewController {
     @objc func bowlPan(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
         switch sender.state {
-            
         case .began, .changed:
             bowl.center = CGPoint(x: bowl.center.x + translation.x, y: bowl.center.y + translation.y)
             sender.setTranslation(CGPoint.zero, in: self.view)
             
             if bowl.frame.intersects(catNormal.frame) {
-                if hunger < 30 {
+                if hunger < 0.3 {
                     switch bowl.image {
                     case bowlIcons[1]:
-                        hunger += 10
-                        DispatchQueue.main.async {
-                            self.rewardsLabel.text = ("\(self.rewardsValue)")
-                        }
+                        hunger += 0.1
                     case bowlIcons[2]:
-                        hunger += 20
-                        DispatchQueue.main.async {
-                            self.rewardsLabel.text = ("\(self.rewardsValue)")
-                        }
+                        hunger += 0.2
                     case bowlIcons[3]:
-                        hunger += 30
-                        DispatchQueue.main.async {
-                            self.rewardsLabel.text = ("\(self.rewardsValue)")
-                        }
+                        hunger += 0.3
                     default:
                         break
                     }
-                    
+                
                     bowl.image = bowlIcons[0]
-                    if hunger >= 30 {
+                    if hunger >= 0.3 {
                         rewardsValue += 10
+                        DispatchQueue.main.async {
+                            self.rewardsLabel.text = ("\(self.rewardsValue)")
+                        }
                     }
                     
                     UIView.animate(
@@ -197,6 +236,50 @@ class AnimalRoomVC: UIViewController {
                 },
                     completion: nil)
             }
+        default:
+            break
+        }
+    }
+    
+    let handCare: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "Hand")
+        img.isHidden = true
+        img.isUserInteractionEnabled = true
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    @objc func handCareDrag(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        switch sender.state {
+        case .began, .changed:
+            handCare.center = CGPoint(x: handCare.center.x + translation.x, y: handCare.center.y + translation.y)
+            sender.setTranslation(CGPoint.zero, in: self.view)
+
+
+            if handCare.frame.intersects(catNormal.frame) {
+                
+                if love < 0.8 {
+                    catPurr?.play()
+                    love += 0.001
+                    if love >= 0.8 {
+                        rewardsValue += 10
+                        DispatchQueue.main.async {
+                            self.rewardsLabel.text = ("\(self.rewardsValue)")
+                        }
+                    }
+                } else {
+                    let attributedTextFull = NSMutableAttributedString(string: "Meoww is happy!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of love.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                    overlayText.attributedText = attributedTextFull
+                    overlayText.textAlignment = .center
+                    overlayAnimation()
+                }
+                
+            }
+            
+            
         default:
             break
         }
@@ -295,6 +378,7 @@ class AnimalRoomVC: UIViewController {
     
     @objc func backBtnAction(sender: UIButton) {
         print("back button tapped")
+        present(otherVC, animated: true, completion: nil)
     }
     
     //MARK: Food Button
@@ -312,10 +396,11 @@ class AnimalRoomVC: UIViewController {
         catHand.isHidden = false
         bowl.isHidden = false
         catFood.isHidden = false
-        catPopUp.isHidden = true
+        sickPopUp.isHidden = true
         catSleeping.isHidden = true
-        phone.isHidden = true
+        phone.alpha = 0
         phone.transform = .identity
+        handCare.isHidden = true
         
         switch bowlPresent {
         case true:
@@ -343,20 +428,17 @@ class AnimalRoomVC: UIViewController {
     @objc func zzzBtnAction(sender: UIButton) {
         print("zzz button tapped")
         catNormal.isHidden = true
+        sickPopUp.isHidden = true
         bowl.isHidden = true
         catFood.isHidden = true
         catHand.isHidden = true
-        phone.isHidden = true
+        handCare.isHidden = true
+        phone.alpha = 0
         phone.transform = .identity
         catSleeping.isHidden = false
-        catPopUp.isHidden = false
-        catPopUp.image = #imageLiteral(resourceName: "Zzz")
         catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
-        //TODO: fix the corresponding image sizes
-        /*catSleepingZzz.frame.size = CGSize(width: 159, height: 107)
-        catSleepingZzz.layer.frame.size = CGSize(width: 159, height: 107)
-        catSleepingZzz.widthAnchor.constraint(equalToConstant: 159).isActive = true
-        catSleepingZzz.heightAnchor.constraint(equalToConstant: 107).isActive = true*/
+
+        z1Animation()
     }
     
     //MARK: Medical Button
@@ -375,34 +457,16 @@ class AnimalRoomVC: UIViewController {
         bowl.isHidden = true
         catFood.isHidden = true
         catHand.isHidden = true
-        catPopUp.isHidden = false
+        handCare.isHidden = true
+        sickPopUp.isHidden = false
         catSleeping.isHidden = false
-        phone.isHidden = false
         catSleeping.image = #imageLiteral(resourceName: "Cat-Awake")
-        catPopUp.image = #imageLiteral(resourceName: "Baloon-Energy")
         phoneAnimation()
         //TODO: fix the corresponding image sizes
         /*catSleepingZzz.widthAnchor.constraint(equalToConstant: 87).isActive = true
          catSleepingZzz.heightAnchor.constraint(equalToConstant: 66).isActive = true
          catSleepingZzz.frame.size = CGSize(width: 87, height: 66)
          catSleepingZzz.layer.frame.size = CGSize(width: 87, height: 66)*/
-    }
-    
-    //MARK: Phone Button
-    let phone: UIButton = {
-        let btn = UIButton()
-        btn.setImage(#imageLiteral(resourceName: "Phone"), for: .normal)
-        btn.alpha = 0.3
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(phoneAction), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func phoneAction(sender: UIButton) {
-        if let phoneURL = NSURL(string: ("tel://911")) {
-            UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-        }
-        overlayAnimation()
     }
     
     //MARK: Game Button
@@ -431,6 +495,15 @@ class AnimalRoomVC: UIViewController {
     
     @objc func careBtnAction(sender: UIButton) {
         print("care button tapped")
+        catNormal.isHidden = false
+        catHand.isHidden = false
+        handCare.isHidden = false
+        bowl.isHidden = true
+        catFood.isHidden = true
+        sickPopUp.isHidden = true
+        catSleeping.isHidden = true
+        phone.alpha = 0
+        phone.transform = .identity
     }
     
     
@@ -439,14 +512,15 @@ class AnimalRoomVC: UIViewController {
         super.viewDidLoad()
         layout()
         rewardsLabel.text = ("\(rewardsValue)")
-        catSleeping.isHidden = true
-        catPopUp.isHidden = true
-        phone.isHidden = true
-        let tap = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
-        tap.minimumPressDuration = 0.1
-        catFood.addGestureRecognizer(tap)
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
-        bowl.addGestureRecognizer(pan)
+        
+        let holdCatFood = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
+        holdCatFood.minimumPressDuration = 0.1
+        catFood.addGestureRecognizer(holdCatFood)
+        let dragBowl = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
+        bowl.addGestureRecognizer(dragBowl)
+        let dragHandCare = UIPanGestureRecognizer(target: self, action: #selector(handCareDrag))
+        handCare.addGestureRecognizer(dragHandCare)
+        catPurrAudio()
     }
     
     //MARK: - Functions
@@ -522,6 +596,69 @@ class AnimalRoomVC: UIViewController {
         }, completion: nil)
     }
     
+    fileprivate func z1Animation() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.zPopUp1.alpha = 1
+                self.zPopUp1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        }) { (finished) in
+            self.z2Animation()
+        }
+    }
+    
+    fileprivate func z2Animation() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.zPopUp2.alpha = 1
+                self.zPopUp2.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }) { (finished) in
+            self.z3Animation()
+        }
+    }
+    
+    fileprivate func z3Animation() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.zPopUp3.alpha = 1
+                self.zPopUp3.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+        }) { (finished) in
+            self.zAnimationOff()
+        }
+    }
+    
+    fileprivate func zAnimationOff() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 2,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.zPopUp1.transform = .identity
+                self.zPopUp1.alpha = 0
+                self.zPopUp2.transform = .identity
+                self.zPopUp2.alpha = 0
+                self.zPopUp3.transform = .identity
+                self.zPopUp3.alpha = 0
+        },
+            completion: nil)
+    }
+    
     fileprivate func phoneAnimation() {
         UIView.animate(
             withDuration: 1,
@@ -586,12 +723,26 @@ class AnimalRoomVC: UIViewController {
         view.layer.addSublayer(emitterLayer)
     }
     
+    func catPurrAudio() {
+        let path = Bundle.main.path(forResource: "Cat-Purr", ofType: "mp3")!
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            catPurr = try AVAudioPlayer(contentsOf: url)
+        } catch  {
+            print(Error.self)
+        }
+    }
+    
     func layout() {
         view.addSubview(background)
         view.addSubview(basket)
         view.addSubview(catNormal)
         view.addSubview(catSleeping)
-        view.addSubview(catPopUp)
+        view.addSubview(sickPopUp)
+        view.addSubview(zPopUp1)
+        view.addSubview(zPopUp2)
+        view.addSubview(zPopUp3)
         view.addSubview(backBtn)
         view.addSubview(rewardsContainer)
         view.addSubview(rewardsLabel)
@@ -604,6 +755,7 @@ class AnimalRoomVC: UIViewController {
         view.addSubview(medicalBtn)
         view.addSubview(gameBtn)
         view.addSubview(careBtn)
+        view.addSubview(handCare)
         
         view.addSubview(overlay)
         view.addSubview(overlayView)
@@ -626,11 +778,24 @@ class AnimalRoomVC: UIViewController {
             
             catSleeping.centerXAnchor.constraint(equalTo: catNormal.centerXAnchor),
             catSleeping.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
-            catPopUp.centerXAnchor.constraint(equalTo: basket.centerXAnchor, constant: 30),
-            catPopUp.bottomAnchor.constraint(equalTo: basket.topAnchor),
-            //TODO: Setting constrains for catPopUp properly
-//            catSleepingZzz.heightAnchor.constraint(equalToConstant: 107),
-//            catSleepingZzz.widthAnchor.constraint(equalToConstant: 159),
+            
+            sickPopUp.centerXAnchor.constraint(equalTo: basket.centerXAnchor, constant: 30),
+            sickPopUp.bottomAnchor.constraint(equalTo: basket.topAnchor),
+            
+            zPopUp1.bottomAnchor.constraint(equalTo: basket.topAnchor),
+            zPopUp1.trailingAnchor.constraint(equalTo: basket.trailingAnchor, constant: -100),
+            zPopUp1.widthAnchor.constraint(equalToConstant: 39),
+            zPopUp1.heightAnchor.constraint(equalToConstant: 49),
+            
+            zPopUp2.bottomAnchor.constraint(equalTo: zPopUp1.bottomAnchor, constant: -20),
+            zPopUp2.trailingAnchor.constraint(equalTo: zPopUp1.leadingAnchor, constant: -20),
+            zPopUp2.widthAnchor.constraint(equalTo: zPopUp1.widthAnchor),
+            zPopUp2.heightAnchor.constraint(equalTo: zPopUp1.heightAnchor),
+            
+            zPopUp3.bottomAnchor.constraint(equalTo: zPopUp2.bottomAnchor, constant: -20),
+            zPopUp3.trailingAnchor.constraint(equalTo: zPopUp2.leadingAnchor, constant: -20),
+            zPopUp3.widthAnchor.constraint(equalTo: zPopUp1.widthAnchor),
+            zPopUp3.heightAnchor.constraint(equalTo: zPopUp1.heightAnchor),
             
             backBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             backBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -658,6 +823,11 @@ class AnimalRoomVC: UIViewController {
             phone.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
             phone.widthAnchor.constraint(equalToConstant: 22),
             phone.heightAnchor.constraint(equalToConstant: 19),
+            
+            handCare.centerYAnchor.constraint(equalTo: phone.centerYAnchor),
+            handCare.leadingAnchor.constraint(equalTo: phone.leadingAnchor),
+            handCare.widthAnchor.constraint(equalToConstant: 122),
+            handCare.heightAnchor.constraint(equalToConstant: 126),
             
             //MARK: - Button Layout
             foodBtn.topAnchor.constraint(equalTo: backBtn.topAnchor),
