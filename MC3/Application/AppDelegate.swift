@@ -23,15 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
-        let viewController = storyboard
-            .instantiateViewController(identifier: SplashViewController.identifier)
-        self.navigationController.setViewControllers([viewController], animated: true)
-        self.window?.rootViewController = self.navigationController
-        self.window?.makeKeyAndVisible()
-
+        self.navigationDidStarted()
         return true
     }
 
@@ -47,6 +39,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
     }
 
-
 }
 
+extension AppDelegate {
+
+    private func navigationDidStarted() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
+        let viewController = storyboard
+            .instantiateViewController(identifier: SplashViewController.identifier)
+        self.navigationController.setViewControllers([viewController], animated: true)
+        self.window?.rootViewController = self.navigationController
+        self.window?.makeKeyAndVisible()
+    }
+
+}

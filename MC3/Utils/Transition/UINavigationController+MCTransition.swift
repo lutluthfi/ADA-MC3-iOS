@@ -30,12 +30,13 @@ extension UINavigationController {
             object, nonatomic
         )
         self.delegate = object as? MCTransitionCoordinator
-        let edgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(
-            target: self,
-            action: #selector(self.onEdgeViewPanned(_:))
-        )
-        edgePanGestureRecognizer.edges = .left
-        self.view.addGestureRecognizer(edgePanGestureRecognizer)
+        // Uncomment the following code to enable swipe back gesture to pop
+        // let edgePanGestureRecognizer = UIScreenEdgePanGestureRecognizer(
+        //     target: self,
+        //     action: #selector(self.onEdgeViewPanned(_:))
+        // )
+        // edgePanGestureRecognizer.edges = .left
+        // self.view.addGestureRecognizer(edgePanGestureRecognizer)
     }
     
     @objc func onEdgeViewPanned(_ sender: UIScreenEdgePanGestureRecognizer) {
