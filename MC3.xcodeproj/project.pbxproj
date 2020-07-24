@@ -26,6 +26,8 @@
 		9ABF622524C458FE00E4F76F /* TikusStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABF622424C458FE00E4F76F /* TikusStoryboard.storyboard */; };
 		9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF622624C6FBDA00E4F76F /* SettingLauncher.swift */; };
 		9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF622824C7EE7100E4F76F /* CustomButton.swift */; };
+		F5C3AFEE24CAD0F200545D1B /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */; };
+		F5C3AFF024CAD69F00545D1B /* RewardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */; };
 		F5CD072324C97AB600EE1D14 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CD072224C97AB600EE1D14 /* RewardViewController.swift */; };
 		F5CD072524C97AD900EE1D14 /* RewardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		9ABF622424C458FE00E4F76F /* TikusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TikusStoryboard.storyboard; path = MC3/TikusStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		9ABF622624C6FBDA00E4F76F /* SettingLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingLauncher.swift; path = Rahmat/SettingLauncher.swift; sourceTree = SOURCE_ROOT; };
 		9ABF622824C7EE7100E4F76F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Rahmat/CustomButton.swift; sourceTree = SOURCE_ROOT; };
+		F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardCollectionViewCell.swift; path = MC3/RewardCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardDetailViewController.swift; path = MC3/RewardDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		F5CD072224C97AB600EE1D14 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardViewController.swift; path = MC3/RewardViewController.swift; sourceTree = SOURCE_ROOT; };
 		F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardStoryboard.storyboard; path = MC3/RewardStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -86,8 +90,10 @@
 		2AF84C5324BDDB3900239497 /* Rewards & Shop */ = {
 			isa = PBXGroup;
 			children = (
-				F5CD072224C97AB600EE1D14 /* RewardViewController.swift */,
 				F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */,
+				F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */,
+				F5CD072224C97AB600EE1D14 /* RewardViewController.swift */,
+				F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */,
 			);
 			path = "Rewards & Shop";
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C3AFF024CAD69F00545D1B /* RewardDetailViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
+				F5C3AFEE24CAD0F200545D1B /* RewardCollectionViewCell.swift in Sources */,
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,

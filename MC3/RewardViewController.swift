@@ -8,7 +8,21 @@
 
 import UIKit
 
-class RewardViewController: UIViewController {
+class RewardViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+    @IBOutlet weak var rewardCollectionView: UICollectionView!
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = rewardCollectionView.dequeueReusableCell(withReuseIdentifier: "rewardCell", for: indexPath) as! RewardCollectionViewCell
+        cell.rewardCellImage.layer.borderColor = #colorLiteral(red: 0.3243855536, green: 0.2837193608, blue: 0.2650057673, alpha: 1)
+        cell.rewardCellImage.layer.cornerRadius = 10
+        cell.rewardCellImage.layer.borderWidth = 3
+        return cell
+    }
+    
 
     @IBOutlet weak var prizeButton: UIButton!
     @IBOutlet weak var redeemButton: UIButton!
@@ -37,6 +51,8 @@ class RewardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prizeButton.isSelected = true
+        rewardCollectionView.delegate = self
+        rewardCollectionView.dataSource = self
         buttonCondition()
         // Do any additional setup after loading the view.
     }
