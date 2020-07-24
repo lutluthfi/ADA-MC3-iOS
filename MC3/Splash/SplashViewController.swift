@@ -10,6 +10,8 @@ import UIKit
 
 extension SplashViewController {
 
+    static let kLoadingDuration = TimeInterval(2)
+
     struct ConstraintConstant {
 
         static let kHeightLogoImageViewConstraint = CGFloat(158)
@@ -35,6 +37,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViewDidLoad()
+        self.dataDidLoad()
     }
 
     private func setupViewDidLoad() {
@@ -44,9 +47,24 @@ class SplashViewController: UIViewController {
         self.logoImageView.layer.cornerRadius = logoImageViewCorner
     }
 
+    private func dataDidLoad() {
+        DispatchQueue
+            .main
+            .asyncAfter(
+                deadline: .now() + SplashViewController.kLoadingDuration,
+                execute: {
+                    self.startIntroScene()
+            })
+    }
+
 }
 
-// MARK: - Override UIViewController
+// MARK: - @objc Function
+extension SplashViewController {
+
+}
+
+// MARK: - UIViewController Function
 extension SplashViewController {
 
     override var prefersStatusBarHidden: Bool {
@@ -95,13 +113,13 @@ extension SplashViewController {
 
 }
 
-// MARK: - Task Function
+// MARK: - Route Function
 extension SplashViewController {
 
-    private func showIntroScene() {
+    private func startIntroScene() {
         let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: IntroViewController.identifier)
-        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
