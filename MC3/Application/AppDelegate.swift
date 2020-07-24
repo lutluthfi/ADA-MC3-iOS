@@ -18,13 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
-//        let viewController = storyboard
-//            .instantiateViewController(identifier: AgreementViewController.identifier)
-//        self.window?.rootViewController = viewController
-//        self.window?.makeKeyAndVisible()
+    //    self.window = UIWindow(frame: UIScreen.main.bounds)
+    //    let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
+    //    let viewController = storyboard
+    //        .instantiateViewController(identifier: AgreementViewController.identifier)
+    //    self.window?.rootViewController = viewController
+    //    self.window?.makeKeyAndVisible()
 
 
         return true
