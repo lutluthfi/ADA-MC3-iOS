@@ -10,6 +10,8 @@ import UIKit
 
 extension SplashViewController {
 
+    static let kLoadingDuration = TimeInterval(2)
+
     struct ConstraintConstant {
 
         static let kHeightLogoImageViewConstraint = CGFloat(158)
@@ -28,10 +30,6 @@ class SplashViewController: UIViewController {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
-        imageView.isUserInteractionEnabled = true
-        imageView.gestureRecognizers = [
-            UITapGestureRecognizer(target: self, action: #selector(self.onLogoImageViewTapped(_:)))
-        ]
         return imageView
     }()
 
@@ -39,6 +37,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViewDidLoad()
+        self.dataDidLoad()
     }
 
     private func setupViewDidLoad() {
@@ -48,14 +47,20 @@ class SplashViewController: UIViewController {
         self.logoImageView.layer.cornerRadius = logoImageViewCorner
     }
 
+    private func dataDidLoad() {
+        DispatchQueue
+            .main
+            .asyncAfter(
+                deadline: .now() + SplashViewController.kLoadingDuration,
+                execute: {
+                    self.startIntroScene()
+            })
+    }
+
 }
 
 // MARK: - @objc Function
 extension SplashViewController {
-
-    @objc private func onLogoImageViewTapped(_ sender: UITapGestureRecognizer) {
-        self.showIntroScene()
-    }
 
 }
 
@@ -108,10 +113,10 @@ extension SplashViewController {
 
 }
 
-// MARK: - Task Function
+// MARK: - Route Function
 extension SplashViewController {
 
-    private func showIntroScene() {
+    private func startIntroScene() {
         let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: IntroViewController.identifier)
         self.navigationController?.pushViewController(vc, animated: true)

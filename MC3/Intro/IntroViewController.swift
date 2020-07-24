@@ -18,6 +18,7 @@ class IntroViewController: UIViewController {
     // MARK: - Lifecycle Function
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupViewDidLoad()
     }
 
     private func setupViewDidLoad() {
@@ -25,9 +26,24 @@ class IntroViewController: UIViewController {
         self.startButton.addTarget(self, action: #selector(self.onStartButtonTouchedUpInside(_:)), for: .touchUpInside)
     }
 
-    // MARK: - @objc Function
-    @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+}
 
+// MARK: - @objc Function
+extension IntroViewController {
+
+    @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+        self.startAgreementScene()
+    }
+
+}
+
+// MARK: - Route Function
+extension IntroViewController {
+
+    private func startAgreementScene() {
+        let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: AgreementViewController.identifier)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 }

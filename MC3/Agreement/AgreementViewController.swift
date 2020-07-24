@@ -21,8 +21,22 @@ class AgreementViewController: UIViewController {
     }
 
     private func setupViewDidLoad() {
-        self.contentAgreementLabel.text = "Welcome to Game Title! In order to have a happily ever after garden, please pledge to these following five of freedom principles regarding animal welfare.\n\nFreedom from hunger & thirst (food and water).\nFreedom from discomfort (shelter).\nFreedom from pain, injury & disease (medical care).\nFreedom to express normal behaviour (exercise).\nFreedom from fear & distress (love and understanding)."
+        self.contentAgreementLabel.text = "Welcome to Game Title! In order to have a happily ever after garden, please pledge to these following five of freedom principles regarding animal welfare.\n\nFreedom from hunger & thirst (food and water)\nFreedom from discomfort (shelter)\nFreedom from pain, injury & disease (medical care)\nFreedom to express normal behaviour (exercise)\nFreedom from fear & distress (love and understanding)"
         self.startButton.layer.cornerRadius = 5
+        self.startButton.addTarget(self, action: #selector(self.onStartButtonTouchedUpInside(_:)), for: .touchUpInside)
     }
+
+}
+
+// MARK: - @objc Function
+extension AgreementViewController {
+
+    @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+    }
+
+}
+
+// MARK: - Route Function
+extension AgreementViewController {
 
 }
