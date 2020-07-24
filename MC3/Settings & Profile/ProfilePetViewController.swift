@@ -13,6 +13,13 @@ class ProfilePetViewController: UIViewController {
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var homeBtn: UIButton!
     
+    @IBOutlet var foodProgress: UIProgressView!
+    @IBOutlet var sleepProgress: UIProgressView!
+    @IBOutlet var vetProgress: UIProgressView!
+    @IBOutlet var gameProgress: UIProgressView!
+    @IBOutlet var pettingProgress: UIProgressView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
@@ -27,6 +34,24 @@ class ProfilePetViewController: UIViewController {
         backBtn.layer.borderWidth = 4
         backBtn.layer.cornerRadius = 5
         backBtn.layer.borderColor = UIColor(hex: "#413834")?.cgColor
+        
+        foodProgress.transform = foodProgress.transform.scaledBy(x: 1, y: 4.5)
+        sleepProgress.transform = sleepProgress.transform.scaledBy(x: 1, y: 4.5)
+        vetProgress.transform = vetProgress.transform.scaledBy(x: 1, y: 4.5)
+        gameProgress.transform = gameProgress.transform.scaledBy(x: 1, y: 4.5)
+        pettingProgress.transform = pettingProgress.transform.scaledBy(x: 1, y: 4.5)
+        
+        foodProgress.layer.cornerRadius = 1
+        foodProgress.clipsToBounds = true
+        sleepProgress.layer.cornerRadius = 1
+        sleepProgress.clipsToBounds = true
+        vetProgress.layer.cornerRadius = 1
+        vetProgress.clipsToBounds = true
+        gameProgress.layer.cornerRadius = 1
+        gameProgress.clipsToBounds = true
+        pettingProgress.layer.cornerRadius = 1
+        pettingProgress.clipsToBounds = true
+
       }
     
     @IBAction func onPressButton(_ sender: UIButton) {

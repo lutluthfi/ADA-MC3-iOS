@@ -689,6 +689,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="profile-line" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-EX-05s">
                                 <rect key="frame" x="346" y="2" width="1" height="414"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-uk-9g9">
+                                <rect key="frame" x="79" y="57" width="176" height="223"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="223" id="RfO-A2-UOt"/>
+                                    <constraint firstAttribute="width" constant="176" id="XRi-2D-cmJ"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
                                 <rect key="frame" x="131" y="293" width="114.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
@@ -713,55 +720,118 @@
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat-food" translatesAutoresizingMaskIntoConstraints="NO" id="qD4-1K-ut1">
-                                <rect key="frame" x="499" y="152.5" width="26" height="32"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat-sleep" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-rL-8N9">
-                                <rect key="frame" x="499" y="204" width="25.5" height="26.5"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat-vet" translatesAutoresizingMaskIntoConstraints="NO" id="SCh-Hu-BAh">
-                                <rect key="frame" x="499" y="250" width="25.5" height="26.5"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat-game" translatesAutoresizingMaskIntoConstraints="NO" id="eNw-f4-vlg">
-                                <rect key="frame" x="497" y="304" width="27" height="18.5"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat-petting" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-zH-5EC">
-                                <rect key="frame" x="500" y="342" width="25.5" height="27"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-cat" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-uk-9g9">
-                                <rect key="frame" x="79" y="57" width="176" height="223"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-food" translatesAutoresizingMaskIntoConstraints="NO" id="qD4-1K-ut1">
+                                <rect key="frame" x="484" y="153" width="26" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="223" id="RfO-A2-UOt"/>
-                                    <constraint firstAttribute="width" constant="176" id="XRi-2D-cmJ"/>
+                                    <constraint firstAttribute="width" constant="26" id="6a0-vD-prV"/>
+                                    <constraint firstAttribute="height" constant="32" id="XiC-D3-bK4"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-sleep" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-rL-8N9">
+                                <rect key="frame" x="484" y="205" width="26" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="MAv-II-e0W"/>
+                                    <constraint firstAttribute="height" constant="26.5" id="hCx-ZU-Iv9"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-vet" translatesAutoresizingMaskIntoConstraints="NO" id="SCh-Hu-BAh">
+                                <rect key="frame" x="484.5" y="251" width="25.5" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26.5" id="DPk-bE-98U"/>
+                                    <constraint firstAttribute="width" constant="25.5" id="dtO-Se-oDA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-game" translatesAutoresizingMaskIntoConstraints="NO" id="eNw-f4-vlg">
+                                <rect key="frame" x="483.5" y="305" width="27" height="18.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="Scw-8s-iyI"/>
+                                    <constraint firstAttribute="height" constant="18.5" id="f2B-R2-Vgs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-petting" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-zH-5EC">
+                                <rect key="frame" x="484.5" y="343" width="25.5" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="4IU-4d-dnZ"/>
+                                    <constraint firstAttribute="width" constant="25.5" id="52h-L4-yR5"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kay-J6-hOS">
+                                <rect key="frame" x="529" y="217.5" width="187" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="qzH-5r-Hgq"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.59607843137254901" green="0.70196078431372544" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" name="413834"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-4p-Nki">
+                                <rect key="frame" x="529" y="263.5" width="187" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="gHB-cI-DI6"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.59607843137254901" green="0.70196078431372544" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" name="413834"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eoc-G0-w45">
+                                <rect key="frame" x="529" y="313.5" width="187" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="L9J-xp-1aM"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.59607843137254901" green="0.70196078431372544" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" name="413834"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d72-NA-uD8">
+                                <rect key="frame" x="529" y="355.5" width="187" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="AGP-en-o32"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.59607843137254901" green="0.70196078431372544" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" name="413834"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pc6-NG-pXC">
+                                <rect key="frame" x="529" y="168" width="187" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="zS2-zM-42q"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.59607843137254901" green="0.70196078431372544" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" name="413834"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" name="BG"/>
                         <constraints>
-                            <constraint firstItem="SCh-Hu-BAh" firstAttribute="centerX" secondItem="tV6-rL-8N9" secondAttribute="centerX" id="1FH-cQ-Kmg"/>
-                            <constraint firstItem="SCh-Hu-BAh" firstAttribute="top" secondItem="tV6-rL-8N9" secondAttribute="bottom" constant="19.5" id="1cU-F8-3Rc"/>
+                            <constraint firstItem="Pc6-NG-pXC" firstAttribute="centerY" secondItem="qD4-1K-ut1" secondAttribute="centerY" id="0Fn-Ah-ewT"/>
+                            <constraint firstItem="eoc-G0-w45" firstAttribute="leading" secondItem="eNw-f4-vlg" secondAttribute="trailing" constant="18.5" id="0db-45-3T0"/>
+                            <constraint firstItem="SCh-Hu-BAh" firstAttribute="top" secondItem="tV6-rL-8N9" secondAttribute="bottom" constant="19.5" id="1Lq-eB-IDo"/>
                             <constraint firstItem="sBL-Fl-gB4" firstAttribute="trailing" secondItem="Wnt-i6-29w" secondAttribute="trailing" constant="20" id="4WY-bM-nfB"/>
-                            <constraint firstItem="tV6-rL-8N9" firstAttribute="top" secondItem="qD4-1K-ut1" secondAttribute="bottom" constant="19.5" id="8ad-42-G0M"/>
+                            <constraint firstItem="d72-NA-uD8" firstAttribute="leading" secondItem="pe6-zH-5EC" secondAttribute="trailing" constant="19" id="6KI-ph-7k5"/>
+                            <constraint firstItem="tV6-rL-8N9" firstAttribute="top" secondItem="qD4-1K-ut1" secondAttribute="bottom" constant="20" id="9Xd-bV-tai"/>
                             <constraint firstItem="up9-5K-vP4" firstAttribute="top" secondItem="Nic-uk-9g9" secondAttribute="bottom" constant="16" id="Bqw-61-Evm"/>
                             <constraint firstItem="GWx-ZU-IEo" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="512" id="D95-db-c0Q"/>
-                            <constraint firstItem="qD4-1K-ut1" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="152.5" id="EKA-Hq-5Ah"/>
-                            <constraint firstItem="pe6-zH-5EC" firstAttribute="top" secondItem="eNw-f4-vlg" secondAttribute="bottom" constant="19.5" id="Gh0-mM-dOT"/>
+                            <constraint firstItem="qD4-1K-ut1" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="440" id="H2T-WE-u2j"/>
                             <constraint firstItem="pjk-NV-Ecc" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="20" id="HTX-Bh-iip"/>
-                            <constraint firstItem="eNw-f4-vlg" firstAttribute="top" secondItem="SCh-Hu-BAh" secondAttribute="bottom" constant="27.5" id="Hof-1V-Mbb"/>
                             <constraint firstItem="up9-5K-vP4" firstAttribute="centerX" secondItem="Nic-uk-9g9" secondAttribute="centerX" id="Lbn-HC-vPM"/>
+                            <constraint firstItem="Kay-J6-hOS" firstAttribute="centerY" secondItem="tV6-rL-8N9" secondAttribute="centerY" id="M3e-TA-j5T"/>
                             <constraint firstItem="2OF-P3-rKJ" firstAttribute="centerX" secondItem="up9-5K-vP4" secondAttribute="centerX" id="N0Y-w8-fen"/>
-                            <constraint firstItem="eNw-f4-vlg" firstAttribute="centerX" secondItem="SCh-Hu-BAh" secondAttribute="centerX" id="Tzi-Kx-jbH"/>
+                            <constraint firstItem="ctv-4p-Nki" firstAttribute="centerY" secondItem="SCh-Hu-BAh" secondAttribute="centerY" id="Om7-vP-Mi5"/>
                             <constraint firstItem="GWx-ZU-IEo" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="34" id="VTS-qP-mfN"/>
                             <constraint firstItem="pjk-NV-Ecc" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="16" id="WJK-iS-Lw5"/>
+                            <constraint firstItem="qD4-1K-ut1" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="153" id="YBI-Jq-gtI"/>
+                            <constraint firstItem="tV6-rL-8N9" firstAttribute="centerX" secondItem="qD4-1K-ut1" secondAttribute="centerX" id="YdJ-79-aIj"/>
                             <constraint firstItem="2OF-P3-rKJ" firstAttribute="top" secondItem="up9-5K-vP4" secondAttribute="bottom" constant="4" id="adR-cu-MSP"/>
-                            <constraint firstItem="tV6-rL-8N9" firstAttribute="centerX" secondItem="qD4-1K-ut1" secondAttribute="centerX" id="azc-Vu-QRE"/>
                             <constraint firstItem="Nic-uk-9g9" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="56" id="bJi-kS-ILL"/>
+                            <constraint firstItem="pe6-zH-5EC" firstAttribute="top" secondItem="eNw-f4-vlg" secondAttribute="bottom" constant="19.5" id="ciX-d1-T0Z"/>
                             <constraint firstItem="Nic-uk-9g9" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="54" id="dS7-hB-Llj"/>
+                            <constraint firstItem="eoc-G0-w45" firstAttribute="centerY" secondItem="eNw-f4-vlg" secondAttribute="centerY" id="dga-Ti-Kd8"/>
+                            <constraint firstItem="d72-NA-uD8" firstAttribute="centerY" secondItem="pe6-zH-5EC" secondAttribute="centerY" id="eSa-ar-2iK"/>
+                            <constraint firstItem="Kay-J6-hOS" firstAttribute="leading" secondItem="tV6-rL-8N9" secondAttribute="trailing" constant="19" id="eaN-yC-mN4"/>
+                            <constraint firstItem="eNw-f4-vlg" firstAttribute="centerX" secondItem="SCh-Hu-BAh" secondAttribute="centerX" id="fNh-6i-uza"/>
+                            <constraint firstItem="ctv-4p-Nki" firstAttribute="leading" secondItem="SCh-Hu-BAh" secondAttribute="trailing" constant="19" id="jYO-Jm-Y8q"/>
                             <constraint firstItem="5CM-EX-05s" firstAttribute="height" secondItem="TLc-d8-8hP" secondAttribute="height" id="kQG-NP-pds"/>
+                            <constraint firstItem="Pc6-NG-pXC" firstAttribute="leading" secondItem="qD4-1K-ut1" secondAttribute="trailing" constant="19" id="kcL-lc-I1t"/>
                             <constraint firstItem="OKh-o5-oWh" firstAttribute="top" secondItem="2OF-P3-rKJ" secondAttribute="bottom" constant="8" id="oJ3-W9-gZp"/>
-                            <constraint firstItem="qD4-1K-ut1" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="455" id="ogK-09-LQY"/>
                             <constraint firstItem="OKh-o5-oWh" firstAttribute="centerX" secondItem="2OF-P3-rKJ" secondAttribute="centerX" id="paT-BG-pwN"/>
-                            <constraint firstItem="pe6-zH-5EC" firstAttribute="centerX" secondItem="eNw-f4-vlg" secondAttribute="centerX" id="xYC-Dx-kPM"/>
+                            <constraint firstItem="SCh-Hu-BAh" firstAttribute="centerX" secondItem="tV6-rL-8N9" secondAttribute="centerX" id="pqP-RP-DrO"/>
+                            <constraint firstItem="eNw-f4-vlg" firstAttribute="top" secondItem="SCh-Hu-BAh" secondAttribute="bottom" constant="27.5" id="q9V-j9-jdm"/>
+                            <constraint firstItem="pe6-zH-5EC" firstAttribute="centerX" secondItem="eNw-f4-vlg" secondAttribute="centerX" id="qtY-xu-zPF"/>
                             <constraint firstItem="5CM-EX-05s" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="302" id="yHv-YB-awV"/>
                             <constraint firstItem="Wnt-i6-29w" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="20" id="yLT-vB-bgX"/>
                         </constraints>
@@ -769,7 +839,12 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="pjk-NV-Ecc" id="RSd-Kx-b4j"/>
+                        <outlet property="foodProgress" destination="Pc6-NG-pXC" id="qMP-yP-oBv"/>
+                        <outlet property="gameProgress" destination="eoc-G0-w45" id="Dp8-nw-RTQ"/>
                         <outlet property="homeBtn" destination="Wnt-i6-29w" id="mjh-DT-iqk"/>
+                        <outlet property="pettingProgress" destination="d72-NA-uD8" id="OmR-Om-c3n"/>
+                        <outlet property="sleepProgress" destination="Kay-J6-hOS" id="NpV-n0-sWW"/>
+                        <outlet property="vetProgress" destination="ctv-4p-Nki" id="pfW-Uh-F8S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fO-zj-e0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
