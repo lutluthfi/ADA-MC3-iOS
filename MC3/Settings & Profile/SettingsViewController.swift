@@ -23,6 +23,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet var aboutBtn: UIButton!
     
     @IBOutlet var settingsCloseBtn: UIButton!
+    @IBOutlet var aboutCloseBtn: UIButton!
+    
+    @IBOutlet var aboutContentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,7 @@ class SettingsViewController: UIViewController {
         
         contentView.layer.cornerRadius = 10
         settingsView.layer.cornerRadius = 10
+        
         aboutView.layer.cornerRadius = 10
     }
     
@@ -52,6 +56,9 @@ class SettingsViewController: UIViewController {
         case settingsCloseBtn:
             dismiss(animated: true, completion: nil)
             break
+        case aboutCloseBtn:
+            aboutView.isHidden = true
+            break
         case musicBtn:
             break
         case soundBtn:
@@ -65,6 +72,7 @@ class SettingsViewController: UIViewController {
             performSegue(withIdentifier: "settings2help", sender: nil)
             break
         case aboutBtn:
+            aboutView.isHidden = false
             break
         default:
             break
