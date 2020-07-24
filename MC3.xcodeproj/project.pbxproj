@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */; };
+		448D224424C5745B00ED44E8 /* TestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */; };
+		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
+		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
+		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
+		44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082D24C5881300474342 /* ProfilePetViewController.swift */; };
+		44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082F24C5882900474342 /* ProfileArticlesViewController.swift */; };
+		44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2083124C58D2600474342 /* UIColor+Extension.swift */; };
 		4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35177024C01EC3000E5E19 /* SplashViewController.swift */; };
 		4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177424C020A6000E5E19 /* SplashViewController.storyboard */; };
 		4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */; };
@@ -43,6 +51,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSettingsViewController.storyboard; sourceTree = "<group>"; };
+		448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingsViewController.swift; sourceTree = "<group>"; };
+		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		44B2082D24C5881300474342 /* ProfilePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePetViewController.swift; sourceTree = "<group>"; };
+		44B2082F24C5882900474342 /* ProfileArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileArticlesViewController.swift; sourceTree = "<group>"; };
+		44B2083124C58D2600474342 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4F35177024C01EC3000E5E19 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4F35177424C020A6000E5E19 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroViewController.storyboard; sourceTree = "<group>"; };
@@ -103,6 +119,14 @@
 		2AF84C5224BDDB2800239497 /* Settings & Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4423D62D24C8433A004A73D4 /* Components */,
+				448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */,
+				448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */,
+				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
+				44B2082924C5871100474342 /* ProfileViewController.swift */,
+				44B2082B24C5873A00474342 /* HelpViewController.swift */,
+				44B2082D24C5881300474342 /* ProfilePetViewController.swift */,
+				44B2082F24C5882900474342 /* ProfileArticlesViewController.swift */,
 			);
 			path = "Settings & Profile";
 			sourceTree = "<group>";
@@ -130,6 +154,13 @@
 			children = (
 			);
 			path = Faruuq;
+			sourceTree = "<group>";
+		};
+		4423D62D24C8433A004A73D4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4F35176F24C01EB4000E5E19 /* Splash */ = {
@@ -296,6 +327,7 @@
 				2AF84C5224BDDB2800239497 /* Settings & Profile */,
 				4F35176F24C01EB4000E5E19 /* Splash */,
 				4F3517B624C6DF54000E5E19 /* Utils */,
+				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
 			);
 			path = MC3;
 			sourceTree = "<group>";
@@ -368,6 +400,7 @@
 				4F55F92C24BDBB9D000739E6 /* LaunchScreen.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */,
+				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +412,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
+				448D224424C5745B00ED44E8 /* TestSettingsViewController.swift in Sources */,
+				44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
@@ -386,10 +421,8 @@
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
-
 				9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */,
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
-
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F35179624C36A1A000E5E19 /* Account.swift in Sources */,
 				4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */,
@@ -403,6 +436,12 @@
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 				4F3517B124C6A4FE000E5E19 /* Animal.swift in Sources */,
+				44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */,
+				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
+				448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */,
+				44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */,
+				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
+				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +587,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XSU8A6MK4;
-
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -566,9 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
 				DEVELOPMENT_TEAM = 6XSU8A6MK4;
-
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
