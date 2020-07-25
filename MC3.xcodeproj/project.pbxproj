@@ -15,6 +15,9 @@
 		44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082D24C5881300474342 /* ProfilePetViewController.swift */; };
 		44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082F24C5882900474342 /* ProfileArticlesViewController.swift */; };
 		44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2083124C58D2600474342 /* UIColor+Extension.swift */; };
+		4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */; };
+		4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */; };
+		4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */; };
 		4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35177024C01EC3000E5E19 /* SplashViewController.swift */; };
 		4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177424C020A6000E5E19 /* SplashViewController.storyboard */; };
 		4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */; };
@@ -59,6 +62,9 @@
 		44B2082D24C5881300474342 /* ProfilePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePetViewController.swift; sourceTree = "<group>"; };
 		44B2082F24C5882900474342 /* ProfileArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileArticlesViewController.swift; sourceTree = "<group>"; };
 		44B2083124C58D2600474342 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGardenViewController.swift; sourceTree = "<group>"; };
+		4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainGardenViewController.storyboard; sourceTree = "<group>"; };
+		4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuMainGardenCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F35177024C01EC3000E5E19 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4F35177424C020A6000E5E19 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroViewController.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,32 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4F1E7DE324CAE08100C300F8 /* MainGarden */ = {
+			isa = PBXGroup;
+			children = (
+				4F1E7DEA24CC44E100C300F8 /* CollectionView */,
+				4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */,
+				4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */,
+			);
+			path = MainGarden;
+			sourceTree = "<group>";
+		};
+		4F1E7DEA24CC44E100C300F8 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				4F1E7DEB24CC44E700C300F8 /* Menu */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		4F1E7DEB24CC44E700C300F8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		4F35176F24C01EB4000E5E19 /* Splash */ = {
@@ -311,6 +343,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				4F1E7DE324CAE08100C300F8 /* MainGarden */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
@@ -401,6 +434,7 @@
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */,
 				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
+				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +459,13 @@
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F35179624C36A1A000E5E19 /* Account.swift in Sources */,
+				4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */,
 				4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */,
 				4F3517AF24C373C7000E5E19 /* CoreDataGameplayStorage.swift in Sources */,
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
 				4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */,
+				4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,
