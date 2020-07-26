@@ -94,7 +94,6 @@ class DialogAnimalInfoView: UIView {
         self.nameFakeTextFieldView.textLabel.font = UIFont(name: "Happy Monkey", size: 17)
         self.nameFakeTextFieldView.textLabel.text = "Guest"
         self.nameFakeTextFieldView.inputAccessoryView = self.textFieldInputAccessoryView
-        self.nameFakeTextFieldView.becomeFirstResponder()
     }
     
 }
