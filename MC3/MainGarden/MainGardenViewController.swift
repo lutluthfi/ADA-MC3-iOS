@@ -26,6 +26,9 @@ class MainGardenViewController: UIViewController {
     @IBOutlet weak var coinAmountLabel: UILabel!
     @IBOutlet weak var coinContainerView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
         .setting,
@@ -41,6 +44,7 @@ class MainGardenViewController: UIViewController {
     }
 
     private func setupViewDidLoad() {
+        self.activateDismissKeyboardTapGestureRecognizer()
         self.coinContainerView.layer.cornerRadius = Constant.kCoinContainerViewCornerRadius
         self.coinContainerView.layer.borderColor = #colorLiteral(red: 0.2549999952, green: 0.2199999988, blue: 0.2039999962, alpha: 1)
         self.coinContainerView.layer.borderWidth = Constant.kCoinContainerViewBorderWidth
@@ -53,6 +57,11 @@ class MainGardenViewController: UIViewController {
             MenuMainGardenCollectionViewCell.self,
             forCellWithReuseIdentifier: MenuMainGardenCollectionViewCell.identifier
         )
+        let dialogId = UUID().uuidString
+        let dialogScene = DialogFactory
+            .Scene
+            .animalInfo(dialogId: dialogId, delegate: nil)
+        self.dialogFactory.show(scene: dialogScene)
     }
 
 }
