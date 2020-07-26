@@ -131,6 +131,9 @@ extension MainGardenViewController {
     }
 
     private func showSettingScene() {
+        let storyboard = UIStoryboard(name: "TestSettingsViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "SettingsViewController")
+        self.present(vc, animated: true)
     }
 
     private func showShopScene() {
