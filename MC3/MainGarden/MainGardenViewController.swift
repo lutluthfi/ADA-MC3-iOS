@@ -27,8 +27,13 @@ class MainGardenViewController: UIViewController {
     @IBOutlet weak var coinContainerView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
 
-    private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] =
-        MenuMainGardenCollectionViewCell.Model.Menu.allCases
+    private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
+        .setting,
+        .reward,
+        .shop,
+        .inventory,
+        .animalRoom
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()

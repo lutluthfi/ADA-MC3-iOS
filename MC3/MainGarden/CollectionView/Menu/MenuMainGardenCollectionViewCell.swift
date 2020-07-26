@@ -46,6 +46,7 @@ class MenuMainGardenCollectionViewCell: UICollectionViewCell {
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -117,19 +118,24 @@ extension MenuMainGardenCollectionViewCell {
     public func fill(withModel model: MenuMainGardenCollectionViewCell.Model) {
         switch model.menu {
         case .animalRoom:
-            self.iconImageView.image = UIImage(systemName: "")
+            self.iconImageView.image = UIImage(systemName: "sparkles")
+            self.iconImageView.tintColor = #colorLiteral(red: 0.9959999919, green: 0.7609999776, blue: 0.3100000024, alpha: 1)
             break
         case .inventory:
-            self.iconImageView.image = UIImage(systemName: "shippingbox.fill")
+            self.iconImageView.image = UIImage(systemName: "cube.box.fill")
+            self.iconImageView.tintColor = #colorLiteral(red: 0.7609999776, green: 0.6000000238, blue: 0.4079999924, alpha: 1)
             break
         case .reward:
             self.iconImageView.image = UIImage(systemName: "gift.fill")
+            self.iconImageView.tintColor = #colorLiteral(red: 0.3764705882, green: 0.5725490196, blue: 0.3490196078, alpha: 1)
             break
         case .setting:
             self.iconImageView.image = UIImage(systemName: "gear")
+            self.iconImageView.tintColor = #colorLiteral(red: 0.4550000131, green: 0.4550000131, blue: 0.4550000131, alpha: 1)
             break
         case .shop:
-            self.iconImageView.image = UIImage(systemName: "")
+            self.iconImageView.image = UIImage(systemName: "cart.fill")
+            self.iconImageView.tintColor = #colorLiteral(red: 0.768627451, green: 0.3921568627, blue: 0.3058823529, alpha: 1)
             break
         }
     }
