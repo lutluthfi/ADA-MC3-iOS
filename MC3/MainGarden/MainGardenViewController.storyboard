@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HappyMonkey-Regular.ttf">
+            <string>HappyMonkey-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main Garden View Controller-->
+        <scene sceneID="CqZ-bY-lex">
+            <objects>
+                <viewController storyboardIdentifier="MainGardenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="10i-bW-s95" customClass="MainGardenViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bpM-Kk-VCs">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Intro" translatesAutoresizingMaskIntoConstraints="NO" id="0lY-oF-4zk">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v8i-8R-fb0">
+                                <rect key="frame" x="812" y="21" width="40" height="372"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="PR3-ie-9UN"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J7t-3p-SdF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hts-O5-uSk">
+                                        <rect key="frame" x="-44" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q0C-UG-G5f">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZk-fK-Pgh">
+                                <rect key="frame" x="44" y="21" width="110.5" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="890-84-A7q">
+                                        <rect key="frame" x="8" y="6" width="29" height="28"/>
+                                        <color key="tintColor" name="FFC85F"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="9VU-ic-efc"/>
+                                            <constraint firstAttribute="width" constant="29" id="qj5-ai-JcJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKn-VP-hPh">
+                                        <rect key="frame" x="69" y="11.5" width="33.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                        <color key="textColor" name="413834"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="890-84-A7q" firstAttribute="leading" secondItem="mZk-fK-Pgh" secondAttribute="leading" constant="8" id="Kgn-Z5-BD0"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="VtF-CY-zw1"/>
+                                    <constraint firstItem="890-84-A7q" firstAttribute="centerY" secondItem="mZk-fK-Pgh" secondAttribute="centerY" id="aEo-6Z-RYV"/>
+                                    <constraint firstAttribute="height" constant="40" id="gN9-db-k4q"/>
+                                    <constraint firstAttribute="trailing" secondItem="dKn-VP-hPh" secondAttribute="trailing" constant="8" id="iS6-Ws-gAw"/>
+                                    <constraint firstItem="dKn-VP-hPh" firstAttribute="centerY" secondItem="mZk-fK-Pgh" secondAttribute="centerY" id="mNr-tv-TfG"/>
+                                    <constraint firstItem="dKn-VP-hPh" firstAttribute="leading" secondItem="890-84-A7q" secondAttribute="trailing" constant="32" id="yjU-7q-daJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0lY-oF-4zk" firstAttribute="leading" secondItem="bpM-Kk-VCs" secondAttribute="leading" id="3IM-cl-zyo"/>
+                            <constraint firstItem="mZk-fK-Pgh" firstAttribute="leading" secondItem="pOF-qA-HGU" secondAttribute="leading" id="4Pf-S8-raO"/>
+                            <constraint firstItem="pOF-qA-HGU" firstAttribute="trailing" secondItem="v8i-8R-fb0" secondAttribute="trailing" id="DXh-Mj-CAw"/>
+                            <constraint firstItem="v8i-8R-fb0" firstAttribute="top" secondItem="pOF-qA-HGU" secondAttribute="top" constant="21" id="TCe-Ch-4Yu"/>
+                            <constraint firstItem="0lY-oF-4zk" firstAttribute="top" secondItem="pOF-qA-HGU" secondAttribute="top" id="TMg-6d-EIj"/>
+                            <constraint firstAttribute="bottom" secondItem="0lY-oF-4zk" secondAttribute="bottom" id="nwU-uc-s2p"/>
+                            <constraint firstItem="pOF-qA-HGU" firstAttribute="bottom" secondItem="v8i-8R-fb0" secondAttribute="bottom" id="qy5-e5-gSD"/>
+                            <constraint firstAttribute="trailing" secondItem="0lY-oF-4zk" secondAttribute="trailing" id="vT4-m1-M59"/>
+                            <constraint firstItem="mZk-fK-Pgh" firstAttribute="top" secondItem="v8i-8R-fb0" secondAttribute="top" id="vYj-Qx-8Vi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pOF-qA-HGU"/>
+                    </view>
+                    <connections>
+                        <outlet property="coinAmountLabel" destination="dKn-VP-hPh" id="KrU-Xj-vIy"/>
+                        <outlet property="coinContainerView" destination="mZk-fK-Pgh" id="rPz-Wf-dDa"/>
+                        <outlet property="menuCollectionView" destination="v8i-8R-fb0" id="rIu-f5-0cU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mG-81-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.61607142857142" y="136.23188405797103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background-Intro" width="896" height="414"/>
+        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="413834">
+            <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FFC85F">
+            <color red="1" green="0.78431372549019607" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
