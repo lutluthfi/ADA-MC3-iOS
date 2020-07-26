@@ -39,7 +39,7 @@ class DialogFactory {
                         initialSpringVelocity: 5.0,
                         options: .curveEaseOut,
                         animations: ({
-                            view.transform = .init(scaleX: 1, y: 1)
+                            view.transform = .identity
                         }),
                         completion: nil)
                 }
