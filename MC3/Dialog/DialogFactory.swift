@@ -33,13 +33,13 @@ class DialogFactory {
                     self.displayedDialogs[dialogId] = view
                     unwrappedKeyWindow.addSubview(view)
                     UIView.animate(
-                        withDuration: 0.75,
+                        withDuration: 1,
                         delay: .zero,
-                        usingSpringWithDamping: 1.0,
+                        usingSpringWithDamping: 0.65,
                         initialSpringVelocity: 5.0,
                         options: .curveEaseOut,
                         animations: ({
-                            view.transform = .init(scaleX: 1, y: 1)
+                            view.transform = .identity
                         }),
                         completion: nil)
                 }
