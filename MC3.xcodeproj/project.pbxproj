@@ -18,6 +18,12 @@
 		4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */; };
 		4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */; };
 		4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */; };
+		4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2144B624CD5268007DAAA8 /* DialogAnimalInfoView.swift */; };
+		4F2144B924CD54B0007DAAA8 /* DialogAnimalInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F2144B824CD54B0007DAAA8 /* DialogAnimalInfoView.xib */; };
+		4F2144BC24CD5D1C007DAAA8 /* DialogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2144BB24CD5D1C007DAAA8 /* DialogFactory.swift */; };
+		4F2144BE24CD671C007DAAA8 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2144BD24CD671C007DAAA8 /* UIViewController+Keyboard.swift */; };
+		4F2144C024CDA346007DAAA8 /* FakeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2144BF24CDA346007DAAA8 /* FakeTextFieldView.swift */; };
+		4F2144C224CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2144C124CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift */; };
 		4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F35177024C01EC3000E5E19 /* SplashViewController.swift */; };
 		4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177424C020A6000E5E19 /* SplashViewController.storyboard */; };
 		4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */; };
@@ -40,11 +46,6 @@
 		4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517BC24C6E2A6000E5E19 /* MCTransitionCoordinator.swift */; };
 		4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */; };
 		4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */; };
-		4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91D24BDBB9B000739E6 /* GameScene.sks */; };
-		4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F91F24BDBB9B000739E6 /* Actions.sks */; };
-		4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F92124BDBB9B000739E6 /* GameScene.swift */; };
-		4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F55F92324BDBB9B000739E6 /* GameViewController.swift */; };
-		4F55F92724BDBB9B000739E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F92524BDBB9B000739E6 /* Main.storyboard */; };
 		4F55F92924BDBB9D000739E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F92824BDBB9D000739E6 /* Assets.xcassets */; };
 		4F55F92C24BDBB9D000739E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F55F92A24BDBB9D000739E6 /* LaunchScreen.storyboard */; };
 		9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABF622024C4229C00E4F76F /* TikusViewController.swift */; };
@@ -65,6 +66,12 @@
 		4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGardenViewController.swift; sourceTree = "<group>"; };
 		4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainGardenViewController.storyboard; sourceTree = "<group>"; };
 		4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuMainGardenCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F2144B624CD5268007DAAA8 /* DialogAnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogAnimalInfoView.swift; sourceTree = "<group>"; };
+		4F2144B824CD54B0007DAAA8 /* DialogAnimalInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogAnimalInfoView.xib; sourceTree = "<group>"; };
+		4F2144BB24CD5D1C007DAAA8 /* DialogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogFactory.swift; sourceTree = "<group>"; };
+		4F2144BD24CD671C007DAAA8 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		4F2144BF24CDA346007DAAA8 /* FakeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTextFieldView.swift; sourceTree = "<group>"; };
+		4F2144C124CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInputAccessoryView.swift; sourceTree = "<group>"; };
 		4F35177024C01EC3000E5E19 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4F35177424C020A6000E5E19 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
 		4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IntroViewController.storyboard; sourceTree = "<group>"; };
@@ -88,11 +95,6 @@
 		4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MCTransition.swift"; sourceTree = "<group>"; };
 		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F55F91B24BDBB9B000739E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F55F91D24BDBB9B000739E6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		4F55F91F24BDBB9B000739E6 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		4F55F92124BDBB9B000739E6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		4F55F92324BDBB9B000739E6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		4F55F92624BDBB9B000739E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F55F92824BDBB9D000739E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F55F92B24BDBB9D000739E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F55F92D24BDBB9D000739E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +195,24 @@
 				4F1E7DEC24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		4F2144B524CD5214007DAAA8 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				4F2144BB24CD5D1C007DAAA8 /* DialogFactory.swift */,
+				4F2144BA24CD5D05007DAAA8 /* AnimalInfo */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		4F2144BA24CD5D05007DAAA8 /* AnimalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4F2144B624CD5268007DAAA8 /* DialogAnimalInfoView.swift */,
+				4F2144B824CD54B0007DAAA8 /* DialogAnimalInfoView.xib */,
+			);
+			path = AnimalInfo;
 			sourceTree = "<group>";
 		};
 		4F35176F24C01EB4000E5E19 /* Splash */ = {
@@ -309,6 +329,10 @@
 		4F3517B624C6DF54000E5E19 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4F2144BF24CDA346007DAAA8 /* FakeTextFieldView.swift */,
+				4F2144C124CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift */,
+				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
+				4F2144BD24CD671C007DAAA8 /* UIViewController+Keyboard.swift */,
 				4F3517B724C6DF74000E5E19 /* Transition */,
 			);
 			path = Utils;
@@ -343,18 +367,13 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
-				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
-				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
-				4F55F92324BDBB9B000739E6 /* GameViewController.swift */,
-				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
+				4F2144B524CD5214007DAAA8 /* Dialog */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
 				4F35178924C1BDA0000E5E19 /* CoreData */,
 				4F35179224C36969000E5E19 /* Domain */,
 				4F35177A24C065AD000E5E19 /* Intro */,
-				4F55F92524BDBB9B000739E6 /* Main.storyboard */,
 				4F1E7DE324CAE08100C300F8 /* MainGarden */,
 				4F35178024C0676E000E5E19 /* Resoures */,
 				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
@@ -425,14 +444,12 @@
 			files = (
 				4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */,
 				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
-				4F55F92724BDBB9B000739E6 /* Main.storyboard in Resources */,
+				4F2144B924CD54B0007DAAA8 /* DialogAnimalInfoView.xib in Resources */,
 				9ABF622524C458FE00E4F76F /* TikusStoryboard.storyboard in Resources */,
-				4F55F91E24BDBB9B000739E6 /* GameScene.sks in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F55F92924BDBB9D000739E6 /* Assets.xcassets in Resources */,
 				4F55F92C24BDBB9D000739E6 /* LaunchScreen.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
-				4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */,
 				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 			);
@@ -452,9 +469,7 @@
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
 				4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */,
-				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */,
-				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
 				9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */,
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
@@ -466,6 +481,8 @@
 				4F55F91C24BDBB9B000739E6 /* AppDelegate.swift in Sources */,
 				4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */,
 				4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */,
+				4F2144C024CDA346007DAAA8 /* FakeTextFieldView.swift in Sources */,
+				4F2144C224CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,
@@ -476,22 +493,17 @@
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 				448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */,
 				44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */,
+				4F2144BE24CD671C007DAAA8 /* UIViewController+Keyboard.swift in Sources */,
 				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
+				4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */,
 				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
+				4F2144BC24CD5D1C007DAAA8 /* DialogFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4F55F92524BDBB9B000739E6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F55F92624BDBB9B000739E6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4F55F92A24BDBB9D000739E6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -622,7 +634,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XSU8A6MK4;
+				DEVELOPMENT_TEAM = 5U7M39KWXM;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,7 +652,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XSU8A6MK4;
+				DEVELOPMENT_TEAM = 5U7M39KWXM;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

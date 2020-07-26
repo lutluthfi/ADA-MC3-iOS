@@ -337,7 +337,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7z-kX-4l8">
-                                <rect key="frame" x="422" y="63" width="52" height="29"/>
+                                <rect key="frame" x="423" y="63" width="50" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
