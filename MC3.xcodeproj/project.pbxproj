@@ -343,11 +343,11 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				4F1E7DE324CAE08100C300F8 /* MainGarden */,
 				4F55F91F24BDBB9B000739E6 /* Actions.sks */,
 				4F55F91D24BDBB9B000739E6 /* GameScene.sks */,
 				4F55F92124BDBB9B000739E6 /* GameScene.swift */,
 				4F55F92324BDBB9B000739E6 /* GameViewController.swift */,
+				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
@@ -355,12 +355,12 @@
 				4F35179224C36969000E5E19 /* Domain */,
 				4F35177A24C065AD000E5E19 /* Intro */,
 				4F55F92524BDBB9B000739E6 /* Main.storyboard */,
+				4F1E7DE324CAE08100C300F8 /* MainGarden */,
 				4F35178024C0676E000E5E19 /* Resoures */,
 				2AF84C5324BDDB3900239497 /* Rewards & Shop */,
 				2AF84C5224BDDB2800239497 /* Settings & Profile */,
 				4F35176F24C01EB4000E5E19 /* Splash */,
 				4F3517B624C6DF54000E5E19 /* Utils */,
-				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
 			);
 			path = MC3;
 			sourceTree = "<group>";
