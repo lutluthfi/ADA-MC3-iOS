@@ -28,9 +28,20 @@ class DialogFactory {
                     .first
                 if let unwrappedKeyWindow = keyWindow {
                     let view = self.instantiateDialogAnimalInfoView()
+                    view.transform = .init(scaleX: .zero, y: .zero)
                     view.delegate = delegate
                     self.displayedDialogs[dialogId] = view
                     unwrappedKeyWindow.addSubview(view)
+                    UIView.animate(
+                        withDuration: 0.75,
+                        delay: .zero,
+                        usingSpringWithDamping: 1.0,
+                        initialSpringVelocity: 5.0,
+                        options: .curveEaseOut,
+                        animations: ({
+                            view.transform = .init(scaleX: 1, y: 1)
+                        }),
+                        completion: nil)
                 }
             }
         }
@@ -50,16 +61,7 @@ class DialogFactory {
 extension DialogFactory {
 
     private func instantiateDialogAnimalInfoView() -> DialogAnimalInfoView {
-        let xPoint = (UIScreen.main.bounds.width / 2) -
-            (DialogAnimalInfoView.Constant.kDialogAnimalInfoViewWidth / 2)
-        let yPoint = (UIScreen.main.bounds.height / 2) -
-            (DialogAnimalInfoView.Constant.kDialogAnimalInfoViewHeight / 2)
-        let rect = CGRect(
-            x: xPoint,
-            y: yPoint,
-            width: DialogAnimalInfoView.Constant.kDialogAnimalInfoViewWidth,
-            height: DialogAnimalInfoView.Constant.kDialogAnimalInfoViewHeight
-        )
+        let rect = DialogAnimalInfoView.Constant.kDialogAnimalInfoViewRect
         return DialogAnimalInfoView(frame: rect)
     }
 

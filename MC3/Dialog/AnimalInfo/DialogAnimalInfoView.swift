@@ -21,6 +21,18 @@ extension DialogAnimalInfoView {
         static let kDialogAnimalInfoViewCornerRadius = CGFloat(10)
         static let kDialogAnimalInfoViewHeight = CGFloat(278)
         static let kDialogAnimalInfoViewWidth = CGFloat(367)
+        static let kDialogAnimalInfoViewRect: CGRect = {
+            let xPoint = (UIScreen.main.bounds.width / 2) -
+                (DialogAnimalInfoView.Constant.kDialogAnimalInfoViewWidth / 2)
+            let yPoint = (UIScreen.main.bounds.height / 2) -
+                (DialogAnimalInfoView.Constant.kDialogAnimalInfoViewHeight / 2)
+            return  CGRect(
+                x: xPoint,
+                y: yPoint,
+                width: DialogAnimalInfoView.Constant.kDialogAnimalInfoViewWidth,
+                height: DialogAnimalInfoView.Constant.kDialogAnimalInfoViewHeight
+            )
+        }()
         static let kConfirmButtonCornerRadius = CGFloat(5)
         static let kNameTextFieldBorderColor = #colorLiteral(red: 0.2549999952, green: 0.2199999988, blue: 0.2039999962, alpha: 1)
         static let kNameTextFieldBorderWidth = CGFloat(3)
