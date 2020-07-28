@@ -59,7 +59,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A772EEC24C69FA000091E62 /* HappyMonkey-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HappyMonkey-Regular.ttf"; sourceTree = "<group>"; };
 		2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoomVC.swift; sourceTree = "<group>"; };
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
@@ -124,14 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A772EEB24C69F6F00091E62 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				2A772EEC24C69FA000091E62 /* HappyMonkey-Regular.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		2AD1427124C9BC0C008160A3 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,7 +382,6 @@
 				4F35178924C1BDA0000E5E19 /* CoreData */,
 				4F2144B524CD5214007DAAA8 /* Dialog */,
 				4F35179224C36969000E5E19 /* Domain */,
-				2A772EEB24C69F6F00091E62 /* Fonts */,
 				4F35177A24C065AD000E5E19 /* Intro */,
 				4F1E7DE324CAE08100C300F8 /* MainGarden */,
 				4F35178024C0676E000E5E19 /* Resoures */,
