@@ -517,7 +517,9 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func gameBtnAction(sender: UIButton) {
-        print("game button tapped")
+        let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
+        self.present(vc, animated: true)
     }
     
     //MARK: Care button
