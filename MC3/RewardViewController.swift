@@ -8,19 +8,41 @@
 
 import UIKit
 
+struct Reward{
+    var rewardName : String
+    var rewardImage : UIImage
+}
+var rewardArray = [Reward(rewardName: "Safari", rewardImage: #imageLiteral(resourceName: "Safari-1")),
+                   Reward(rewardName: "Seminar", rewardImage: #imageLiteral(resourceName: "Seminar-1")),
+                   Reward(rewardName: "Donation", rewardImage: #imageLiteral(resourceName: "Donation-1")),
+                   Reward(rewardName: "Safari", rewardImage: #imageLiteral(resourceName: "Safari-2")),
+                   Reward(rewardName: "Seminar", rewardImage: #imageLiteral(resourceName: "Seminar-2")),
+                   Reward(rewardName: "Donation", rewardImage: #imageLiteral(resourceName: "Donation-2")),
+                   Reward(rewardName: "Seminar", rewardImage: #imageLiteral(resourceName: "Seminar-3")),
+                   Reward(rewardName: "Donation", rewardImage: #imageLiteral(resourceName: "Donation-3"))]
+
+var selectedReward = 0
+
 class RewardViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var rewardCollectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return rewardArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = rewardCollectionView.dequeueReusableCell(withReuseIdentifier: "rewardCell", for: indexPath) as! RewardCollectionViewCell
+        cell.rewardCellLabel.text = rewardArray[indexPath.row].rewardName
+        cell.rewardCellImage.image = rewardArray[indexPath.row].rewardImage
         cell.rewardCellImage.layer.borderColor = #colorLiteral(red: 0.3243855536, green: 0.2837193608, blue: 0.2650057673, alpha: 1)
         cell.rewardCellImage.layer.cornerRadius = 10
         cell.rewardCellImage.layer.borderWidth = 3
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedReward = indexPath.row
+        performSegue(withIdentifier: "ToDetailReward", sender: self)
     }
     
 
