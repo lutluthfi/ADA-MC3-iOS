@@ -27,9 +27,6 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
         closeBtn.layer.cornerRadius = 5
         closeBtn.layer.borderColor = UIColor(hex: "#413834")?.cgColor
         
-        let angle = CGFloat.pi/2
-        pageControl.transform = CGAffineTransform(rotationAngle: angle)
-        
         scrollView.contentInsetAdjustmentBehavior = .never
     }
     
@@ -39,7 +36,7 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
     
     func updatePageNumber() {
         // If not case to `Int` will give an error.
-        let currentPage = Int(ceil(scrollView.contentOffset.y / scrollView.frame.size.height))
+        let currentPage = Int(ceil(scrollView.contentOffset.x / scrollView.frame.size.width))
         pageControl.currentPage = currentPage
     }
     
@@ -52,6 +49,21 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
         updatePageNumber()
     }
     
+    @IBAction func onTapGesture(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: sender.view)
+        let frameWidth = self.view.frame.maxX
+        let xPosition = location.x.truncatingRemainder(dividingBy: frameWidth)
+        let currentPage = pageControl.currentPage
+        if (xPosition < 200 && currentPage > 0) {
+            let offset = CGPoint(x: (currentPage - 1) * Int(frameWidth), y: 0)
+            self.scrollView.setContentOffset(offset, animated: true)
+        }
+        
+        if (xPosition > self.view.frame.maxX - 200 && currentPage < 6) {
+            let offset = CGPoint(x: (currentPage + 1) * Int(frameWidth), y: 0)
+            self.scrollView.setContentOffset(offset, animated: true)
+        }
+    }
     /*
     // MARK: - Navigation
 
