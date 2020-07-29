@@ -68,7 +68,7 @@ class AnimalRoomVC: UIViewController {
     //MARK: Lamp
     let lamp: UIButton = {
         let btn = UIButton()
-        btn.setImage(#imageLiteral(resourceName: "Lamp-2"), for: .normal)
+        btn.setImage(UIImage(named: "Lamp-Sleep"), for: .normal)
         btn.alpha = 0
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(lampAction), for: .touchUpInside)

@@ -153,7 +153,7 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.lamp.alpha = 1
-                self.lamp.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                self.lamp.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         },
             completion: nil)
     }
@@ -315,8 +315,10 @@ extension AnimalRoomVC {
             catFood.widthAnchor.constraint(equalToConstant: 123.08),
             catFood.heightAnchor.constraint(equalToConstant: 136.6),
             
-            lamp.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            lamp.leadingAnchor.constraint(equalTo: basket.leadingAnchor, constant: -40),
+            lamp.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 30),
+            lamp.leadingAnchor.constraint(equalTo: basket.leadingAnchor, constant: -180),
+            lamp.widthAnchor.constraint(equalToConstant: 100),
+            lamp.heightAnchor.constraint(equalToConstant: 180),
             
             
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
