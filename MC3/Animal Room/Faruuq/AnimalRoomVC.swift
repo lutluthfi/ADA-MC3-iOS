@@ -23,11 +23,11 @@ class AnimalRoomVC: UIViewController {
     var sleepingState: Bool = false
     
     //MARK: Logic
-    var hunger: Double = 0
-    var sleep: Double = 0
-    var health: Double = 0
-    var fun: Double = 0
-    var love: Double = 0
+    var hunger: Float = 0.0
+    var sleep: Float = 0.0
+    var health: Float = 0.0
+    var fun: Float = 0.0
+    var love: Float = 0.0
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -43,6 +43,30 @@ class AnimalRoomVC: UIViewController {
         img.image = #imageLiteral(resourceName: "Basket")
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
+    }()
+    
+    //MARK: - Progress View Item
+    var progressBarIcon: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "Food-Icon-ProgressBar")
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
+    
+    let progressBarBackground: UIView = {
+        let background = UIView()
+        background.backgroundColor = UIColor(named: "413834")
+        background.layer.cornerRadius = 5
+        background.translatesAutoresizingMaskIntoConstraints = false
+        return background
+    }()
+    
+    let progressBar: UIProgressView = {
+        let progressBar = UIProgressView()
+        progressBar.progressTintColor = UIColor(named: "BG")
+        progressBar.trackTintColor = UIColor(named: "413834")
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        return progressBar
     }()
     
     //MARK: - Cat Items
@@ -88,8 +112,12 @@ class AnimalRoomVC: UIViewController {
         }
         self.z1Animation()
         
-        let attributedTextFull = NSMutableAttributedString(string: "Meoww is sleeping!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-        attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+        let attributedTextFull = NSMutableAttributedString(
+            string: "Meoww is sleeping!",
+            attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+        attributedTextFull.append(NSAttributedString(
+            string: "\n\nYou earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.",
+            attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
         overlayText.attributedText = attributedTextFull
         overlayText.textAlignment = .center
         self.overlayAnimation()
@@ -143,8 +171,12 @@ class AnimalRoomVC: UIViewController {
         if let phoneURL = NSURL(string: ("tel://911")) {
             UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
         }
-        let attributedTextFull = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-        attributedTextFull.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for Meoww.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+        let attributedTextFull = NSMutableAttributedString(
+            string: "Meoww is sick!",
+            attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+        attributedTextFull.append(NSAttributedString(
+            string: "\n\nYou just called the vet to make an appointment for Meoww.",
+            attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
         overlayText.attributedText = attributedTextFull
         overlayText.textAlignment = .center
         self.overlayAnimation()
@@ -221,20 +253,26 @@ class AnimalRoomVC: UIViewController {
             sender.setTranslation(CGPoint.zero, in: self.view)
             
             if bowl.frame.intersects(catNormal.frame) {
-                if hunger < 0.3 {
+                if hunger < 1 {
                     switch bowl.image {
                     case bowlIcons[1]:
                         hunger += 0.1
+                        progressBarAnimate()
+                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
+                        progressBarAnimate()
+                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
+                        progressBarAnimate()
+                        progressBar.setProgress(hunger, animated: true)
                     default:
                         break
                     }
                 
                     bowl.image = bowlIcons[0]
-                    if hunger >= 0.3 {
+                    if hunger >= 1 {
                         rewardsValue += 10
                         DispatchQueue.main.async {
                             self.rewardsLabel.text = ("\(self.rewardsValue)")
@@ -553,6 +591,8 @@ class AnimalRoomVC: UIViewController {
         super.viewDidLoad()
         self.layout()
         rewardsLabel.text = ("\(rewardsValue)")
+        
+        progressBar.setProgress(hunger, animated: true)
         
         let holdCatFood = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
         holdCatFood.minimumPressDuration = 0.1

@@ -233,10 +233,41 @@ extension AnimalRoomVC {
         view.layer.addSublayer(emitterLayer)
     }
     
+    func progressBarAnimate() {
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 5,
+            options: [],
+            animations: {
+                self.progressBar.transform = CGAffineTransform(translationX: 0, y: 50)
+                self.progressBarBackground.transform = CGAffineTransform(translationX: 0, y: 50)
+                self.progressBarIcon.transform = CGAffineTransform(translationX: 0, y: 50)
+        }) { (finished) in
+            UIView.animate(
+                withDuration: 1,
+                delay: 0,
+                usingSpringWithDamping: 0.8,
+                initialSpringVelocity: 5,
+                options: [],
+                animations: {
+                    self.progressBar.transform = .identity
+                    self.progressBarBackground.transform = .identity
+                    self.progressBarIcon.transform = .identity
+            },
+                completion: nil)
+            
+        }
+    }
+    
     //MARK: - Layouts
     func layout() {
         view.addSubview(background)
         view.addSubview(basket)
+        view.addSubview(progressBarBackground)
+        view.addSubview(progressBar)
+        view.addSubview(progressBarIcon)
         view.addSubview(catNormal)
         view.addSubview(catSleeping)
         view.addSubview(lamp)
@@ -270,9 +301,24 @@ extension AnimalRoomVC {
             background.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
             basket.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40),
-            basket.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: +50),
+            basket.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50),
             basket.widthAnchor.constraint(equalToConstant: 395),
             basket.heightAnchor.constraint(equalToConstant: 235),
+            
+            progressBarBackground.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor),
+            progressBarBackground.centerYAnchor.constraint(equalTo: progressBar.centerYAnchor),
+            progressBarBackground.widthAnchor.constraint(equalToConstant: 168),
+            progressBarBackground.heightAnchor.constraint(equalToConstant: 29),
+            
+            progressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
+            progressBar.topAnchor.constraint(equalTo: view.topAnchor, constant: -30),
+            progressBar.widthAnchor.constraint(equalToConstant: 158),
+            progressBar.heightAnchor.constraint(equalToConstant: 19),
+            
+            progressBarIcon.trailingAnchor.constraint(equalTo: progressBarBackground.leadingAnchor, constant: -20),
+            progressBarIcon.centerYAnchor.constraint(equalTo: progressBarBackground.centerYAnchor),
+            progressBarIcon.heightAnchor.constraint(equalToConstant: 39),
+            progressBarIcon.widthAnchor.constraint(equalToConstant: 39),
             
             catNormal.centerXAnchor.constraint(equalTo: basket.centerXAnchor),
             catNormal.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
