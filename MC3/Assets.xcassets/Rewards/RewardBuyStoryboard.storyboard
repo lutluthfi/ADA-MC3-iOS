@@ -66,6 +66,31 @@
                                             <action selector="okayPressed:" destination="5IA-01-2u7" eventType="touchUpInside" id="uO8-bw-BbY"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWC-do-c9Z">
+                                        <rect key="frame" x="143" y="133" width="78" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLM-yw-5k0">
+                                        <rect key="frame" x="229" y="134" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.25490196079999999" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button" image="plus.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="plusPressed:" destination="5IA-01-2u7" eventType="touchUpInside" id="aPa-ue-033"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exu-Vd-CbK">
+                                        <rect key="frame" x="113" y="134" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.25490196079999999" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button" image="minus.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="minPressed:" destination="5IA-01-2u7" eventType="touchUpInside" id="3uF-i8-oxX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -79,6 +104,9 @@
                         <outlet property="YesButton" destination="qE2-FU-LdD" id="BH6-Z0-VVE"/>
                         <outlet property="alertView" destination="nH2-c5-7xa" id="ggD-lx-oGh"/>
                         <outlet property="contentLabel" destination="qBI-qe-rd6" id="mjZ-vI-HTr"/>
+                        <outlet property="donationMoneyLabel" destination="wWC-do-c9Z" id="LF1-5m-5dP"/>
+                        <outlet property="minusButton" destination="gLM-yw-5k0" id="W4Q-Pl-d2n"/>
+                        <outlet property="plusButton" destination="exu-Vd-CbK" id="dEe-WS-ifx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAT-nI-3yx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,4 +114,8 @@
             <point key="canvasLocation" x="-158.03571428571428" y="159.42028985507247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus.square.fill" catalog="system" width="128" height="114"/>
+        <image name="plus.square.fill" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

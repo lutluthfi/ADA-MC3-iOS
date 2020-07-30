@@ -9,14 +9,20 @@
 import UIKit
 
 class RewardBuyAlertViewController: UIViewController {
-    
+    var moneyDonated = 50
     var contentArray = ["Buy Safari Ticket to “Taman Safari Indonesia” for $150 ?", "Buy Smart Socialization Puppy Seminar Ticket for S100 ?", "How much do you want to donate ?"]
+    var nextContentArray = ["You just bought Safari Ticket to “Taman Safari Indonesia” for $ 150!",
+                            "You just bought Seminar Ticket for $ 100!",
+                            "You just Donated "]
     
     @IBOutlet weak var NoButton: UIButton!
     @IBOutlet weak var YesButton: UIButton!
     @IBOutlet weak var OkayButton: UIButton!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var contentLabel: UILabel!
+    
+    
+    
     
     @IBAction func noPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -25,9 +31,31 @@ class RewardBuyAlertViewController: UIViewController {
         NoButton.isHidden = true
         YesButton.isHidden = true
         OkayButton.isHidden = false
+        contentLabel.text = nextContentArray[selectedReward]
+        if selectedReward ==  2 {
+            contentLabel.text = nextContentArray[selectedReward] + "$ " + String(moneyDonated)
+            minusButton.isHidden = true
+            plusButton.isHidden = true
+            donationMoneyLabel.isHidden = true
+        }
     }
     @IBAction func okayPressed(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    // donation items
+    @IBOutlet weak var donationMoneyLabel: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
+    
+    
+    @IBAction func minPressed(_ sender: Any) {
+        moneyDonated -= 5
+        donationMoneyLabel.text = "$ " + String(moneyDonated)
+    }
+    
+    @IBAction func plusPressed(_ sender: Any) {
+        moneyDonated += 5
+        donationMoneyLabel.text = "$ " + String(moneyDonated)
     }
     
     override func viewDidLoad() {
@@ -51,6 +79,13 @@ class RewardBuyAlertViewController: UIViewController {
             contentLabel.text = contentArray[selectedReward]
         }else{
             contentLabel.text = "Coming Soon !"
+        }
+        
+        if selectedReward == 2 {
+            plusButton.isHidden = false
+            minusButton.isHidden = false
+            donationMoneyLabel.isHidden = false
+            donationMoneyLabel.text = "$ " + String(moneyDonated)
         }
         // Do any additional setup after loading the view.
     }

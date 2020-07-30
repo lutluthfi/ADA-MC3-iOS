@@ -72,6 +72,10 @@ class RewardDetailViewController: UIViewController {
             detailLabel.text = "Coming Soon !"
         }
         
+        if selectedReward == 3 {
+            
+        }
+        
         
         // Do any additional setup after loading the view.
     }
