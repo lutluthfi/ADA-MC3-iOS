@@ -268,6 +268,7 @@ extension AnimalRoomVC {
                 self.progressBar.transform = CGAffineTransform(translationX: 0, y: 50)
                 self.progressBarBackground.transform = CGAffineTransform(translationX: 0, y: 50)
                 self.progressBarIcon.transform = CGAffineTransform(translationX: 0, y: 50)
+                self.progressBarBackgroundContainer.transform = CGAffineTransform(translationX: 0, y: 50)
         }) { (finished) in
             UIView.animate(
                 withDuration: 1,
@@ -279,6 +280,7 @@ extension AnimalRoomVC {
                     self.progressBar.transform = .identity
                     self.progressBarBackground.transform = .identity
                     self.progressBarIcon.transform = .identity
+                    self.progressBarBackgroundContainer.transform = .identity
             },
                 completion: nil)
             
@@ -311,6 +313,7 @@ extension AnimalRoomVC {
         view.addSubview(careBtn)
         view.addSubview(handCare)
         
+        view.addSubview(progressBarBackgroundContainer)
         view.addSubview(progressBarBackground)
         view.addSubview(progressBar)
         view.addSubview(progressBarIcon)
@@ -330,6 +333,11 @@ extension AnimalRoomVC {
             basket.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50),
             basket.widthAnchor.constraint(equalToConstant: 395),
             basket.heightAnchor.constraint(equalToConstant: 235),
+            
+            progressBarBackgroundContainer.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor, constant: -28),
+            progressBarBackgroundContainer.centerYAnchor.constraint(equalTo: progressBar.centerYAnchor),
+            progressBarBackgroundContainer.widthAnchor.constraint(equalToConstant: 168 + 39 + 40),
+            progressBarBackgroundContainer.heightAnchor.constraint(equalToConstant: 49),
             
             progressBarBackground.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor),
             progressBarBackground.centerYAnchor.constraint(equalTo: progressBar.centerYAnchor),

@@ -46,6 +46,14 @@ class AnimalRoomVC: UIViewController {
     }()
     
     //MARK: - Progress View Item
+    let progressBarBackgroundContainer: UIView = {
+        let background = UIView()
+        background.backgroundColor = UIColor(named: "BG")
+        background.layer.cornerRadius = 10
+        background.translatesAutoresizingMaskIntoConstraints = false
+        return background
+    }()
+    
     var progressBarIcon: UIImageView = {
         let img = UIImageView()
         img.image = UIImage(named: "Food-Icon-ProgressBar")
