@@ -79,7 +79,7 @@ class AnimalRoomVC: UIViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-
+    
     //MARK: Cat Sleeping
     let catSleeping: UIImageView = {
         let img = UIImageView()
@@ -100,29 +100,58 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func lampAction(sender: UIButton) {
-        lamp.alpha = 0
-        lamp.transform = .identity
-        catNormal.isHidden = true
-        catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
-        catSleeping.isHidden = false
-        sleepingState = true
-        rewardsValue += 20
-        DispatchQueue.main.async {
-            self.rewardsLabel.text = "\(self.rewardsValue)"
-        }
-        self.z1Animation()
         
-        let attributedTextFull = NSMutableAttributedString(
-            string: "Meoww is sleeping!",
-            attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-        attributedTextFull.append(NSAttributedString(
-            string: "\n\nYou earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.",
-            attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
-        overlayText.attributedText = attributedTextFull
-        overlayText.textAlignment = .center
-        self.overlayAnimation()
-    }
+        if sleepingState == false {
+            sleepingState = true
+            catNormal.isHidden = true
+            catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
+            catSleeping.isHidden = false
+            rewardsValue += 10
+            DispatchQueue.main.async {
+                self.rewardsLabel.text = "\(self.rewardsValue)"
+            }
+            
+            self.z1Animation()
+            
+            let attributedTextFull = NSMutableAttributedString(
+                string: "Meoww is sleeping!",
+                attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+            attributedTextFull.append(NSAttributedString(
+                string: "\n\nYou earned $10 for giving Meoww time to sleep. Come back later to play with Meoww again.",
+                attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+            overlayText.attributedText = attributedTextFull
+            overlayText.textAlignment = .center
+            self.overlayAnimation()
+            overlaySleepingMode.alpha = 1
+            
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSleeping), userInfo: nil, repeats: true)
+            
+        } else {
+            sleepingState = false
+            catSleeping.isHidden = true
+            catNormal.isHidden = false
+            overlaySleepingMode.alpha = 0
+            zPopUp1.isHidden = true
+            zPopUp2.isHidden = true
+            zPopUp3.isHidden = true
+            timer?.invalidate()
+        }
 
+    }
+    
+    @objc func timerSleeping() {
+        currentTimer += 1
+        switch currentTimer {
+        case 3:
+            sleep += 0.3
+        case 5:
+            sleep += 0.5
+        case 8:
+            sleep += 0.2
+        default:
+            break
+        }
+    }
     
     //MARK: Cat Pop Up
     let sickPopUp: UIImageView = {
@@ -137,6 +166,7 @@ class AnimalRoomVC: UIViewController {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Z")
         img.alpha = 0
+        img.isHidden = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -145,6 +175,7 @@ class AnimalRoomVC: UIViewController {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Z")
         img.alpha = 0
+        img.isHidden = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -153,6 +184,7 @@ class AnimalRoomVC: UIViewController {
         let img = UIImageView()
         img.image = #imageLiteral(resourceName: "Z")
         img.alpha = 0
+        img.isHidden = true
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
@@ -168,6 +200,8 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func phoneAction(sender: UIButton) {
+        health = 1
+        progressBar.setProgress(health, animated: true)
         if let phoneURL = NSURL(string: ("tel://911")) {
             UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
         }
@@ -180,8 +214,9 @@ class AnimalRoomVC: UIViewController {
         overlayText.attributedText = attributedTextFull
         overlayText.textAlignment = .center
         self.overlayAnimation()
+        
     }
-
+    
     //MARK: Cat Hand
     let catHand: UIImageView = {
         let img = UIImageView()
@@ -235,7 +270,7 @@ class AnimalRoomVC: UIViewController {
             break
         }
     }
-
+    
     //MARK: Bowl
     var bowl: UIImageView = {
         let img = UIImageView()
@@ -270,7 +305,7 @@ class AnimalRoomVC: UIViewController {
                     default:
                         break
                     }
-                
+                    
                     bowl.image = bowlIcons[0]
                     if hunger >= 1 {
                         rewardsValue += 10
@@ -329,13 +364,13 @@ class AnimalRoomVC: UIViewController {
         case .began, .changed:
             handCare.center = CGPoint(x: handCare.center.x + translation.x, y: handCare.center.y + translation.y)
             sender.setTranslation(CGPoint.zero, in: self.view)
-
+            
             if handCare.frame.intersects(catNormal.frame) {
                 
-                if love < 0.8 {
+                if love < 1 {
                     catPurr?.play()
                     love += 0.001
-                    if love >= 0.8 {
+                    if love >= 1 {
                         rewardsValue += 10
                         DispatchQueue.main.async {
                             self.rewardsLabel.text = ("\(self.rewardsValue)")
@@ -349,6 +384,9 @@ class AnimalRoomVC: UIViewController {
                     overlayAnimation()
                 }
             }
+        case .ended:
+            progressBarAnimate()
+            progressBar.setProgress(love, animated: true)
         default:
             break
         }
@@ -373,6 +411,14 @@ class AnimalRoomVC: UIViewController {
     }()
     
     //MARK: - Overlay
+    let overlaySleepingMode: UIView = {
+        let box = UIView()
+        box.backgroundColor = UIColor(named: "Overlay70")
+        box.alpha = 0
+        box.translatesAutoresizingMaskIntoConstraints = false
+        return box
+    }()
+    
     let overlay: UIView = {
         let box = UIView()
         box.backgroundColor = UIColor(named: "Overlay70")
@@ -411,8 +457,8 @@ class AnimalRoomVC: UIViewController {
         btn.tintColor = .white
         btn.layer.cornerRadius = 5
         //TODO: How to adjust the button size to be smaller than the stackview size
-//        btn.frame = CGRect(x: 0, y: 0, width: 128, height: 39)
-//        btn.sizeThatFits(CGSize(width: 128, height: 39))
+        //        btn.frame = CGRect(x: 0, y: 0, width: 128, height: 39)
+        //        btn.sizeThatFits(CGSize(width: 128, height: 39))
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(overlayDismiss), for: .touchUpInside)
         return btn
@@ -423,6 +469,7 @@ class AnimalRoomVC: UIViewController {
         overlayView.alpha = 0
         overlayView.transform = .identity
         stackView.alpha = 0
+        progressBarAnimate()
     }
     
     let stackView: UIStackView = {
@@ -461,29 +508,39 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func foodBtnAction(sender: UIButton) {
-        catNormal.isHidden = false
-        catHand.isHidden = false
-        bowl.isHidden = false
-        catFood.isHidden = false
-        sickPopUp.isHidden = true
-        catSleeping.isHidden = true
-        phone.alpha = 0
-        phone.transform = .identity
-        handCare.isHidden = true
-        lamp.alpha = 0
-        lamp.transform = .identity
+        progressBarIcon.image = UIImage(named: "Food-Icon-ProgressBar")
+        progressBar.setProgress(hunger, animated: true)
+        progressBarAnimate()
         
-        switch bowlPresent {
-        case true:
-            catHandAnimation()
-            bowlDown()
-            bowlPresent = false
-        default:
-            catHandAnimation()
-            bowlUp()
-            bowlPresent = true
-            currentTimer = 0
+        if sleepingState == true {
+            catSleepingState()
+        } else {
+            catNormal.isHidden = false
+            catHand.isHidden = false
+            bowl.isHidden = false
+            catFood.isHidden = false
+            catFood.alpha = 1
+            sickPopUp.isHidden = true
+            catSleeping.isHidden = true
+            phone.alpha = 0
+            handCare.isHidden = true
+            lamp.alpha = 0
+            
+            
+            
+            switch bowlPresent {
+            case true:
+                catHandAnimation()
+                bowlDown()
+                bowlPresent = false
+            default:
+                catHandAnimation()
+                bowlUp()
+                bowlPresent = true
+                currentTimer = 0
+            }
         }
+        
     }
     
     //MARK: Zzz Button
@@ -498,22 +555,25 @@ class AnimalRoomVC: UIViewController {
     
     @objc func zzzBtnAction(sender: UIButton) {
         print("zzz button tapped")
-        if sleepingState == true {
-            let attributedTextFull = NSMutableAttributedString(string: "Meoww is sleeping!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-            attributedTextFull.append(NSAttributedString(string: "\n\nYou just earned $20 for giving Meoww time to sleep. Come back later to play with Meoww again.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
-            overlayText.attributedText = attributedTextFull
-            overlayText.textAlignment = .center
-            overlayAnimation()
-        } else {
-            sickPopUp.isHidden = true
-            bowl.isHidden = true
-            catFood.isHidden = true
-            catHand.isHidden = true
-            handCare.isHidden = true
-            phone.alpha = 0
-            phone.transform = .identity
-            lampAnimation()
-        }
+        progressBarIcon.image = UIImage(systemName: "zzz")
+        progressBarIcon.tintColor = UIColor(named: "413834")
+        progressBar.setProgress(sleep, animated: true)
+        progressBarAnimate()
+        
+            if sleepingState == true {
+                catSleepingState()
+                z1Animation()
+                lampAnimation()
+            } else {
+                sickPopUp.isHidden = true
+                bowl.isHidden = true
+                catFood.isHidden = true
+                catHand.isHidden = true
+                handCare.isHidden = true
+                phone.alpha = 0
+                phone.transform = .identity
+                lampAnimation()
+            }
     }
     
     //MARK: Medical Button
@@ -528,20 +588,27 @@ class AnimalRoomVC: UIViewController {
     
     @objc func medicalBtnAction(sender: UIButton) {
         print("medical button tapped")
-        catNormal.isHidden = true
-        bowl.isHidden = true
-        catFood.isHidden = true
-        catHand.isHidden = true
-        handCare.isHidden = true
-        sickPopUp.isHidden = false
-        catSleeping.isHidden = false
-        catSleeping.image = #imageLiteral(resourceName: "Cat-Awake")
-        zPopUp2.alpha = 0
-        zPopUp1.alpha = 0
-        zPopUp3.alpha = 0
-        phoneAnimation()
-        lamp.alpha = 0
-        lamp.transform = .identity
+        progressBarIcon.image = UIImage(systemName: "waveform.path.ecg")
+        progressBarIcon.tintColor = UIColor(named: "413834")
+        progressBar.setProgress(health, animated: true)
+        progressBarAnimate()
+        
+        if sleepingState == true {
+            catSleepingState()
+        } else {
+            catNormal.isHidden = true
+            bowl.isHidden = true
+            catFood.isHidden = true
+            catHand.isHidden = true
+            handCare.isHidden = true
+            sickPopUp.isHidden = false
+            catSleeping.isHidden = false
+            catSleeping.image = #imageLiteral(resourceName: "Cat-Awake")
+            phoneAnimation()
+            lamp.alpha = 0
+            overlaySleepingMode.alpha = 0
+        }
+        
     }
     
     //MARK: Game Button
@@ -572,17 +639,27 @@ class AnimalRoomVC: UIViewController {
     
     @objc func careBtnAction(sender: UIButton) {
         print("care button tapped")
-        catNormal.isHidden = false
-        catHand.isHidden = false
-        handCare.isHidden = false
-        bowl.isHidden = true
-        catFood.isHidden = true
-        sickPopUp.isHidden = true
-        catSleeping.isHidden = true
-        phone.alpha = 0
-        phone.transform = .identity
-        lamp.alpha = 0
-        lamp.transform = .identity
+        
+        progressBarIcon.image = UIImage(systemName: "hand.raised.fill")
+        progressBarIcon.tintColor = UIColor(named: "413834")
+        progressBar.setProgress(love, animated: true)
+        progressBarAnimate()
+        
+        if sleepingState == true {
+            catSleepingState()
+        } else {
+            catNormal.isHidden = false
+            catHand.isHidden = false
+            handCare.isHidden = false
+            bowl.isHidden = true
+            catFood.isHidden = true
+            sickPopUp.isHidden = true
+            catSleeping.isHidden = true
+            phone.alpha = 0
+            lamp.alpha = 0
+            overlaySleepingMode.alpha = 0
+        }
+        
     }
     
     

@@ -82,6 +82,10 @@ extension AnimalRoomVC {
     }
     
     func z1Animation() {
+        zPopUp1.isHidden = false
+        zPopUp2.isHidden = false
+        zPopUp3.isHidden = false
+        zPopUp1.transform = CGAffineTransform(scaleX: .zero, y: .zero)
         UIView.animate(
             withDuration: 1,
             delay: 0,
@@ -90,13 +94,15 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.zPopUp1.alpha = 1
-                self.zPopUp1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                self.zPopUp1.transform = .identity
+//                self.zPopUp1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }) { (finished) in
             self.z2Animation()
         }
     }
     
     func z2Animation() {
+        zPopUp2.transform = CGAffineTransform(scaleX: .zero, y: .zero)
         UIView.animate(
             withDuration: 1,
             delay: 0,
@@ -105,13 +111,15 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.zPopUp2.alpha = 1
-                self.zPopUp2.transform = CGAffineTransform(scaleX: 2, y: 2)
+                self.zPopUp2.transform = .identity
+//                self.zPopUp2.transform = CGAffineTransform(scaleX: 2, y: 2)
         }) { (finished) in
             self.z3Animation()
         }
     }
     
     func z3Animation() {
+        zPopUp3.transform = CGAffineTransform(scaleX: .zero, y: .zero)
         UIView.animate(
             withDuration: 1,
             delay: 0,
@@ -120,7 +128,7 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.zPopUp3.alpha = 1
-                self.zPopUp3.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+                self.zPopUp3.transform = .identity
         }) { (finished) in
             self.zAnimationOff()
         }
@@ -134,17 +142,15 @@ extension AnimalRoomVC {
             initialSpringVelocity: 5,
             options: [],
             animations: {
-                self.zPopUp1.transform = .identity
                 self.zPopUp1.alpha = 0
-                self.zPopUp2.transform = .identity
                 self.zPopUp2.alpha = 0
-                self.zPopUp3.transform = .identity
                 self.zPopUp3.alpha = 0
         },
             completion: nil)
     }
     
     func lampAnimation() {
+        lamp.transform = CGAffineTransform(scaleX: .zero, y: .zero)
         UIView.animate(
             withDuration: 1,
             delay: 0,
@@ -153,12 +159,13 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.lamp.alpha = 1
-                self.lamp.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                self.lamp.transform = .identity
         },
             completion: nil)
     }
     
     func phoneAnimation() {
+        phone.transform = CGAffineTransform(scaleX: .zero, y: .zero)
         UIView.animate(
             withDuration: 1,
             delay: 0,
@@ -167,7 +174,7 @@ extension AnimalRoomVC {
             options: [],
             animations: {
                 self.phone.alpha = 1
-                self.phone.transform = CGAffineTransform(scaleX: 7, y: 7)
+                self.phone.transform = .identity
         },
             completion: nil)
     }
@@ -197,6 +204,23 @@ extension AnimalRoomVC {
         } catch  {
             print(Error.self)
         }
+    }
+    
+    func catSleepingState () {
+        catSleeping.isHidden = false
+        catSleeping.image = UIImage(named: "Cat-Sleeping")
+        overlaySleepingMode.alpha = 1
+        catNormal.isHidden = true
+        bowl.isHidden = true
+        catHand.isHidden = true
+        catFood.alpha = 0
+        handCare.isHidden = true
+        phone.alpha = 0
+        lamp.alpha = 0
+        zPopUp1.isHidden = true
+        zPopUp2.isHidden = true
+        zPopUp3.isHidden = true
+        sickPopUp.isHidden = true
     }
     
     func emitter() {
@@ -265,11 +289,9 @@ extension AnimalRoomVC {
     func layout() {
         view.addSubview(background)
         view.addSubview(basket)
-        view.addSubview(progressBarBackground)
-        view.addSubview(progressBar)
-        view.addSubview(progressBarIcon)
         view.addSubview(catNormal)
         view.addSubview(catSleeping)
+        view.addSubview(overlaySleepingMode)
         view.addSubview(lamp)
         view.addSubview(sickPopUp)
         view.addSubview(zPopUp1)
@@ -288,6 +310,10 @@ extension AnimalRoomVC {
         view.addSubview(gameBtn)
         view.addSubview(careBtn)
         view.addSubview(handCare)
+        
+        view.addSubview(progressBarBackground)
+        view.addSubview(progressBar)
+        view.addSubview(progressBarIcon)
         
         view.addSubview(overlay)
         view.addSubview(overlayView)
@@ -331,18 +357,18 @@ extension AnimalRoomVC {
             
             zPopUp1.bottomAnchor.constraint(equalTo: basket.topAnchor),
             zPopUp1.trailingAnchor.constraint(equalTo: basket.trailingAnchor, constant: -100),
-            zPopUp1.widthAnchor.constraint(equalToConstant: 39),
-            zPopUp1.heightAnchor.constraint(equalToConstant: 49),
+            zPopUp1.widthAnchor.constraint(equalToConstant: 19),
+            zPopUp1.heightAnchor.constraint(equalToConstant: 29),
             
-            zPopUp2.bottomAnchor.constraint(equalTo: zPopUp1.bottomAnchor, constant: -20),
-            zPopUp2.trailingAnchor.constraint(equalTo: zPopUp1.leadingAnchor, constant: -20),
-            zPopUp2.widthAnchor.constraint(equalTo: zPopUp1.widthAnchor),
-            zPopUp2.heightAnchor.constraint(equalTo: zPopUp1.heightAnchor),
+            zPopUp2.bottomAnchor.constraint(equalTo: zPopUp1.bottomAnchor, constant: -10),
+            zPopUp2.trailingAnchor.constraint(equalTo: zPopUp1.leadingAnchor, constant: -10),
+            zPopUp2.widthAnchor.constraint(equalTo: zPopUp1.widthAnchor, multiplier: 1.5),
+            zPopUp2.heightAnchor.constraint(equalTo: zPopUp1.heightAnchor, multiplier: 1.5),
             
-            zPopUp3.bottomAnchor.constraint(equalTo: zPopUp2.bottomAnchor, constant: -20),
-            zPopUp3.trailingAnchor.constraint(equalTo: zPopUp2.leadingAnchor, constant: -20),
-            zPopUp3.widthAnchor.constraint(equalTo: zPopUp1.widthAnchor),
-            zPopUp3.heightAnchor.constraint(equalTo: zPopUp1.heightAnchor),
+            zPopUp3.bottomAnchor.constraint(equalTo: zPopUp2.bottomAnchor, constant: -10),
+            zPopUp3.trailingAnchor.constraint(equalTo: zPopUp2.leadingAnchor, constant: -10),
+            zPopUp3.widthAnchor.constraint(equalTo: zPopUp2.widthAnchor, multiplier: 1.5),
+            zPopUp3.heightAnchor.constraint(equalTo: zPopUp2.heightAnchor, multiplier: 1.5),
             
             backBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             backBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -363,8 +389,8 @@ extension AnimalRoomVC {
             
             lamp.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 30),
             lamp.leadingAnchor.constraint(equalTo: basket.leadingAnchor, constant: -180),
-            lamp.widthAnchor.constraint(equalToConstant: 100),
-            lamp.heightAnchor.constraint(equalToConstant: 180),
+            lamp.widthAnchor.constraint(equalToConstant: 127),
+            lamp.heightAnchor.constraint(equalToConstant: 207),
             
             
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
@@ -374,8 +400,8 @@ extension AnimalRoomVC {
             
             phone.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 70),
             phone.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
-            phone.widthAnchor.constraint(equalToConstant: 22),
-            phone.heightAnchor.constraint(equalToConstant: 19),
+            phone.widthAnchor.constraint(equalToConstant: 144),
+            phone.heightAnchor.constraint(equalToConstant: 124),
             
             handCare.centerYAnchor.constraint(equalTo: phone.centerYAnchor),
             handCare.leadingAnchor.constraint(equalTo: phone.leadingAnchor),
@@ -399,6 +425,11 @@ extension AnimalRoomVC {
             careBtn.trailingAnchor.constraint(equalTo: foodBtn.trailingAnchor),
             
             //MARK: - Overlay Layout
+            overlaySleepingMode.widthAnchor.constraint(equalTo: view.widthAnchor),
+            overlaySleepingMode.heightAnchor.constraint(equalTo: view.heightAnchor),
+            overlaySleepingMode.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            overlaySleepingMode.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             overlay.widthAnchor.constraint(equalTo: view.widthAnchor),
             overlay.heightAnchor.constraint(equalTo: view.heightAnchor),
             overlay.centerXAnchor.constraint(equalTo: view.centerXAnchor),
