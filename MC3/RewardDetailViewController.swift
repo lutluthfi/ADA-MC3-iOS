@@ -13,6 +13,7 @@ struct rewardDetail{
     var rewardDesc : String
     var rewardImage : UIImage
 }
+
 var rewardDetailArray = [rewardDetail(rewardTitle: "Safari",
                                       rewardDesc: "Place: Taman Safari Indonesia \nActivities: Witness the majestic wildlife of Indonesia, an experience like no other (free lunch included). \nPrice: $150",
                                       rewardImage: #imageLiteral(resourceName: "Safari-1")),
@@ -21,7 +22,23 @@ var rewardDetailArray = [rewardDetail(rewardTitle: "Safari",
                                       rewardImage: #imageLiteral(resourceName: "Seminar-1")),
                          rewardDetail(rewardTitle: "Donation",
                                       rewardDesc: "Cause: Help Charlie to do a Surgery \nDetails: Charlie has two fractures on his hip due to falling onto something with a sharp edge. Please send positive vibes his way.",
-                                      rewardImage: #imageLiteral(resourceName: "Donation-1"))]
+                                      rewardImage: #imageLiteral(resourceName: "Donation-1")),
+                         rewardDetail(rewardTitle: "Safari",
+                                      rewardDesc: "Coming Soon !",
+                                      rewardImage: #imageLiteral(resourceName: "Safari-2")),
+                         rewardDetail(rewardTitle: "Seminar",
+                                      rewardDesc: "Coming Soon !",
+                                      rewardImage: #imageLiteral(resourceName: "Seminar-2")),
+                         rewardDetail(rewardTitle: "Donation",
+                                      rewardDesc: "Coming Soon !",
+                                      rewardImage: #imageLiteral(resourceName: "Donation-2")),
+                         rewardDetail(rewardTitle: "Seminar",
+                                      rewardDesc: "Coming Soon !",
+                                      rewardImage: #imageLiteral(resourceName: "Seminar-3")),
+                         rewardDetail(rewardTitle: "Donation",
+                                      rewardDesc: "Coming Soon !",
+                                      rewardImage: #imageLiteral(resourceName: "Donation-3"))
+]
 
 
 class RewardDetailViewController: UIViewController {
@@ -30,8 +47,12 @@ class RewardDetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     
+    let alertService = alertService()
     
-    
+    @IBAction func BuyButtonPressed(_ sender: UIButton) {
+        let alertVC = alertService.alert()
+        present(alertVC, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         buyButton.layer.cornerRadius = 10
@@ -42,21 +63,28 @@ class RewardDetailViewController: UIViewController {
         imageDetail.layer.cornerRadius = 15
         imageDetail.clipsToBounds = true
         
-        titleLabel.text = rewardDetailArray[selectedReward].rewardTitle
-        detailLabel.text = rewardDetailArray[selectedReward].rewardDesc
-        imageDetail.image = rewardDetailArray[selectedReward].rewardImage
+        if selectedReward < 3 {
+            titleLabel.text = rewardDetailArray[selectedReward].rewardTitle
+            detailLabel.text = rewardDetailArray[selectedReward].rewardDesc
+            imageDetail.image = rewardDetailArray[selectedReward].rewardImage
+        } else {
+            titleLabel.text = "Coming Soon !"
+            detailLabel.text = "Coming Soon !"
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
