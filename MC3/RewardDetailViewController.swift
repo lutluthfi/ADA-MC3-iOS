@@ -47,10 +47,10 @@ class RewardDetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
     
-    let alertService = alertService()
+    let AlertService = alertService()
     
     @IBAction func BuyButtonPressed(_ sender: UIButton) {
-        let alertVC = alertService.alert()
+        let alertVC = AlertService.alert()
         present(alertVC, animated: true)
     }
     override func viewDidLoad() {
