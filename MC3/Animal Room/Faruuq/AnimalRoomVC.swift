@@ -136,13 +136,18 @@ class AnimalRoomVC: UIViewController {
             
         } else {
             sleepingState = false
-            catSleeping.isHidden = true
-            catNormal.isHidden = false
+            catSleeping.isHidden = false
+            catSleeping.image = UIImage(named: "Cat-Awake")
+            catNormal.isHidden = true
             overlaySleepingMode.alpha = 0
             zPopUp1.isHidden = true
             zPopUp2.isHidden = true
             zPopUp3.isHidden = true
             timer?.invalidate()
+            progressBarIcon.image = UIImage(systemName: "zzz")
+            progressBarIcon.tintColor = UIColor(named: "413834")
+            progressBar.setProgress(sleep, animated: true)
+            progressBarAnimate()
         }
 
     }
@@ -300,14 +305,17 @@ class AnimalRoomVC: UIViewController {
                     switch bowl.image {
                     case bowlIcons[1]:
                         hunger += 0.1
+                        sleep -= 0.1
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
+                        sleep -= 0.1
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
+                        sleep -= 0.1
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     default:
@@ -573,6 +581,9 @@ class AnimalRoomVC: UIViewController {
                 z1Animation()
                 lampAnimation()
             } else {
+                catSleeping.isHidden = false
+                catSleeping.image = UIImage(named: "Cat-Awake")
+                catNormal.isHidden = true
                 sickPopUp.isHidden = true
                 bowl.isHidden = true
                 catFood.isHidden = true
