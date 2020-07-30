@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct redeemReward {
+    var rewardDetail : rewardDetail
+    var isRedeemed : Bool
+}
+
+var redeemRewardArray = [redeemReward]()
+
 class RewardBuyAlertViewController: UIViewController {
     var moneyDonated = 50
     var contentArray = ["Buy Safari Ticket to “Taman Safari Indonesia” for $150 ?", "Buy Smart Socialization Puppy Seminar Ticket for S100 ?", "How much do you want to donate ?"]
@@ -41,6 +48,12 @@ class RewardBuyAlertViewController: UIViewController {
     }
     @IBAction func okayPressed(_ sender: Any) {
         self.dismiss(animated: true)
+        if selectedReward != 2 {
+            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: false))
+        } else {
+            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: true))
+        }
+        
     }
     // donation items
     @IBOutlet weak var donationMoneyLabel: UILabel!
