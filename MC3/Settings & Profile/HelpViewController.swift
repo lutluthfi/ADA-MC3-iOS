@@ -13,6 +13,9 @@ class HelpViewController: UIViewController {
     @IBOutlet var help1Img: UIImageView!
     @IBOutlet var help2Img: UIImageView!
     @IBOutlet var help3Img: UIImageView!
+    @IBOutlet var help4Img: UIImageView!
+    @IBOutlet var help5Img: UIImageView!
+    @IBOutlet var help6Img: UIImageView!
     
     @IBOutlet var closeBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
@@ -40,12 +43,20 @@ class HelpViewController: UIViewController {
             help1Img.isHidden = false
             help2Img.isHidden = true
             help3Img.isHidden = true
+            help4Img.isHidden = true
+            help5Img.isHidden = true
+            help6Img.isHidden = true
+            
             prevBtn.isHidden = true
             break
         case 1:
             help1Img.isHidden = true
             help2Img.isHidden = false
             help3Img.isHidden = true
+            help4Img.isHidden = true
+            help5Img.isHidden = true
+            help6Img.isHidden = true
+            
             prevBtn.isHidden = false
             nextBtn.isHidden = false
             break
@@ -53,6 +64,43 @@ class HelpViewController: UIViewController {
             help1Img.isHidden = true
             help2Img.isHidden = true
             help3Img.isHidden = false
+            help4Img.isHidden = true
+            help5Img.isHidden = true
+            help6Img.isHidden = true
+            
+            prevBtn.isHidden = false
+            nextBtn.isHidden = false
+            break
+        case 3:
+            help1Img.isHidden = true
+            help2Img.isHidden = true
+            help3Img.isHidden = true
+            help4Img.isHidden = false
+            help5Img.isHidden = true
+            help6Img.isHidden = true
+            
+            prevBtn.isHidden = false
+            nextBtn.isHidden = false
+            break
+        case 4:
+            help1Img.isHidden = true
+            help2Img.isHidden = true
+            help3Img.isHidden = true
+            help4Img.isHidden = true
+            help5Img.isHidden = false
+            help6Img.isHidden = true
+            
+            prevBtn.isHidden = false
+            nextBtn.isHidden = false
+            break
+        case 5:
+            help1Img.isHidden = true
+            help2Img.isHidden = true
+            help3Img.isHidden = true
+            help4Img.isHidden = true
+            help5Img.isHidden = true
+            help6Img.isHidden = false
+            
             prevBtn.isHidden = false
             nextBtn.isHidden = true
             break
@@ -67,7 +115,7 @@ class HelpViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             break
         case nextBtn:
-            if (index < 2) {
+            if (index < 5) {
                 prepareHelpContent(index: index + 1)
             }
             break
