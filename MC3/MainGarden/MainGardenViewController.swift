@@ -131,6 +131,9 @@ extension MainGardenViewController: UICollectionViewDataSource, UICollectionView
 extension MainGardenViewController {
 
     private func showAnimalRoomScene() {
+        let storyboard = UIStoryboard(name: "AnimalRoomViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AnimalRoomVC")
+        self.present(vc, animated: true)
     }
 
     private func showInventoryScene() {
