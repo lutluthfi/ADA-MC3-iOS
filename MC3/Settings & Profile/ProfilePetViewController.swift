@@ -62,7 +62,7 @@ class ProfilePetViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             break
         case backBtn:
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
             break
         default:
             break

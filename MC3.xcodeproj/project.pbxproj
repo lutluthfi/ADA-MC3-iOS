@@ -11,8 +11,6 @@
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
 		2AE7410224CA505300DF963B /* OtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7410124CA505300DF963B /* OtherVC.swift */; };
-		448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */; };
-		448D224424C5745B00ED44E8 /* TestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
@@ -56,6 +54,7 @@
 		4F6FB31024D0449C0079AADB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30C24D0449C0079AADB /* CustomButton.swift */; };
 		4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30D24D0449C0079AADB /* SettingLauncher.swift */; };
 		4F6FB31224D0449C0079AADB /* TikusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30E24D0449C0079AADB /* TikusViewController.swift */; };
+		4F6FB33624D484C90079AADB /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +62,6 @@
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
 		2AE7410124CA505300DF963B /* OtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherVC.swift; sourceTree = "<group>"; };
-		448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSettingsViewController.storyboard; sourceTree = "<group>"; };
-		448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingsViewController.swift; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +107,7 @@
 		4F6FB30C24D0449C0079AADB /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4F6FB30D24D0449C0079AADB /* SettingLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingLauncher.swift; sourceTree = "<group>"; };
 		4F6FB30E24D0449C0079AADB /* TikusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TikusViewController.swift; sourceTree = "<group>"; };
+		4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				4423D62D24C8433A004A73D4 /* Components */,
-				448D224124C573F400ED44E8 /* SettingsViewController.storyboard */,
+				4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */,
 				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
 				44B2082924C5871100474342 /* ProfileViewController.swift */,
 				44B2082B24C5873A00474342 /* HelpViewController.swift */,
@@ -465,14 +463,13 @@
 				2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */,
 				4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */,
 				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
+				4F6FB33624D484C90079AADB /* SettingsViewController.storyboard in Resources */,
 				4F2144B924CD54B0007DAAA8 /* DialogAnimalInfoView.xib in Resources */,
 				4F6FB2FF24D03F270079AADB /* LaunchScreen.storyboard in Resources */,
 				4F6FB30F24D0449C0079AADB /* TikusStoryboard.storyboard in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
-				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
-				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,7 +660,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.ruq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -681,7 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.ruq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -57,11 +57,11 @@ class MainGardenViewController: UIViewController {
             MenuMainGardenCollectionViewCell.self,
             forCellWithReuseIdentifier: MenuMainGardenCollectionViewCell.identifier
         )
-        let dialogId = UUID().uuidString
-        let dialogScene = DialogFactory
-            .Scene
-            .animalInfo(dialogId: dialogId, delegate: nil)
-        self.dialogFactory.show(scene: dialogScene)
+        //        let dialogId = UUID().uuidString
+        //        let dialogScene = DialogFactory
+        //            .Scene
+        //            .animalInfo(dialogId: dialogId, delegate: nil)
+        //        self.dialogFactory.show(scene: dialogScene)
     }
 
 }
@@ -145,6 +145,7 @@ extension MainGardenViewController {
     private func showSettingScene() {
         let storyboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SettingsViewController")
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 

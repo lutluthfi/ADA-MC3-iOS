@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -28,7 +28,7 @@
                                         <rect key="frame" x="-0.5" y="-0.5" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
+                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,6 +61,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="onButtonPress:" destination="RqK-so-xaT" eventType="touchUpInside" id="ME5-SD-hHq"/>
+                                                    <segue destination="8m1-gy-XtW" kind="show" identifier="settings2profile" id="ObA-Xb-IeN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0l-Lx-nsL">
@@ -270,8 +271,7 @@
                         <outlet property="settingsCloseBtn" destination="L6D-Z4-S8V" id="ddz-Lv-cWJ"/>
                         <outlet property="settingsView" destination="ZGs-TW-Fhj" id="BTc-w5-c2j"/>
                         <outlet property="soundBtn" destination="eQp-aK-IhU" id="DhA-3y-CWn"/>
-                        <segue destination="7Bt-Pn-MPU" kind="show" identifier="settings2profile" id="gXf-Bw-Upw"/>
-                        <segue destination="6hV-6e-Nyb" kind="presentation" identifier="settings2help" id="Z7b-VW-Fhi"/>
+                        <segue destination="6hV-6e-Nyb" kind="presentation" identifier="settings2help" modalTransitionStyle="crossDissolve" id="Z7b-VW-Fhi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bm-ae-9nH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="130.58035714285714" y="392.75362318840581"/>
+            <point key="canvasLocation" x="161" y="288"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="JIq-95-1Cc">
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLd-To-r7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.8125" y="-581.15942028985512"/>
+            <point key="canvasLocation" x="858" y="287"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="OoX-Tu-fw4">
@@ -455,7 +455,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
+                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -501,7 +501,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
+                                <rect key="frame" x="387" y="26" width="48" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -577,13 +577,13 @@
                         <outlet property="ownerNameLabel" destination="Gvo-Gr-rbt" id="XHi-od-wmC"/>
                         <outlet property="ownerPhotoImg" destination="waI-7t-dkQ" id="DnI-OM-C2y"/>
                         <outlet property="signoutBtn" destination="Tjc-CZ-QU5" id="hLW-b8-3Y6"/>
-                        <segue destination="Gjs-IG-KXl" kind="showDetail" identifier="profile2pet" id="H9u-ZC-vK7"/>
+                        <segue destination="Gjs-IG-KXl" kind="show" identifier="profile2pet" id="H9u-ZC-vK7"/>
                         <segue destination="NIa-Ua-bvi" kind="showDetail" identifier="profile2articles" id="lZZ-1g-35C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdq-5C-WkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.8125" y="392.75362318840581"/>
+            <point key="canvasLocation" x="858" y="1203"/>
         </scene>
         <!--Profile Articles View Controller-->
         <scene sceneID="hzw-M4-c8V">
@@ -711,7 +711,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1645.9821428571429" y="-630.43478260869574"/>
+            <point key="canvasLocation" x="1602" y="287"/>
         </scene>
         <!--Profile Pet View Controller-->
         <scene sceneID="i5j-e2-sgd">
@@ -764,25 +764,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
-                                <rect key="frame" x="131" y="293" width="114.5" height="29"/>
+                                <rect key="frame" x="135" y="293" width="106.5" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="352" width="32" height="18"/>
+                                <rect key="frame" x="172" y="351" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="26" width="81" height="29"/>
+                                <rect key="frame" x="556" y="26" width="69" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -908,6 +908,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sBL-Fl-gB4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Sax-aD-QXI"/>
                     <connections>
                         <outlet property="backBtn" destination="pjk-NV-Ecc" id="RSd-Kx-b4j"/>
                         <outlet property="foodProgress" destination="Pc6-NG-pXC" id="qMP-yP-oBv"/>
@@ -920,7 +921,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fO-zj-e0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.9821428571429" y="388.40579710144931"/>
+            <point key="canvasLocation" x="1602" y="1203"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LDB-qq-L6C">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="8m1-gy-XtW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Gau-9A-ZeR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fxi-kT-OSW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Bt-Pn-MPU" kind="relationship" relationship="rootViewController" id="1lS-4g-mLY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDx-JI-ybR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="161" y="1204"/>
         </scene>
     </scenes>
     <resources>
