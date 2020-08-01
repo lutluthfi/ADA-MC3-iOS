@@ -45,9 +45,9 @@ extension AppDelegate {
 
     private func navigationDidStarted() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
+        let storyboard = UIStoryboard(name: MainGardenViewController.identifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(
-            identifier: SplashViewController.identifier
+            identifier: MainGardenViewController.identifier
         )
         self.navigationController.setViewControllers([viewController], animated: true)
         self.window?.rootViewController = self.navigationController

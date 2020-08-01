@@ -64,8 +64,6 @@ class MainGardenViewController: UIViewController {
     @IBOutlet weak var statusSleepIconContainerView: UIView!
     @IBOutlet weak var statusSleepProgressView: UIProgressView!
 
-    @IBOutlet weak var catImageView: UIImageView!
-
     private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
@@ -83,12 +81,6 @@ class MainGardenViewController: UIViewController {
 
     private func setupViewDidLoad() {
         self.activateDismissKeyboardTapGestureRecognizer()
-
-        self.catImageView.isUserInteractionEnabled = true
-        self.catImageView.gestureRecognizers = [
-            UITapGestureRecognizer(target: self, action: #selector(self.onCatImageViewTapped(_:)))
-        ]
-
         self.coinContainerView.layer.cornerRadius = Constant.kCoinContainerViewCornerRadius
         self.coinContainerView.layer.borderColor = #colorLiteral(red: 0.2549999952, green: 0.2199999988, blue: 0.2039999962, alpha: 1)
         self.coinContainerView.layer.borderWidth = Constant.kCoinContainerViewBorderWidth
@@ -180,7 +172,8 @@ class MainGardenViewController: UIViewController {
             .kStatusAnimalInfoProgressViewCorner
         self.statusPettingProgressView.transform = Constant
             .kStatusAnimalInfoProgressViewTransform
-        
+
+        self.doGeneratePetImageView()
         //        let dialogId = UUID().uuidString
         //        let dialogScene = DialogFactory
         //            .Scene
@@ -193,7 +186,7 @@ class MainGardenViewController: UIViewController {
 // MARK: - @objc Function
 extension MainGardenViewController {
 
-    @objc private func onCatImageViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc private func onPetImageViewTapped(_ sender: UITapGestureRecognizer) {
         let isContainerViewShow = self.leadingAllStatusAnimalInfoContainerViewConstraint.constant ==
             Constant.kShowLeadingAllStatusAnimalInfoContainerViewConstraint
         self.leadingAllStatusAnimalInfoContainerViewConstraint.constant = isContainerViewShow ?
@@ -223,7 +216,24 @@ extension MainGardenViewController {
 extension MainGardenViewController {
 
     private func doGeneratePetImageView() {
-        
+        let petImageView = UIImageView()
+        let xPositionRange = self.petPositionHolderView.frame.origin.x ..<
+            self.petPositionHolderView.frame.width
+        let yPositionRange = self.petPositionHolderView.frame.origin.y ..<
+            (self.view.frame.height - self.petPositionHolderView.frame.height)
+        let xPosition = CGFloat.random(in: xPositionRange)
+        let yPosition = CGFloat.random(in: yPositionRange)
+        petImageView.frame = .init(x: xPosition, y: yPosition, width: 70, height: 90)
+        petImageView.isUserInteractionEnabled = true
+        petImageView.image = UIImage(named: "Cat-Normal-1")
+        petImageView.gestureRecognizers = [
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.onPetImageViewTapped(_:))
+            )
+        ]
+        self.contentView.addSubview(petImageView)
+        self.contentView.bringSubviewToFront(petImageView)
     }
 
 }
