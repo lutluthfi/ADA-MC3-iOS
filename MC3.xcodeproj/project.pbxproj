@@ -14,6 +14,7 @@
 		4417902124D4F87700C6C655 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902024D4F87700C6C655 /* AudioManager.swift */; };
 		4417902424D4FF5000C6C655 /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417902324D4FF5000C6C655 /* backsound.mp3 */; };
 		4417902624D5106600C6C655 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902524D5106600C6C655 /* SoundManager.swift */; };
+		4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902D24D51AD800C6C655 /* SoundEnum.swift */; };
 		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
@@ -68,6 +69,7 @@
 		4417902024D4F87700C6C655 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		4417902324D4FF5000C6C655 /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
 		4417902524D5106600C6C655 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		4417902D24D51AD800C6C655 /* SoundEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEnum.swift; sourceTree = "<group>"; };
 		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 				4417902324D4FF5000C6C655 /* backsound.mp3 */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		4417902C24D51AC500C6C655 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4417902D24D51AD800C6C655 /* SoundEnum.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4423D62D24C8433A004A73D4 /* Components */ = {
@@ -397,6 +407,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				4417902C24D51AC500C6C655 /* Model */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
@@ -532,6 +543,7 @@
 				4F6FB31024D0449C0079AADB /* CustomButton.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,
+				4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */,
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */,
 				4F6FB2F424D03ED20079AADB /* AppDelegate.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 
 let settingsDefaults = UserDefaults.standard
 let backgroundMusic = AudioManager.init(audioPath: "backsound.mp3")
+let soundManager = SoundManager.init()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         backgroundMusic.stop()
+        soundManager.stopAll()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

@@ -9,29 +9,46 @@
 import Foundation
 import AVFoundation
 
-class SoundManager: AudioManager {
-    
-    override func play() {
-        let soundStatus = settingsDefaults.bool(forKey: "soundStatus")
+class SoundManager {
+    var soundCollection: [SoundEnum: AVAudioPlayer] = [:]
+    var avAudioPlayer: AVAudioPlayer?
+
+    init() {
+        /** PREPARE SOUND*/
         
-//        if (soundStatus) {
-//            if let player: AVAudioPlayer = self.avAudioPlayer {
-//                if (!player.isPlaying) {
-//                    player.numberOfLoops = 1
-//                    player.play()
-//                }
-//                
-//            } else {
-//                print("FAILED TO PLAY AUDIO")
-//            }
-//        }
+        // prepare catpurr sound
+        let pathCatPur = Bundle.main.path(forResource: "Cat-Purr.mp3", ofType:nil)!
+        let urlCatPurr = URL(fileURLWithPath: pathCatPur)
+       
+        do {
+            let catPurAvAudioPlayer = try AVAudioPlayer(contentsOf: urlCatPurr)
+            soundCollection[.catPurr] = catPurAvAudioPlayer
+        } catch {
+            print("FAILED TO INIT SOUND MANAGER")
+        }
     }
     
-    override func stop() {
+    func play(soundType: SoundEnum) {
         let soundStatus = settingsDefaults.bool(forKey: "soundStatus")
         
         if (soundStatus) {
-            if let player: AVAudioPlayer = avAudioPlayer {
+            if let player: AVAudioPlayer = soundCollection[soundType] {
+                if (!player.isPlaying) {
+                    player.numberOfLoops = 1
+                    player.play()
+                }
+                
+            } else {
+                print("FAILED TO PLAY AUDIO")
+            }
+        }
+    }
+    
+    func stop(soundType: SoundEnum) {
+        let soundStatus = settingsDefaults.bool(forKey: "soundStatus")
+        
+        if (soundStatus) {
+            if let player: AVAudioPlayer = soundCollection[soundType] {
                 player.stop()
             } else {
                 print("FAILED TO STOP AUDIO")
@@ -39,7 +56,11 @@ class SoundManager: AudioManager {
         }
     }
     
-    public func getPlayer() -> AVAudioPlayer?{
-        return self.avAudioPlayer ?? nil
+    public func getPlayer(soundType: SoundEnum) -> AVAudioPlayer?{
+        return soundCollection[soundType] ?? nil
+    }
+    
+    public func stopAll() {
+        self.stop(soundType: .catPurr)
     }
 }
