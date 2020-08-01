@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
+        backgroundMusic.stop()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -59,6 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
+            
+        if (musicStatus) {
+            backgroundMusic.play()
+        } else {
+            backgroundMusic.stop()
+        }
     }
 
 }
