@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -83,18 +83,218 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i38-8t-XCO">
+                                                <rect key="frame" x="-550" y="220" width="400" height="400"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngf-AP-Lfz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLj-Dc-Tge">
+                                                        <rect key="frame" x="257" y="0.0" width="28" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-food" translatesAutoresizingMaskIntoConstraints="NO" id="gZu-7H-z9J">
+                                                                <rect key="frame" x="6" y="6" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="cFc-ll-Y0K"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="nBn-pu-MnG"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="gZu-7H-z9J" firstAttribute="centerX" secondItem="BLj-Dc-Tge" secondAttribute="centerX" id="7Ar-67-tYa"/>
+                                                            <constraint firstItem="gZu-7H-z9J" firstAttribute="centerY" secondItem="BLj-Dc-Tge" secondAttribute="centerY" id="8jI-bW-oMt"/>
+                                                            <constraint firstAttribute="width" constant="28" id="oR9-X6-gxM"/>
+                                                            <constraint firstAttribute="height" constant="28" id="qKZ-fN-PWu"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O6U-Rv-135">
+                                                        <rect key="frame" x="301" y="13" width="78" height="2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="VIO-eH-nAc"/>
+                                                        </constraints>
+                                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="trackTintColor" name="413834"/>
+                                                    </progressView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjF-Zd-qqp">
+                                                        <rect key="frame" x="307" y="30" width="28" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-sleep" translatesAutoresizingMaskIntoConstraints="NO" id="p4c-xO-qdf">
+                                                                <rect key="frame" x="6" y="6" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="Jvr-7v-k4p"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="UtP-X6-HuV"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="28" id="54a-tt-PJX"/>
+                                                            <constraint firstItem="p4c-xO-qdf" firstAttribute="centerY" secondItem="RjF-Zd-qqp" secondAttribute="centerY" id="BZd-nW-LX5"/>
+                                                            <constraint firstAttribute="height" constant="28" id="SaN-N5-u4O"/>
+                                                            <constraint firstItem="p4c-xO-qdf" firstAttribute="centerX" secondItem="RjF-Zd-qqp" secondAttribute="centerX" id="X15-pO-wNw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZRC-gz-vhz" customClass="StatusAnimalInfoProgressView" customModule="MC3" customModuleProvider="target">
+                                                        <rect key="frame" x="351" y="43" width="78" height="2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="6W2-GC-Hed"/>
+                                                        </constraints>
+                                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="trackTintColor" name="413834"/>
+                                                    </progressView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="une-em-dmD">
+                                                        <rect key="frame" x="342" y="65" width="28" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-vet" translatesAutoresizingMaskIntoConstraints="NO" id="qXj-O0-Zba">
+                                                                <rect key="frame" x="6" y="6" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="2yV-oy-dI7"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="bQx-fL-WoC"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="qXj-O0-Zba" firstAttribute="centerX" secondItem="une-em-dmD" secondAttribute="centerX" id="2bx-Sw-G1G"/>
+                                                            <constraint firstAttribute="height" constant="28" id="YpE-Dj-vSt"/>
+                                                            <constraint firstAttribute="width" constant="28" id="cvH-ZG-4Ck"/>
+                                                            <constraint firstItem="qXj-O0-Zba" firstAttribute="centerY" secondItem="une-em-dmD" secondAttribute="centerY" id="wOD-09-P7Z"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nqo-0J-wiK">
+                                                        <rect key="frame" x="386" y="78" width="78" height="2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="SOP-ZX-Gx5"/>
+                                                        </constraints>
+                                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="trackTintColor" name="413834"/>
+                                                    </progressView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-HZ-AZ6">
+                                                        <rect key="frame" x="367" y="105" width="28" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-game" translatesAutoresizingMaskIntoConstraints="NO" id="I5S-pg-xAj">
+                                                                <rect key="frame" x="6" y="6" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="16" id="doY-Xt-SBv"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="kcn-F0-uCc"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="I5S-pg-xAj" firstAttribute="centerX" secondItem="rfz-HZ-AZ6" secondAttribute="centerX" id="K22-IH-mJP"/>
+                                                            <constraint firstAttribute="width" constant="28" id="TGH-eO-vpr"/>
+                                                            <constraint firstItem="I5S-pg-xAj" firstAttribute="centerY" secondItem="rfz-HZ-AZ6" secondAttribute="centerY" id="UcL-b3-dsO"/>
+                                                            <constraint firstAttribute="height" constant="28" id="XHB-td-fNS"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iDw-3M-p8w">
+                                                        <rect key="frame" x="411" y="118" width="78" height="2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="csh-n4-3Fl"/>
+                                                        </constraints>
+                                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="trackTintColor" name="413834"/>
+                                                    </progressView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJf-v0-yZ6">
+                                                        <rect key="frame" x="380" y="150" width="28" height="28"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-cat-petting" translatesAutoresizingMaskIntoConstraints="NO" id="FMo-Lt-8tU">
+                                                                <rect key="frame" x="6" y="6" width="16" height="16"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="28e-VD-MMb"/>
+                                                                    <constraint firstAttribute="height" constant="16" id="9ZF-95-wH1"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="FMo-Lt-8tU" firstAttribute="centerX" secondItem="yJf-v0-yZ6" secondAttribute="centerX" id="CYN-Xh-cdQ"/>
+                                                            <constraint firstAttribute="height" constant="28" id="K4B-aG-2eO"/>
+                                                            <constraint firstAttribute="width" constant="28" id="TgJ-Uu-FXO"/>
+                                                            <constraint firstItem="FMo-Lt-8tU" firstAttribute="centerY" secondItem="yJf-v0-yZ6" secondAttribute="centerY" id="m08-dD-Nnf"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ROf-oF-2kn" customClass="StatusAnimalInfoProgressView" customModule="MC3" customModuleProvider="target">
+                                                        <rect key="frame" x="424" y="163" width="78" height="2"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="78" id="Qn9-jp-LNz"/>
+                                                        </constraints>
+                                                        <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="trackTintColor" name="413834"/>
+                                                    </progressView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat-Normal-1" translatesAutoresizingMaskIntoConstraints="NO" id="7uL-Bj-Twj">
+                                                        <rect key="frame" x="211" y="238" width="120" height="152"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="OEl-QL-Sny"/>
+                                                            <constraint firstAttribute="height" constant="152" id="PzE-YG-SDW"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="BLj-Dc-Tge" secondAttribute="trailing" constant="115" id="0CO-pr-RwK"/>
+                                                    <constraint firstItem="RjF-Zd-qqp" firstAttribute="top" secondItem="i38-8t-XCO" secondAttribute="top" constant="30" id="6bm-2h-r2i"/>
+                                                    <constraint firstItem="rfz-HZ-AZ6" firstAttribute="top" secondItem="i38-8t-XCO" secondAttribute="top" constant="105" id="7AF-8X-ajm"/>
+                                                    <constraint firstItem="nqo-0J-wiK" firstAttribute="leading" secondItem="une-em-dmD" secondAttribute="trailing" constant="16" id="BWG-XQ-Axv"/>
+                                                    <constraint firstItem="une-em-dmD" firstAttribute="top" secondItem="i38-8t-XCO" secondAttribute="top" constant="65" id="BzA-rC-Az6"/>
+                                                    <constraint firstAttribute="height" constant="400" id="CRP-iY-CTh"/>
+                                                    <constraint firstAttribute="width" constant="400" id="Ces-hZ-k1a"/>
+                                                    <constraint firstAttribute="trailing" secondItem="une-em-dmD" secondAttribute="trailing" constant="30" id="DbU-cy-0dM"/>
+                                                    <constraint firstItem="ROf-oF-2kn" firstAttribute="centerY" secondItem="yJf-v0-yZ6" secondAttribute="centerY" id="EhA-ai-WlP"/>
+                                                    <constraint firstItem="ngf-AP-Lfz" firstAttribute="leading" secondItem="i38-8t-XCO" secondAttribute="leading" id="GWj-Nz-BjW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yJf-v0-yZ6" secondAttribute="trailing" constant="-8" id="Hgp-cT-ZtX"/>
+                                                    <constraint firstItem="ZRC-gz-vhz" firstAttribute="centerY" secondItem="RjF-Zd-qqp" secondAttribute="centerY" id="IiX-uO-fOt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ngf-AP-Lfz" secondAttribute="bottom" id="Qd3-Xj-QxQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ngf-AP-Lfz" secondAttribute="trailing" id="XfE-Vq-kw2"/>
+                                                    <constraint firstItem="ROf-oF-2kn" firstAttribute="leading" secondItem="yJf-v0-yZ6" secondAttribute="trailing" constant="16" id="Zs3-i6-aId"/>
+                                                    <constraint firstItem="iDw-3M-p8w" firstAttribute="leading" secondItem="rfz-HZ-AZ6" secondAttribute="trailing" constant="16" id="d3E-Sm-WkG"/>
+                                                    <constraint firstItem="yJf-v0-yZ6" firstAttribute="top" secondItem="i38-8t-XCO" secondAttribute="top" constant="150" id="eJa-ZM-RYG"/>
+                                                    <constraint firstItem="O6U-Rv-135" firstAttribute="centerY" secondItem="BLj-Dc-Tge" secondAttribute="centerY" id="fW3-Cj-9Y5"/>
+                                                    <constraint firstItem="iDw-3M-p8w" firstAttribute="centerY" secondItem="rfz-HZ-AZ6" secondAttribute="centerY" id="hjm-bV-WmP"/>
+                                                    <constraint firstItem="BLj-Dc-Tge" firstAttribute="top" secondItem="ngf-AP-Lfz" secondAttribute="top" id="j1p-W8-iiy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rfz-HZ-AZ6" secondAttribute="trailing" constant="5" id="j6q-Ei-fqc"/>
+                                                    <constraint firstItem="O6U-Rv-135" firstAttribute="leading" secondItem="BLj-Dc-Tge" secondAttribute="trailing" constant="16" id="jGJ-pi-giZ"/>
+                                                    <constraint firstItem="7uL-Bj-Twj" firstAttribute="centerY" secondItem="yJf-v0-yZ6" secondAttribute="centerY" constant="150" id="kOW-5W-0Gs"/>
+                                                    <constraint firstItem="ngf-AP-Lfz" firstAttribute="top" secondItem="i38-8t-XCO" secondAttribute="top" id="kvO-hB-Gd2"/>
+                                                    <constraint firstItem="7uL-Bj-Twj" firstAttribute="centerX" secondItem="BLj-Dc-Tge" secondAttribute="centerX" id="mts-MM-wCF"/>
+                                                    <constraint firstItem="ZRC-gz-vhz" firstAttribute="leading" secondItem="RjF-Zd-qqp" secondAttribute="trailing" constant="16" id="rJe-wf-8eg"/>
+                                                    <constraint firstItem="nqo-0J-wiK" firstAttribute="centerY" secondItem="une-em-dmD" secondAttribute="centerY" id="rVl-qp-OVW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RjF-Zd-qqp" secondAttribute="trailing" constant="65" id="u5C-3Z-ktG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTL-dw-Me9">
+                                                <rect key="frame" x="167.5" y="280" width="607.5" height="110"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" constant="110" id="fTc-0F-K3N"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="J0A-Id-ZZe" secondAttribute="trailing" id="06l-uk-42P"/>
                                             <constraint firstAttribute="trailing" secondItem="p5V-KZ-Bfl" secondAttribute="trailing" constant="57" id="0b8-Ze-qxz"/>
                                             <constraint firstAttribute="bottom" secondItem="p5V-KZ-Bfl" secondAttribute="bottom" constant="21" id="B70-dn-YZ4"/>
+                                            <constraint firstItem="p5V-KZ-Bfl" firstAttribute="leading" secondItem="tTL-dw-Me9" secondAttribute="trailing" constant="24" id="JWw-VK-Axa"/>
+                                            <constraint firstItem="i38-8t-XCO" firstAttribute="trailing" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="-150" identifier="AllStatusAnimalInfoContainerViewLeading" id="JyH-IQ-AIr"/>
                                             <constraint firstItem="BD1-8g-u55" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="57" id="VVl-OZ-ssD"/>
+                                            <constraint firstItem="tTL-dw-Me9" firstAttribute="leading" secondItem="BD1-8g-u55" secondAttribute="trailing" id="aJn-tj-cSo"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" id="fd2-AO-NH2"/>
                                             <constraint firstItem="BD1-8g-u55" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="21" id="gNh-Am-F00"/>
+                                            <constraint firstAttribute="bottom" secondItem="tTL-dw-Me9" secondAttribute="bottom" constant="24" id="hNA-xk-ucd"/>
                                             <constraint firstItem="p5V-KZ-Bfl" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="21" id="jen-am-oo7"/>
                                             <constraint firstAttribute="bottom" secondItem="J0A-Id-ZZe" secondAttribute="bottom" id="tfW-4y-iem"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="twr-Do-Zkx"/>
+                                            <constraint firstItem="tTL-dw-Me9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="250" id="wBL-8e-8t6"/>
+                                            <constraint firstItem="i38-8t-XCO" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="220" id="zCW-54-O4w"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -120,10 +320,27 @@
                         <viewLayoutGuide key="safeArea" id="pOF-qA-HGU"/>
                     </view>
                     <connections>
+                        <outlet property="allStatusAnimalInfoBackgroundImageView" destination="ngf-AP-Lfz" id="pr2-pF-Ifg"/>
+                        <outlet property="allStatusAnimalInfoContainerView" destination="i38-8t-XCO" id="STZ-bZ-mJz"/>
+                        <outlet property="centerYPetAnimalInfoImageView" destination="kOW-5W-0Gs" id="Zi3-IL-h7b"/>
                         <outlet property="coinAmountLabel" destination="8X3-Tv-5II" id="yXK-Z5-Jdf"/>
                         <outlet property="coinContainerView" destination="BD1-8g-u55" id="9LV-cb-VQt"/>
+                        <outlet property="contentView" destination="Ioc-Qk-8Et" id="O8H-Fg-BmF"/>
+                        <outlet property="leadingAllStatusAnimalInfoContainerViewConstraint" destination="JyH-IQ-AIr" id="RJ9-yY-u7K"/>
+                        <outlet property="mainGardenBackgroundImageView" destination="J0A-Id-ZZe" id="AzX-pd-WxM"/>
                         <outlet property="menuCollectionView" destination="p5V-KZ-Bfl" id="zVp-Sd-F0P"/>
+                        <outlet property="petPositionHolderView" destination="tTL-dw-Me9" id="8CD-6d-TIh"/>
                         <outlet property="scrollView" destination="e1T-yg-sDf" id="7hx-W1-yH7"/>
+                        <outlet property="statusFoodIconContainerView" destination="BLj-Dc-Tge" id="W0c-30-t6t"/>
+                        <outlet property="statusFoodProgressView" destination="O6U-Rv-135" id="rc5-oj-sGr"/>
+                        <outlet property="statusHealthIconContainerView" destination="une-em-dmD" id="o4h-qN-dnl"/>
+                        <outlet property="statusHealthProgressView" destination="nqo-0J-wiK" id="ubP-QJ-sId"/>
+                        <outlet property="statusPettingIconContainerView" destination="yJf-v0-yZ6" id="YPY-vR-n2y"/>
+                        <outlet property="statusPettingProgressView" destination="ROf-oF-2kn" id="YQq-9H-LsI"/>
+                        <outlet property="statusPlayIconContainerView" destination="rfz-HZ-AZ6" id="TOh-a2-eX6"/>
+                        <outlet property="statusPlayProgressView" destination="iDw-3M-p8w" id="JnQ-Mp-jdV"/>
+                        <outlet property="statusSleepIconContainerView" destination="RjF-Zd-qqp" id="9Fn-yr-X08"/>
+                        <outlet property="statusSleepProgressView" destination="ZRC-gz-vhz" id="IMT-zG-kRN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mG-81-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,7 +350,13 @@
     </scenes>
     <resources>
         <image name="Background-Intro" width="896" height="414"/>
+        <image name="Cat-Normal-1" width="182" height="230"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="profile-cat-food" width="26" height="16"/>
+        <image name="profile-cat-game" width="27" height="18"/>
+        <image name="profile-cat-petting" width="28" height="27"/>
+        <image name="profile-cat-sleep" width="27" height="27"/>
+        <image name="profile-cat-vet" width="27" height="26"/>
         <namedColor name="413834">
             <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
