@@ -384,7 +384,8 @@ class AnimalRoomVC: UIViewController {
             if handCare.frame.intersects(catNormal.frame) {
                 
                 if love < 1 {
-                    catPurr?.play()
+//                    catPurr?.play()
+                    soundManager.play(soundType: .catPurr)
                     love += 0.001
                     if love >= 1 {
                         rewardsValue += 10
