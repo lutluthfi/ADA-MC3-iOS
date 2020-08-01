@@ -590,9 +590,11 @@
                         <outlet property="signoutBtn" destination="Tjc-CZ-QU5" id="hLW-b8-3Y6"/>
                         <segue destination="Gjs-IG-KXl" kind="showDetail" identifier="profile2pet" id="H9u-ZC-vK7"/>
                         <segue destination="NIa-Ua-bvi" kind="showDetail" identifier="profile2articles" id="lZZ-1g-35C"/>
+                        <segue destination="cc2-9F-WmJ" kind="unwind" identifier="unwind2MainGardenView" unwindAction="unwindToMainGardenView:" id="ZO2-RY-oTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdq-5C-WkN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cc2-9F-WmJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="857.8125" y="392.75362318840581"/>
         </scene>
@@ -927,9 +929,11 @@
                         <outlet property="pettingProgress" destination="d72-NA-uD8" id="OmR-Om-c3n"/>
                         <outlet property="sleepProgress" destination="Kay-J6-hOS" id="NpV-n0-sWW"/>
                         <outlet property="vetProgress" destination="ctv-4p-Nki" id="pfW-Uh-F8S"/>
+                        <segue destination="Jlw-82-Ccz" kind="unwind" identifier="unwind2MainGardenView" unwindAction="unwindToMainGardenView:" id="WXy-HS-L9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fO-zj-e0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Jlw-82-Ccz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1645.9821428571429" y="388.40579710144931"/>
         </scene>

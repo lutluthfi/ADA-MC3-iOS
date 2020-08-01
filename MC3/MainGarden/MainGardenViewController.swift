@@ -63,6 +63,11 @@ class MainGardenViewController: UIViewController {
             .animalInfo(dialogId: dialogId, delegate: nil)
         self.dialogFactory.show(scene: dialogScene)
     }
+    
+    // NEEDED! Do not delete!
+    @IBAction func unwindToMainGardenView(_ segue : UIStoryboardSegue) {
+      // Do nothing
+    }
 
 }
 
