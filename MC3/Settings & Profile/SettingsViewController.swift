@@ -27,6 +27,10 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet var aboutContentLabel: UILabel!
     
+    var musicStatus: Bool = true
+    var soundStatus: Bool = true
+    var notificationStatus: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
@@ -41,6 +45,10 @@ class SettingsViewController: UIViewController {
         settingsView.layer.cornerRadius = 10
         
         aboutView.layer.cornerRadius = 10
+        
+        setMusicIcon(status: settingsDefaults.bool(forKey: "musicStatus"))
+        setSoundIcon(status: settingsDefaults.bool(forKey: "soundStatus"))
+        setNotificationIcon(status: settingsDefaults.bool(forKey: "notificationStatus"))
     }
     
     @IBAction func onBackgroundViewTap(_ sender: UITapGestureRecognizer) {
@@ -49,6 +57,47 @@ class SettingsViewController: UIViewController {
         if ((location.x < contentView.frame.minX || location.x > contentView.frame.maxX) || (location.y < contentView.frame.minY || location.y > contentView.frame.maxY)) {
             dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func setMusicIcon(status: Bool) {
+        if (status) {
+            musicBtn.setImage(UIImage(systemName: "music.note"), for: .normal)
+        } else {
+            musicBtn.setImage(#imageLiteral(resourceName: "music-slash"), for: .normal)
+        }
+        
+        musicStatus = status
+        settingsDefaults.set(status, forKey: "musicStatus")
+        
+        if (backgroundMusic.getPlayerStatus() != status) {
+            if (status) {
+                backgroundMusic.play()
+            }else {
+                backgroundMusic.stop()
+            }
+        }
+    }
+    
+    func setSoundIcon(status: Bool) {
+        if (status) {
+            soundBtn.setImage(UIImage(systemName: "speaker.2.fill"), for: .normal)
+        } else {
+            soundBtn.setImage(UIImage(systemName: "speaker.slash.fill"), for: .normal)
+        }
+        
+        soundStatus = status
+        settingsDefaults.set(status, forKey: "soundStatus")
+    }
+    
+    func setNotificationIcon(status: Bool) {
+        if (status) {
+            notificationBtn.setImage(UIImage(systemName: "bell.fill"), for: .normal)
+        } else {
+            notificationBtn.setImage(UIImage(systemName: "bell.slash.fill"), for: .normal)
+        }
+        
+        notificationStatus = status
+        settingsDefaults.set(status, forKey: "notificationStatus")
     }
     
     @IBAction func onButtonPress(_ sender: UIButton) {
@@ -60,13 +109,16 @@ class SettingsViewController: UIViewController {
             aboutView.isHidden = true
             break
         case musicBtn:
+            setMusicIcon(status: !musicStatus)
             break
         case soundBtn:
+            setSoundIcon(status: !soundStatus)
             break
         case profileBtn:
             performSegue(withIdentifier: "settings2profile", sender: nil)
             break
         case notificationBtn:
+            setNotificationIcon(status: !notificationStatus)
             break
         case helpBtn:
             performSegue(withIdentifier: "settings2help", sender: nil)

@@ -8,6 +8,9 @@
 
 import UIKit
 
+let settingsDefaults = UserDefaults.standard
+let backgroundMusic = AudioManager.init(audioPath: "backsound.mp3")
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,6 +26,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
+        // this code to check and set initial settings default
+        let isInitSettingsDefault = settingsDefaults.bool(forKey: "init")
+        
+        if !isInitSettingsDefault {
+            settingsDefaults.set(true, forKey: "musicStatus")
+            settingsDefaults.set(true, forKey: "soundStatus")
+            settingsDefaults.set(true, forKey: "notificationStatus")
+            settingsDefaults.set(true, forKey: "init")
+        }
+        
+        let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
+        
+        if (musicStatus) {
+            backgroundMusic.play()
+        } else {
+            backgroundMusic.stop()
+        }
+        
         self.navigationDidStarted()
         return true
     }
