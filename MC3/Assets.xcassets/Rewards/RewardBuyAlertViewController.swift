@@ -11,6 +11,7 @@ import UIKit
 struct redeemReward {
     var rewardDetail : rewardDetail
     var isRedeemed : Bool
+    var redeemCode : String
 }
 
 var redeemRewardArray = [redeemReward]()
@@ -49,9 +50,9 @@ class RewardBuyAlertViewController: UIViewController {
     @IBAction func okayPressed(_ sender: Any) {
         self.dismiss(animated: true)
         if selectedReward != 2 {
-            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: false))
+            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: false, redeemCode: ""))
         } else {
-            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: true))
+            redeemRewardArray.append(redeemReward(rewardDetail: rewardDetailArray[selectedReward], isRedeemed: true, redeemCode: ""))
         }
         
     }

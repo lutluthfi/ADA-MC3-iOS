@@ -39,7 +39,13 @@ class RewardViewController: UIViewController, UICollectionViewDelegate,UICollect
             }
             return redeemPlotArray.count
         }else {
-            return 3
+            var historyPlotArray = [redeemReward]()
+            for rewardRedeemed in redeemRewardArray {
+                if rewardRedeemed.isRedeemed == true {
+                    historyPlotArray.append(rewardRedeemed)
+                }
+            }
+            return historyPlotArray.count
         }
         
     }
@@ -61,8 +67,14 @@ class RewardViewController: UIViewController, UICollectionViewDelegate,UICollect
             cell.rewardCellLabel.text = redeemPlotArray[indexPath.row].rewardDetail.rewardTitle
             cell.rewardCellImage.image = redeemPlotArray[indexPath.row].rewardDetail.rewardImage
         } else {
-            cell.rewardCellLabel.text = "history"
-            cell.rewardCellImage.image = #imageLiteral(resourceName: "Hand")
+            var historyPlotArray = [redeemReward]()
+            for rewardRedeemed in redeemRewardArray {
+                if rewardRedeemed.isRedeemed == true {
+                    historyPlotArray.append(rewardRedeemed)
+                }
+            }
+            cell.rewardCellLabel.text = historyPlotArray[indexPath.row].rewardDetail.rewardTitle
+            cell.rewardCellImage.image = historyPlotArray[indexPath.row].rewardDetail.rewardImage
         }
         cell.rewardCellImage.layer.borderColor = #colorLiteral(red: 0.3243855536, green: 0.2837193608, blue: 0.2650057673, alpha: 1)
         cell.rewardCellImage.layer.cornerRadius = 10
@@ -75,6 +87,8 @@ class RewardViewController: UIViewController, UICollectionViewDelegate,UICollect
             selectedReward = indexPath.row
             performSegue(withIdentifier: "ToDetailReward", sender: self)
         } else if selectedSegment == 1 {
+            
+// ini buat ngubah ke history
             var redeemPlotArray = [redeemReward]()
             var realPost = [Int]()
             var counter = 0
@@ -85,11 +99,13 @@ class RewardViewController: UIViewController, UICollectionViewDelegate,UICollect
                 }
                 counter += 1
             }
+            selectedReward = realPost[indexPath.row]
+            performSegue(withIdentifier: "ToRedeemVC", sender: self)
+//            redeemRewardArray[realPost[indexPath.row]].isRedeemed = true
+//            rewardCollectionView.reloadData()
             
-            redeemRewardArray[realPost[indexPath.row]].isRedeemed = true
-            rewardCollectionView.reloadData()
         } else {
-            return
+            performSegue(withIdentifier: "ToRedeemVC", sender: self)
         }
     }
     
