@@ -21,6 +21,7 @@ class AnimalRoomVC: UIViewController {
     var catPurr: AVAudioPlayer?
     let otherVC = OtherVC()
     var sleepingState: Bool = false
+    var animator: UIDynamicAnimator?
     
     //MARK: Logic
     var hunger: Float = 0.0
@@ -486,6 +487,7 @@ class AnimalRoomVC: UIViewController {
         overlayView.transform = .identity
         stackView.alpha = 0
         progressBarAnimate()
+        spawnCoin()
     }
     
     let stackView: UIStackView = {
@@ -541,9 +543,7 @@ class AnimalRoomVC: UIViewController {
             phone.alpha = 0
             handCare.isHidden = true
             lamp.alpha = 0
-            
-            
-            
+
             switch bowlPresent {
             case true:
                 catHandAnimation()
