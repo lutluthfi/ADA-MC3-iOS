@@ -13,6 +13,7 @@
 		2AE7410224CA505300DF963B /* OtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7410124CA505300DF963B /* OtherVC.swift */; };
 		4417902124D4F87700C6C655 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902024D4F87700C6C655 /* AudioManager.swift */; };
 		4417902424D4FF5000C6C655 /* backsound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417902324D4FF5000C6C655 /* backsound.mp3 */; };
+		4417902624D5106600C6C655 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902524D5106600C6C655 /* SoundManager.swift */; };
 		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
@@ -66,6 +67,7 @@
 		2AE7410124CA505300DF963B /* OtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherVC.swift; sourceTree = "<group>"; };
 		4417902024D4F87700C6C655 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		4417902324D4FF5000C6C655 /* backsound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backsound.mp3; sourceTree = "<group>"; };
+		4417902524D5106600C6C655 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4417902024D4F87700C6C655 /* AudioManager.swift */,
+				4417902524D5106600C6C655 /* SoundManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
 				4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */,
 				4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */,
+				4417902624D5106600C6C655 /* SoundManager.swift in Sources */,
 				4F2144C024CDA346007DAAA8 /* FakeTextFieldView.swift in Sources */,
 				4F2144C224CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,

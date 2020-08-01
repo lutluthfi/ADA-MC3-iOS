@@ -150,6 +150,7 @@ extension MainGardenViewController {
     private func showSettingScene() {
         let storyboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SettingsViewController")
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 
