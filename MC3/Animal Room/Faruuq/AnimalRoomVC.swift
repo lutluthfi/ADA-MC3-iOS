@@ -115,10 +115,7 @@ class AnimalRoomVC: UIViewController {
             catNormal.isHidden = true
             catSleeping.image = #imageLiteral(resourceName: "Cat-Sleeping")
             catSleeping.isHidden = false
-            rewardsValue += 10
-            DispatchQueue.main.async {
-                self.rewardsLabel.text = "\(self.rewardsValue)"
-            }
+            spawnCoin()
             
             self.z1Animation()
             
@@ -325,10 +322,7 @@ class AnimalRoomVC: UIViewController {
                     
                     bowl.image = bowlIcons[0]
                     if hunger >= 1 {
-                        rewardsValue += 10
-                        DispatchQueue.main.async {
-                            self.rewardsLabel.text = ("\(self.rewardsValue)")
-                        }
+                        spawnCoin()
                     }
                     
                     UIView.animate(
@@ -388,10 +382,7 @@ class AnimalRoomVC: UIViewController {
                     catPurr?.play()
                     love += 0.001
                     if love >= 1 {
-                        rewardsValue += 10
-                        DispatchQueue.main.async {
-                            self.rewardsLabel.text = ("\(self.rewardsValue)")
-                        }
+                        spawnCoin()
                     }
                 } else {
                     let attributedTextFull = NSMutableAttributedString(string: "Meoww is happy!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
@@ -487,7 +478,6 @@ class AnimalRoomVC: UIViewController {
         overlayView.transform = .identity
         stackView.alpha = 0
         progressBarAnimate()
-        spawnCoin()
     }
     
     let stackView: UIStackView = {
@@ -627,7 +617,6 @@ class AnimalRoomVC: UIViewController {
             lamp.alpha = 0
             overlaySleepingMode.alpha = 0
         }
-        
     }
     
     //MARK: Game Button
@@ -641,9 +630,12 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func gameBtnAction(sender: UIButton) {
+        hunger -= 0.1
+        sleep -= 0.2
         let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
         self.present(vc, animated: true)
+        
     }
     
     //MARK: Care button

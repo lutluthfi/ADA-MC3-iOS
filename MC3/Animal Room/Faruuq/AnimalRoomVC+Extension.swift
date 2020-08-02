@@ -322,7 +322,6 @@ extension AnimalRoomVC {
     }
     
     @objc func coinTap(sender: UITapGestureRecognizer) {
-        print("coin tapped")
         UIView.animate(
             withDuration: 0.5,
             delay: 0,
@@ -458,7 +457,7 @@ extension AnimalRoomVC {
             bowl.heightAnchor.constraint(equalToConstant: 92),
             
             phone.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 70),
-            phone.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
+            phone.leadingAnchor.constraint(equalTo: lamp.leadingAnchor),
             phone.widthAnchor.constraint(equalToConstant: 144),
             phone.heightAnchor.constraint(equalToConstant: 124),
             
