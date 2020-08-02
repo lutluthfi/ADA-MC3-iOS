@@ -9,5 +9,11 @@
 import Foundation
 
 enum SoundEnum {
+    case button
     case catPurr
+    case catEating
+    case catMeowAngry
+    case catMeowRegular
+    case catPouringFood
+    case coin
 }
