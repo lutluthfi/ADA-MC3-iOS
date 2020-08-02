@@ -39,6 +39,10 @@
 		F5DC1A5F24D597C300D27F8C /* ShopStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */; };
 		F5DC1A6124D6AA7400D27F8C /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */; };
 		F5DC1A6324D6B52100D27F8C /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */; };
+		F5DC1A6524D6C82D00D27F8C /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6424D6C82D00D27F8C /* ItemDetailViewController.swift */; };
+		F5DC1A6724D6CDE200D27F8C /* ShopAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DC1A6624D6CDE200D27F8C /* ShopAlertStoryboard.storyboard */; };
+		F5DC1A6924D6CE7200D27F8C /* ShopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6824D6CE7200D27F8C /* ShopAlertViewController.swift */; };
+		F5DC1A6B24D6CF3500D27F8C /* ShopAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6A24D6CF3500D27F8C /* ShopAlertService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopStoryboard.storyboard; sourceTree = "<group>"; };
 		F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
 		F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		F5DC1A6424D6C82D00D27F8C /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		F5DC1A6624D6CDE200D27F8C /* ShopAlertStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopAlertStoryboard.storyboard; sourceTree = "<group>"; };
+		F5DC1A6824D6CE7200D27F8C /* ShopAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAlertViewController.swift; sourceTree = "<group>"; };
+		F5DC1A6A24D6CF3500D27F8C /* ShopAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAlertService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +251,12 @@
 			isa = PBXGroup;
 			children = (
 				F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */,
+				F5DC1A6624D6CDE200D27F8C /* ShopAlertStoryboard.storyboard */,
 				F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */,
 				F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */,
+				F5DC1A6424D6C82D00D27F8C /* ItemDetailViewController.swift */,
+				F5DC1A6A24D6CF3500D27F8C /* ShopAlertService.swift */,
+				F5DC1A6824D6CE7200D27F8C /* ShopAlertViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 				4F55F92C24BDBB9D000739E6 /* LaunchScreen.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */,
+				F5DC1A6724D6CDE200D27F8C /* ShopAlertStoryboard.storyboard in Resources */,
 				F5DC1A5F24D597C300D27F8C /* ShopStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,12 +347,15 @@
 				F5C3AFF024CAD69F00545D1B /* RewardDetailViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				F5C3AFEE24CAD0F200545D1B /* RewardCollectionViewCell.swift in Sources */,
+				F5DC1A6924D6CE7200D27F8C /* ShopAlertViewController.swift in Sources */,
 				4F55F92224BDBB9B000739E6 /* GameScene.swift in Sources */,
 				9ABF622124C4229C00E4F76F /* TikusViewController.swift in Sources */,
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
 				F5DC1A5424D2BF1E00D27F8C /* alertService.swift in Sources */,
 				9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */,
+				F5DC1A6B24D6CF3500D27F8C /* ShopAlertService.swift in Sources */,
 				F5DC1A6124D6AA7400D27F8C /* ShopHomeViewController.swift in Sources */,
+				F5DC1A6524D6C82D00D27F8C /* ItemDetailViewController.swift in Sources */,
 				F5CD072324C97AB600EE1D14 /* RewardViewController.swift in Sources */,
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,

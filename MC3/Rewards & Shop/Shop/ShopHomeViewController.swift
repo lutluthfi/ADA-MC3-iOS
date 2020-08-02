@@ -8,6 +8,7 @@
 
 import UIKit
 var selectedCategory : Int = 0
+var selectedItem : Int = 0
 
 struct ShopItem {
     var image : UIImage
@@ -39,14 +40,23 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
             if indexPath.row < bushArray.count-1 {
                 cell.shopCellImage.image = bushArray[indexPath.row].image
                 cell.shopCellLabel.text = "$ \(String(bushArray[indexPath.row].price))"
+                if bushArray[indexPath.row].isPurchased == true {
+                    cell.shopCellImage.alpha = 0.5
+                    cell.shopCellLabel.text = "SOLD"
+                }
             } else {
                 cell.shopCellImage.image = bushArray[bushArray.count-1].image
                 cell.shopCellLabel.text = "$ \(String(bushArray[bushArray.count-1].price))"
             }
+            
         } else if selectedCategory == 1 {
             if indexPath.row < benchArray.count-1 {
                 cell.shopCellImage.image = benchArray[indexPath.row].image
                 cell.shopCellLabel.text = "$ \(String(benchArray[indexPath.row].price))"
+                if benchArray[indexPath.row].isPurchased == true {
+                    cell.shopCellImage.alpha = 0.5
+                    cell.shopCellLabel.text = "SOLD"
+                }
             } else {
                 cell.shopCellImage.image = benchArray[benchArray.count-1].image
                 cell.shopCellLabel.text = "$ \(String(benchArray[benchArray.count-1].price))"
@@ -55,6 +65,10 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
             if indexPath.row < flowerArray.count-1 {
                 cell.shopCellImage.image = flowerArray[indexPath.row].image
                 cell.shopCellLabel.text = "$ \(String(flowerArray[indexPath.row].price))"
+                if flowerArray[indexPath.row].isPurchased == true {
+                    cell.shopCellImage.alpha = 0.5
+                    cell.shopCellLabel.text = "SOLD"
+                }
             } else {
                 cell.shopCellImage.image = flowerArray[flowerArray.count-1].image
                 cell.shopCellLabel.text = "$ \(String(flowerArray[flowerArray.count-1].price))"
@@ -63,6 +77,10 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
             if indexPath.row < lampArray.count-1 {
                 cell.shopCellImage.image = lampArray[indexPath.row].image
                 cell.shopCellLabel.text = "$ \(String(lampArray[indexPath.row].price))"
+                if lampArray[indexPath.row].isPurchased == true {
+                    cell.shopCellImage.alpha = 0.5
+                    cell.shopCellLabel.text = "SOLD"
+                }
             } else {
                 cell.shopCellImage.image = lampArray[lampArray.count-1].image
                 cell.shopCellLabel.text = "$ \(String(lampArray[lampArray.count-1].price))"
@@ -71,6 +89,10 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
             if indexPath.row < treeArray.count-1 {
                 cell.shopCellImage.image = treeArray[indexPath.row].image
                 cell.shopCellLabel.text = "$ \(String(treeArray[indexPath.row].price))"
+                if treeArray[indexPath.row].isPurchased == true {
+                    cell.shopCellImage.alpha = 0.5
+                    cell.shopCellLabel.text = "SOLD"
+                }
             } else {
                 cell.shopCellImage.image = treeArray[treeArray.count-1].image
                 cell.shopCellLabel.text = "$ \(String(treeArray[treeArray.count-1].price))"
@@ -86,19 +108,14 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if selectedCategory == 0 {
-            
-        } else if selectedCategory == 1 {
-            
-        } else if selectedCategory == 2 {
-            
-        } else if selectedCategory == 3 {
-            
-        } else if selectedCategory == 4 {
-            
+        selectedItem = indexPath.row
+        let itemArray = [bushArray,benchArray,flowerArray,lampArray,treeArray]
+        if itemArray[selectedCategory][selectedItem].isPurchased == false {
+            performSegue(withIdentifier: "toItemDetail", sender: self)
         } else {
             return
         }
+        
     }
     
     @IBOutlet weak var shopCollectionView: UICollectionView!
