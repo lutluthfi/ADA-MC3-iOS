@@ -36,6 +36,9 @@
 		F5DC1A5624D2EA9A00D27F8C /* RewardRedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A5524D2EA9A00D27F8C /* RewardRedeemViewController.swift */; };
 		F5DC1A5824D564BE00D27F8C /* RedeemHistoryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A5724D564BE00D27F8C /* RedeemHistoryAlertViewController.swift */; };
 		F5DC1A5A24D5675D00D27F8C /* RedeemHistoryAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A5924D5675D00D27F8C /* RedeemHistoryAlertService.swift */; };
+		F5DC1A5F24D597C300D27F8C /* ShopStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */; };
+		F5DC1A6124D6AA7400D27F8C /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */; };
+		F5DC1A6324D6B52100D27F8C /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,16 +63,19 @@
 		9ABF622424C458FE00E4F76F /* TikusStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TikusStoryboard.storyboard; path = MC3/TikusStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		9ABF622624C6FBDA00E4F76F /* SettingLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingLauncher.swift; path = Rahmat/SettingLauncher.swift; sourceTree = SOURCE_ROOT; };
 		9ABF622824C7EE7100E4F76F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Rahmat/CustomButton.swift; sourceTree = SOURCE_ROOT; };
-		F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardCollectionViewCell.swift; path = MC3/RewardCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardDetailViewController.swift; path = MC3/RewardDetailViewController.swift; sourceTree = SOURCE_ROOT; };
-		F5CD072224C97AB600EE1D14 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardViewController.swift; path = MC3/RewardViewController.swift; sourceTree = SOURCE_ROOT; };
-		F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardStoryboard.storyboard; path = MC3/RewardStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
-		F5DC1A4F24D2BB1A00D27F8C /* RewardBuyStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardBuyStoryboard.storyboard; path = MC3/Assets.xcassets/Rewards/RewardBuyStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
-		F5DC1A5124D2BDC300D27F8C /* RewardBuyAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardBuyAlertViewController.swift; path = MC3/Assets.xcassets/Rewards/RewardBuyAlertViewController.swift; sourceTree = SOURCE_ROOT; };
-		F5DC1A5324D2BF1E00D27F8C /* alertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = alertService.swift; path = MC3/Assets.xcassets/Rewards/alertService.swift; sourceTree = SOURCE_ROOT; };
-		F5DC1A5524D2EA9A00D27F8C /* RewardRedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardRedeemViewController.swift; path = MC3/Assets.xcassets/Rewards/RewardRedeemViewController.swift; sourceTree = SOURCE_ROOT; };
-		F5DC1A5724D564BE00D27F8C /* RedeemHistoryAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedeemHistoryAlertViewController.swift; path = MC3/Assets.xcassets/Rewards/RedeemHistoryAlertViewController.swift; sourceTree = SOURCE_ROOT; };
-		F5DC1A5924D5675D00D27F8C /* RedeemHistoryAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedeemHistoryAlertService.swift; path = MC3/Assets.xcassets/Rewards/RedeemHistoryAlertService.swift; sourceTree = SOURCE_ROOT; };
+		F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardCollectionViewCell.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardDetailViewController.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F5CD072224C97AB600EE1D14 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardViewController.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardStoryboard.storyboard; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
+		F5DC1A4F24D2BB1A00D27F8C /* RewardBuyStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = RewardBuyStoryboard.storyboard; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardBuyStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5124D2BDC300D27F8C /* RewardBuyAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardBuyAlertViewController.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardBuyAlertViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5324D2BF1E00D27F8C /* alertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = alertService.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/alertService.swift"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5524D2EA9A00D27F8C /* RewardRedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardRedeemViewController.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RewardRedeemViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5724D564BE00D27F8C /* RedeemHistoryAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedeemHistoryAlertViewController.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RedeemHistoryAlertViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5924D5675D00D27F8C /* RedeemHistoryAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedeemHistoryAlertService.swift; path = "MC3/Rewards & Shop/MC3/Rewards & Shop/New Group/RedeemHistoryAlertService.swift"; sourceTree = SOURCE_ROOT; };
+		F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopStoryboard.storyboard; sourceTree = "<group>"; };
+		F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
+		F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,16 +108,8 @@
 		2AF84C5324BDDB3900239497 /* Rewards & Shop */ = {
 			isa = PBXGroup;
 			children = (
-				F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */,
-				F5DC1A4F24D2BB1A00D27F8C /* RewardBuyStoryboard.storyboard */,
-				F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */,
-				F5CD072224C97AB600EE1D14 /* RewardViewController.swift */,
-				F5DC1A5124D2BDC300D27F8C /* RewardBuyAlertViewController.swift */,
-				F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */,
-				F5DC1A5524D2EA9A00D27F8C /* RewardRedeemViewController.swift */,
-				F5DC1A5724D564BE00D27F8C /* RedeemHistoryAlertViewController.swift */,
-				F5DC1A5324D2BF1E00D27F8C /* alertService.swift */,
-				F5DC1A5924D5675D00D27F8C /* RedeemHistoryAlertService.swift */,
+				F5DC1A5D24D5974F00D27F8C /* Shop */,
+				F5DC1A5B24D5971000D27F8C /* Rewards */,
 			);
 			path = "Rewards & Shop";
 			sourceTree = "<group>";
@@ -224,6 +222,33 @@
 			path = MC3;
 			sourceTree = "<group>";
 		};
+		F5DC1A5B24D5971000D27F8C /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				F5CD072424C97AD900EE1D14 /* RewardStoryboard.storyboard */,
+				F5DC1A4F24D2BB1A00D27F8C /* RewardBuyStoryboard.storyboard */,
+				F5C3AFED24CAD0F200545D1B /* RewardCollectionViewCell.swift */,
+				F5CD072224C97AB600EE1D14 /* RewardViewController.swift */,
+				F5DC1A5124D2BDC300D27F8C /* RewardBuyAlertViewController.swift */,
+				F5C3AFEF24CAD69F00545D1B /* RewardDetailViewController.swift */,
+				F5DC1A5524D2EA9A00D27F8C /* RewardRedeemViewController.swift */,
+				F5DC1A5724D564BE00D27F8C /* RedeemHistoryAlertViewController.swift */,
+				F5DC1A5324D2BF1E00D27F8C /* alertService.swift */,
+				F5DC1A5924D5675D00D27F8C /* RedeemHistoryAlertService.swift */,
+			);
+			path = Rewards;
+			sourceTree = "<group>";
+		};
+		F5DC1A5D24D5974F00D27F8C /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				F5DC1A5E24D597C300D27F8C /* ShopStoryboard.storyboard */,
+				F5DC1A6024D6AA7400D27F8C /* ShopHomeViewController.swift */,
+				F5DC1A6224D6B52100D27F8C /* ShopCollectionViewCell.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +319,7 @@
 				4F55F92C24BDBB9D000739E6 /* LaunchScreen.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				4F55F92024BDBB9B000739E6 /* Actions.sks in Resources */,
+				F5DC1A5F24D597C300D27F8C /* ShopStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +339,7 @@
 				4F55F92424BDBB9B000739E6 /* GameViewController.swift in Sources */,
 				F5DC1A5424D2BF1E00D27F8C /* alertService.swift in Sources */,
 				9ABF622924C7EE7100E4F76F /* CustomButton.swift in Sources */,
+				F5DC1A6124D6AA7400D27F8C /* ShopHomeViewController.swift in Sources */,
 				F5CD072324C97AB600EE1D14 /* RewardViewController.swift in Sources */,
 				9ABF622724C6FBDA00E4F76F /* SettingLauncher.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
@@ -321,6 +348,7 @@
 				F5DC1A5224D2BDC300D27F8C /* RewardBuyAlertViewController.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 				F5DC1A5A24D5675D00D27F8C /* RedeemHistoryAlertService.swift in Sources */,
+				F5DC1A6324D6B52100D27F8C /* ShopCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
