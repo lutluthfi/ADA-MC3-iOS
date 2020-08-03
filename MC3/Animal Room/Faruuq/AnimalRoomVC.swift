@@ -681,6 +681,11 @@ class AnimalRoomVC: UIViewController {
         
     }
     
+    @IBAction func unwindToAnimalRoom(_ segue : UIStoryboardSegue) {
+      // Do nothing
+        let segueDes = segue.source as! TikusViewController
+        print(segueDes.totalScore)
+    }
     
     //MARK: - ViedDidLoad
     override func viewDidLoad() {
