@@ -9,7 +9,7 @@
 import UIKit
 
 let settingsDefaults = UserDefaults.standard
-let backgroundMusic = AudioManager.init(audioPath: "backsound.mp3")
+let backgroundMusic = AudioManager.init(audioPath: "Background-Music.mp3")
 let soundManager = SoundManager.init()
 
 @UIApplicationMain
