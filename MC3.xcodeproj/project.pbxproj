@@ -144,8 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4423D62D24C8433A004A73D4 /* Components */,
-				448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */,
-				448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */,
+				448D224124C573F400ED44E8 /* SettingsViewController.storyboard */,
 				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
 				44B2082924C5871100474342 /* ProfileViewController.swift */,
 				44B2082B24C5873A00474342 /* HelpViewController.swift */,
@@ -473,6 +472,7 @@
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
+				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +488,6 @@
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				2AE7410224CA505300DF963B /* OtherVC.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
-				448D224424C5745B00ED44E8 /* TestSettingsViewController.swift in Sources */,
 				44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
