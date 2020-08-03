@@ -28,6 +28,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
     
     @IBOutlet weak var tangan: UIImageView!
     
+    var totalScore = 0
     var score = 0
     var timer: Timer?
     
@@ -49,7 +50,6 @@ class TikusViewController: UIViewController, TikusGameDelegate {
     }
     
     func startGame(){
-        score = 0
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
             print("START GAME")
             self.startAnimate()
@@ -82,13 +82,14 @@ class TikusViewController: UIViewController, TikusGameDelegate {
     }
     
     func backToRoom() {
-        performSegue(withIdentifier: "unwind2AnimalRoom", sender: nil)
+        performSegue(withIdentifier: "unwind2AnimalRoom", sender: totalScore)
     }
     
     func setText(){
         let nilai = score*2
         settingsLauncher.tulisan2.text = "You just earn \(nilai)$ for"
         settingsLauncher.tulisan3.text = "catching \(score) mouse."
+        totalScore += score
         score = 0
     }
     
