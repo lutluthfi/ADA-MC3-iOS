@@ -94,9 +94,11 @@
                         <outlet property="tikus7" destination="X8b-wX-ep9" id="0oP-Sb-dSj"/>
                         <outlet property="tikus8" destination="f3x-0w-00c" id="wJE-qA-oc2"/>
                         <outlet property="tikus9" destination="ogH-MG-WhA" id="9RV-md-bnu"/>
+                        <segue destination="gCx-57-Vlg" kind="unwind" identifier="unwind2AnimalRoom" unwindAction="unwindToAnimalRoom:" id="y0F-Nf-evA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXJ-g0-Lc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gCx-57-Vlg" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="b2f-O8-HtZ">
                     <connections>
                         <action selector="tapped:" destination="Tx7-C3-JxY" id="ipx-kG-abm"/>

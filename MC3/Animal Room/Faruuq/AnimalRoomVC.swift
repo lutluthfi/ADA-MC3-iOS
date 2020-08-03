@@ -682,6 +682,9 @@ class AnimalRoomVC: UIViewController {
         
     }
     
+    @IBAction func unwindToAnimalRoom(_ segue : UIStoryboardSegue) {
+      // Do nothing
+    }
     
     //MARK: - ViedDidLoad
     override func viewDidLoad() {

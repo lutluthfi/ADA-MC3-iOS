@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TikusGameDelegate {
+    func playAgain()
+    func backToRoom()
+}
+
 class SettingLauncher: NSObject {
     
     let blackView = UIView()
@@ -18,9 +23,11 @@ class SettingLauncher: NSObject {
     var playButton = CustomButton()
     var homeButton = CustomButton()
     
+    var delegate: TikusGameDelegate?
+    
     func showSettings() {
         //show pop up
-        
+        handleMuncul()
         if let window = UIApplication.shared.keyWindow{
             
             window.addSubview(blackView)
@@ -63,20 +70,31 @@ class SettingLauncher: NSObject {
             homeButton.setTitle("Back to Room", for: .normal)
             
             addReplayAction()
+            addHomeAction()
         }
     }
     
     
     
     func addReplayAction(){
-        playButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+        playButton.addTarget(self, action: #selector(handlePlayAgain), for: .touchUpInside)
     }
     
-    func homeAction(){
+    func addHomeAction(){
         homeButton.addTarget(self, action: #selector(pindahScreen), for: .touchUpInside)
     }
     
-    @objc func handleDismiss(){
+    @objc func handlePlayAgain() {
+        handleDismiss()
+        delegate?.playAgain()
+    }
+    
+    @objc func pindahScreen(){
+        handleDismiss()
+        delegate?.backToRoom()
+    }
+    
+    func handleDismiss(){
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
             self.whiteView.alpha = 0
@@ -98,10 +116,6 @@ class SettingLauncher: NSObject {
             self.playButton.alpha = 1
             self.homeButton.alpha = 1
         }
-    }
-    
-    @objc func pindahScreen(){
-        // segue ke home
     }
     
     override init() {
