@@ -8,6 +8,10 @@
 
 import UIKit
 
+let settingsDefaults = UserDefaults.standard
+let backgroundMusic = AudioManager.init(audioPath: "Background-Music.mp3")
+let soundManager = SoundManager.init()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,11 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
+        // this code to check and set initial settings default
+        let isInitSettingsDefault = settingsDefaults.bool(forKey: "init")
+        
+        if !isInitSettingsDefault {
+            settingsDefaults.set(true, forKey: "musicStatus")
+            settingsDefaults.set(true, forKey: "soundStatus")
+            settingsDefaults.set(true, forKey: "notificationStatus")
+            settingsDefaults.set(true, forKey: "init")
+        }
+        
+        let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
+        
+        if (musicStatus) {
+            backgroundMusic.play()
+        } else {
+            backgroundMusic.stop()
+        }
+        
         self.navigationDidStarted()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
+        backgroundMusic.stop()
+        soundManager.stopAll()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -37,6 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
+            
+        if (musicStatus) {
+            backgroundMusic.play()
+        } else {
+            backgroundMusic.stop()
+        }
     }
 
 }

@@ -63,6 +63,11 @@ class MainGardenViewController: UIViewController {
             .animalInfo(dialogId: dialogId, delegate: nil)
         self.dialogFactory.show(scene: dialogScene)
     }
+    
+    // NEEDED! Do not delete!
+    @IBAction func unwindToMainGardenView(_ segue : UIStoryboardSegue) {
+      // Do nothing
+    }
 
 }
 
@@ -145,6 +150,7 @@ extension MainGardenViewController {
     private func showSettingScene() {
         let storyboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "SettingsViewController")
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 

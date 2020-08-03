@@ -11,6 +11,18 @@
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
 		2AE7410224CA505300DF963B /* OtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7410124CA505300DF963B /* OtherVC.swift */; };
+		4417902124D4F87700C6C655 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902024D4F87700C6C655 /* AudioManager.swift */; };
+		4417902624D5106600C6C655 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902524D5106600C6C655 /* SoundManager.swift */; };
+		4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902D24D51AD800C6C655 /* SoundEnum.swift */; };
+		4417903724D7244600C6C655 /* Cat-Meow-Angry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417902F24D7244600C6C655 /* Cat-Meow-Angry.mp3 */; };
+		4417903824D7244600C6C655 /* Background-Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903024D7244600C6C655 /* Background-Music.mp3 */; };
+		4417903924D7244600C6C655 /* Button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903124D7244600C6C655 /* Button.mp3 */; };
+		4417903A24D7244600C6C655 /* Cat-Pouring-Food.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903224D7244600C6C655 /* Cat-Pouring-Food.mp3 */; };
+		4417903C24D7244600C6C655 /* Coins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903424D7244600C6C655 /* Coins.mp3 */; };
+		4417903D24D7244600C6C655 /* Cat-Eating.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903524D7244600C6C655 /* Cat-Eating.mp3 */; };
+		4417903E24D7244600C6C655 /* Cat-Meow-Regular.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903624D7244600C6C655 /* Cat-Meow-Regular.mp3 */; };
+		4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417903F24D728DE00C6C655 /* UIButton+Extension.swift */; };
+		4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */; };
 		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
@@ -62,6 +74,18 @@
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
 		2AE7410124CA505300DF963B /* OtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherVC.swift; sourceTree = "<group>"; };
+		4417902024D4F87700C6C655 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		4417902524D5106600C6C655 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		4417902D24D51AD800C6C655 /* SoundEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEnum.swift; sourceTree = "<group>"; };
+		4417902F24D7244600C6C655 /* Cat-Meow-Angry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Meow-Angry.mp3"; sourceTree = "<group>"; };
+		4417903024D7244600C6C655 /* Background-Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Background-Music.mp3"; sourceTree = "<group>"; };
+		4417903124D7244600C6C655 /* Button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Button.mp3; sourceTree = "<group>"; };
+		4417903224D7244600C6C655 /* Cat-Pouring-Food.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Pouring-Food.mp3"; sourceTree = "<group>"; };
+		4417903424D7244600C6C655 /* Coins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coins.mp3; sourceTree = "<group>"; };
+		4417903524D7244600C6C655 /* Cat-Eating.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Eating.mp3"; sourceTree = "<group>"; };
+		4417903624D7244600C6C655 /* Cat-Meow-Regular.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Meow-Regular.mp3"; sourceTree = "<group>"; };
+		4417903F24D728DE00C6C655 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +148,13 @@
 		2AD1427124C9BC0C008160A3 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				4417903024D7244600C6C655 /* Background-Music.mp3 */,
+				4417903124D7244600C6C655 /* Button.mp3 */,
+				4417903524D7244600C6C655 /* Cat-Eating.mp3 */,
+				4417902F24D7244600C6C655 /* Cat-Meow-Angry.mp3 */,
+				4417903624D7244600C6C655 /* Cat-Meow-Regular.mp3 */,
+				4417903224D7244600C6C655 /* Cat-Pouring-Food.mp3 */,
+				4417903424D7244600C6C655 /* Coins.mp3 */,
 				2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */,
 			);
 			path = Audio;
@@ -141,6 +172,7 @@
 		2AF84C5224BDDB2800239497 /* Settings & Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4417901D24D4F84900C6C655 /* Controllers */,
 				4423D62D24C8433A004A73D4 /* Components */,
 				448D224124C573F400ED44E8 /* SettingsViewController.storyboard */,
 				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
@@ -168,6 +200,23 @@
 				4F6FB30024D040DE0079AADB /* AnimalRoomViewController.storyboard */,
 			);
 			path = Faruuq;
+			sourceTree = "<group>";
+		};
+		4417901D24D4F84900C6C655 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4417902024D4F87700C6C655 /* AudioManager.swift */,
+				4417902524D5106600C6C655 /* SoundManager.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4417902C24D51AC500C6C655 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4417902D24D51AD800C6C655 /* SoundEnum.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		4423D62D24C8433A004A73D4 /* Components */ = {
@@ -339,6 +388,8 @@
 				44B2083124C58D2600474342 /* UIColor+Extension.swift */,
 				4F2144BD24CD671C007DAAA8 /* UIViewController+Keyboard.swift */,
 				4F3517B724C6DF74000E5E19 /* Transition */,
+				4417903F24D728DE00C6C655 /* UIButton+Extension.swift */,
+				4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,6 +423,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				4417902C24D51AC500C6C655 /* Model */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
 				4F35177F24C0675D000E5E19 /* Application */,
@@ -459,19 +511,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4417903824D7244600C6C655 /* Background-Music.mp3 in Resources */,
 				4F6FB30124D040DE0079AADB /* AnimalRoomViewController.storyboard in Resources */,
 				2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */,
+				4417903E24D7244600C6C655 /* Cat-Meow-Regular.mp3 in Resources */,
 				4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */,
 				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
 				4F2144B924CD54B0007DAAA8 /* DialogAnimalInfoView.xib in Resources */,
+				4417903C24D7244600C6C655 /* Coins.mp3 in Resources */,
 				4F6FB2FF24D03F270079AADB /* LaunchScreen.storyboard in Resources */,
 				4F6FB30F24D0449C0079AADB /* TikusStoryboard.storyboard in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
+				4417903724D7244600C6C655 /* Cat-Meow-Angry.mp3 in Resources */,
 				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
+				4417903D24D7244600C6C655 /* Cat-Eating.mp3 in Resources */,
 				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
+				4417903A24D7244600C6C655 /* Cat-Pouring-Food.mp3 in Resources */,
+				4417903924D7244600C6C655 /* Button.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +543,7 @@
 			files = (
 				2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
+				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				2AE7410224CA505300DF963B /* OtherVC.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
 				44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */,
@@ -491,19 +551,23 @@
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
 				4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */,
+				4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */,
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */,
 				4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */,
+				4417902124D4F87700C6C655 /* AudioManager.swift in Sources */,
 				4F3517AF24C373C7000E5E19 /* CoreDataGameplayStorage.swift in Sources */,
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
 				4F3517BB24C6E034000E5E19 /* MCTransitionAnimator.swift in Sources */,
 				4F1E7DED24CC44FC00C300F8 /* MenuMainGardenCollectionViewCell.swift in Sources */,
+				4417902624D5106600C6C655 /* SoundManager.swift in Sources */,
 				4F2144C024CDA346007DAAA8 /* FakeTextFieldView.swift in Sources */,
 				4F2144C224CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,
 				4F6FB31024D0449C0079AADB /* CustomButton.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,
+				4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */,
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */,
 				4F6FB2F424D03ED20079AADB /* AppDelegate.swift in Sources */,
