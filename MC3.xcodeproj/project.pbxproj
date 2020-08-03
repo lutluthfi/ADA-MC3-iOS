@@ -11,8 +11,7 @@
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
 		2AE7410224CA505300DF963B /* OtherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7410124CA505300DF963B /* OtherVC.swift */; };
-		448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */; };
-		448D224424C5745B00ED44E8 /* TestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */; };
+		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
@@ -63,8 +62,7 @@
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
 		2AE7410124CA505300DF963B /* OtherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherVC.swift; sourceTree = "<group>"; };
-		448D224124C573F400ED44E8 /* TestSettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestSettingsViewController.storyboard; sourceTree = "<group>"; };
-		448D224324C5745B00ED44E8 /* TestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingsViewController.swift; sourceTree = "<group>"; };
+		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -470,7 +468,7 @@
 				4F6FB30F24D0449C0079AADB /* TikusStoryboard.storyboard in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
-				448D224224C573F400ED44E8 /* TestSettingsViewController.storyboard in Resources */,
+				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
