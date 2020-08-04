@@ -28,9 +28,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ioc-Qk-8Et">
                                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Intro" translatesAutoresizingMaskIntoConstraints="NO" id="J0A-Id-ZZe">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Garden-Day" translatesAutoresizingMaskIntoConstraints="NO" id="J0A-Id-ZZe">
                                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvx-sq-bEo">
+                                                <rect key="frame" x="0.0" y="0.0" width="896" height="250"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Building" translatesAutoresizingMaskIntoConstraints="NO" id="8Ea-U3-ppJ">
+                                                        <rect key="frame" x="252" y="40" width="535" height="270"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="8Ea-U3-ppJ" secondAttribute="trailing" constant="109" id="aE1-JL-Ykb"/>
+                                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="8Ea-U3-ppJ" secondAttribute="bottom" constant="-60" id="nRs-nF-72Q"/>
+                                                    <constraint firstItem="8Ea-U3-ppJ" firstAttribute="leading" secondItem="Lvx-sq-bEo" secondAttribute="leading" constant="252" id="s2P-eo-QwN"/>
+                                                    <constraint firstItem="8Ea-U3-ppJ" firstAttribute="top" secondItem="Lvx-sq-bEo" secondAttribute="top" constant="40" id="w44-vt-ziB"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BD1-8g-u55">
                                                 <rect key="frame" x="57" y="21" width="110.5" height="40"/>
                                                 <subviews>
@@ -271,7 +286,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTL-dw-Me9">
-                                                <rect key="frame" x="167.5" y="280" width="607.5" height="110"/>
+                                                <rect key="frame" x="167.5" y="250" width="607.5" height="140"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="250" constant="110" id="fTc-0F-K3N"/>
@@ -282,9 +297,11 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="J0A-Id-ZZe" secondAttribute="trailing" id="06l-uk-42P"/>
                                             <constraint firstAttribute="trailing" secondItem="p5V-KZ-Bfl" secondAttribute="trailing" constant="57" id="0b8-Ze-qxz"/>
+                                            <constraint firstItem="Lvx-sq-bEo" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="7sa-3j-YXN"/>
                                             <constraint firstAttribute="bottom" secondItem="p5V-KZ-Bfl" secondAttribute="bottom" constant="21" id="B70-dn-YZ4"/>
                                             <constraint firstItem="p5V-KZ-Bfl" firstAttribute="leading" secondItem="tTL-dw-Me9" secondAttribute="trailing" constant="24" id="JWw-VK-Axa"/>
                                             <constraint firstItem="i38-8t-XCO" firstAttribute="trailing" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="-150" identifier="AllStatusAnimalInfoContainerViewLeading" id="JyH-IQ-AIr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lvx-sq-bEo" secondAttribute="trailing" id="U2Q-lI-ppK"/>
                                             <constraint firstItem="BD1-8g-u55" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="57" id="VVl-OZ-ssD"/>
                                             <constraint firstItem="tTL-dw-Me9" firstAttribute="leading" secondItem="BD1-8g-u55" secondAttribute="trailing" id="aJn-tj-cSo"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" id="fd2-AO-NH2"/>
@@ -294,6 +311,8 @@
                                             <constraint firstAttribute="bottom" secondItem="J0A-Id-ZZe" secondAttribute="bottom" id="tfW-4y-iem"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="twr-Do-Zkx"/>
                                             <constraint firstItem="tTL-dw-Me9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="250" id="wBL-8e-8t6"/>
+                                            <constraint firstItem="tTL-dw-Me9" firstAttribute="top" secondItem="Lvx-sq-bEo" secondAttribute="bottom" id="xMH-zg-JRF"/>
+                                            <constraint firstItem="Lvx-sq-bEo" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" id="xqo-lT-y7e"/>
                                             <constraint firstItem="i38-8t-XCO" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="220" id="zCW-54-O4w"/>
                                         </constraints>
                                     </view>
@@ -320,8 +339,10 @@
                         <viewLayoutGuide key="safeArea" id="pOF-qA-HGU"/>
                     </view>
                     <connections>
+                        <outlet property="aboveGroundContainerView" destination="Lvx-sq-bEo" id="sLc-7a-bqO"/>
                         <outlet property="allStatusAnimalInfoBackgroundImageView" destination="ngf-AP-Lfz" id="pr2-pF-Ifg"/>
                         <outlet property="allStatusAnimalInfoContainerView" destination="i38-8t-XCO" id="STZ-bZ-mJz"/>
+                        <outlet property="buildingImageView" destination="8Ea-U3-ppJ" id="GC5-4M-uwK"/>
                         <outlet property="centerYPetAnimalInfoImageView" destination="kOW-5W-0Gs" id="Zi3-IL-h7b"/>
                         <outlet property="coinAmountLabel" destination="8X3-Tv-5II" id="yXK-Z5-Jdf"/>
                         <outlet property="coinContainerView" destination="BD1-8g-u55" id="9LV-cb-VQt"/>
@@ -345,12 +366,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mG-81-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.61607142857142" y="136.23188405797103"/>
+            <point key="canvasLocation" x="138.17733990147784" y="135.19999999999999"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background-Intro" width="896" height="414"/>
+        <image name="Building" width="530" height="221"/>
         <image name="Cat-Normal-1" width="182" height="230"/>
+        <image name="Garden-Day" width="896" height="414"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="profile-cat-food" width="26" height="16"/>
         <image name="profile-cat-game" width="27" height="18"/>

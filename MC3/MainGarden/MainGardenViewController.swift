@@ -13,12 +13,32 @@ extension MainGardenViewController {
     struct Constant {
 
         static let kAllStatusAnimalInfoBackgroundImageViewBorderWidth = CGFloat(5)
+        static let kCloudSizes = [
+            CGSize(width: 50, height: 50),
+            CGSize(width: 100, height: 100),
+            CGSize(width: 150, height: 150)
+        ]
         static let kCoinContainerViewBorderWidth = CGFloat(3)
         static let kCoinContainerViewCornerRadius = CGFloat(5)
+        static let kDayCloudsImage = [
+            UIImage(named: "Cloud-Day-1"),
+            UIImage(named: "Cloud-Day-2"),
+            UIImage(named: "Cloud-Day-3"),
+            UIImage(named: "Cloud-Day-4")
+        ]
         static let kHideCenterYPetAnimalInfoImageViewConstraint = CGFloat(150)
         static let kHideLeadingAllStatusAnimalInfoContainerViewConstraint = CGFloat(-150)
+        static let kNightCloudsImage = [
+            UIImage(named: "Cloud-Night-1"),
+            UIImage(named: "Cloud-Night-2"),
+            UIImage(named: "Cloud-Night-3"),
+            UIImage(named: "Cloud-Night-4")
+        ]
         static let kPetMaxYPosition = CGFloat(200)
         static let kPetMinYPosition = CGFloat(295)
+        static let kPlayCloudTimerTimeInterval = TimeInterval(5)
+        static let kPlayCloudMaxVelocityTimeInterval = TimeInterval(60)
+        static let kPlayCloudMinVelocityTimeInterval = TimeInterval(30)
         static let kShowCenterYPetAnimalInfoImageViewConstraint = CGFloat(0)
         static let kShowLeadingAllStatusAnimalInfoContainerViewConstraint = CGFloat(200)
         static let kStatusAnimalInfoProgressViewCorner = CGFloat(2)
@@ -26,6 +46,7 @@ extension MainGardenViewController {
             scaleX: 1,
             y: 4.5
         )
+        static let kYCloudPositionRange = .zero ..< CGFloat(100)
 
     }
 
@@ -48,8 +69,10 @@ class MainGardenViewController: UIViewController {
         return view
     }()
 
+    @IBOutlet weak var aboveGroundContainerView: UIView!
     @IBOutlet weak var allStatusAnimalInfoContainerView: UIView!
     @IBOutlet weak var allStatusAnimalInfoBackgroundImageView: UIImageView!
+    @IBOutlet weak var buildingImageView: UIImageView!
     @IBOutlet weak var centerYPetAnimalInfoImageView: NSLayoutConstraint!
     @IBOutlet weak var coinAmountLabel: UILabel!
     @IBOutlet weak var coinContainerView: UIView!
@@ -180,6 +203,7 @@ class MainGardenViewController: UIViewController {
             .kStatusAnimalInfoProgressViewTransform
 
         self.doGeneratePetImageView()
+        self.doPlayCloudImageView()
         //        let dialogId = UUID().uuidString
         //        let dialogScene = DialogFactory
         //            .Scene
@@ -236,6 +260,18 @@ extension MainGardenViewController {
 // MARK: - Private Function
 extension MainGardenViewController {
 
+    private func doGenerateCloudImageView() -> UIImageView {
+        let cgSize = Constant.kCloudSizes.randomElement() ?? .zero
+        let yPositionRange = Constant.kYCloudPositionRange
+        let yPosition = CGFloat.random(in: yPositionRange)
+        let cgPoint = CGPoint(x: (.zero - cgSize.width), y: yPosition)
+        let cloudImageView = UIImageView()
+        cloudImageView.frame = CGRect(origin: cgPoint, size: cgSize)
+        cloudImageView.contentMode = .scaleAspectFit
+        cloudImageView.image = Constant.kDayCloudsImage.randomElement() as? UIImage
+        return cloudImageView
+    }
+
     // Will generate position of pet as much as user have
     private func doGeneratePetImageView() {
         let petImageView = UIImageView()
@@ -256,6 +292,31 @@ extension MainGardenViewController {
         ]
         self.contentView.addSubview(petImageView)
         self.contentView.bringSubviewToFront(petImageView)
+    }
+
+    private func doPlayCloudImageView() {
+        Timer.scheduledTimer(
+            withTimeInterval: Constant.kPlayCloudTimerTimeInterval,
+            repeats: true,
+            block: { (timer) in
+                let cloudImageView = self.doGenerateCloudImageView()
+                self.aboveGroundContainerView.addSubview(cloudImageView)
+                Bool.random() ?
+                    self.aboveGroundContainerView.bringSubviewToFront(cloudImageView) :
+                    self.aboveGroundContainerView.sendSubviewToBack(cloudImageView)
+                let velocityDuration = TimeInterval.random(
+                    in: Constant.kPlayCloudMinVelocityTimeInterval
+                    ...
+                    Constant.kPlayCloudMaxVelocityTimeInterval
+                )
+                UIView.animate(withDuration: velocityDuration, animations: {
+                    cloudImageView.frame.origin.x =
+                        UIScreen.main.bounds.maxX + cloudImageView.frame.width
+                    self.aboveGroundContainerView.layoutIfNeeded()
+                }, completion: { (_) in
+                    cloudImageView.removeFromSuperview()
+                })
+        })
     }
 
 }
