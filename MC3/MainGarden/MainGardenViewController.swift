@@ -303,7 +303,6 @@ extension MainGardenViewController {
             withTimeInterval: Constant.kPlayCloudTimerTimeInterval,
             repeats: true,
             block: { (timer) in
-                print(Calendar.current.component(.second, from: timer.fireDate))
                 let cloudImageView = self.doGenerateCloudImageView()
                 self.aboveGroundContainerView.addSubview(cloudImageView)
                 Bool.random() ?
