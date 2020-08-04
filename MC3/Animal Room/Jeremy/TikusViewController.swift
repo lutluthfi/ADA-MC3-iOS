@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TikusViewController: UIViewController, TikusGameDelegate {
     
@@ -31,6 +32,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
     var totalScore = 0
     var score = 0
     var timer: Timer?
+    var player: AVAudioPlayer?
     
     func startAnimate() {
         tikusMuncul()
@@ -50,12 +52,12 @@ class TikusViewController: UIViewController, TikusGameDelegate {
     }
     
     func startGame(){
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (_) in
             print("START GAME")
             self.startAnimate()
         }
         
-        Timer.scheduledTimer(withTimeInterval: 12, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
             print("END GAME")
             self.stopTikus()
             self.tikusHilang()
@@ -183,6 +185,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus satu selesai
         
@@ -194,6 +197,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus2.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus dua selesai
         
@@ -204,6 +208,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus3.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus tiga selesai
         
@@ -214,6 +219,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus4.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus dua selesai
         
@@ -224,6 +230,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus5.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus dua selesai
         
@@ -234,6 +241,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus6.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus enam selesai
         
@@ -244,6 +252,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
              self.tikus7.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus tujuh selesai
         
@@ -255,6 +264,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus8.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus delapan selesai
         
@@ -266,6 +276,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus9.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus sembilan selesai
         
@@ -276,6 +287,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus10.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus sepuluh selesai
         
@@ -286,6 +298,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus11.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus sebelas selesai
         
@@ -296,6 +309,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus12.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            playSound()
         }
         // tikus dua belas selesai
         
@@ -384,7 +398,22 @@ class TikusViewController: UIViewController, TikusGameDelegate {
         tikus11.alpha = 1
         tikus12.alpha = 1
     }
-    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "Button", withExtension: "mp3") else { return }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            guard let player = player else { return }
+
+            player.play()
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
     
 }
 
