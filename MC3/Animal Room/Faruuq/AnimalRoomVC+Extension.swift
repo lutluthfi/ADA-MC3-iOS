@@ -337,6 +337,18 @@ extension AnimalRoomVC {
         }
     }
     
+    func notification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Feeden"
+        content.body = "Hooman, I'm hungry, food..miaw"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+    }
+    
     //MARK: - Layouts
     func layout() {
         view.addSubview(background)

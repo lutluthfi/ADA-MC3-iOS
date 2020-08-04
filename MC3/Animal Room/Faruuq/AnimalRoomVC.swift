@@ -747,5 +747,21 @@ class AnimalRoomVC: UIViewController {
         let dragHandCare = UIPanGestureRecognizer(target: self, action: #selector(handCareDrag))
         handCare.addGestureRecognizer(dragHandCare)
         self.catPurrAudio()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
+            if granted {
+                print("User granted notification")
+            }
+            /*
+            if granted == false {
+                let alert = UIAlertController(title: "Feeden Notification", message: "Allowing Feeden to notify you will result in how we remind you to take care of your pet. You may turn on the notification through Settings > Notifications > Feeden", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            } */
+        }
+        
+        notification()
+        
     }
 }
