@@ -183,6 +183,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus satu selesai
         
@@ -194,6 +195,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus2.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus dua selesai
         
@@ -204,6 +206,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus3.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus tiga selesai
         
@@ -214,6 +217,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus4.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus dua selesai
         
@@ -224,6 +228,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus5.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus dua selesai
         
@@ -234,6 +239,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus6.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus enam selesai
         
@@ -244,6 +250,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
              self.tikus7.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus tujuh selesai
         
@@ -255,6 +262,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus8.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus delapan selesai
         
@@ -266,6 +274,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus9.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus sembilan selesai
         
@@ -276,6 +285,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus10.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus sepuluh selesai
         
@@ -286,6 +296,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus11.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus sebelas selesai
         
@@ -296,6 +307,7 @@ class TikusViewController: UIViewController, TikusGameDelegate {
             self.tikus12.stopAnimating()
             // Score nambah (score += 1)
             score += 1
+            soundManager.play(soundType: .button)
         }
         // tikus dua belas selesai
         
