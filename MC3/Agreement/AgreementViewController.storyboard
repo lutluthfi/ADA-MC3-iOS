@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ad7-Ib-Hib">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HappyMonkey-Regular.ttf">
+            <string>HappyMonkey-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Agreement View Controller-->
+        <scene sceneID="NEH-0f-NMB">
+            <objects>
+                <viewController storyboardIdentifier="AgreementViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ad7-Ib-Hib" customClass="AgreementViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2P5-RT-TOG">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agreement" translatesAutoresizingMaskIntoConstraints="NO" id="U1L-ue-IEU">
+                                <rect key="frame" x="108" y="59.5" width="340" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="dPe-Cd-az8"/>
+                                    <constraint firstAttribute="height" constant="295" id="ydN-1X-t0i"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Yrt-jt-twL">
+                                <rect key="frame" x="490" y="79" width="338" height="256.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agreement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-Cl-M88">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="28"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhy-3V-3Tc">
+                                        <rect key="frame" x="0.0" y="60" width="338" height="124.5"/>
+                                        <string key="text">Welcome to Game Title! In order to have a happily ever after garden, please pledge to these following five of freedom principles regarding animal welfare. Freedom from hunger &amp; thirst (food and water). Freedom from discomfort (shelter). Freedom from pain, injury &amp; disease (medical care). Freedom to express normal behaviour (exercise). Freedom from fear &amp; distress (love and understanding).</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7O3-i0-vLg">
+                                        <rect key="frame" x="0.0" y="216.5" width="338" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRI-tf-KUv">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="40"/>
+                                                <color key="backgroundColor" name="413834"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="128" id="33P-HT-ewD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="mRI-tf-KUv" secondAttribute="bottom" id="8SD-0e-Boc"/>
+                                            <constraint firstAttribute="height" constant="40" id="9p6-CT-CSk"/>
+                                            <constraint firstItem="mRI-tf-KUv" firstAttribute="leading" secondItem="7O3-i0-vLg" secondAttribute="leading" id="FVB-Qf-Md2"/>
+                                            <constraint firstItem="mRI-tf-KUv" firstAttribute="top" secondItem="7O3-i0-vLg" secondAttribute="top" id="Zpz-RF-e56"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="BG"/>
+                        <constraints>
+                            <constraint firstItem="Yrt-jt-twL" firstAttribute="leading" secondItem="U1L-ue-IEU" secondAttribute="trailing" constant="42" id="Ahe-X3-QLH"/>
+                            <constraint firstItem="CGN-qM-GWW" firstAttribute="trailing" secondItem="Yrt-jt-twL" secondAttribute="trailing" constant="24" id="R1e-WG-u2b"/>
+                            <constraint firstItem="U1L-ue-IEU" firstAttribute="centerY" secondItem="2P5-RT-TOG" secondAttribute="centerY" id="cFc-uD-IbQ"/>
+                            <constraint firstItem="U1L-ue-IEU" firstAttribute="leading" secondItem="CGN-qM-GWW" secondAttribute="leading" constant="64" id="eu3-GV-PJi"/>
+                            <constraint firstItem="Yrt-jt-twL" firstAttribute="centerY" secondItem="U1L-ue-IEU" secondAttribute="centerY" id="mj9-Hs-rds"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CGN-qM-GWW"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentAgreementLabel" destination="fhy-3V-3Tc" id="p7z-nx-Odh"/>
+                        <outlet property="startButton" destination="mRI-tf-KUv" id="yMY-3X-XRA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcJ-yX-ZBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Agreement" width="363" height="295"/>
+        <namedColor name="413834">
+            <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BG">
+            <color red="1" green="0.97600001096725464" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
