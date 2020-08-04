@@ -39,6 +39,12 @@ class MainGardenViewController: UIViewController {
         let view = UIView()
         view.frame = self.view.frame
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.gestureRecognizers = [
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.onOpaqueViewTapped(_:))
+            )
+        ]
         return view
     }()
 
@@ -186,6 +192,21 @@ class MainGardenViewController: UIViewController {
 // MARK: - @objc Function
 extension MainGardenViewController {
 
+    @objc private func onOpaqueViewTapped(_ sender: UITapGestureRecognizer) {
+        self.leadingAllStatusAnimalInfoContainerViewConstraint.constant = Constant
+            .kHideLeadingAllStatusAnimalInfoContainerViewConstraint
+        self.opaqueView.removeFromSuperview()
+        UIView.animate(withDuration: 0.75, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: { (_) in
+            self.centerYPetAnimalInfoImageView.constant = Constant
+                .kHideCenterYPetAnimalInfoImageViewConstraint
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+            })
+        })
+    }
+
     @objc private func onPetImageViewTapped(_ sender: UITapGestureRecognizer) {
         let isContainerViewShow = self.leadingAllStatusAnimalInfoContainerViewConstraint.constant ==
             Constant.kShowLeadingAllStatusAnimalInfoContainerViewConstraint
@@ -215,6 +236,7 @@ extension MainGardenViewController {
 // MARK: - Private Function
 extension MainGardenViewController {
 
+    // Will generate position of pet as much as user have
     private func doGeneratePetImageView() {
         let petImageView = UIImageView()
         let xPositionRange = self.petPositionHolderView.frame.origin.x ..<
