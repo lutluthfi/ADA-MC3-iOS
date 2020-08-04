@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
     @IBAction func onPressButton(_ sender: UIButton) {
         switch sender {
         case homeBtn:
-            dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "unwind2MainGardenView", sender: nil)
             break
         case signoutBtn:
             break

@@ -59,7 +59,7 @@ class ProfilePetViewController: UIViewController {
     @IBAction func onPressButton(_ sender: UIButton) {
         switch sender {
         case homeBtn:
-            dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "unwind2MainGardenView", sender: nil)
             break
         case backBtn:
             self.navigationController?.popViewController(animated: true)

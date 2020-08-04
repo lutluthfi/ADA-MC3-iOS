@@ -287,6 +287,56 @@ extension AnimalRoomVC {
         }
     }
     
+    func spawnCoin() {
+        let coin1 = UIImageView(image: UIImage(named: "Coin"))
+        let coin2 = UIImageView(image: UIImage(named: "Coin"))
+        let coin3 = UIImageView(image: UIImage(named: "Coin"))
+        let coin4 = UIImageView(image: UIImage(named: "Coin"))
+        let coin5 = UIImageView(image: UIImage(named: "Coin"))
+        let coin6 = UIImageView(image: UIImage(named: "Coin"))
+        let coin7 = UIImageView(image: UIImage(named: "Coin"))
+        let coin8 = UIImageView(image: UIImage(named: "Coin"))
+        let coin9 = UIImageView(image: UIImage(named: "Coin"))
+        let coin10 = UIImageView(image: UIImage(named: "Coin"))
+        
+        let coins: [UIImageView] = [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10]
+        for item in coins {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(coinTap))
+            item.addGestureRecognizer(tap)
+            item.isUserInteractionEnabled = true
+            item.layer.position = CGPoint(x: CGFloat.random(in: 100..<view.frame.width - 200), y: CGFloat.random(in: 0..<view.frame.height - 200))
+            view.addSubview(item)
+        }
+
+        animator = UIDynamicAnimator(referenceView: self.view)
+        let gravity = UIGravityBehavior(items: [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10])
+        animator?.addBehavior(gravity)
+        
+        let collision = UICollisionBehavior(items: [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10])
+        collision.translatesReferenceBoundsIntoBoundary = true
+        animator?.addBehavior(collision)
+        
+        let bounce = UIDynamicItemBehavior(items: [coin1, coin2, coin3, coin4, coin5, coin6, coin7, coin8, coin9, coin10])
+        bounce.elasticity = 0.7
+        animator?.addBehavior(bounce)
+    }
+    
+    @objc func coinTap(sender: UITapGestureRecognizer) {
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            options: .curveEaseIn,
+            animations: {
+                sender.view?.layer.position = CGPoint(x: 90, y: 0)
+                sender.view?.alpha = 0
+        },
+            completion: nil)
+        rewardsValue += 1
+        DispatchQueue.main.async {
+            self.rewardsLabel.text = "\(self.rewardsValue)"
+        }
+    }
+    
     //MARK: - Layouts
     func layout() {
         view.addSubview(background)
@@ -407,7 +457,7 @@ extension AnimalRoomVC {
             bowl.heightAnchor.constraint(equalToConstant: 92),
             
             phone.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 70),
-            phone.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100),
+            phone.leadingAnchor.constraint(equalTo: lamp.leadingAnchor),
             phone.widthAnchor.constraint(equalToConstant: 144),
             phone.heightAnchor.constraint(equalToConstant: 124),
             
