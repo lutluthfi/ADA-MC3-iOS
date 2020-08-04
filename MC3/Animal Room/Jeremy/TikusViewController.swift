@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TikusViewController: UIViewController {
+class TikusViewController: UIViewController, TikusGameDelegate {
     
     //kanan ke kiri
     @IBOutlet weak var tikus: UIImageView!
@@ -28,10 +28,13 @@ class TikusViewController: UIViewController {
     
     @IBOutlet weak var tangan: UIImageView!
     
+    var totalScore = 0
     var score = 0
     var timer: Timer?
     
     func startAnimate() {
+        tikusMuncul()
+        
         tesAnimasi(delay: 1, tikusInput: tikus, angka: -1000)
         tesAnimasi(delay: 2, tikusInput: tikus2, angka: -1000)
         tesAnimasi(delay: 3.1, tikusInput: tikus3, angka: -1000)
@@ -46,26 +49,25 @@ class TikusViewController: UIViewController {
         tesAnimasi(delay: 3, tikusInput: tikus12, angka: 1000)
     }
     
-    @objc func restart(){
-        tikusHilang()
-        startAnimate()
+    func startGame(){
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
+            print("START GAME")
+            self.startAnimate()
+        }
         
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
-           print("timer selesai")
-        self.handle1()
+        Timer.scheduledTimer(withTimeInterval: 12, repeats: false) { (_) in
+            print("END GAME")
+            self.stopTikus()
+            self.tikusHilang()
+            self.handle()
         }
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tikusHilang()
-        startAnimate()
-        
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
-           print("timer selesai")
-            self.handle()
-        }
+        settingsLauncher.delegate = self
+        startGame()
     }
     
     let settingsLauncher = SettingLauncher()
@@ -75,24 +77,21 @@ class TikusViewController: UIViewController {
         settingsLauncher.showSettings()
     }
     
-    func handle1(){
-        setText()
-        settingsLauncher.handleMuncul()
+    func playAgain() {
+        startGame()
     }
     
-    func ReplayAction(){
-        settingsLauncher.playButton.addTarget(self, action: #selector(restart), for: .touchUpInside)
+    func backToRoom() {
+        performSegue(withIdentifier: "unwind2AnimalRoom", sender: totalScore)
     }
     
     func setText(){
         let nilai = score*2
         settingsLauncher.tulisan2.text = "You just earn \(nilai)$ for"
         settingsLauncher.tulisan3.text = "catching \(score) mouse."
+        totalScore += score
         score = 0
-        ReplayAction()
     }
-
-    
     
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         // ngedetec position tikus 1 ketika bergerak
@@ -306,14 +305,15 @@ class TikusViewController: UIViewController {
     
     func tesAnimasi(delay: Double, tikusInput: UIImageView, angka: Int) {
         UIView.animate(
-            withDuration: 3,
-            delay: delay,
-            options: [.repeat],
-            animations: {
-            tikusInput.alpha = 1
+        withDuration: 3,
+        delay: delay,
+        options: [.repeat],
+        animations: {
+//            tikusInput.alpha = 1
             tikusInput.transform = CGAffineTransform(translationX: CGFloat(angka), y: 0)
-        },
-            completion: nil)
+        }, completion: { (isComplete) in
+//            print(isComplete, angka)
+        })
     }
     
     
@@ -330,6 +330,44 @@ class TikusViewController: UIViewController {
         tikus10.alpha = 0
         tikus11.alpha = 0
         tikus12.alpha = 0
+    }
+    
+    func stopTikus() {
+        tikus.layer.removeAllAnimations()
+        tikus.layer.transform = CATransform3DIdentity
+        
+        tikus2.layer.removeAllAnimations()
+        tikus2.layer.transform = CATransform3DIdentity
+        
+        tikus3.layer.removeAllAnimations()
+        tikus3.layer.transform = CATransform3DIdentity
+        
+        tikus4.layer.removeAllAnimations()
+        tikus4.layer.transform = CATransform3DIdentity
+        
+        tikus5.layer.removeAllAnimations()
+        tikus5.layer.transform = CATransform3DIdentity
+        
+        tikus6.layer.removeAllAnimations()
+        tikus6.layer.transform = CATransform3DIdentity
+        
+        tikus7.layer.removeAllAnimations()
+        tikus7.layer.transform = CATransform3DIdentity
+        
+        tikus8.layer.removeAllAnimations()
+        tikus8.layer.transform = CATransform3DIdentity
+        
+        tikus9.layer.removeAllAnimations()
+        tikus9.layer.transform = CATransform3DIdentity
+        
+        tikus10.layer.removeAllAnimations()
+        tikus10.layer.transform = CATransform3DIdentity
+        
+        tikus11.layer.removeAllAnimations()
+        tikus11.layer.transform = CATransform3DIdentity
+        
+        tikus12.layer.removeAllAnimations()
+        tikus12.layer.transform = CATransform3DIdentity
     }
     
     func tikusMuncul(){
