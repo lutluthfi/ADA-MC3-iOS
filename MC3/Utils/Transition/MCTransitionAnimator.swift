@@ -41,12 +41,6 @@ final class MCTransitionAnimator: NSObject, UIViewControllerAnimatedTransitionin
         self.presenting ?
             containerView.addSubview(toView) :
             containerView.insertSubview(toView, belowSubview: fromView)
-        // Use the following code to add circle ease out animation
-        // let paths = self.getStartEndPath()
-        // let maskCircleLayer = CAShapeLayer()
-        // maskCircleLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        // maskCircleLayer.position = self.circleOrigin
-        // maskCircleLayer.path = paths.start
         if self.presenting {
             toView.alpha = 0
         }

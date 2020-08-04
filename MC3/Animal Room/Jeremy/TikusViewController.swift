@@ -383,7 +383,9 @@ class TikusViewController: UIViewController, TikusGameDelegate {
         tikus10.alpha = 1
         tikus11.alpha = 1
         tikus12.alpha = 1
-    } 
+    }
+    
+    
 }
 
 
