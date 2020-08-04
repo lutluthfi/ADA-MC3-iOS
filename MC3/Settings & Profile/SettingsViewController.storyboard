@@ -955,6 +955,9 @@
             <point key="canvasLocation" x="161" y="1204"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1lS-4g-mLY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Help-1" width="687" height="213"/>
         <image name="Help-2" width="738" height="213"/>

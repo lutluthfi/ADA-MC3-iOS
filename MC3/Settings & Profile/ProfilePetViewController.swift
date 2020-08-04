@@ -62,7 +62,8 @@ class ProfilePetViewController: UIViewController {
             performSegue(withIdentifier: "unwind2MainGardenView", sender: nil)
             break
         case backBtn:
-            self.navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+//            self.navigationController?.popViewController(animated: true)
             break
         default:
             break

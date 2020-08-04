@@ -22,6 +22,7 @@
 		4417903E24D7244600C6C655 /* Cat-Meow-Regular.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903624D7244600C6C655 /* Cat-Meow-Regular.mp3 */; };
 		4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417903F24D728DE00C6C655 /* UIButton+Extension.swift */; };
 		4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */; };
+		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
@@ -744,15 +745,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U7M39KWXM;
+				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -762,15 +765,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5U7M39KWXM;
+				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
