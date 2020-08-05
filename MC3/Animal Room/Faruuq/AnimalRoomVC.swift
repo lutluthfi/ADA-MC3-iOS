@@ -11,7 +11,15 @@ import AVFoundation
 
 class AnimalRoomVC: UIViewController {
     
-    var rewardsValue: Int = 100
+    struct Keys {
+        static let hunger = "saveHunger"
+        static let sleep = "saveSleep"
+        static let health = "saveHealth"
+        static let fun = "saveFun"
+        static let love = "saveLove"
+        static let rewards = "saveRewards"
+    }
+    
     let bowlIcons: [UIImage] = [#imageLiteral(resourceName: "Bowl-Empty"), #imageLiteral(resourceName: "Bowl-Half"), #imageLiteral(resourceName: "Bowl-Full"), #imageLiteral(resourceName: "Bowl-Excess")]
     var bowlPresent: Bool = false
     var timer: Timer?
@@ -22,11 +30,14 @@ class AnimalRoomVC: UIViewController {
     var animator: UIDynamicAnimator?
     
     //MARK: Logic
+    var rewardsValue: Int = 100
     var hunger: Float = 0.0
     var sleep: Float = 0.0
     var health: Float = 0.0
     var fun: Float = 0.0
     var love: Float = 0.0
+    
+    let defaults = UserDefaults.standard
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -154,18 +165,24 @@ class AnimalRoomVC: UIViewController {
         switch currentTimer {
         case 3:
             sleep += 0.2
+            defaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
+                defaults.set(hunger, forKey: Keys.hunger)
             }
         case 5:
             sleep += 0.3
+            defaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
+                defaults.set(hunger, forKey: Keys.hunger)
             }
         case 8:
             sleep += 0.5
+            defaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
+                defaults.set(hunger, forKey: Keys.hunger)
             }
         default:
             break
@@ -231,6 +248,7 @@ class AnimalRoomVC: UIViewController {
             self.overlayAnimation()
         } else {
             health += 1
+            defaults.set(health, forKey: Keys.health)
             progressBar.setProgress(health, animated: true)
             
             let alert = UIAlertController(title: "Vet Phone Number", message: "Enter your vet number", preferredStyle: .alert)
@@ -297,15 +315,15 @@ class AnimalRoomVC: UIViewController {
     @objc func timerEnds() {
         currentTimer += 1
         switch currentTimer {
-        case 2:
+        case 1:
             DispatchQueue.main.async {
                 self.bowl.image = self.bowlIcons[1]
             }
-        case 4:
+        case 2:
             DispatchQueue.main.async {
                 self.bowl.image = self.bowlIcons[2]
             }
-        case 6:
+        case 4:
             DispatchQueue.main.async {
                 self.bowl.image = self.bowlIcons[3]
             }
@@ -335,17 +353,23 @@ class AnimalRoomVC: UIViewController {
                     switch bowl.image {
                     case bowlIcons[1]:
                         hunger += 0.1
+                        defaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
+                        defaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
+                        defaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
+                        defaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
+                        defaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
+                        defaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     default:
@@ -354,6 +378,11 @@ class AnimalRoomVC: UIViewController {
                     
                     bowl.image = bowlIcons[0]
                     if hunger >= 1 {
+                        let attributedTextFull = NSMutableAttributedString(string: "Meoww is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                        attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of food. Play game with Meoww to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                        overlayText.attributedText = attributedTextFull
+                        overlayText.textAlignment = .center
+                        overlayAnimation()
                         spawnCoin()
                     }
                     
@@ -413,6 +442,7 @@ class AnimalRoomVC: UIViewController {
 //                    catPurr?.play()
                     soundManager.play(soundType: .catPurr)
                     love += 0.001
+                    defaults.set(love, forKey: Keys.love)
                     if love >= 1 {
                         spawnCoin()
                     }
@@ -496,9 +526,6 @@ class AnimalRoomVC: UIViewController {
         btn.titleLabel?.font = UIFont(name: "HappyMonkey-Regular", size: 20)
         btn.tintColor = .white
         btn.layer.cornerRadius = 5
-        //TODO: How to adjust the button size to be smaller than the stackview size
-        //        btn.frame = CGRect(x: 0, y: 0, width: 128, height: 39)
-        //        btn.sizeThatFits(CGSize(width: 128, height: 39))
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addTarget(self, action: #selector(overlayDismiss), for: .touchUpInside)
         return btn
@@ -634,6 +661,7 @@ class AnimalRoomVC: UIViewController {
         } else {
             if hunger > 0 {
                 health = 1
+                defaults.set(health, forKey: Keys.health)
                 catNormal.isHidden = true
                 bowl.isHidden = true
                 catFood.isHidden = true
@@ -651,6 +679,7 @@ class AnimalRoomVC: UIViewController {
                 progressBarAnimate()
             } else {
                 health = 0
+                defaults.set(health, forKey: Keys.health)
                 catNormal.isHidden = true
                 bowl.isHidden = true
                 catFood.isHidden = true
@@ -682,7 +711,9 @@ class AnimalRoomVC: UIViewController {
     
     @objc func gameBtnAction(sender: UIButton) {
         hunger -= 0.2
+        defaults.set(hunger, forKey: Keys.hunger)
         sleep -= 0.2
+        defaults.set(sleep, forKey: Keys.sleep)
         let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
         self.present(vc, animated: true)
@@ -721,11 +752,11 @@ class AnimalRoomVC: UIViewController {
     }
     
     @IBAction func unwindToAnimalRoom(_ segue : UIStoryboardSegue) {
-      // Do nothing
         let segueDes = segue.source as! TikusViewController
         print(segueDes.totalScore)
         let totalScoreGame = segueDes.totalScore * 2
         rewardsValue += totalScoreGame
+        defaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
             self.rewardsLabel.text = "\(self.rewardsValue)"
         }
@@ -735,15 +766,19 @@ class AnimalRoomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.layout()
-        rewardsLabel.text = ("\(rewardsValue)")
         
+        loadDefaults()
+        
+        rewardsLabel.text = ("\(rewardsValue)")
         progressBar.setProgress(hunger, animated: true)
         
         let holdCatFood = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
         holdCatFood.minimumPressDuration = 0.1
         catFood.addGestureRecognizer(holdCatFood)
+        
         let dragBowl = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
         bowl.addGestureRecognizer(dragBowl)
+        
         let dragHandCare = UIPanGestureRecognizer(target: self, action: #selector(handCareDrag))
         handCare.addGestureRecognizer(dragHandCare)
         self.catPurrAudio()

@@ -95,7 +95,6 @@ extension AnimalRoomVC {
             animations: {
                 self.zPopUp1.alpha = 1
                 self.zPopUp1.transform = .identity
-//                self.zPopUp1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }) { (finished) in
             self.z2Animation()
         }
@@ -112,7 +111,6 @@ extension AnimalRoomVC {
             animations: {
                 self.zPopUp2.alpha = 1
                 self.zPopUp2.transform = .identity
-//                self.zPopUp2.transform = CGAffineTransform(scaleX: 2, y: 2)
         }) { (finished) in
             self.z3Animation()
         }
@@ -332,6 +330,7 @@ extension AnimalRoomVC {
         },
             completion: nil)
         rewardsValue += 1
+        defaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
             self.rewardsLabel.text = "\(self.rewardsValue)"
         }
@@ -347,6 +346,15 @@ extension AnimalRoomVC {
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
+    }
+    
+    func loadDefaults() {
+        rewardsValue = defaults.integer(forKey: Keys.rewards)
+        hunger = defaults.float(forKey: Keys.hunger)
+        sleep = defaults.float(forKey: Keys.sleep)
+        health = defaults.float(forKey: Keys.health)
+        fun = defaults.float(forKey: Keys.fun)
+        love = defaults.float(forKey: Keys.love)
     }
     
     //MARK: - Layouts
