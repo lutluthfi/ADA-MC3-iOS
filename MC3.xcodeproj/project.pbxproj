@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A49FA1624DB8445004E8D22 /* InventoryVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */; };
+		2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA1024DB8445004E8D22 /* InventoryVC.swift */; };
+		2A49FA1C24DB8445004E8D22 /* InventoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A49FA1424DB8445004E8D22 /* InventoryStoryboard.storyboard */; };
 		2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */; };
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
@@ -22,8 +25,10 @@
 		4417903E24D7244600C6C655 /* Cat-Meow-Regular.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4417903624D7244600C6C655 /* Cat-Meow-Regular.mp3 */; };
 		4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417903F24D728DE00C6C655 /* UIButton+Extension.swift */; };
 		4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */; };
-		448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 448D224124C573F400ED44E8 /* SettingsViewController.storyboard */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
+		44B1551624DC1E2A00F6AD69 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */; };
+		44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551924DC213D00F6AD69 /* InventoryPosition.swift */; };
+		44B1551C24DC2AD500F6AD69 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551B24DC2AD500F6AD69 /* InventoryList.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
 		44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082D24C5881300474342 /* ProfilePetViewController.swift */; };
@@ -66,9 +71,16 @@
 		4F6FB31024D0449C0079AADB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30C24D0449C0079AADB /* CustomButton.swift */; };
 		4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30D24D0449C0079AADB /* SettingLauncher.swift */; };
 		4F6FB31224D0449C0079AADB /* TikusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB30E24D0449C0079AADB /* TikusViewController.swift */; };
+		4F6FB33624D484C90079AADB /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */; };
+		4F6FB33A24D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB33924D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift */; };
+		4F6FB33C24D4962E0079AADB /* BackgroundStatusAnimalInfoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB33B24D4962E0079AADB /* BackgroundStatusAnimalInfoImageView.swift */; };
+		4F6FB33F24D4A0E80079AADB /* StatusAnimalInfoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FB33E24D4A0E80079AADB /* StatusAnimalInfoProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryVC+Extension.swift"; sourceTree = "<group>"; };
+		2A49FA1024DB8445004E8D22 /* InventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
+		2A49FA1424DB8445004E8D22 /* InventoryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InventoryStoryboard.storyboard; sourceTree = "<group>"; };
 		2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoomVC.swift; sourceTree = "<group>"; };
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
@@ -86,6 +98,9 @@
 		4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
+		44B1551924DC213D00F6AD69 /* InventoryPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryPosition.swift; sourceTree = "<group>"; };
+		44B1551B24DC2AD500F6AD69 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		44B2082D24C5881300474342 /* ProfilePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePetViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +145,10 @@
 		4F6FB30C24D0449C0079AADB /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4F6FB30D24D0449C0079AADB /* SettingLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingLauncher.swift; sourceTree = "<group>"; };
 		4F6FB30E24D0449C0079AADB /* TikusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TikusViewController.swift; sourceTree = "<group>"; };
+		4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		4F6FB33924D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleContainerStatusAnimalInfoView.swift; sourceTree = "<group>"; };
+		4F6FB33B24D4962E0079AADB /* BackgroundStatusAnimalInfoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStatusAnimalInfoImageView.swift; sourceTree = "<group>"; };
+		4F6FB33E24D4A0E80079AADB /* StatusAnimalInfoProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAnimalInfoProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +162,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A49FA0D24DB840A004E8D22 /* Garden Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				2A49FA1424DB8445004E8D22 /* InventoryStoryboard.storyboard */,
+				2A49FA1024DB8445004E8D22 /* InventoryVC.swift */,
+				2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */,
+			);
+			path = "Garden Inventory";
+			sourceTree = "<group>";
+		};
 		2AD1427124C9BC0C008160A3 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +201,7 @@
 			children = (
 				4417901D24D4F84900C6C655 /* Controllers */,
 				4423D62D24C8433A004A73D4 /* Components */,
-				448D224124C573F400ED44E8 /* SettingsViewController.storyboard */,
+				4F6FB33524D484C90079AADB /* SettingsViewController.storyboard */,
 				448D224524C5746F00ED44E8 /* SettingsViewController.swift */,
 				44B2082924C5871100474342 /* ProfileViewController.swift */,
 				44B2082B24C5873A00474342 /* HelpViewController.swift */,
@@ -212,6 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				4417902D24D51AD800C6C655 /* SoundEnum.swift */,
+				44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */,
+				44B1551924DC213D00F6AD69 /* InventoryPosition.swift */,
+				44B1551B24DC2AD500F6AD69 /* InventoryList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +258,7 @@
 		4F1E7DE324CAE08100C300F8 /* MainGarden */ = {
 			isa = PBXGroup;
 			children = (
+				4F6FB33D24D4A06C0079AADB /* Utils */,
 				4F1E7DEA24CC44E100C300F8 /* CollectionView */,
 				4F1E7DE624CAE0A900C300F8 /* MainGardenViewController.swift */,
 				4F1E7DE824CAE0B300C300F8 /* MainGardenViewController.storyboard */,
@@ -406,6 +439,7 @@
 			children = (
 				4F55F91A24BDBB9B000739E6 /* MC3 */,
 				4F55F91924BDBB9B000739E6 /* Products */,
+				4F9F451324D9715400BAFB23 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,6 +454,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				2A49FA0D24DB840A004E8D22 /* Garden Inventory */,
 				4417902C24D51AC500C6C655 /* Model */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
 				2AF84C5124BDDB1A00239497 /* Animal Room */,
@@ -448,6 +483,24 @@
 				4F6FB30E24D0449C0079AADB /* TikusViewController.swift */,
 			);
 			path = Jeremy;
+			sourceTree = "<group>";
+		};
+		4F6FB33D24D4A06C0079AADB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4F6FB33B24D4962E0079AADB /* BackgroundStatusAnimalInfoImageView.swift */,
+				4F6FB33924D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift */,
+				4F6FB33E24D4A0E80079AADB /* StatusAnimalInfoProgressView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4F9F451324D9715400BAFB23 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				448D224124C573F400ED44E8 /* SettingsViewController.storyboard */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,22 +562,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				4417903824D7244600C6C655 /* Background-Music.mp3 in Resources */,
+				2A49FA1C24DB8445004E8D22 /* InventoryStoryboard.storyboard in Resources */,
 				4F6FB30124D040DE0079AADB /* AnimalRoomViewController.storyboard in Resources */,
 				2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */,
 				4417903E24D7244600C6C655 /* Cat-Meow-Regular.mp3 in Resources */,
 				4F35178724C1A2F4000E5E19 /* AgreementViewController.storyboard in Resources */,
 				4F35178824C1AB0F000E5E19 /* HappyMonkey-Regular.ttf in Resources */,
+				4F6FB33624D484C90079AADB /* SettingsViewController.storyboard in Resources */,
 				4F2144B924CD54B0007DAAA8 /* DialogAnimalInfoView.xib in Resources */,
 				4417903C24D7244600C6C655 /* Coins.mp3 in Resources */,
 				4F6FB2FF24D03F270079AADB /* LaunchScreen.storyboard in Resources */,
 				4F6FB30F24D0449C0079AADB /* TikusStoryboard.storyboard in Resources */,
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
+				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				4417903724D7244600C6C655 /* Cat-Meow-Angry.mp3 in Resources */,
-				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				4417903D24D7244600C6C655 /* Cat-Eating.mp3 in Resources */,
-				448D224224C573F400ED44E8 /* SettingsViewController.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 				4417903A24D7244600C6C655 /* Cat-Pouring-Food.mp3 in Resources */,
 				4417903924D7244600C6C655 /* Button.mp3 in Resources */,
@@ -539,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */,
+				44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
@@ -551,6 +606,7 @@
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */,
 				4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */,
+				44B1551624DC1E2A00F6AD69 /* SettingsKey.swift in Sources */,
 				4417902124D4F87700C6C655 /* AudioManager.swift in Sources */,
 				4F3517AF24C373C7000E5E19 /* CoreDataGameplayStorage.swift in Sources */,
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
@@ -560,17 +616,22 @@
 				4F2144C024CDA346007DAAA8 /* FakeTextFieldView.swift in Sources */,
 				4F2144C224CDA3A6007DAAA8 /* TextFieldInputAccessoryView.swift in Sources */,
 				4F35179424C3697D000E5E19 /* Gameplay.swift in Sources */,
+				4F6FB33F24D4A0E80079AADB /* StatusAnimalInfoProgressView.swift in Sources */,
+				4F6FB33C24D4962E0079AADB /* BackgroundStatusAnimalInfoImageView.swift in Sources */,
 				4F6FB31024D0449C0079AADB /* CustomButton.swift in Sources */,
 				4F3517A524C371D5000E5E19 /* GameplayEntity+CoreDataClass.swift in Sources */,
 				4F3517A624C371D5000E5E19 /* GameplayEntity+CoreDataProperties.swift in Sources */,
+				2A49FA1624DB8445004E8D22 /* InventoryVC+Extension.swift in Sources */,
 				4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */,
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */,
+				4F6FB33A24D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift in Sources */,
 				4F6FB2F424D03ED20079AADB /* AppDelegate.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 				4F3517B124C6A4FE000E5E19 /* Animal.swift in Sources */,
 				44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
+				44B1551C24DC2AD500F6AD69 /* InventoryList.swift in Sources */,
 				448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */,
 				4F6FB31224D0449C0079AADB /* TikusViewController.swift in Sources */,
 				44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */,
@@ -578,6 +639,7 @@
 				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
 				4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */,
 				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
+				2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */,
 				4F2144BC24CD5D1C007DAAA8 /* DialogFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,15 +776,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4L7CSTPQKF;
+				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.ruq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -732,15 +796,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4L7CSTPQKF;
+				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.ruq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

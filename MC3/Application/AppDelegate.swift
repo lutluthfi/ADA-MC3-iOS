@@ -53,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             settingsDefaults.set(true, forKey: "soundStatus")
             settingsDefaults.set(true, forKey: "notificationStatus")
             settingsDefaults.set(true, forKey: "init")
+            
+            // for inventory
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder1)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder2)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder3)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder4)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder5)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder6)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder7)
+            settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder8)
         }
         
         let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
@@ -94,9 +104,9 @@ extension AppDelegate {
 
     private func navigationDidStarted() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: MainGardenViewController.identifier, bundle: nil)
+        let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(
-            identifier: MainGardenViewController.identifier
+            identifier: SplashViewController.identifier
         )
         self.navigationController.setViewControllers([viewController], animated: true)
         self.window?.rootViewController = self.navigationController

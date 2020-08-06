@@ -32,11 +32,18 @@ class AgreementViewController: UIViewController {
 extension AgreementViewController {
 
     @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+        self.showMainGardenScene()
     }
 
 }
 
 // MARK: - Route Function
 extension AgreementViewController {
+
+    private func showMainGardenScene() {
+        let storyboard = UIStoryboard(name: MainGardenViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: MainGardenViewController.identifier)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
