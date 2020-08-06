@@ -26,6 +26,9 @@
 		4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417903F24D728DE00C6C655 /* UIButton+Extension.swift */; };
 		4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */; };
 		448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448D224524C5746F00ED44E8 /* SettingsViewController.swift */; };
+		44B1551624DC1E2A00F6AD69 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */; };
+		44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551924DC213D00F6AD69 /* InventoryPosition.swift */; };
+		44B1551C24DC2AD500F6AD69 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551B24DC2AD500F6AD69 /* InventoryList.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
 		44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082D24C5881300474342 /* ProfilePetViewController.swift */; };
@@ -95,6 +98,9 @@
 		4417904124D72B5200C6C655 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		448D224124C573F400ED44E8 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		448D224524C5746F00ED44E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
+		44B1551924DC213D00F6AD69 /* InventoryPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryPosition.swift; sourceTree = "<group>"; };
+		44B1551B24DC2AD500F6AD69 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		44B2082D24C5881300474342 /* ProfilePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePetViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				4417902D24D51AD800C6C655 /* SoundEnum.swift */,
+				44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */,
+				44B1551924DC213D00F6AD69 /* InventoryPosition.swift */,
+				44B1551B24DC2AD500F6AD69 /* InventoryList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -584,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */,
+				44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
@@ -596,6 +606,7 @@
 				4F35178524C1A2E7000E5E19 /* AgreementViewController.swift in Sources */,
 				4F1E7DE724CAE0A900C300F8 /* MainGardenViewController.swift in Sources */,
 				4F3517B524C6CD1F000E5E19 /* PetActivity.swift in Sources */,
+				44B1551624DC1E2A00F6AD69 /* SettingsKey.swift in Sources */,
 				4417902124D4F87700C6C655 /* AudioManager.swift in Sources */,
 				4F3517AF24C373C7000E5E19 /* CoreDataGameplayStorage.swift in Sources */,
 				4F35178C24C1BDCB000E5E19 /* CoreDataStorage.xcdatamodeld in Sources */,
@@ -620,6 +631,7 @@
 				4F3517B124C6A4FE000E5E19 /* Animal.swift in Sources */,
 				44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
+				44B1551C24DC2AD500F6AD69 /* InventoryList.swift in Sources */,
 				448D224624C5746F00ED44E8 /* SettingsViewController.swift in Sources */,
 				4F6FB31224D0449C0079AADB /* TikusViewController.swift in Sources */,
 				44B2083224C58D2600474342 /* UIColor+Extension.swift in Sources */,
