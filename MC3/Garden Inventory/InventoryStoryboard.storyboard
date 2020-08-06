@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v61-bw-am8">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--InventoryVC-->
+        <scene sceneID="If2-pu-tZo">
+            <objects>
+                <viewController storyboardIdentifier="InventoryVC" id="v61-bw-am8" customClass="InventoryVC" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XFY-OQ-7zu">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Intro" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-Sn-f78">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnT-UI-lqf" userLabel="Trigger Button">
+                                <rect key="frame" x="810" y="171" width="26" height="51"/>
+                                <color key="tintColor" name="E58069"/>
+                                <state key="normal" image="cube.box.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="triggerBtn:" destination="v61-bw-am8" eventType="touchUpInside" id="5Qj-06-JFF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rewards-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="QOM-uo-hyl">
+                                <rect key="frame" x="44" y="21" width="112" height="44"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bush-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhh-Ei-CkD">
+                                <rect key="frame" x="0.0" y="144" width="248" height="143"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bush-2" translatesAutoresizingMaskIntoConstraints="NO" id="Spl-8c-ycQ" userLabel="Bush2">
+                                <rect key="frame" x="152.5" y="249" width="151" height="102"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bench-Flip" translatesAutoresizingMaskIntoConstraints="NO" id="xtk-WR-xhL" userLabel="Bench1">
+                                <rect key="frame" x="270" y="327" width="176" height="72"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bench" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Vn-4ev" userLabel="Bench2">
+                                <rect key="frame" x="654" y="327" width="176" height="72"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lamp-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZlL-kA-4Pr" userLabel="Lamp1">
+                                <rect key="frame" x="79" y="96" width="34" height="277"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lamp-2" translatesAutoresizingMaskIntoConstraints="NO" id="Igc-RF-WOH" userLabel="Lamp2">
+                                <rect key="frame" x="458.5" y="144" width="19" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="2KT-iH-OC0"/>
+                                    <constraint firstAttribute="width" constant="19" id="PuB-xC-5RD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree" translatesAutoresizingMaskIntoConstraints="NO" id="eHA-eY-dx4" userLabel="Tree1">
+                                <rect key="frame" x="186.5" y="24" width="179" height="216"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree" translatesAutoresizingMaskIntoConstraints="NO" id="OgN-Se-g1M" userLabel="Tree 2">
+                                <rect key="frame" x="666" y="76" width="138" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="d2Q-HS-58P"/>
+                                    <constraint firstAttribute="width" constant="138" id="xVh-fS-lT1"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIU-Ni-bGm" userLabel="Dim">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <color key="backgroundColor" name="Overlay35"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="896" id="R5A-A4-rMW"/>
+                                    <constraint firstAttribute="height" constant="414" id="uhQ-UY-gO3"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OwM-fI-qH9" appends="YES" id="0QT-QI-zZk"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" alpha="0.0" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAr-Df-2aI" userLabel="Bush Placeholder 1">
+                                <rect key="frame" x="44" y="220" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="n9n-iP-qrI"/>
+                                    <constraint firstAttribute="width" constant="144" id="rUC-8D-hgg"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="asn-PM-vJ5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMy-Uy-hKy" userLabel="Bush Placeholder 2">
+                                <rect key="frame" x="201" y="270" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BLd-79-sKZ"/>
+                                    <constraint firstAttribute="width" constant="144" id="lgJ-ME-FLt"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="VcH-tL-urL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYC-ys-frk" userLabel="Bench Placeholder 3">
+                                <rect key="frame" x="286" y="333" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iPW-ck-QWD"/>
+                                    <constraint firstAttribute="width" constant="144" id="pmc-fV-PAM"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="aEH-KB-b8Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMK-Jd-2Q7" userLabel="Bench Placeholder 4">
+                                <rect key="frame" x="670" y="333" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="9JN-E8-P7Y"/>
+                                    <constraint firstAttribute="height" constant="60" id="keg-ue-1yz"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="9Wu-lZ-x03"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFg-Mt-a90" userLabel="Lamp Placeholder 1">
+                                <rect key="frame" x="44" y="333" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0ey-D4-Z9w"/>
+                                    <constraint firstAttribute="width" constant="144" id="VIA-2B-8lS"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="SXm-Vf-amp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-KZ-BHG" userLabel="Lamp Placeholder 2">
+                                <rect key="frame" x="446" y="273" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VUE-g7-lNs"/>
+                                    <constraint firstAttribute="width" constant="144" id="kIo-Tw-jXa"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="Zfz-1A-OhK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLA-0j-eWB" userLabel="Tree Placeholder 1">
+                                <rect key="frame" x="169" y="220" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="0Rv-Or-3Cf"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZYz-8y-OO3"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="gOR-uj-vMw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7J-Sc-OfB" userLabel="Tree Placeholder 2">
+                                <rect key="frame" x="658" y="220" width="144" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Kc1-ci-VCP"/>
+                                    <constraint firstAttribute="width" constant="144" id="ZiG-SM-i6n"/>
+                                </constraints>
+                                <state key="normal" image="Box-Placeholder"/>
+                                <connections>
+                                    <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="9y2-jc-uqc"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="PYV-4O-4Ce" userLabel="Bush Arrow 1">
+                                <rect key="frame" x="101" y="150" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-pd-3Sb" userLabel="Bush Arrow 2">
+                                <rect key="frame" x="258" y="200" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-2W-SNk" userLabel="Bench Arrow 3">
+                                <rect key="frame" x="343" y="263" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-AB-dWi" userLabel="Bench Arrow 4">
+                                <rect key="frame" x="727" y="263" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="GBN-Vh-zCe" userLabel="Lamp Arrow 1">
+                                <rect key="frame" x="101" y="263" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="y8i-jR-01u" userLabel="Lamp Arrow 2">
+                                <rect key="frame" x="503" y="203" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="EEk-x0-dz6" userLabel="Tree Arrow 1">
+                                <rect key="frame" x="226" y="150" width="30" height="50"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="2HM-x5-f72" userLabel="Tree Arrow 2">
+                                <rect key="frame" x="715" y="150" width="30" height="50"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nv-it-7TC" userLabel="Rewards Container">
+                                <rect key="frame" x="118" y="401" width="660" height="173"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ve6-td-09F">
+                                        <rect key="frame" x="38" y="20" width="584" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGR-1w-c2U" userLabel="Bush btn">
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="39"/>
+                                                <color key="backgroundColor" name="413834"/>
+                                                <state key="normal" title="Bush">
+                                                    <color key="titleColor" name="BG"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="bushBtnTap:" destination="v61-bw-am8" eventType="touchUpInside" id="Xa2-d8-YkX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0R-NC-kpj" userLabel="Bench btn">
+                                                <rect key="frame" x="119" y="0.0" width="108" height="39"/>
+                                                <color key="backgroundColor" red="0.13333333333333333" green="0.11372549019607843" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Bench">
+                                                    <color key="titleColor" name="BG"/>
+                                                </state>
+                                                <state key="disabled" title="Bench"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="benchBtnTap:" destination="v61-bw-am8" eventType="touchUpInside" id="tf6-BR-WiB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hi-pV-U1o" userLabel="Flower btn">
+                                                <rect key="frame" x="238" y="0.0" width="108" height="39"/>
+                                                <color key="backgroundColor" red="0.1333333333" green="0.1137254902" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Flower">
+                                                    <color key="titleColor" name="BG"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="flowerBtnTap:" destination="v61-bw-am8" eventType="touchUpInside" id="UWc-5Y-cLr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNe-jK-0ef" userLabel="Lamp btn">
+                                                <rect key="frame" x="357" y="0.0" width="108" height="39"/>
+                                                <color key="backgroundColor" red="0.1333333333" green="0.1137254902" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Lamp">
+                                                    <color key="titleColor" name="BG"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="lampBtnTap:" destination="v61-bw-am8" eventType="touchUpInside" id="LAG-Ir-1dl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Us-34-RPV" userLabel="Tree btn">
+                                                <rect key="frame" x="476" y="0.0" width="108" height="39"/>
+                                                <color key="backgroundColor" red="0.1333333333" green="0.1137254902" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Tree">
+                                                    <color key="titleColor" name="BG"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="treeBtnTap:" destination="v61-bw-am8" eventType="touchUpInside" id="esT-3V-oiq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="1Rb-7g-iNa"/>
+                                            <constraint firstAttribute="width" constant="584" id="2hf-br-9KN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAu-GC-IPv" userLabel="Container">
+                                        <rect key="frame" x="20" y="49" width="620" height="104"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="HlY-8Z-iiV">
+                                                <rect key="frame" x="40" y="8" width="540" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KN7-WX-cWg" userLabel="Reward1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="64" id="nW0-np-BC6"/>
+                                                            <constraint firstAttribute="height" constant="64" id="zZK-CG-y4R"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="Reward-Bush-1">
+                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="rewardIconTap:" destination="v61-bw-am8" eventType="touchUpInside" id="YjY-Bf-dv8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQT-rI-ull" userLabel="Reward2">
+                                                        <rect key="frame" x="119" y="0.0" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="g8g-Ut-7tg"/>
+                                                            <constraint firstAttribute="width" constant="64" id="gZN-ZV-VKF"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Reward-Bush-2"/>
+                                                        <connections>
+                                                            <action selector="rewardIconTap:" destination="v61-bw-am8" eventType="touchUpInside" id="yqT-Xt-eUr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9i-fE-7B2" userLabel="Reward3">
+                                                        <rect key="frame" x="238" y="0.0" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="41U-Js-ZLZ"/>
+                                                            <constraint firstAttribute="width" constant="64" id="bNU-q1-OPB"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Reward-Disable-1"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEn-eJ-O7t" userLabel="Reward4">
+                                                        <rect key="frame" x="357" y="0.0" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="Nts-1Z-bQE"/>
+                                                            <constraint firstAttribute="width" constant="64" id="zlC-WN-Omm"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Reward-Disable-2"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhu-b1-DJq" userLabel="Reward5">
+                                                        <rect key="frame" x="476" y="0.0" width="64" height="64"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="64" id="PC9-bA-RU7"/>
+                                                            <constraint firstAttribute="width" constant="64" id="zEm-sk-IUz"/>
+                                                        </constraints>
+                                                        <state key="normal" image="Reward-Disable-1"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="413834"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="620" id="3bF-fC-lsu"/>
+                                            <constraint firstItem="HlY-8Z-iiV" firstAttribute="top" secondItem="cAu-GC-IPv" secondAttribute="top" constant="8" id="aLa-gu-HJZ"/>
+                                            <constraint firstItem="HlY-8Z-iiV" firstAttribute="centerX" secondItem="cAu-GC-IPv" secondAttribute="centerX" id="mrc-V6-cnM"/>
+                                            <constraint firstAttribute="height" constant="104" id="roE-ov-QsR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ve6-td-09F" firstAttribute="centerX" secondItem="9nv-it-7TC" secondAttribute="centerX" id="DHj-6N-X9g"/>
+                                    <constraint firstItem="cAu-GC-IPv" firstAttribute="centerX" secondItem="Ve6-td-09F" secondAttribute="centerX" id="S0i-yd-EM9"/>
+                                    <constraint firstAttribute="bottom" secondItem="cAu-GC-IPv" secondAttribute="bottom" constant="20" id="UpA-MU-Kj4"/>
+                                    <constraint firstItem="cAu-GC-IPv" firstAttribute="top" secondItem="Ve6-td-09F" secondAttribute="bottom" constant="-10" id="sat-EP-3Eb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HIU-Ni-bGm" firstAttribute="centerY" secondItem="XFY-OQ-7zu" secondAttribute="centerY" id="0Cn-1b-aia"/>
+                            <constraint firstItem="HhH-Vn-4ev" firstAttribute="centerX" secondItem="EMK-Jd-2Q7" secondAttribute="centerX" id="0Cp-pd-aFV"/>
+                            <constraint firstItem="OgN-Se-g1M" firstAttribute="centerX" secondItem="p7J-Sc-OfB" secondAttribute="centerX" constant="5" id="0Wn-Y0-98p"/>
+                            <constraint firstItem="Mhh-Ei-CkD" firstAttribute="leading" secondItem="XFY-OQ-7zu" secondAttribute="leading" id="1nS-GM-B76"/>
+                            <constraint firstItem="EMK-Jd-2Q7" firstAttribute="top" secondItem="GP6-AB-dWi" secondAttribute="bottom" constant="20" id="1rp-mD-qWh"/>
+                            <constraint firstItem="BFg-Mt-a90" firstAttribute="top" secondItem="GBN-Vh-zCe" secondAttribute="bottom" constant="20" id="2Ha-sY-S4z"/>
+                            <constraint firstItem="p7J-Sc-OfB" firstAttribute="top" secondItem="2HM-x5-f72" secondAttribute="bottom" constant="20" id="4hp-M4-DJy"/>
+                            <constraint firstItem="Mhh-Ei-CkD" firstAttribute="bottom" secondItem="XFY-OQ-7zu" secondAttribute="centerY" constant="80" id="4yZ-Dt-7ip"/>
+                            <constraint firstItem="xtk-WR-xhL" firstAttribute="centerY" secondItem="bYC-ys-frk" secondAttribute="centerY" id="5tE-sK-dNs"/>
+                            <constraint firstItem="Spl-8c-ycQ" firstAttribute="centerY" secondItem="kMy-Uy-hKy" secondAttribute="centerY" id="89v-GR-iiX"/>
+                            <constraint firstItem="2HM-x5-f72" firstAttribute="centerX" secondItem="p7J-Sc-OfB" secondAttribute="centerX" id="8KE-la-iDm"/>
+                            <constraint firstItem="9nv-it-7TC" firstAttribute="leading" secondItem="XFY-OQ-7zu" secondAttribute="leadingMargin" constant="58" id="AeY-BQ-4Rx"/>
+                            <constraint firstItem="ZlL-kA-4Pr" firstAttribute="centerX" secondItem="BFg-Mt-a90" secondAttribute="centerX" constant="-20" id="AxP-d8-Xz5"/>
+                            <constraint firstItem="aLA-0j-eWB" firstAttribute="leading" secondItem="Lsn-kL-YK8" secondAttribute="leading" constant="125" id="BeF-wz-dcV"/>
+                            <constraint firstItem="EMK-Jd-2Q7" firstAttribute="bottom" secondItem="bYC-ys-frk" secondAttribute="bottom" id="Eug-tA-Ac8"/>
+                            <constraint firstItem="aLA-0j-eWB" firstAttribute="top" secondItem="EEk-x0-dz6" secondAttribute="bottom" constant="20" id="FFf-aJ-bic"/>
+                            <constraint firstItem="GP6-AB-dWi" firstAttribute="centerX" secondItem="EMK-Jd-2Q7" secondAttribute="centerX" id="FfV-IN-jNh"/>
+                            <constraint firstItem="3iA-2W-SNk" firstAttribute="centerX" secondItem="bYC-ys-frk" secondAttribute="centerX" id="Gft-mW-Vhx"/>
+                            <constraint firstItem="GBN-Vh-zCe" firstAttribute="centerX" secondItem="BFg-Mt-a90" secondAttribute="centerX" id="HIQ-qn-HUP"/>
+                            <constraint firstItem="aAr-Df-2aI" firstAttribute="top" secondItem="Lsn-kL-YK8" secondAttribute="top" constant="220" id="HXZ-Q7-w7s"/>
+                            <constraint firstItem="p7J-Sc-OfB" firstAttribute="bottom" secondItem="aLA-0j-eWB" secondAttribute="bottom" id="Iw6-Ac-KQO"/>
+                            <constraint firstItem="xtk-WR-xhL" firstAttribute="centerX" secondItem="bYC-ys-frk" secondAttribute="centerX" id="LSq-gG-Jwu"/>
+                            <constraint firstAttribute="bottom" secondItem="9nv-it-7TC" secondAttribute="bottom" constant="-160" id="MOY-RX-p7R"/>
+                            <constraint firstItem="aAr-Df-2aI" firstAttribute="top" secondItem="PYV-4O-4Ce" secondAttribute="bottom" constant="20" id="PDE-Eu-qcJ"/>
+                            <constraint firstItem="DSG-Sn-f78" firstAttribute="centerX" secondItem="XFY-OQ-7zu" secondAttribute="centerX" id="PVC-UZ-fDX"/>
+                            <constraint firstItem="gOr-KZ-BHG" firstAttribute="top" secondItem="y8i-jR-01u" secondAttribute="bottom" constant="20" id="PWy-YP-gwc"/>
+                            <constraint firstItem="HhH-Vn-4ev" firstAttribute="centerY" secondItem="EMK-Jd-2Q7" secondAttribute="centerY" id="PyX-y3-E5o"/>
+                            <constraint firstItem="TBl-pd-3Sb" firstAttribute="centerX" secondItem="kMy-Uy-hKy" secondAttribute="centerX" id="QSz-rq-E4v"/>
+                            <constraint firstItem="bYC-ys-frk" firstAttribute="centerX" secondItem="9nv-it-7TC" secondAttribute="centerX" constant="-90" id="SdA-76-WCU"/>
+                            <constraint firstItem="bYC-ys-frk" firstAttribute="top" secondItem="3iA-2W-SNk" secondAttribute="bottom" constant="20" id="Tet-LW-bA4"/>
+                            <constraint firstItem="bYC-ys-frk" firstAttribute="centerY" secondItem="Lsn-kL-YK8" secondAttribute="bottom" constant="-30" id="UDc-z1-ZPh"/>
+                            <constraint firstItem="BFg-Mt-a90" firstAttribute="leading" secondItem="Lsn-kL-YK8" secondAttribute="leading" id="WW8-Yj-EfR"/>
+                            <constraint firstItem="kMy-Uy-hKy" firstAttribute="top" secondItem="TBl-pd-3Sb" secondAttribute="bottom" constant="20" id="YZB-lm-UmA"/>
+                            <constraint firstItem="Lsn-kL-YK8" firstAttribute="trailing" secondItem="p7J-Sc-OfB" secondAttribute="trailing" constant="50" id="YZW-tO-ez2"/>
+                            <constraint firstItem="DSG-Sn-f78" firstAttribute="centerY" secondItem="XFY-OQ-7zu" secondAttribute="centerY" id="Yca-rw-B2s"/>
+                            <constraint firstItem="Lsn-kL-YK8" firstAttribute="trailing" secondItem="XnT-UI-lqf" secondAttribute="trailing" constant="16" id="Z6Y-pg-2md"/>
+                            <constraint firstItem="kMy-Uy-hKy" firstAttribute="leading" secondItem="aAr-Df-2aI" secondAttribute="trailing" constant="13" id="anP-qA-G2m"/>
+                            <constraint firstItem="eHA-eY-dx4" firstAttribute="centerY" secondItem="XFY-OQ-7zu" secondAttribute="centerY" constant="-75" id="bWG-8g-Orz"/>
+                            <constraint firstItem="QOM-uo-hyl" firstAttribute="leading" secondItem="Lsn-kL-YK8" secondAttribute="leading" id="czf-2m-1Vr"/>
+                            <constraint firstItem="9nv-it-7TC" firstAttribute="top" secondItem="XFY-OQ-7zu" secondAttribute="top" constant="401" id="e4A-DI-9hm"/>
+                            <constraint firstItem="Lsn-kL-YK8" firstAttribute="bottom" secondItem="gOr-KZ-BHG" secondAttribute="bottom" constant="60" id="fUu-Ih-Fh4"/>
+                            <constraint firstItem="ZlL-kA-4Pr" firstAttribute="bottom" secondItem="BFg-Mt-a90" secondAttribute="centerY" constant="10" id="faW-UR-lSO"/>
+                            <constraint firstItem="y8i-jR-01u" firstAttribute="centerX" secondItem="gOr-KZ-BHG" secondAttribute="centerX" id="fdM-XT-Vgp"/>
+                            <constraint firstItem="Igc-RF-WOH" firstAttribute="centerX" secondItem="gOr-KZ-BHG" secondAttribute="centerX" constant="-50" id="fw1-vn-mq5"/>
+                            <constraint firstItem="EEk-x0-dz6" firstAttribute="centerX" secondItem="aLA-0j-eWB" secondAttribute="centerX" id="hZT-22-FQJ"/>
+                            <constraint firstItem="aAr-Df-2aI" firstAttribute="leading" secondItem="Lsn-kL-YK8" secondAttribute="leading" id="iqe-NE-Ech"/>
+                            <constraint firstItem="PYV-4O-4Ce" firstAttribute="centerX" secondItem="aAr-Df-2aI" secondAttribute="centerX" id="nOf-pl-4bh"/>
+                            <constraint firstItem="9nv-it-7TC" firstAttribute="centerX" secondItem="DSG-Sn-f78" secondAttribute="centerX" id="nan-Om-CXE"/>
+                            <constraint firstItem="EMK-Jd-2Q7" firstAttribute="centerX" secondItem="Lsn-kL-YK8" secondAttribute="trailing" constant="-110" id="o42-h8-Sgf"/>
+                            <constraint firstItem="HIU-Ni-bGm" firstAttribute="centerX" secondItem="XFY-OQ-7zu" secondAttribute="centerX" id="oE2-9k-okg"/>
+                            <constraint firstItem="kMy-Uy-hKy" firstAttribute="top" secondItem="Lsn-kL-YK8" secondAttribute="top" constant="270" id="oPg-nh-bJK"/>
+                            <constraint firstItem="Lsn-kL-YK8" firstAttribute="bottom" secondItem="BFg-Mt-a90" secondAttribute="bottom" id="pK8-Za-O9W"/>
+                            <constraint firstItem="gOr-KZ-BHG" firstAttribute="centerX" secondItem="XFY-OQ-7zu" secondAttribute="centerX" constant="70" id="pZR-Dt-dG1"/>
+                            <constraint firstItem="Igc-RF-WOH" firstAttribute="bottom" secondItem="gOr-KZ-BHG" secondAttribute="centerY" id="rs8-x9-dRy"/>
+                            <constraint firstItem="Lsn-kL-YK8" firstAttribute="bottom" secondItem="XnT-UI-lqf" secondAttribute="bottom" constant="171" id="tEk-NW-vjd"/>
+                            <constraint firstItem="OgN-Se-g1M" firstAttribute="centerY" secondItem="p7J-Sc-OfB" secondAttribute="centerY" constant="-90" id="tYc-ts-Pyd"/>
+                            <constraint firstItem="XnT-UI-lqf" firstAttribute="centerY" secondItem="Lsn-kL-YK8" secondAttribute="centerY" id="ufb-Og-V3l"/>
+                            <constraint firstItem="aLA-0j-eWB" firstAttribute="top" secondItem="Lsn-kL-YK8" secondAttribute="top" constant="220" id="xOg-el-hLb"/>
+                            <constraint firstItem="eHA-eY-dx4" firstAttribute="centerX" secondItem="aLA-0j-eWB" secondAttribute="centerX" constant="35" id="xbS-pC-k40"/>
+                            <constraint firstItem="Spl-8c-ycQ" firstAttribute="centerX" secondItem="kMy-Uy-hKy" secondAttribute="centerX" constant="-45" id="z0H-ii-6A4"/>
+                            <constraint firstItem="QOM-uo-hyl" firstAttribute="top" secondItem="Lsn-kL-YK8" secondAttribute="top" constant="21" id="zfJ-hb-9ff"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lsn-kL-YK8"/>
+                    </view>
+                    <connections>
+                        <outlet property="bench1" destination="xtk-WR-xhL" id="QGV-5P-g9N"/>
+                        <outlet property="bench2" destination="HhH-Vn-4ev" id="kFs-Gz-TGg"/>
+                        <outlet property="benchArrow1" destination="3iA-2W-SNk" id="s58-cl-hI7"/>
+                        <outlet property="benchArrow2" destination="GP6-AB-dWi" id="VMu-Vq-T6b"/>
+                        <outlet property="benchBtn" destination="Z0R-NC-kpj" id="CGR-oG-2B0"/>
+                        <outlet property="benchPlaceholder1" destination="bYC-ys-frk" id="DbK-o8-LLo"/>
+                        <outlet property="benchPlaceholder2" destination="EMK-Jd-2Q7" id="d4h-a8-qRj"/>
+                        <outlet property="bush1" destination="Mhh-Ei-CkD" id="GgL-CJ-XYX"/>
+                        <outlet property="bush2" destination="Spl-8c-ycQ" id="N88-CV-yW9"/>
+                        <outlet property="bushArrow1" destination="PYV-4O-4Ce" id="4Ii-ob-Vf3"/>
+                        <outlet property="bushArrow2" destination="TBl-pd-3Sb" id="faA-5t-sHR"/>
+                        <outlet property="bushBtn" destination="xGR-1w-c2U" id="yWx-5T-feh"/>
+                        <outlet property="bushPlaceholder1" destination="aAr-Df-2aI" id="CIQ-z7-NbC"/>
+                        <outlet property="bushPlaceholder2" destination="kMy-Uy-hKy" id="6rw-QH-0n3"/>
+                        <outlet property="dim" destination="HIU-Ni-bGm" id="EbE-HM-8Jy"/>
+                        <outlet property="flowerBtn" destination="3Hi-pV-U1o" id="Ba4-9J-N85"/>
+                        <outlet property="lamp1" destination="ZlL-kA-4Pr" id="Ogn-ge-6z0"/>
+                        <outlet property="lamp2" destination="Igc-RF-WOH" id="3uF-l0-bB8"/>
+                        <outlet property="lampArrow1" destination="GBN-Vh-zCe" id="pIC-zC-IDA"/>
+                        <outlet property="lampArrow2" destination="y8i-jR-01u" id="hdC-iO-glY"/>
+                        <outlet property="lampBtn" destination="XNe-jK-0ef" id="hAO-fg-CBF"/>
+                        <outlet property="lampPlaceholder1" destination="BFg-Mt-a90" id="fKB-te-eu7"/>
+                        <outlet property="lampPlaceholder2" destination="gOr-KZ-BHG" id="5jr-1Z-QcF"/>
+                        <outlet property="reward1" destination="KN7-WX-cWg" id="OH8-tK-uhV"/>
+                        <outlet property="reward2" destination="BQT-rI-ull" id="lSO-Di-eq0"/>
+                        <outlet property="reward3" destination="m9i-fE-7B2" id="Jss-IS-4VB"/>
+                        <outlet property="reward4" destination="DEn-eJ-O7t" id="fWw-1x-YvL"/>
+                        <outlet property="reward5" destination="yhu-b1-DJq" id="oXC-ST-L6g"/>
+                        <outlet property="rewardsContainer" destination="9nv-it-7TC" id="UtI-D1-aDL"/>
+                        <outlet property="tree1" destination="eHA-eY-dx4" id="N2S-84-yGF"/>
+                        <outlet property="tree2" destination="OgN-Se-g1M" id="QyC-bp-36F"/>
+                        <outlet property="treeArrow1" destination="EEk-x0-dz6" id="Ggf-g9-geq"/>
+                        <outlet property="treeArrow2" destination="2HM-x5-f72" id="pjD-TZ-xHg"/>
+                        <outlet property="treeBtn" destination="1Us-34-RPV" id="JRO-w9-u1Y"/>
+                        <outlet property="treePlaceholder1" destination="aLA-0j-eWB" id="q04-CL-eu2"/>
+                        <outlet property="treePlaceholder2" destination="p7J-Sc-OfB" id="mOd-cg-6bf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ok-Nx-NmS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OwM-fI-qH9">
+                    <connections>
+                        <action selector="tapGesture:" destination="v61-bw-am8" id="74s-Ee-8SB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="47.544642857142854" y="966.66666666666674"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Arrow-Placement" width="30" height="50"/>
+        <image name="Background-Intro" width="896" height="414"/>
+        <image name="Bench" width="176" height="72"/>
+        <image name="Bench-Flip" width="176" height="72"/>
+        <image name="Box-Placeholder" width="147" height="63"/>
+        <image name="Bush-1" width="248" height="143"/>
+        <image name="Bush-2" width="151" height="102"/>
+        <image name="Lamp-1" width="34" height="277"/>
+        <image name="Lamp-2" width="38" height="277"/>
+        <image name="Reward-Bush-1" width="64" height="64"/>
+        <image name="Reward-Bush-2" width="64" height="64"/>
+        <image name="Reward-Disable-1" width="64" height="64"/>
+        <image name="Reward-Disable-2" width="64" height="64"/>
+        <image name="Rewards-Icon" width="112" height="44"/>
+        <image name="Tree" width="179" height="216"/>
+        <image name="cube.box.fill" catalog="system" width="128" height="124"/>
+        <namedColor name="413834">
+            <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BG">
+            <color red="1" green="0.97600001096725464" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="E58069">
+            <color red="0.89800000190734863" green="0.50199997425079346" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Overlay35">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.34999999403953552" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
