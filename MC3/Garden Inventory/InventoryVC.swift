@@ -258,7 +258,7 @@ class InventoryVC: UIViewController {
         rewardBtnStatus(reward: "tree")
         btnColorStatus(btn: "tree")
         
-        if (placeholderItem7 == InventoryList.lamp1 || placeholderItem8 == InventoryList.lamp1) {
+        if (placeholderItem7 == InventoryList.tree1 || placeholderItem8 == InventoryList.tree1) {
             reward1.isEnabled = false
             reward1.setImage(#imageLiteral(resourceName: "Tree-Disable"), for: .disabled)
         } else {
