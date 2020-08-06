@@ -71,24 +71,14 @@ class InventoryVC: UIViewController {
     
     var selectedItemIndex: Int = 0
     
-    struct Keys {
-        static let bush1Occupied = "savedBush1Placeholder"
-        static let bush2Occupied = "savedBush2Placeholder"
-        static let bush1Alpha = "savedBush1Alpha"
-        static let bush2Alpha = "savedBush2Alpha"
-        static let bench1Occupied = "savedBench1Placeholder"
-        static let bench2Occupied = "savedBench2Placeholder"
-        static let bench1Alpha = "savedBench1Alpha"
-        static let bench2Alpha = "savedBench2Alpha"
-        static let lamp1Occupied = "savedLamp1Placeholder"
-        static let lamp2Occupied = "savedLamp2Placeholder"
-        static let lamp1Alpha = "savedLamp1Alpha"
-        static let lamp2Alpha = "savedLamp2Alpha"
-        static let tree1Occupied = "savedTree1Placeholder"
-        static let tree2Occupied = "savedTree2Placeholder"
-        static let tree1Alpha = "savedTree1Alpha"
-        static let tree2Alpha = "savedTree2Alpha"
-    }
+    var placeholderItem1: String?
+    var placeholderItem2: String?
+    var placeholderItem3: String?
+    var placeholderItem4: String?
+    var placeholderItem5: String?
+    var placeholderItem6: String?
+    var placeholderItem7: String?
+    var placeholderItem8: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,24 +95,30 @@ class InventoryVC: UIViewController {
         reward4.adjustsImageWhenDisabled = true
         reward5.adjustsImageWhenDisabled = true
         
-        bushPlaceholder1Occupied = defaults.bool(forKey: Keys.bush1Occupied)
-        bushPlaceholder2Occupied = defaults.bool(forKey: Keys.bush2Occupied)
+        placeholderItem1 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder1)
+        placeholderItem2 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder2)
+        placeholderItem3 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder3)
+        placeholderItem4 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder4)
+        placeholderItem5 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder5)
+        placeholderItem6 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder6)
+        placeholderItem7 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder7)
+        placeholderItem8 = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder8)
         
-        benchPlaceholder1Occupied = defaults.bool(forKey: Keys.bench1Occupied)
-        benchPlaceholder2Occupied = defaults.bool(forKey: Keys.bench2Occupied)
-        
-        lampPlaceholder1Occupied = defaults.bool(forKey: Keys.lamp1Occupied)
-        lampPlaceholder2Occupied = defaults.bool(forKey: Keys.lamp2Occupied)
-        
-        treePlaceholder1Occupied = defaults.bool(forKey: Keys.tree1Occupied)
-        treePlaceholder2Occupied = defaults.bool(forKey: Keys.tree2Occupied)
+        bushPlaceholder1Occupied = placeholderItem1 != nil
+        bushPlaceholder2Occupied = placeholderItem2 != nil
+        benchPlaceholder1Occupied = placeholderItem3 != nil
+        benchPlaceholder2Occupied = placeholderItem4 != nil
+        lampPlaceholder1Occupied = placeholderItem5 != nil
+        lampPlaceholder2Occupied = placeholderItem6 != nil
+        treePlaceholder1Occupied = placeholderItem7 != nil
+        treePlaceholder2Occupied = placeholderItem8 != nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showBottomAction()
         self.modalTransitionStyle = .coverVertical
-        self.arrowAnimate("bush")
+        self.bushBtnTap(bushBtn)
     }
     
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
@@ -175,55 +171,106 @@ class InventoryVC: UIViewController {
     
     @IBAction func bushBtnTap(_ sender: UIButton) {
         rewardBtnStatus(reward: "bush")
-        print("bush button status \(bushBtnStatus)")
         btnColorStatus(btn: "bush")
-        reward1.isEnabled = true
-        reward2.isEnabled = true
-        reward1.setImage(UIImage(named: "Reward-Bush-1"), for: .normal)
-        reward2.setImage(UIImage(named: "Reward-Bush-2"), for: .normal)
+        
+        if (placeholderItem1 == InventoryList.bush1 || placeholderItem2 == InventoryList.bush1) {
+            reward1.isEnabled = false
+            reward1.setImage(#imageLiteral(resourceName: "Reward-Disable-1"), for: .disabled)
+        } else {
+            reward1.isEnabled = true
+            reward1.setImage(UIImage(named: "Reward-Bush-1"), for: .normal)
+        }
+        
+        if (placeholderItem1 == InventoryList.bush2 || placeholderItem2 == InventoryList.bush2) {
+            reward2.isEnabled = false
+            reward2.setImage(#imageLiteral(resourceName: "Reward-Disable-2"), for: .disabled)
+        } else {
+            reward2.isEnabled = true
+            reward2.setImage(UIImage(named: "Reward-Bush-2"), for: .normal)
+        }
+        
+        setImageDisable(reward: reward3)
+        setImageDisable(reward: reward4)
+        setImageDisable(reward: reward5)
+        
         self.arrowAnimate("bush")
     }
     
     @IBAction func benchBtnTap(_ sender: UIButton) {
         rewardBtnStatus(reward: "bench")
-        print("bench button status \(benchBtnStatus)")
         btnColorStatus(btn: "bench")
-        reward1.isEnabled = true
-        reward1.setImage(UIImage(named: "Reward-Bench"), for: .normal)
-        reward2.isEnabled = false
+        
+        if (placeholderItem3 == InventoryList.bench1Flip || placeholderItem4 == InventoryList.bench1) {
+            reward1.isEnabled = false
+            reward1.setImage(#imageLiteral(resourceName: "Bench-Disable"), for: .disabled)
+        } else {
+            reward1.isEnabled = true
+            reward1.setImage(UIImage(named: "Reward-Bench"), for: .normal)
+        }
+        
         setImageDisable(reward: reward2)
+        setImageDisable(reward: reward3)
+        setImageDisable(reward: reward4)
+        setImageDisable(reward: reward5)
+        
         self.arrowAnimate("bench")
     }
     
     @IBAction func flowerBtnTap(_ sender: UIButton) {
         rewardBtnStatus(reward: "flower")
-        print("flower button status \(flowerBtnStatus)")
         btnColorStatus(btn: "flower")
-        reward1.isEnabled = false
-        reward2.isEnabled = false
+        
         setImageDisable(reward: reward1)
         setImageDisable(reward: reward2)
+        setImageDisable(reward: reward3)
+        setImageDisable(reward: reward4)
+        setImageDisable(reward: reward5)
     }
     
     @IBAction func lampBtnTap(_ sender: UIButton) {
         rewardBtnStatus(reward: "lamp")
-        print("lamp button status \(lampBtnStatus)")
         btnColorStatus(btn: "lamp")
-        reward1.isEnabled = true
-        reward2.isEnabled = true
-        reward1.setImage(UIImage(named: "Reward-Lamp-1"), for: .normal)
-        reward2.setImage(UIImage(named: "Reward-Lamp-2"), for: .normal)
+        
+        if (placeholderItem5 == InventoryList.lamp1 || placeholderItem6 == InventoryList.lamp1) {
+            reward1.isEnabled = false
+            reward1.setImage(#imageLiteral(resourceName: "Lamp-2-Disable"), for: .disabled)
+        } else {
+            reward1.isEnabled = true
+            reward1.setImage(UIImage(named: "Reward-Lamp-1"), for: .normal)
+        }
+        
+        if (placeholderItem5 == InventoryList.lamp2 || placeholderItem6 == InventoryList.lamp2) {
+            reward2.isEnabled = false
+            reward2.setImage(#imageLiteral(resourceName: "Lamp-1-Disable"), for: .disabled)
+        } else {
+            reward2.isEnabled = true
+            reward2.setImage(UIImage(named: "Reward-Lamp-2"), for: .normal)
+        }
+        
+        setImageDisable(reward: reward3)
+        setImageDisable(reward: reward4)
+        setImageDisable(reward: reward5)
+        
         arrowAnimate("lamp")
     }
     
     @IBAction func treeBtnTap(_ sender: UIButton) {
         rewardBtnStatus(reward: "tree")
-        print("tree button status \(treeBtnStatus)")
         btnColorStatus(btn: "tree")
-        reward1.isEnabled = true
-        reward1.setImage(UIImage(named: "Reward-Tree"), for: .normal)
-        reward2.isEnabled = false
+        
+        if (placeholderItem7 == InventoryList.lamp1 || placeholderItem8 == InventoryList.lamp1) {
+            reward1.isEnabled = false
+            reward1.setImage(#imageLiteral(resourceName: "Tree-Disable"), for: .disabled)
+        } else {
+            reward1.isEnabled = true
+            reward1.setImage(UIImage(named: "Reward-Tree"), for: .normal)
+        }
+        
         setImageDisable(reward: reward2)
+        setImageDisable(reward: reward3)
+        setImageDisable(reward: reward4)
+        setImageDisable(reward: reward5)
+        
         arrowAnimate("tree")
     }
     

@@ -84,12 +84,8 @@ extension InventoryVC {
     }
     
     func setImageDisable(reward: UIButton) {
-        switch reward.isEnabled {
-        case false:
-            reward.setImage(UIImage(named: "Reward-Disable-1"), for: .normal)
-        default:
-            break
-        }
+        reward.isEnabled = false
+        reward.setImage(UIImage(named: "Reward-Disable-1"), for: .disabled)
     }
     
     func arrowAnimate(_ category: String) {
