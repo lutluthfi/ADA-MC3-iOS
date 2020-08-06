@@ -94,6 +94,14 @@ class MainGardenViewController: UIViewController {
     @IBOutlet weak var statusSleepIconContainerView: UIView!
     @IBOutlet weak var statusSleepProgressView: UIProgressView!
 
+    
+    @IBOutlet var imgBush1: UIImageView!
+    @IBOutlet var imgBush2: UIImageView!
+    @IBOutlet var imgLamp1: UIImageView!
+    @IBOutlet var imgLamp2: UIImageView!
+    @IBOutlet var imgTree1: UIImageView!
+    @IBOutlet var imgBench1: UIImageView!
+    
     private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
@@ -213,6 +221,8 @@ class MainGardenViewController: UIViewController {
         //            .Scene
         //            .animalInfo(dialogId: dialogId, delegate: nil)
         //        self.dialogFactory.show(scene: dialogScene)
+        
+        self.preparePlaceholderItem()
     }
 
 }
@@ -444,6 +454,11 @@ extension MainGardenViewController {
     }
 
     private func showInventoryScene() {
+        let storyboard = UIStoryboard(name: "InventoryStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "InventoryVC") as InventoryVC
+        vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        self.present(vc, animated: true)
     }
 
     private func showRewardScene() {
@@ -458,5 +473,219 @@ extension MainGardenViewController {
 
     private func showShopScene() {
     }
+}
 
+extension MainGardenViewController: InventoryDelegate {
+    func preparePlaceholderItem() {
+        prepareItemPlaceholder1()
+        prepareItemPlaceholder2()
+        prepareItemPlaceholder3()
+        prepareItemPlaceholder4()
+        prepareItemPlaceholder5()
+        prepareItemPlaceholder6()
+        prepareItemPlaceholder7()
+        prepareItemPlaceholder8()
+    }
+    
+    func prepareItemPlaceholder1() {
+        let itemPlaceholder1: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder1)
+        switch itemPlaceholder1 {
+        case InventoryList.bush1:
+            imgBush1.isHidden = false
+            imgBush1.layer.frame = InventoryPosition.bush1Pos1Frame
+            break
+        case InventoryList.bush2:
+            imgBush2.isHidden = false
+            imgBush2.layer.frame = InventoryPosition.bush2Pos1Frame
+            break
+        default:
+            break
+        }
+    }
+    
+    func prepareItemPlaceholder2() {
+        let itemPlaceholder2: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder2)
+        switch itemPlaceholder2 {
+        case InventoryList.bush1:
+              imgBush1.isHidden = false
+              imgBush1.layer.frame = InventoryPosition.bush1Pos2Frame
+              break
+        case InventoryList.bush2:
+              imgBush2.isHidden = false
+              imgBush2.layer.frame = InventoryPosition.bush2Pos2Frame
+              break
+          default:
+              break
+          }
+    }
+    
+    func prepareItemPlaceholder3() {
+        let itemPlaceholder3: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder3)
+        switch itemPlaceholder3 {
+        case InventoryList.bench1Flip:
+              imgBench1.isHidden = false
+              imgBench1.layer.frame = InventoryPosition.benchFlip1Pos3Frame
+              break
+          default:
+              break
+        }
+    }
+    
+    func prepareItemPlaceholder4() {
+        let itemPlaceholder4: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder4)
+        switch itemPlaceholder4 {
+        case InventoryList.bench1:
+              imgBench1.isHidden = false
+              imgBench1.layer.frame = InventoryPosition.bench1Pos4Frame
+              break
+          default:
+              break
+        }
+    }
+    
+    func prepareItemPlaceholder5() {
+        let itemPlaceholder5: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder5)
+        switch itemPlaceholder5 {
+        case InventoryList.lamp1:
+            imgLamp1.isHidden = false
+            imgLamp1.layer.frame = InventoryPosition.lamp1Pos5Frame
+            break
+        case InventoryList.lamp2:
+            imgLamp2.isHidden = false
+            imgLamp2.layer.frame = InventoryPosition.lamp2Pos5Frame
+            break
+        default:
+            break
+        }
+    }
+    
+    func prepareItemPlaceholder6() {
+        let itemPlaceholder6: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder6)
+        switch itemPlaceholder6 {
+        case InventoryList.lamp1:
+            imgLamp1.isHidden = false
+            imgLamp1.layer.frame = InventoryPosition.lamp1Pos6Frame
+            break
+        case InventoryList.lamp2:
+            imgLamp2.isHidden = false
+            imgLamp2.layer.frame = InventoryPosition.lamp2Pos6Frame
+            break
+        default:
+            break
+        }
+    }
+    
+    func prepareItemPlaceholder7() {
+        let itemPlaceholder7: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder7)
+        switch itemPlaceholder7 {
+        case InventoryList.tree1:
+            imgTree1.isHidden = false
+            imgTree1.layer.frame = InventoryPosition.tree1Pos7Frame
+            break
+        default:
+            break
+        }
+    }
+    
+    func prepareItemPlaceholder8() {
+        let itemPlaceholder8: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder8)
+        switch itemPlaceholder8 {
+        case InventoryList.tree1:
+            imgTree1.isHidden = false
+            imgTree1.layer.frame = InventoryPosition.tree1Pos8Frame
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeBush(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgBush1.isHidden = false
+            if (position == 1) {
+                settingsDefaults.set(InventoryList.bush1, forKey: SettingsKey.itemPlaceholder1)
+                self.imgBush1.layer.frame = InventoryPosition.bush1Pos1Frame
+            } else {
+                settingsDefaults.set(InventoryList.bush1, forKey: SettingsKey.itemPlaceholder2)
+                self.imgBush1.layer.frame = InventoryPosition.bush1Pos2Frame
+            }
+            break
+        case 2:
+            self.imgBush2.isHidden = false
+            if (position == 1) {
+                settingsDefaults.set(InventoryList.bush2, forKey: SettingsKey.itemPlaceholder1)
+                self.imgBush2.layer.frame = InventoryPosition.bush2Pos1Frame
+            } else {
+                settingsDefaults.set(InventoryList.bush2, forKey: SettingsKey.itemPlaceholder2)
+                self.imgBush2.layer.frame = InventoryPosition.bush2Pos2Frame
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeBench(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgBench1.isHidden = false
+            if (position == 3) {
+                settingsDefaults.set(InventoryList.bench1Flip, forKey: SettingsKey.itemPlaceholder3)
+                self.imgBench1.image = #imageLiteral(resourceName: "Bench-Flip")
+                self.imgBench1.layer.frame = InventoryPosition.benchFlip1Pos3Frame
+            } else {
+                settingsDefaults.set(InventoryList.bench1, forKey: SettingsKey.itemPlaceholder4)
+                self.imgBench1.image = #imageLiteral(resourceName: "Bench")
+                self.imgBench1.layer.frame = InventoryPosition.bench1Pos4Frame
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeLamp(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgLamp1.isHidden = false
+            if (position == 5) {
+                settingsDefaults.set(InventoryList.lamp1, forKey: SettingsKey.itemPlaceholder5)
+                self.imgLamp1.layer.frame = InventoryPosition.lamp1Pos5Frame
+            } else {
+                settingsDefaults.set(InventoryList.lamp1, forKey: SettingsKey.itemPlaceholder6)
+                self.imgLamp1.layer.frame = InventoryPosition.lamp1Pos6Frame
+            }
+            break
+        case 2:
+            self.imgLamp2.isHidden = false
+            if (position == 5) {
+                settingsDefaults.set(InventoryList.lamp2, forKey: SettingsKey.itemPlaceholder5)
+                self.imgLamp2.layer.frame = InventoryPosition.lamp2Pos5Frame
+            } else {
+                settingsDefaults.set(InventoryList.lamp2, forKey: SettingsKey.itemPlaceholder6)
+                self.imgLamp2.layer.frame = InventoryPosition.lamp2Pos6Frame
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeTree(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgTree1.isHidden = false
+            if (position == 7) {
+                settingsDefaults.set(InventoryList.tree1, forKey: SettingsKey.itemPlaceholder7)
+                self.imgTree1.layer.frame = InventoryPosition.tree1Pos7Frame
+            } else {
+                settingsDefaults.set(InventoryList.tree1, forKey: SettingsKey.itemPlaceholder8)
+                self.imgTree1.layer.frame = InventoryPosition.tree1Pos8Frame
+            }
+            break
+        default:
+            break
+        }
+    }
 }

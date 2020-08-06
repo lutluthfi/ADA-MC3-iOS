@@ -75,6 +75,36 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="j2k-Xs-1Xa"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t11-ft-W7P">
+                                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                                <subviews>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bush-1" translatesAutoresizingMaskIntoConstraints="NO" id="B6w-Bp-iBC">
+                                                        <rect key="frame" x="-60" y="145" width="249" height="144"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bush-2" translatesAutoresizingMaskIntoConstraints="NO" id="m3S-ly-KIR">
+                                                        <rect key="frame" x="142" y="237" width="151" height="104"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lamp-1" translatesAutoresizingMaskIntoConstraints="NO" id="0dB-5L-Fn5">
+                                                        <rect key="frame" x="461" y="132" width="19" height="160"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lamp-2" translatesAutoresizingMaskIntoConstraints="NO" id="l25-sW-1HT">
+                                                        <rect key="frame" x="64" y="98" width="33" height="277"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tree" translatesAutoresizingMaskIntoConstraints="NO" id="RVH-YN-lfi">
+                                                        <rect key="frame" x="189" y="26" width="178" height="217"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bench-Flip" translatesAutoresizingMaskIntoConstraints="NO" id="Kii-vf-eGv">
+                                                        <rect key="frame" x="300" y="326" width="176" height="73"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p5V-KZ-Bfl">
                                                 <rect key="frame" x="799" y="21" width="40" height="372"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -298,16 +328,22 @@
                                             <constraint firstAttribute="trailing" secondItem="J0A-Id-ZZe" secondAttribute="trailing" id="06l-uk-42P"/>
                                             <constraint firstAttribute="trailing" secondItem="p5V-KZ-Bfl" secondAttribute="trailing" constant="57" id="0b8-Ze-qxz"/>
                                             <constraint firstItem="Lvx-sq-bEo" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="7sa-3j-YXN"/>
+                                            <constraint firstItem="t11-ft-W7P" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="9Fi-oQ-i3K"/>
                                             <constraint firstAttribute="bottom" secondItem="p5V-KZ-Bfl" secondAttribute="bottom" constant="21" id="B70-dn-YZ4"/>
+                                            <constraint firstAttribute="bottom" secondItem="t11-ft-W7P" secondAttribute="bottom" id="BMt-Cn-nXN"/>
                                             <constraint firstItem="p5V-KZ-Bfl" firstAttribute="leading" secondItem="tTL-dw-Me9" secondAttribute="trailing" constant="24" id="JWw-VK-Axa"/>
                                             <constraint firstItem="i38-8t-XCO" firstAttribute="trailing" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="-150" identifier="AllStatusAnimalInfoContainerViewLeading" id="JyH-IQ-AIr"/>
                                             <constraint firstAttribute="trailing" secondItem="Lvx-sq-bEo" secondAttribute="trailing" id="U2Q-lI-ppK"/>
                                             <constraint firstItem="BD1-8g-u55" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" constant="57" id="VVl-OZ-ssD"/>
+                                            <constraint firstItem="t11-ft-W7P" firstAttribute="height" secondItem="Ioc-Qk-8Et" secondAttribute="height" id="Wrc-Nw-Jvu"/>
                                             <constraint firstItem="tTL-dw-Me9" firstAttribute="leading" secondItem="BD1-8g-u55" secondAttribute="trailing" id="aJn-tj-cSo"/>
+                                            <constraint firstAttribute="trailing" secondItem="t11-ft-W7P" secondAttribute="trailing" id="cq4-Ce-P7D"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" id="fd2-AO-NH2"/>
                                             <constraint firstItem="BD1-8g-u55" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="21" id="gNh-Am-F00"/>
                                             <constraint firstAttribute="bottom" secondItem="tTL-dw-Me9" secondAttribute="bottom" constant="24" id="hNA-xk-ucd"/>
                                             <constraint firstItem="p5V-KZ-Bfl" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="21" id="jen-am-oo7"/>
+                                            <constraint firstItem="t11-ft-W7P" firstAttribute="top" secondItem="Ioc-Qk-8Et" secondAttribute="top" id="kvK-TX-RA9"/>
+                                            <constraint firstItem="t11-ft-W7P" firstAttribute="width" secondItem="Ioc-Qk-8Et" secondAttribute="width" id="qGe-f3-C7Q"/>
                                             <constraint firstAttribute="bottom" secondItem="J0A-Id-ZZe" secondAttribute="bottom" id="tfW-4y-iem"/>
                                             <constraint firstItem="J0A-Id-ZZe" firstAttribute="leading" secondItem="Ioc-Qk-8Et" secondAttribute="leading" id="twr-Do-Zkx"/>
                                             <constraint firstItem="tTL-dw-Me9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ioc-Qk-8Et" secondAttribute="top" constant="250" id="wBL-8e-8t6"/>
@@ -347,6 +383,12 @@
                         <outlet property="coinAmountLabel" destination="8X3-Tv-5II" id="yXK-Z5-Jdf"/>
                         <outlet property="coinContainerView" destination="BD1-8g-u55" id="9LV-cb-VQt"/>
                         <outlet property="contentView" destination="Ioc-Qk-8Et" id="O8H-Fg-BmF"/>
+                        <outlet property="imgBench1" destination="Kii-vf-eGv" id="Rc5-VR-H4S"/>
+                        <outlet property="imgBush1" destination="B6w-Bp-iBC" id="na9-Dw-xPo"/>
+                        <outlet property="imgBush2" destination="m3S-ly-KIR" id="bxw-LU-y0h"/>
+                        <outlet property="imgLamp1" destination="0dB-5L-Fn5" id="Qan-ty-FuB"/>
+                        <outlet property="imgLamp2" destination="l25-sW-1HT" id="cPG-n5-ffi"/>
+                        <outlet property="imgTree1" destination="RVH-YN-lfi" id="97P-2A-WII"/>
                         <outlet property="leadingAllStatusAnimalInfoContainerViewConstraint" destination="JyH-IQ-AIr" id="RJ9-yY-u7K"/>
                         <outlet property="mainGardenBackgroundImageView" destination="J0A-Id-ZZe" id="AzX-pd-WxM"/>
                         <outlet property="menuCollectionView" destination="p5V-KZ-Bfl" id="zVp-Sd-F0P"/>
@@ -366,13 +408,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mG-81-h2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.17733990147784" y="135.19999999999999"/>
+            <point key="canvasLocation" x="136.60714285714286" y="134.78260869565219"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Bench-Flip" width="176" height="72"/>
         <image name="Building" width="530" height="221"/>
+        <image name="Bush-1" width="248" height="143"/>
+        <image name="Bush-2" width="151" height="102"/>
         <image name="Cat-Normal-1" width="182" height="230"/>
         <image name="Garden-Day" width="896" height="414"/>
+        <image name="Lamp-1" width="34" height="277"/>
+        <image name="Lamp-2" width="38" height="277"/>
+        <image name="Tree" width="179" height="216"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="profile-cat-food" width="26" height="16"/>
         <image name="profile-cat-game" width="27" height="18"/>
