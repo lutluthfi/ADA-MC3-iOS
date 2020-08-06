@@ -94,6 +94,14 @@ class MainGardenViewController: UIViewController {
     @IBOutlet weak var statusSleepIconContainerView: UIView!
     @IBOutlet weak var statusSleepProgressView: UIProgressView!
 
+    
+    @IBOutlet var imgBush1: UIImageView!
+    @IBOutlet var imgBush2: UIImageView!
+    @IBOutlet var imgLamp1: UIImageView!
+    @IBOutlet var imgLamp2: UIImageView!
+    @IBOutlet var imgTree1: UIImageView!
+    @IBOutlet var imgBench1: UIImageView!
+    
     private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
@@ -445,8 +453,9 @@ extension MainGardenViewController {
 
     private func showInventoryScene() {
         let storyboard = UIStoryboard(name: "InventoryStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "InventoryVC")
+        let vc = storyboard.instantiateViewController(identifier: "InventoryVC") as InventoryVC
         vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
         self.present(vc, animated: true)
     }
 
@@ -462,5 +471,85 @@ extension MainGardenViewController {
 
     private func showShopScene() {
     }
+}
 
+extension MainGardenViewController: InventoryDelegate {
+    func placeBush(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgBush1.isHidden = false
+            if (position == 1) {
+                self.imgBush1.layer.frame = CGRect(x: -60, y: 154, width: 249, height: 144)
+            } else {
+                self.imgBush1.layer.frame = CGRect(x: 115, y: 207, width: 185, height: 107)
+            }
+            break
+        case 2:
+            self.imgBush2.isHidden = false
+            if (position == 1) {
+                self.imgBush2.layer.frame = CGRect(x: 8, y: 192, width: 151, height: 104)
+            } else {
+                self.imgBush2.layer.frame = CGRect(x: 142, y: 237, width: 151, height: 104)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeBench(type: Int, position: Int) {
+        print("PLACE BENCH", type, position)
+        switch type {
+        case 1:
+            self.imgBench1.isHidden = false
+            if (position == 3) {
+                self.imgBench1.image = #imageLiteral(resourceName: "Bench-Flip")
+                self.imgBench1.layer.frame = CGRect(x: 300, y: 327, width: 176, height: 73)
+            } else {
+                self.imgBench1.image = #imageLiteral(resourceName: "Bench")
+                self.imgBench1.layer.frame = CGRect(x: 643, y: 326, width: 176, height: 73)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeLamp(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgLamp1.isHidden = false
+            if (position == 5) {
+                self.imgLamp1.layer.frame = CGRect(x: 64, y: 98, width: 33, height: 277)
+            } else {
+                self.imgLamp1.layer.frame = CGRect(x: 461, y: 132, width: 19, height: 157)
+            }
+            break
+        case 2:
+            self.imgLamp2.isHidden = false
+            if (position == 5) {
+                self.imgLamp2.layer.frame = CGRect(x: 84, y: 98, width: 33, height: 277)
+            } else {
+                self.imgLamp2.layer.frame = CGRect(x: 461, y: 132, width: 19, height: 160)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func placeTree(type: Int, position: Int) {
+        switch type {
+        case 1:
+            self.imgTree1.isHidden = false
+            if (position == 7) {
+                self.imgTree1.layer.frame = CGRect(x: 189, y: 26, width: 178, height: 217)
+            } else {
+                self.imgTree1.layer.frame = CGRect(x: 653, y: 71, width: 138, height: 168)
+            }
+            break
+        default:
+            break
+        }
+    }
 }

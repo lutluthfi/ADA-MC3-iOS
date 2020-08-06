@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol InventoryDelegate {
+    func placeBush(type: Int, position: Int)
+    func placeBench(type: Int, position: Int)
+    func placeLamp(type: Int, position: Int)
+    func placeTree(type: Int, position: Int)
+}
+
 class InventoryVC: UIViewController {
     
     var bushBtnStatus: Bool = true
@@ -15,12 +22,6 @@ class InventoryVC: UIViewController {
     var flowerBtnStatus: Bool = false
     var lampBtnStatus: Bool = false
     var treeBtnStatus: Bool = false
-    
-    var reward1Status: Bool = false
-    var reward2Status: Bool = false
-    var reward3Status: Bool = false
-    var reward4Status: Bool = false
-    var reward5Status: Bool = false
     
     var bushPlaceholder1Occupied: Bool = false
     var bushPlaceholder2Occupied: Bool = false
@@ -74,6 +75,10 @@ class InventoryVC: UIViewController {
     @IBOutlet weak var tree2: UIImageView!
     
     let defaults = UserDefaults.standard
+    
+    var delegate: InventoryDelegate?
+    
+    var selectedItemIndex: Int = 0
     
     struct Keys {
         static let bush1Occupied = "savedBush1Placeholder"
@@ -171,20 +176,6 @@ class InventoryVC: UIViewController {
         })
     }
     
-//    @IBAction func triggerBtn(_ sender: UIButton) {
-//        UIView.animate(
-//            withDuration: 1,
-//            delay: 0,
-//            usingSpringWithDamping: 0.8,
-//            initialSpringVelocity: 5,
-//            options: .curveEaseInOut,
-//            animations: {
-//                self.dim.alpha = 1
-//                self.rewardsContainer.transform = CGAffineTransform(translationX: 0, y: -120)
-//        },
-//            completion: nil)
-//    }
-    
     func showBottomAction() {
         UIView.animate(
             withDuration: 1,
@@ -255,263 +246,266 @@ class InventoryVC: UIViewController {
     @IBAction func placeholderLocation(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            bushPlaceholder1Occupied = true
-            defaults.set(bushPlaceholder1Occupied, forKey: Keys.bush1Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bush1.alpha = 1
-                        self.defaults.set(self.bush1.alpha, forKey: Keys.bush1Alpha)
-                        self.bushPlaceholder1.alpha = 0
-                        self.bushPlaceholder2.alpha = 0
-                        self.bushArrow1.alpha = 0
-                        self.bushArrow2.alpha = 0
-                },
-                    completion: nil)
-            } else if reward2Status == true {
-                self.bush1.image = UIImage(named: "Bush-2")
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bush1.alpha = 1
-                        self.defaults.set(self.bush1.alpha, forKey: Keys.bush1Alpha)
-                        self.bushPlaceholder2.alpha = 0
-                        self.bushPlaceholder1.alpha = 0
-                        self.bushArrow2.alpha = 0
-                        self.bushArrow1.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeBush(type: selectedItemIndex, position: sender.tag)
+//            bushPlaceholder1Occupied = true
+//            defaults.set(bushPlaceholder1Occupied, forKey: Keys.bush1Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bush1.alpha = 1
+//                        self.defaults.set(self.bush1.alpha, forKey: Keys.bush1Alpha)
+//                        self.bushPlaceholder1.alpha = 0
+//                        self.bushPlaceholder2.alpha = 0
+//                        self.bushArrow1.alpha = 0
+//                        self.bushArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            } else if reward2Status == true {
+//                self.bush1.image = UIImage(named: "Bush-2")
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bush1.alpha = 1
+//                        self.defaults.set(self.bush1.alpha, forKey: Keys.bush1Alpha)
+//                        self.bushPlaceholder2.alpha = 0
+//                        self.bushPlaceholder1.alpha = 0
+//                        self.bushArrow2.alpha = 0
+//                        self.bushArrow1.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 2:
-            bushPlaceholder2Occupied = true
-            defaults.set(bushPlaceholder2Occupied, forKey: Keys.bush2Occupied)
-            if reward1Status == true {
-                self.bush2.image = UIImage(named: "Bush-1")
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bush2.alpha = 1
-                        self.defaults.set(self.bush2.alpha, forKey: Keys.bush2Alpha)
-                        self.bushPlaceholder1.alpha = 0
-                        self.bushPlaceholder2.alpha = 0
-                        self.bushArrow1.alpha = 0
-                        self.bushArrow2.alpha = 0
-                        
-                },
-                    completion: nil)
-            } else if reward2Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bush2.alpha = 1
-                        self.defaults.set(self.bush2.alpha, forKey: Keys.bush2Alpha)
-                        self.bushPlaceholder2.alpha = 0
-                        self.bushPlaceholder1.alpha = 0
-                        self.bushArrow2.alpha = 0
-                        self.bushArrow1.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeBush(type: selectedItemIndex, position: sender.tag)
+//            bushPlaceholder2Occupied = true
+//            defaults.set(bushPlaceholder2Occupied, forKey: Keys.bush2Occupied)
+//            if reward1Status == true {
+//                self.bush2.image = UIImage(named: "Bush-1")
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bush2.alpha = 1
+//                        self.defaults.set(self.bush2.alpha, forKey: Keys.bush2Alpha)
+//                        self.bushPlaceholder1.alpha = 0
+//                        self.bushPlaceholder2.alpha = 0
+//                        self.bushArrow1.alpha = 0
+//                        self.bushArrow2.alpha = 0
+//
+//                },
+//                    completion: nil)
+//            } else if reward2Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bush2.alpha = 1
+//                        self.defaults.set(self.bush2.alpha, forKey: Keys.bush2Alpha)
+//                        self.bushPlaceholder2.alpha = 0
+//                        self.bushPlaceholder1.alpha = 0
+//                        self.bushArrow2.alpha = 0
+//                        self.bushArrow1.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 3:
-            benchPlaceholder1Occupied = true
-            defaults.set(benchPlaceholder1Occupied, forKey: Keys.bench1Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bench1.alpha = 1
-                        self.defaults.set(self.bench1.alpha, forKey: Keys.bench1Alpha)
-                        self.benchPlaceholder1.alpha = 0
-                        self.benchPlaceholder2.alpha = 0
-                        self.benchArrow1.alpha = 0
-                        self.benchArrow2.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeBench(type: selectedItemIndex, position: sender.tag)
+//            benchPlaceholder1Occupied = true
+//            defaults.set(benchPlaceholder1Occupied, forKey: Keys.bench1Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bench1.alpha = 1
+//                        self.defaults.set(self.bench1.alpha, forKey: Keys.bench1Alpha)
+//                        self.benchPlaceholder1.alpha = 0
+//                        self.benchPlaceholder2.alpha = 0
+//                        self.benchArrow1.alpha = 0
+//                        self.benchArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 4:
-            benchPlaceholder2Occupied = true
-            defaults.set(benchPlaceholder2Occupied, forKey: Keys.bench2Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.bench2.alpha = 1
-                        self.defaults.set(self.bench2.alpha, forKey: Keys.bench2Alpha)
-                        self.benchPlaceholder1.alpha = 0
-                        self.benchPlaceholder2.alpha = 0
-                        self.benchArrow1.alpha = 0
-                        self.benchArrow2.alpha = 0
-                },
-                    completion: nil)
-            }
+            print(selectedItemIndex, sender.tag)
+            print(delegate)
+            delegate?.placeBench(type: selectedItemIndex, position: sender.tag)
+//            benchPlaceholder2Occupied = true
+//            defaults.set(benchPlaceholder2Occupied, forKey: Keys.bench2Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.bench2.alpha = 1
+//                        self.defaults.set(self.bench2.alpha, forKey: Keys.bench2Alpha)
+//                        self.benchPlaceholder1.alpha = 0
+//                        self.benchPlaceholder2.alpha = 0
+//                        self.benchArrow1.alpha = 0
+//                        self.benchArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 5:
-            lampPlaceholder1Occupied = true
-            defaults.set(lampPlaceholder1Occupied, forKey: Keys.lamp1Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.lamp1.alpha = 1
-                        self.defaults.set(self.lamp1.alpha, forKey: Keys.lamp1Alpha)
-                        self.lampPlaceholder1.alpha = 0
-                        self.lampPlaceholder2.alpha = 0
-                        self.lampArrow1.alpha = 0
-                        self.lampArrow2.alpha = 0
-                },
-                    completion: nil)
-            } else if reward2Status == true {
-                self.lamp1.image = UIImage(named: "Lamp-2")
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.lamp1.alpha = 1
-                        self.defaults.set(self.lamp1.alpha, forKey: Keys.lamp1Alpha)
-                        self.lampPlaceholder2.alpha = 0
-                        self.lampPlaceholder1.alpha = 0
-                        self.lampArrow2.alpha = 0
-                        self.lampArrow1.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeLamp(type: selectedItemIndex, position: sender.tag)
+//            lampPlaceholder1Occupied = true
+//            defaults.set(lampPlaceholder1Occupied, forKey: Keys.lamp1Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.lamp1.alpha = 1
+//                        self.defaults.set(self.lamp1.alpha, forKey: Keys.lamp1Alpha)
+//                        self.lampPlaceholder1.alpha = 0
+//                        self.lampPlaceholder2.alpha = 0
+//                        self.lampArrow1.alpha = 0
+//                        self.lampArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            } else if reward2Status == true {
+//                self.lamp1.image = UIImage(named: "Lamp-2")
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.lamp1.alpha = 1
+//                        self.defaults.set(self.lamp1.alpha, forKey: Keys.lamp1Alpha)
+//                        self.lampPlaceholder2.alpha = 0
+//                        self.lampPlaceholder1.alpha = 0
+//                        self.lampArrow2.alpha = 0
+//                        self.lampArrow1.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 6:
-            lampPlaceholder2Occupied = true
-            defaults.set(lampPlaceholder2Occupied, forKey: Keys.lamp2Occupied)
-            if reward1Status == true {
-                self.lamp2.image = UIImage(named: "Lamp-1")
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.lamp2.alpha = 1
-                        self.defaults.set(self.lamp2.alpha, forKey: Keys.lamp2Alpha)
-                        self.lampPlaceholder1.alpha = 0
-                        self.lampPlaceholder2.alpha = 0
-                        self.lampArrow1.alpha = 0
-                        self.lampArrow2.alpha = 0
-                        
-                },
-                    completion: nil)
-            } else if reward2Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.lamp2.alpha = 1
-                        self.defaults.set(self.lamp2.alpha, forKey: Keys.lamp2Alpha)
-                        self.lampPlaceholder2.alpha = 0
-                        self.lampPlaceholder1.alpha = 0
-                        self.lampArrow2.alpha = 0
-                        self.lampArrow1.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeLamp(type: selectedItemIndex, position: sender.tag)
+//            lampPlaceholder2Occupied = true
+//            defaults.set(lampPlaceholder2Occupied, forKey: Keys.lamp2Occupied)
+//            if reward1Status == true {
+//                self.lamp2.image = UIImage(named: "Lamp-1")
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.lamp2.alpha = 1
+//                        self.defaults.set(self.lamp2.alpha, forKey: Keys.lamp2Alpha)
+//                        self.lampPlaceholder1.alpha = 0
+//                        self.lampPlaceholder2.alpha = 0
+//                        self.lampArrow1.alpha = 0
+//                        self.lampArrow2.alpha = 0
+//
+//                },
+//                    completion: nil)
+//            } else if reward2Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.lamp2.alpha = 1
+//                        self.defaults.set(self.lamp2.alpha, forKey: Keys.lamp2Alpha)
+//                        self.lampPlaceholder2.alpha = 0
+//                        self.lampPlaceholder1.alpha = 0
+//                        self.lampArrow2.alpha = 0
+//                        self.lampArrow1.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 7:
-            treePlaceholder1Occupied = true
-            defaults.set(treePlaceholder1Occupied, forKey: Keys.tree1Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.tree1.alpha = 1
-                        self.defaults.set(self.tree1.alpha, forKey: Keys.tree1Alpha)
-                        self.treePlaceholder1.alpha = 0
-                        self.treePlaceholder2.alpha = 0
-                        self.treeArrow1.alpha = 0
-                        self.treeArrow2.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeTree(type: selectedItemIndex, position: sender.tag)
+//            treePlaceholder1Occupied = true
+//            defaults.set(treePlaceholder1Occupied, forKey: Keys.tree1Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.tree1.alpha = 1
+//                        self.defaults.set(self.tree1.alpha, forKey: Keys.tree1Alpha)
+//                        self.treePlaceholder1.alpha = 0
+//                        self.treePlaceholder2.alpha = 0
+//                        self.treeArrow1.alpha = 0
+//                        self.treeArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         case 8:
-            treePlaceholder2Occupied = true
-            defaults.set(treePlaceholder2Occupied, forKey: Keys.tree2Occupied)
-            if reward1Status == true {
-                UIView.animate(
-                    withDuration: 0.5,
-                    delay: 0,
-                    usingSpringWithDamping: 0.8,
-                    initialSpringVelocity: 5,
-                    options: [],
-                    animations: {
-                        self.dim.alpha = 0
-                        self.tree2.alpha = 1
-                        self.defaults.set(self.tree2.alpha, forKey: Keys.tree2Alpha)
-                        self.treePlaceholder1.alpha = 0
-                        self.treePlaceholder2.alpha = 0
-                        self.treeArrow1.alpha = 0
-                        self.treeArrow2.alpha = 0
-                },
-                    completion: nil)
-            }
+            delegate?.placeTree(type: selectedItemIndex, position: sender.tag)
+//            treePlaceholder2Occupied = true
+//            defaults.set(treePlaceholder2Occupied, forKey: Keys.tree2Occupied)
+//            if reward1Status == true {
+//                UIView.animate(
+//                    withDuration: 0.5,
+//                    delay: 0,
+//                    usingSpringWithDamping: 0.8,
+//                    initialSpringVelocity: 5,
+//                    options: [],
+//                    animations: {
+//                        self.dim.alpha = 0
+//                        self.tree2.alpha = 1
+//                        self.defaults.set(self.tree2.alpha, forKey: Keys.tree2Alpha)
+//                        self.treePlaceholder1.alpha = 0
+//                        self.treePlaceholder2.alpha = 0
+//                        self.treeArrow1.alpha = 0
+//                        self.treeArrow2.alpha = 0
+//                },
+//                    completion: nil)
+//            }
         default:
             break
         }
+        
+        dismiss(animated: false, completion: nil)
     }
     
     @IBAction func rewardIconTap(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            reward1Status = true
-            reward2Status = false
-        case 2:
-            reward1Status = false
-            reward2Status = true
-        default:
-            break
-        }
+        selectedItemIndex = sender.tag
         
         if bushBtnStatus == true {
             UIView.animate(
