@@ -330,9 +330,9 @@ extension AnimalRoomVC {
         },
             completion: nil)
         rewardsValue += 1
-        defaults.set(rewardsValue, forKey: Keys.rewards)
+        settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
-            self.rewardsLabel.text = "\(self.rewardsValue)"
+            self.rewardsLabel.text = "\(rewardsValue)"
         }
     }
     
@@ -349,12 +349,12 @@ extension AnimalRoomVC {
     }
     
     func loadDefaults() {
-        rewardsValue = defaults.integer(forKey: Keys.rewards)
-        hunger = defaults.float(forKey: Keys.hunger)
-        sleep = defaults.float(forKey: Keys.sleep)
-        health = defaults.float(forKey: Keys.health)
-        fun = defaults.float(forKey: Keys.fun)
-        love = defaults.float(forKey: Keys.love)
+        rewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
+        hunger = settingsDefaults.float(forKey: Keys.hunger)
+        sleep = settingsDefaults.float(forKey: Keys.sleep)
+        health = settingsDefaults.float(forKey: Keys.health)
+        fun = settingsDefaults.float(forKey: Keys.fun)
+        love = settingsDefaults.float(forKey: Keys.love)
     }
     
     //MARK: - Layouts

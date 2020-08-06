@@ -11,15 +11,6 @@ import AVFoundation
 
 class AnimalRoomVC: UIViewController {
     
-    struct Keys {
-        static let hunger = "saveHunger"
-        static let sleep = "saveSleep"
-        static let health = "saveHealth"
-        static let fun = "saveFun"
-        static let love = "saveLove"
-        static let rewards = "saveRewards"
-    }
-    
     let bowlIcons: [UIImage] = [#imageLiteral(resourceName: "Bowl-Empty"), #imageLiteral(resourceName: "Bowl-Half"), #imageLiteral(resourceName: "Bowl-Full"), #imageLiteral(resourceName: "Bowl-Excess")]
     var bowlPresent: Bool = false
     var timer: Timer?
@@ -28,16 +19,6 @@ class AnimalRoomVC: UIViewController {
     var catPurr: AVAudioPlayer?
     var sleepingState: Bool = false
     var animator: UIDynamicAnimator?
-    
-    //MARK: Logic
-    var rewardsValue: Int = 100
-    var hunger: Float = 0.0
-    var sleep: Float = 0.0
-    var health: Float = 0.0
-    var fun: Float = 0.0
-    var love: Float = 0.0
-    
-    let defaults = UserDefaults.standard
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -165,24 +146,24 @@ class AnimalRoomVC: UIViewController {
         switch currentTimer {
         case 3:
             sleep += 0.2
-            defaults.set(sleep, forKey: Keys.sleep)
+            settingsDefaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
-                defaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
         case 5:
             sleep += 0.3
-            defaults.set(sleep, forKey: Keys.sleep)
+            settingsDefaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
-                defaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
         case 8:
             sleep += 0.5
-            defaults.set(sleep, forKey: Keys.sleep)
+            settingsDefaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
-                defaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
         default:
             break
@@ -248,7 +229,7 @@ class AnimalRoomVC: UIViewController {
             self.overlayAnimation()
         } else {
             health += 1
-            defaults.set(health, forKey: Keys.health)
+            settingsDefaults.set(health, forKey: Keys.health)
             progressBar.setProgress(health, animated: true)
             
             let alert = UIAlertController(title: "Vet Phone Number", message: "Enter your vet number", preferredStyle: .alert)
@@ -353,23 +334,23 @@ class AnimalRoomVC: UIViewController {
                     switch bowl.image {
                     case bowlIcons[1]:
                         hunger += 0.1
-                        defaults.set(hunger, forKey: Keys.hunger)
+                        settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
-                        defaults.set(sleep, forKey: Keys.sleep)
+                        settingsDefaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
-                        defaults.set(hunger, forKey: Keys.hunger)
+                        settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
-                        defaults.set(sleep, forKey: Keys.sleep)
+                        settingsDefaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
-                        defaults.set(hunger, forKey: Keys.hunger)
+                        settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
-                        defaults.set(sleep, forKey: Keys.sleep)
+                        settingsDefaults.set(sleep, forKey: Keys.sleep)
                         progressBarAnimate()
                         progressBar.setProgress(hunger, animated: true)
                     default:
@@ -442,7 +423,7 @@ class AnimalRoomVC: UIViewController {
 //                    catPurr?.play()
                     soundManager.play(soundType: .catPurr)
                     love += 0.001
-                    defaults.set(love, forKey: Keys.love)
+                    settingsDefaults.set(love, forKey: Keys.love)
                     if love >= 1 {
                         spawnCoin()
                     }
@@ -661,7 +642,7 @@ class AnimalRoomVC: UIViewController {
         } else {
             if hunger > 0 {
                 health = 1
-                defaults.set(health, forKey: Keys.health)
+                settingsDefaults.set(health, forKey: Keys.health)
                 catNormal.isHidden = true
                 bowl.isHidden = true
                 catFood.isHidden = true
@@ -679,7 +660,7 @@ class AnimalRoomVC: UIViewController {
                 progressBarAnimate()
             } else {
                 health = 0
-                defaults.set(health, forKey: Keys.health)
+                settingsDefaults.set(health, forKey: Keys.health)
                 catNormal.isHidden = true
                 bowl.isHidden = true
                 catFood.isHidden = true
@@ -711,9 +692,9 @@ class AnimalRoomVC: UIViewController {
     
     @objc func gameBtnAction(sender: UIButton) {
         hunger -= 0.2
-        defaults.set(hunger, forKey: Keys.hunger)
+        settingsDefaults.set(hunger, forKey: Keys.hunger)
         sleep -= 0.2
-        defaults.set(sleep, forKey: Keys.sleep)
+        settingsDefaults.set(sleep, forKey: Keys.sleep)
         let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
         self.present(vc, animated: true)
@@ -756,9 +737,9 @@ class AnimalRoomVC: UIViewController {
         print(segueDes.totalScore)
         let totalScoreGame = segueDes.totalScore * 2
         rewardsValue += totalScoreGame
-        defaults.set(rewardsValue, forKey: Keys.rewards)
+        settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
-            self.rewardsLabel.text = "\(self.rewardsValue)"
+            self.rewardsLabel.text = "\(rewardsValue)"
         }
     }
     
@@ -782,21 +763,23 @@ class AnimalRoomVC: UIViewController {
         let dragHandCare = UIPanGestureRecognizer(target: self, action: #selector(handCareDrag))
         handCare.addGestureRecognizer(dragHandCare)
         self.catPurrAudio()
-        
+       
+        /*
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
             if granted {
                 print("User granted notification")
             }
-            /*
+            
             if granted == false {
                 let alert = UIAlertController(title: "Feeden Notification", message: "Allowing Feeden to notify you will result in how we remind you to take care of your pet. You may turn on the notification through Settings > Notifications > Feeden", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alert.addAction(action)
                 self.present(alert, animated: true)
-            } */
+            }
         }
+         */
         
-        notification()
+//        notification()
         
     }
 }

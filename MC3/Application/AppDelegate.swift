@@ -12,6 +12,23 @@ let settingsDefaults = UserDefaults.standard
 let backgroundMusic = AudioManager.init(audioPath: "Background-Music.mp3")
 let soundManager = SoundManager.init()
 
+//Logic Animal Room
+var rewardsValue: Int = 0
+var hunger: Float = 0.0
+var sleep: Float = 0.0
+var health: Float = 0.0
+var fun: Float = 0.0
+var love: Float = 0.0
+
+struct Keys {
+    static let hunger = "savedHunger"
+    static let sleep = "savedSleep"
+    static let health = "savedHealth"
+    static let fun = "savedFun"
+    static let love = "savedLove"
+    static let rewards = "savedRewards"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
