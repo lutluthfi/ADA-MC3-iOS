@@ -22,7 +22,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bush-2" translatesAutoresizingMaskIntoConstraints="NO" id="Spl-8c-ycQ" userLabel="Bush2">
                                 <rect key="frame" x="152.5" y="249" width="151" height="102"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Bench-Flip" translatesAutoresizingMaskIntoConstraints="NO" id="xtk-WR-xhL" userLabel="Bench1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bench-Flip" translatesAutoresizingMaskIntoConstraints="NO" id="xtk-WR-xhL" userLabel="Bench1">
                                 <rect key="frame" x="270" y="327" width="176" height="72"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bench" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Vn-4ev" userLabel="Bench2">
@@ -82,7 +82,7 @@
                                     <action selector="placeholderLocation:" destination="v61-bw-am8" eventType="touchUpInside" id="VcH-tL-urL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYC-ys-frk" userLabel="Bench Placeholder 3">
+                            <button opaque="NO" alpha="0.0" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYC-ys-frk" userLabel="Bench Placeholder 3">
                                 <rect key="frame" x="286" y="333" width="144" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="iPW-ck-QWD"/>
@@ -154,7 +154,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-pd-3Sb" userLabel="Bush Arrow 2">
                                 <rect key="frame" x="258" y="200" width="30" height="50"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-2W-SNk" userLabel="Bench Arrow 3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-2W-SNk" userLabel="Bench Arrow 3">
                                 <rect key="frame" x="343" y="263" width="30" height="50"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow-Placement" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-AB-dWi" userLabel="Bench Arrow 4">
@@ -370,6 +370,7 @@
                             <constraint firstItem="gOr-KZ-BHG" firstAttribute="top" secondItem="y8i-jR-01u" secondAttribute="bottom" constant="20" id="PWy-YP-gwc"/>
                             <constraint firstItem="HhH-Vn-4ev" firstAttribute="centerY" secondItem="EMK-Jd-2Q7" secondAttribute="centerY" id="PyX-y3-E5o"/>
                             <constraint firstItem="TBl-pd-3Sb" firstAttribute="centerX" secondItem="kMy-Uy-hKy" secondAttribute="centerX" id="QSz-rq-E4v"/>
+                            <constraint firstItem="3iA-2W-SNk" firstAttribute="leading" secondItem="aLA-0j-eWB" secondAttribute="trailing" constant="30" id="TUR-Db-AAh"/>
                             <constraint firstItem="bYC-ys-frk" firstAttribute="top" secondItem="3iA-2W-SNk" secondAttribute="bottom" constant="20" id="Tet-LW-bA4"/>
                             <constraint firstItem="bYC-ys-frk" firstAttribute="centerY" secondItem="Lsn-kL-YK8" secondAttribute="bottom" constant="-30" id="UDc-z1-ZPh"/>
                             <constraint firstItem="BFg-Mt-a90" firstAttribute="leading" secondItem="Lsn-kL-YK8" secondAttribute="leading" id="WW8-Yj-EfR"/>

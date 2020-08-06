@@ -109,8 +109,6 @@ class InventoryVC: UIViewController {
         reward4.adjustsImageWhenDisabled = true
         reward5.adjustsImageWhenDisabled = true
         
-        self.arrowAnimate("bush")
-        
         bushPlaceholder1Occupied = defaults.bool(forKey: Keys.bush1Occupied)
         bushPlaceholder2Occupied = defaults.bool(forKey: Keys.bush2Occupied)
         bush1.alpha = CGFloat(defaults.float(forKey: Keys.bush1Alpha))
@@ -136,6 +134,7 @@ class InventoryVC: UIViewController {
         super.viewDidAppear(animated)
         showBottomAction()
         self.modalTransitionStyle = .coverVertical
+        self.arrowAnimate("bush")
     }
     
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
