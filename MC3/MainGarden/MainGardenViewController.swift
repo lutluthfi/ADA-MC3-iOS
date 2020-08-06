@@ -444,6 +444,10 @@ extension MainGardenViewController {
     }
 
     private func showInventoryScene() {
+        let storyboard = UIStoryboard(name: "InventoryStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "InventoryVC")
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
 
     private func showRewardScene() {

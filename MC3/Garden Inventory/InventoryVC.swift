@@ -96,6 +96,7 @@ class InventoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.isOpaque = true
         reward1.isEnabled = true
         reward2.isEnabled = true
         reward3.isEnabled = false
@@ -131,17 +132,23 @@ class InventoryVC: UIViewController {
         tree2.alpha = CGFloat(defaults.float(forKey: Keys.tree2Alpha))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showBottomAction()
+        self.modalTransitionStyle = .coverVertical
+    }
+    
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         UIView.animate(
-            withDuration: 1,
+            withDuration: 0.5,
             delay: 0,
             usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 5,
+            initialSpringVelocity: 3,
             options: .curveEaseIn,
             animations: {
                 self.rewardsContainer.transform = .identity
                 self.dim.alpha = 0
-                
+
                 self.bushPlaceholder1.alpha = 0
                 self.bushPlaceholder2.alpha = 0
                 self.benchPlaceholder1.alpha = 0
@@ -150,7 +157,7 @@ class InventoryVC: UIViewController {
                 self.lampPlaceholder2.alpha = 0
                 self.treePlaceholder1.alpha = 0
                 self.treePlaceholder2.alpha = 0
-                
+
                 self.bushArrow1.alpha = 0
                 self.bushArrow2.alpha = 0
                 self.benchArrow1.alpha = 0
@@ -160,10 +167,26 @@ class InventoryVC: UIViewController {
                 self.treeArrow1.alpha = 0
                 self.treeArrow2.alpha = 0
         },
-            completion: nil)
+        completion: { (isComplete) in
+            self.dismiss(animated: false, completion: nil)
+        })
     }
     
-    @IBAction func triggerBtn(_ sender: UIButton) {
+//    @IBAction func triggerBtn(_ sender: UIButton) {
+//        UIView.animate(
+//            withDuration: 1,
+//            delay: 0,
+//            usingSpringWithDamping: 0.8,
+//            initialSpringVelocity: 5,
+//            options: .curveEaseInOut,
+//            animations: {
+//                self.dim.alpha = 1
+//                self.rewardsContainer.transform = CGAffineTransform(translationX: 0, y: -120)
+//        },
+//            completion: nil)
+//    }
+    
+    func showBottomAction() {
         UIView.animate(
             withDuration: 1,
             delay: 0,
