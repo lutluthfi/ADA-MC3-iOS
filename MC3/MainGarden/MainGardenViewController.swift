@@ -102,6 +102,8 @@ class MainGardenViewController: UIViewController {
     @IBOutlet var imgTree1: UIImageView!
     @IBOutlet var imgBench1: UIImageView!
     
+    private var rewardsValue: Int = 0
+    
     private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
@@ -116,7 +118,13 @@ class MainGardenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.prepareData()
         self.setupViewDidLoad()
+    }
+    
+    func prepareData() {
+        self.rewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
+        self.coinAmountLabel.text = "\(rewardsValue)"
     }
 
     private func setupViewDidLoad() {
@@ -391,7 +399,7 @@ extension MainGardenViewController {
     
     // NEEDED! Do not delete!
     @IBAction func unwindToMainGardenView(_ segue : UIStoryboardSegue) {
-      // Do nothing
+        self.prepareData()
     }
 
 }
