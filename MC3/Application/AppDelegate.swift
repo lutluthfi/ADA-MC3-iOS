@@ -36,6 +36,7 @@ struct Keys {
     
     static let isAgree = "isAgree"
     static let isStartGame = "isStartGame"
+    static let catName = "catName"
 }
 
 @UIApplicationMain
