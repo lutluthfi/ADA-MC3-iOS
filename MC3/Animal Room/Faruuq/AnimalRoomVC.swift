@@ -749,6 +749,12 @@ class AnimalRoomVC: UIViewController {
         self.layout()
         
         loadDefaults()
+        if hunger < 0 || sleep < 0 || fun < 0 || love < 0 {
+            hunger = 0
+            sleep = 0
+            fun = 0
+            love = 0
+        }
         
         rewardsLabel.text = ("\(rewardsValue)")
         progressBar.setProgress(hunger, animated: true)
@@ -764,7 +770,6 @@ class AnimalRoomVC: UIViewController {
         handCare.addGestureRecognizer(dragHandCare)
         self.catPurrAudio()
        
-        /*
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
             if granted {
                 print("User granted notification")
@@ -777,9 +782,8 @@ class AnimalRoomVC: UIViewController {
                 self.present(alert, animated: true)
             }
         }
-         */
         
-//        notification()
+        notification()
         
     }
 }

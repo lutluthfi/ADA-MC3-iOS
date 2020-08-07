@@ -19,6 +19,10 @@ var sleep: Float = 0.0
 var health: Float = 0.0
 var fun: Float = 0.0
 var love: Float = 0.0
+var timeIntervalBackground: Double = 0
+var timeIntervalForeground: Double = 0
+var firstTime: Bool = true
+var gapTime: Int = 0
 
 struct Keys {
     static let hunger = "savedHunger"
@@ -27,11 +31,13 @@ struct Keys {
     static let fun = "savedFun"
     static let love = "savedLove"
     static let rewards = "savedRewards"
+    static let timeIntervalBackground = "savedTimeInterval"
+    static let firstTime = "savedFirstTime"
 }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     lazy var navigationController: UINavigationController = {
         let controller = UINavigationController()
         controller.enableMCTransitioning()
@@ -39,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return controller
     }()
     var window: UIWindow?
-
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -76,32 +82,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.navigationDidStarted()
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         backgroundMusic.stop()
         soundManager.stopAll()
+        
+        timeIntervalBackground = Date().timeIntervalSince1970
+        settingsDefaults.set(timeIntervalBackground, forKey: Keys.timeIntervalBackground)
+        print("background = \(timeIntervalBackground)")
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         let musicStatus = settingsDefaults.bool(forKey: "musicStatus")
-            
+        
         if (musicStatus) {
             backgroundMusic.play()
         } else {
             backgroundMusic.stop()
         }
+        
+        if firstTime == settingsDefaults.bool(forKey: Keys.firstTime) {
+            timeIntervalForeground = Date().timeIntervalSince1970
+            print("foreground = \(timeIntervalForeground)")
+            timeIntervalBackground = settingsDefaults.double(forKey: Keys.timeIntervalBackground)
+            gapTime = Int(timeIntervalForeground - timeIntervalBackground)
+            print("gap time = \(gapTime)")
+        } else if firstTime == true {
+            firstTime = false
+            settingsDefaults.set(firstTime, forKey: Keys.firstTime)
+        }
+        
+        hunger = settingsDefaults.float(forKey: Keys.hunger)
+        if hunger > 0 || sleep > 0 || fun > 0 || love > 0 {
+            switch gapTime {
+            case 60...900: //1-15 menit
+                hunger -= 0.05
+                sleep -= 0.05
+                fun -= 0.05
+                love -= 0.05
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(sleep, forKey: Keys.hunger)
+                settingsDefaults.set(fun, forKey: Keys.hunger)
+                settingsDefaults.set(love, forKey: Keys.hunger)
+            case 901...1800: //15-30 menit
+                hunger -= 0.1
+                sleep -= 0.1
+                fun -= 0.1
+                love -= 0.1
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(sleep, forKey: Keys.hunger)
+                settingsDefaults.set(fun, forKey: Keys.hunger)
+                settingsDefaults.set(love, forKey: Keys.hunger)
+            case 1801...2700: //30-45 menit
+                hunger -= 0.2
+                sleep -= 0.2
+                fun -= 0.2
+                love -= 0.2
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(sleep, forKey: Keys.hunger)
+                settingsDefaults.set(fun, forKey: Keys.hunger)
+                settingsDefaults.set(love, forKey: Keys.hunger)
+            case 2700...: //>45 menit
+                hunger = 0
+                sleep = 0
+                fun = 0
+                love = 0
+                settingsDefaults.set(hunger, forKey: Keys.hunger)
+                settingsDefaults.set(sleep, forKey: Keys.hunger)
+                settingsDefaults.set(fun, forKey: Keys.hunger)
+                settingsDefaults.set(love, forKey: Keys.hunger)
+            default:
+                break
+            }
+        }
+        
     }
-
+    
 }
 
 extension AppDelegate {
-
+    
     private func navigationDidStarted() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: SplashViewController.identifier, bundle: nil)
@@ -112,5 +178,5 @@ extension AppDelegate {
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
     }
-
+    
 }
