@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HappyMonkey-Regular.ttf">
+            <string>HappyMonkey-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Shop Alert View Controller-->
+        <scene sceneID="HFw-Zu-eU7">
+            <objects>
+                <viewController storyboardIdentifier="ShopAlertVC" id="lNi-p4-7hD" customClass="ShopAlertViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ShopAlertVC" id="pfV-An-S0f">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XU7-o0-NiG">
+                                <rect key="frame" x="266" y="92" width="365" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-XS-rdM">
+                                        <rect key="frame" x="8" y="8" width="349" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWB-WF-o4k">
+                                        <rect key="frame" x="66" y="166" width="87" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" red="0.25490196079999999" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noPressed:" destination="lNi-p4-7hD" eventType="touchUpInside" id="c0v-ZS-gKz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUo-Hu-Gy1">
+                                        <rect key="frame" x="212" y="166" width="87" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" red="1" green="0.97647058819999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yesPressed:" destination="lNi-p4-7hD" eventType="touchUpInside" id="gDL-5L-jwL"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gq-cc-eQB">
+                                        <rect key="frame" x="118" y="166" width="128" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                        <state key="normal" title="Okay">
+                                            <color key="titleColor" red="1" green="0.97647058819999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="noPressed:" destination="lNi-p4-7hD" eventType="touchUpInside" id="mne-k9-4pZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z3t-dK-aaB"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="dt6-XS-rdM" id="rxs-2f-z3J"/>
+                        <outlet property="alertView" destination="XU7-o0-NiG" id="ss6-6u-wFg"/>
+                        <outlet property="noButton" destination="HWB-WF-o4k" id="sPj-IA-RW6"/>
+                        <outlet property="okayButton" destination="0Gq-cc-eQB" id="PyW-Ys-aO9"/>
+                        <outlet property="yesButton" destination="DUo-Hu-Gy1" id="z4g-Xp-jIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7z-q1-OoQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="-70"/>
+        </scene>
+    </scenes>
+</document>

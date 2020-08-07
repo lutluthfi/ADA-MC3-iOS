@@ -462,6 +462,7 @@ extension MainGardenViewController {
     }
 
     private func showRewardScene() {
+        
     }
 
     private func showSettingScene() {
@@ -472,6 +473,9 @@ extension MainGardenViewController {
     }
 
     private func showShopScene() {
+        let storyboard = UIStoryboard(name: "ShopStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ShopStoryboard")
+        self.present(vc, animated: true)
     }
 }
 
