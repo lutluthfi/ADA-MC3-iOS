@@ -32,7 +32,12 @@ class IntroViewController: UIViewController {
 extension IntroViewController {
 
     @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
-        self.startAgreementScene()
+        let isAgree = settingsDefaults.bool(forKey: Keys.isAgree)
+        if (isAgree) {
+            self.startMainGardenScene()
+        } else {
+            self.startAgreementScene()
+        }
     }
 
 }
@@ -44,6 +49,12 @@ extension IntroViewController {
         let storyboard = UIStoryboard(name: AgreementViewController.identifier, bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: AgreementViewController.identifier)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func startMainGardenScene() {
+        let storyboard = UIStoryboard(name: MainGardenViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: MainGardenViewController.identifier)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
