@@ -95,7 +95,6 @@ extension AnimalRoomVC {
             animations: {
                 self.zPopUp1.alpha = 1
                 self.zPopUp1.transform = .identity
-//                self.zPopUp1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }) { (finished) in
             self.z2Animation()
         }
@@ -112,7 +111,6 @@ extension AnimalRoomVC {
             animations: {
                 self.zPopUp2.alpha = 1
                 self.zPopUp2.transform = .identity
-//                self.zPopUp2.transform = CGAffineTransform(scaleX: 2, y: 2)
         }) { (finished) in
             self.z3Animation()
         }
@@ -332,9 +330,31 @@ extension AnimalRoomVC {
         },
             completion: nil)
         rewardsValue += 1
+        settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
-            self.rewardsLabel.text = "\(self.rewardsValue)"
+            self.rewardsLabel.text = "\(rewardsValue)"
         }
+    }
+    
+    func notification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Feeden"
+        content.body = "Hi Hooman, wanna play with me for a sec?"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+    }
+    
+    func loadDefaults() {
+        rewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
+        hunger = settingsDefaults.float(forKey: Keys.hunger)
+        sleep = settingsDefaults.float(forKey: Keys.sleep)
+        health = settingsDefaults.float(forKey: Keys.health)
+        fun = settingsDefaults.float(forKey: Keys.fun)
+        love = settingsDefaults.float(forKey: Keys.love)
     }
     
     //MARK: - Layouts
