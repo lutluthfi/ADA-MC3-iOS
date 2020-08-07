@@ -64,6 +64,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vby-h8-qJB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CWH-DZ-ofn"/>
                     <connections>
                         <outlet property="startButton" destination="M2A-tX-k3S" id="54L-hw-Ls3"/>
                     </connections>
@@ -79,10 +80,96 @@
             </objects>
             <point key="canvasLocation" x="122.54464285714285" y="78.260869565217391"/>
         </scene>
+        <!--On Board View Controller-->
+        <scene sceneID="gnw-KW-pHp">
+            <objects>
+                <viewController storyboardIdentifier="OnBoardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GSu-kl-zf5" customClass="OnBoardViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6U4-vB-akg">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Onboard" translatesAutoresizingMaskIntoConstraints="NO" id="9UR-90-z9S">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collect coins by taking care of the animals you found in the garden." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpG-BS-kEM">
+                                <rect key="frame" x="128" y="219" width="171" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="ASu-X2-cE8"/>
+                                    <constraint firstAttribute="width" constant="171" id="ozw-Eg-XiP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" name="413834"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep track of your animal’s status and check out the related insights." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVH-ls-MvP">
+                                <rect key="frame" x="588" y="219" width="248" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="Y8H-Rs-3W5"/>
+                                    <constraint firstAttribute="height" constant="52" id="mB7-Te-BUQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" name="413834"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trade your coins with in-game garden decorations and real-life rewards such as zoo visit tickets." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tue-Tx-cQf">
+                                <rect key="frame" x="314.5" y="56" width="267" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="267" id="4W3-Za-DFI"/>
+                                    <constraint firstAttribute="height" constant="71" id="EoY-Au-sz9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <color key="textColor" name="413834"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkk-Ho-JMD">
+                                <rect key="frame" x="355.5" y="313" width="185" height="39"/>
+                                <color key="backgroundColor" name="413834"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="UKK-bK-1rR"/>
+                                    <constraint firstAttribute="width" constant="185" id="h1p-bt-YK7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressBtn:" destination="GSu-kl-zf5" eventType="touchUpInside" id="e8b-wZ-G4A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pkk-Ho-JMD" firstAttribute="top" secondItem="eaZ-RP-s3d" secondAttribute="top" constant="313" id="0vu-In-ljO"/>
+                            <constraint firstItem="Pkk-Ho-JMD" firstAttribute="centerX" secondItem="eaZ-RP-s3d" secondAttribute="centerX" id="4l7-gy-Cvd"/>
+                            <constraint firstItem="9UR-90-z9S" firstAttribute="width" secondItem="6U4-vB-akg" secondAttribute="width" id="5z4-ah-Qtc"/>
+                            <constraint firstItem="NpG-BS-kEM" firstAttribute="leading" secondItem="eaZ-RP-s3d" secondAttribute="leading" constant="84" id="9Wq-my-xxV"/>
+                            <constraint firstItem="DVH-ls-MvP" firstAttribute="top" secondItem="eaZ-RP-s3d" secondAttribute="top" constant="219" id="EHw-WO-HSh"/>
+                            <constraint firstItem="9UR-90-z9S" firstAttribute="top" secondItem="eaZ-RP-s3d" secondAttribute="top" id="HWp-RI-rZ4"/>
+                            <constraint firstItem="9UR-90-z9S" firstAttribute="trailing" secondItem="eaZ-RP-s3d" secondAttribute="trailing" constant="44" id="JNN-J0-Ajg"/>
+                            <constraint firstItem="9UR-90-z9S" firstAttribute="bottom" secondItem="eaZ-RP-s3d" secondAttribute="bottom" constant="21" id="Oue-yx-bqY"/>
+                            <constraint firstItem="tue-Tx-cQf" firstAttribute="centerX" secondItem="eaZ-RP-s3d" secondAttribute="centerX" id="cQL-5i-uaU"/>
+                            <constraint firstItem="eaZ-RP-s3d" firstAttribute="trailing" secondItem="DVH-ls-MvP" secondAttribute="trailing" constant="16" id="ca8-Yg-6ak"/>
+                            <constraint firstItem="9UR-90-z9S" firstAttribute="height" secondItem="6U4-vB-akg" secondAttribute="height" id="gaC-o4-eMr"/>
+                            <constraint firstItem="eaZ-RP-s3d" firstAttribute="leading" secondItem="9UR-90-z9S" secondAttribute="leading" constant="44" id="mtT-3M-JaM"/>
+                            <constraint firstItem="tue-Tx-cQf" firstAttribute="top" secondItem="eaZ-RP-s3d" secondAttribute="top" constant="56" id="owY-QN-Puq"/>
+                            <constraint firstItem="NpG-BS-kEM" firstAttribute="top" secondItem="eaZ-RP-s3d" secondAttribute="top" constant="219" id="v0P-5Z-nt2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eaZ-RP-s3d"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnNext" destination="Pkk-Ho-JMD" id="rFG-mS-7lZ"/>
+                        <segue destination="RAN-f0-b17" kind="presentation" identifier="onboard2intro" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cZf-LC-qXz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBJ-BW-hLN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="859"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Appname" width="311" height="71"/>
         <image name="Background-Garden" width="896" height="414"/>
+        <image name="Onboard" width="896" height="414"/>
         <namedColor name="413834">
             <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

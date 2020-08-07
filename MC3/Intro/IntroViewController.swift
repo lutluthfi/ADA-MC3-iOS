@@ -32,6 +32,7 @@ class IntroViewController: UIViewController {
 extension IntroViewController {
 
     @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+        settingsDefaults.set(true, forKey: Keys.isStartGame)
         let isAgree = settingsDefaults.bool(forKey: Keys.isAgree)
         if (isAgree) {
             self.startMainGardenScene()
