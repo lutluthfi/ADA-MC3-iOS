@@ -749,10 +749,13 @@ class AnimalRoomVC: UIViewController {
         self.layout()
         
         loadDefaults()
-        if hunger < 0 || sleep < 0 || fun < 0 || love < 0 {
+        if hunger < 0 {
             hunger = 0
+        } else if sleep < 0 {
             sleep = 0
+        } else if fun < 0 {
             fun = 0
+        } else if love < 0 {
             love = 0
         }
         
@@ -760,7 +763,7 @@ class AnimalRoomVC: UIViewController {
         progressBar.setProgress(hunger, animated: true)
         
         let holdCatFood = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
-        holdCatFood.minimumPressDuration = 0.1
+        holdCatFood.minimumPressDuration = 0.3
         catFood.addGestureRecognizer(holdCatFood)
         
         let dragBowl = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
