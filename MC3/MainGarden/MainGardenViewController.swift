@@ -258,6 +258,19 @@ extension MainGardenViewController {
                 aboveSubview: self.mainGardenBackgroundImageView
             )
         UIView.animate(withDuration: 0.75, animations: {
+
+            let hunger = settingsDefaults.float(forKey: Keys.hunger)
+            let sleep = settingsDefaults.float(forKey: Keys.sleep)
+            let health = settingsDefaults.float(forKey: Keys.health)
+            let fun = settingsDefaults.float(forKey: Keys.fun)
+            let love = settingsDefaults.float(forKey: Keys.love)
+            
+            self.statusFoodProgressView.progress = hunger
+            self.statusSleepProgressView.progress = sleep
+            self.statusPlayProgressView.progress = fun
+            self.statusHealthProgressView.progress = health
+            self.statusPettingProgressView.progress = love
+            
             self.view.layoutIfNeeded()
         }, completion: { (_) in
             self.centerYPetAnimalInfoImageView.constant = isContainerViewShow ?
