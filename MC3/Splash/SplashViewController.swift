@@ -28,8 +28,10 @@ class SplashViewController: UIViewController {
     // MARK: - Component View
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "Icon")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
