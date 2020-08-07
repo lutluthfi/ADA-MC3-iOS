@@ -22,6 +22,7 @@ class ProfilePetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
+        prepareProgressValue()
         // Do any additional setup after loading the view.
     }
     
@@ -54,6 +55,22 @@ class ProfilePetViewController: UIViewController {
         gameProgress.clipsToBounds = true
         pettingProgress.layer.cornerRadius = 1
         pettingProgress.clipsToBounds = true
+    }
+    
+    func prepareProgressValue() {
+        hunger = settingsDefaults.float(forKey: Keys.hunger)
+        sleep = settingsDefaults.float(forKey: Keys.sleep)
+        health = settingsDefaults.float(forKey: Keys.health)
+        fun = settingsDefaults.float(forKey: Keys.fun)
+        love = settingsDefaults.float(forKey: Keys.love)
+        
+        foodProgress.progress = hunger
+        sleepProgress.progress = sleep
+        vetProgress.progress = health
+        gameProgress.progress = fun
+        pettingProgress.progress = love
+        
+        print(hunger, sleep, health, fun, love)
     }
     
     @IBAction func onPressButton(_ sender: UIButton) {
