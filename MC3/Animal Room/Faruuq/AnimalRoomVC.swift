@@ -541,7 +541,7 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func backBtnAction(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwind2MainGarden", sender: nil)
     }
     
     //MARK: Food Button
