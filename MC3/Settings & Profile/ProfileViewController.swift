@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var catArticles2Btn: UIButton!
     @IBOutlet var catArticles1Label: UILabel!
     @IBOutlet var catArticles2Label: UILabel!
+    @IBOutlet var labelPetName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ProfileViewController: UIViewController {
     }
     
     func prepareScreen() {
+      labelPetName.text = settingsDefaults.string(forKey: Keys.catName) ?? "Cat"
         homeBtn.layer.borderWidth = 4
         homeBtn.layer.cornerRadius = 5
         homeBtn.layer.borderColor = UIColor(hex: "#413834")?.cgColor

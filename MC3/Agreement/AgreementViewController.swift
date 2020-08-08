@@ -32,6 +32,7 @@ class AgreementViewController: UIViewController {
 extension AgreementViewController {
 
     @objc private func onStartButtonTouchedUpInside(_ sender: UIButton) {
+        settingsDefaults.set(true, forKey: Keys.isAgree)
         self.showMainGardenScene()
     }
 
