@@ -33,6 +33,10 @@ struct Keys {
     static let rewards = "savedRewards"
     static let timeIntervalBackground = "savedTimeInterval"
     static let firstTime = "savedFirstTime"
+    
+    static let isAgree = "isAgree"
+    static let isStartGame = "isStartGame"
+    static let catName = "catName"
 }
 
 @UIApplicationMain
@@ -69,6 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder6)
             settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder7)
             settingsDefaults.set(nil, forKey: SettingsKey.itemPlaceholder8)
+            
+            // general
+            settingsDefaults.set(false, forKey: Keys.isAgree)
+            settingsDefaults.set(false, forKey: Keys.isStartGame)
         }
         
         let musicStatus = settingsDefaults.bool(forKey: "musicStatus")

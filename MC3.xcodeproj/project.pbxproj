@@ -46,6 +46,7 @@
 		44B1551624DC1E2A00F6AD69 /* SettingsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */; };
 		44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551924DC213D00F6AD69 /* InventoryPosition.swift */; };
 		44B1551C24DC2AD500F6AD69 /* InventoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551B24DC2AD500F6AD69 /* InventoryList.swift */; };
+		44B1551E24DD4E5900F6AD69 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1551D24DD4E5800F6AD69 /* OnBoardViewController.swift */; };
 		44B2082A24C5871100474342 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082924C5871100474342 /* ProfileViewController.swift */; };
 		44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082B24C5873A00474342 /* HelpViewController.swift */; };
 		44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2082D24C5881300474342 /* ProfilePetViewController.swift */; };
@@ -135,6 +136,7 @@
 		44B1551524DC1E2A00F6AD69 /* SettingsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKey.swift; sourceTree = "<group>"; };
 		44B1551924DC213D00F6AD69 /* InventoryPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryPosition.swift; sourceTree = "<group>"; };
 		44B1551B24DC2AD500F6AD69 /* InventoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryList.swift; sourceTree = "<group>"; };
+		44B1551D24DD4E5800F6AD69 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		44B2082924C5871100474342 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		44B2082B24C5873A00474342 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		44B2082D24C5881300474342 /* ProfilePetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePetViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		4F35177A24C065AD000E5E19 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
+				44B1551D24DD4E5800F6AD69 /* OnBoardViewController.swift */,
 				4F35177B24C065C8000E5E19 /* IntroViewController.storyboard */,
 				4F35177D24C065D7000E5E19 /* IntroViewController.swift */,
 			);
@@ -705,6 +708,7 @@
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */,
 				4F6FB33A24D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift in Sources */,
+				44B1551E24DD4E5900F6AD69 /* OnBoardViewController.swift in Sources */,
 				4F6FB2F424D03ED20079AADB /* AppDelegate.swift in Sources */,
 				4F35177124C01EC3000E5E19 /* SplashViewController.swift in Sources */,
 				4F3517B124C6A4FE000E5E19 /* Animal.swift in Sources */,

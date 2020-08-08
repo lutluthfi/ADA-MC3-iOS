@@ -28,8 +28,10 @@ class SplashViewController: UIViewController {
     // MARK: - Component View
     lazy var logoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "Icon")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .gray
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
@@ -53,7 +55,12 @@ class SplashViewController: UIViewController {
             .asyncAfter(
                 deadline: .now() + SplashViewController.kLoadingDuration,
                 execute: {
-                    self.startIntroScene()
+                    let isStartGame = settingsDefaults.bool(forKey: Keys.isStartGame)
+                    if (isStartGame) {
+                        self.startIntroScene()
+                    } else {
+                        self.startOnboardScreen()
+                    }
             })
     }
 
@@ -119,6 +126,12 @@ extension SplashViewController {
     private func startIntroScene() {
         let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: IntroViewController.identifier)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func startOnboardScreen() {
+        let storyboard = UIStoryboard(name: IntroViewController.identifier, bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: OnBoardViewController.identifier)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

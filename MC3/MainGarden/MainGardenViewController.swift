@@ -102,6 +102,9 @@ class MainGardenViewController: UIViewController {
     @IBOutlet var imgTree1: UIImageView!
     @IBOutlet var imgBench1: UIImageView!
     
+    private var rewardsValue: Int = 0
+    private let dialogPetNameId = UUID().uuidString
+    
     private lazy var dialogFactory = DialogFactory()
 
     private let displayedMenu: [MenuMainGardenCollectionViewCell.Model.Menu] = [
@@ -116,7 +119,24 @@ class MainGardenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.prepareData()
+        self.prepareNameModal()
         self.setupViewDidLoad()
+    }
+    
+    func prepareData() {
+        self.rewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
+        self.coinAmountLabel.text = "\(rewardsValue)"
+    }
+    
+    func prepareNameModal() {
+        let catName = settingsDefaults.string(forKey: Keys.catName)
+        if (catName == nil || catName?.count == 0) {
+            let dialogScene = DialogFactory
+                .Scene
+                .animalInfo(dialogId: dialogPetNameId, delegate: self)
+            self.dialogFactory.show(scene: dialogScene)
+        }
     }
 
     private func setupViewDidLoad() {
@@ -216,11 +236,6 @@ class MainGardenViewController: UIViewController {
         self.doGeneratePetImageView()
         self.doInitialAnimateCloudImageView()
         self.doAnimateCloudImageView()
-        //        let dialogId = UUID().uuidString
-        //        let dialogScene = DialogFactory
-        //            .Scene
-        //            .animalInfo(dialogId: dialogId, delegate: nil)
-        //        self.dialogFactory.show(scene: dialogScene)
         
         self.preparePlaceholderItem()
     }
@@ -258,6 +273,19 @@ extension MainGardenViewController {
                 aboveSubview: self.mainGardenBackgroundImageView
             )
         UIView.animate(withDuration: 0.75, animations: {
+
+            let hunger = settingsDefaults.float(forKey: Keys.hunger)
+            let sleep = settingsDefaults.float(forKey: Keys.sleep)
+            let health = settingsDefaults.float(forKey: Keys.health)
+            let fun = settingsDefaults.float(forKey: Keys.fun)
+            let love = settingsDefaults.float(forKey: Keys.love)
+            
+            self.statusFoodProgressView.progress = hunger
+            self.statusSleepProgressView.progress = sleep
+            self.statusPlayProgressView.progress = fun
+            self.statusHealthProgressView.progress = health
+            self.statusPettingProgressView.progress = love
+            
             self.view.layoutIfNeeded()
         }, completion: { (_) in
             self.centerYPetAnimalInfoImageView.constant = isContainerViewShow ?
@@ -378,7 +406,7 @@ extension MainGardenViewController {
     
     // NEEDED! Do not delete!
     @IBAction func unwindToMainGardenView(_ segue : UIStoryboardSegue) {
-      // Do nothing
+        self.prepareData()
     }
 
 }
@@ -694,4 +722,12 @@ extension MainGardenViewController: InventoryDelegate {
             break
         }
     }
+}
+
+extension MainGardenViewController: DialogAnimalInfoViewDelegate {
+    func dialogAnimalInfoView(_ view: UIView, didConfirm name: String) {
+        settingsDefaults.set(name, forKey: Keys.catName)
+        self.dialogFactory.hide(dialogId: dialogPetNameId)
+    }
+    
 }

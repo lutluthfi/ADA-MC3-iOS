@@ -17,8 +17,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="jnU-Ks-PQJ"/>
                     </view>
+                    <connections>
+                        <segue destination="VBu-8u-eDw" kind="unwind" identifier="unwind2MainGarden" unwindAction="unwindToMainGardenView:" id="Hww-qo-dJ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4n-nl-Alx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VBu-8u-eDw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
