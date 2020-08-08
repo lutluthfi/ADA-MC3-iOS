@@ -171,7 +171,7 @@
 		4F3517BA24C6E034000E5E19 /* MCTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTransitionAnimator.swift; sourceTree = "<group>"; };
 		4F3517BC24C6E2A6000E5E19 /* MCTransitionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTransitionCoordinator.swift; sourceTree = "<group>"; };
 		4F3517BE24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+MCTransition.swift"; sourceTree = "<group>"; };
-		4F55F91824BDBB9B000739E6 /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F55F91824BDBB9B000739E6 /* Freeden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freeden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6FB2F324D03ED20079AADB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F6FB2F524D03EF90079AADB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6FB2F724D03F020079AADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 		4F55F91924BDBB9B000739E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F55F91824BDBB9B000739E6 /* MC3.app */,
+				4F55F91824BDBB9B000739E6 /* Freeden.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 			);
 			name = MC3;
 			productName = MC3;
-			productReference = 4F55F91824BDBB9B000739E6 /* MC3.app */;
+			productReference = 4F55F91824BDBB9B000739E6 /* Freeden.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -867,14 +867,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
+				DEVELOPMENT_TEAM = 6FKY4347J7;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.freeden;
+				PRODUCT_NAME = Freeden;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -888,14 +889,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = ZDJ4YH8CPU;
+				DEVELOPMENT_TEAM = 6FKY4347J7;
 				INFOPLIST_FILE = "$(SRCROOT)/MC3/Resoures/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.rahmat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.freeden;
+				PRODUCT_NAME = Freeden;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
