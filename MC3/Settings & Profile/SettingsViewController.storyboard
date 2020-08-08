@@ -28,7 +28,7 @@
                                         <rect key="frame" x="-0.5" y="-0.5" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
+                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -466,7 +466,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
+                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -512,7 +512,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="48" height="28"/>
+                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -585,6 +585,7 @@
                         <outlet property="catArticles2Label" destination="6sZ-42-WAY" id="6bf-dI-MOY"/>
                         <outlet property="catBtn" destination="WDh-Ww-dnN" id="oH3-o0-Dpl"/>
                         <outlet property="homeBtn" destination="ysL-uh-KIW" id="ylF-Tn-FzK"/>
+                        <outlet property="labelPetName" destination="cPj-vZ-vec" id="r9Q-xP-Odp"/>
                         <outlet property="ownerNameLabel" destination="Gvo-Gr-rbt" id="XHi-od-wmC"/>
                         <outlet property="ownerPhotoImg" destination="waI-7t-dkQ" id="DnI-OM-C2y"/>
                         <outlet property="signoutBtn" destination="Tjc-CZ-QU5" id="hLW-b8-3Y6"/>
@@ -776,26 +777,26 @@
                                     <constraint firstAttribute="width" constant="176" id="XRi-2D-cmJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
-                                <rect key="frame" x="135" y="293" width="106.5" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pet Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up9-5K-vP4">
+                                <rect key="frame" x="97" y="293" width="167" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="351" width="32" height="18"/>
+                                <rect key="frame" x="172" y="352" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="26" width="69" height="28"/>
+                                <rect key="frame" x="556" y="26" width="81" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -927,6 +928,7 @@
                         <outlet property="foodProgress" destination="Pc6-NG-pXC" id="qMP-yP-oBv"/>
                         <outlet property="gameProgress" destination="eoc-G0-w45" id="Dp8-nw-RTQ"/>
                         <outlet property="homeBtn" destination="Wnt-i6-29w" id="mjh-DT-iqk"/>
+                        <outlet property="labelPetName" destination="up9-5K-vP4" id="LoJ-0h-tfc"/>
                         <outlet property="pettingProgress" destination="d72-NA-uD8" id="OmR-Om-c3n"/>
                         <outlet property="sleepProgress" destination="Kay-J6-hOS" id="NpV-n0-sWW"/>
                         <outlet property="vetProgress" destination="ctv-4p-Nki" id="pfW-Uh-F8S"/>
@@ -936,7 +938,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fO-zj-e0G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Jlw-82-Ccz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="1203"/>
+            <point key="canvasLocation" x="1601.7857142857142" y="1202.8985507246377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LDB-qq-L6C">

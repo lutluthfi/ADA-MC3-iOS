@@ -18,7 +18,8 @@ class ProfilePetViewController: UIViewController {
     @IBOutlet var vetProgress: UIProgressView!
     @IBOutlet var gameProgress: UIProgressView!
     @IBOutlet var pettingProgress: UIProgressView!
-        
+    @IBOutlet var labelPetName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
@@ -27,6 +28,8 @@ class ProfilePetViewController: UIViewController {
     }
     
     func prepareScreen() {
+        labelPetName.text = settingsDefaults.string(forKey: Keys.catName) ?? "Cat"
+        
         homeBtn.layer.borderWidth = 4
         homeBtn.layer.cornerRadius = 5
         homeBtn.layer.borderColor = UIColor(hex: "#413834")?.cgColor
