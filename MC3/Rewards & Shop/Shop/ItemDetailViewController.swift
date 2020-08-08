@@ -19,9 +19,9 @@ class ItemDetailViewController: UIViewController {
     
     @IBAction func buyPressed(_ sender: UIButton) {
         let alertVC = AlertService.alert()
+        alertVC.modalTransitionStyle = .crossDissolve
         present(alertVC, animated: true)
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +83,7 @@ class ItemDetailViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "unwindToShopHomeVC", sender: self)
     }
     
     /*

@@ -13,6 +13,7 @@ class RewardRedeemViewController: UIViewController {
     @IBOutlet weak var imageDetail: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var rewardsLabel: UILabel!
     
     let AlertService = RedeemHistoryAlertService()
     
@@ -23,6 +24,12 @@ class RewardRedeemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+        rewardsLabel.font = UIFont(name: "HappyMonkey-Regular", size: 20)
+        rewardsLabel.textColor = .black
+        rewardsLabel.textAlignment = .right
+        
         buyButton.layer.cornerRadius = 10
         buyButton.clipsToBounds = true
         
@@ -45,6 +52,9 @@ class RewardRedeemViewController: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindToRewardVC", sender: self)
     }
     
     

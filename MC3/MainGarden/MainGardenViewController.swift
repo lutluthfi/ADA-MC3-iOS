@@ -461,8 +461,10 @@ extension MainGardenViewController {
         self.present(vc, animated: true)
     }
 
-    private func showRewardScene() {
-        
+    private func showRewardScene() { //RewardStoryboard
+        let storyboard = UIStoryboard(name: "RewardStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "RewardStoryboard")
+        self.present(vc, animated: true)
     }
 
     private func showSettingScene() {

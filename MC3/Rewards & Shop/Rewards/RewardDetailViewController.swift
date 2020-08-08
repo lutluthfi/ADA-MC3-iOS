@@ -16,28 +16,28 @@ struct rewardDetail{
 
 var rewardDetailArray = [rewardDetail(rewardTitle: "Safari",
                                       rewardDesc: "Place: Taman Safari Indonesia \nActivities: Witness the majestic wildlife of Indonesia, an experience like no other (free lunch included). \nPrice: $150",
-                                      rewardImage: #imageLiteral(resourceName: "Safari-1")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-safari-1")),
                          rewardDetail(rewardTitle: "Seminar",
                                       rewardDesc: "Topic: Smart Socialization Puppy \nDetails: Come learn about Socialization, what it is, what you need to do, and what you need to avoid. \nPrice: $100",
-                                      rewardImage: #imageLiteral(resourceName: "Seminar-1")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-seminar-1")),
                          rewardDetail(rewardTitle: "Donation",
                                       rewardDesc: "Cause: Help Charlie to do a Surgery \nDetails: Charlie has two fractures on his hip due to falling onto something with a sharp edge. Please send positive vibes his way.",
-                                      rewardImage: #imageLiteral(resourceName: "Donation-1")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-donation-1")),
                          rewardDetail(rewardTitle: "Safari",
                                       rewardDesc: "Coming Soon !",
-                                      rewardImage: #imageLiteral(resourceName: "Safari-2")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-safari-2")),
                          rewardDetail(rewardTitle: "Seminar",
                                       rewardDesc: "Coming Soon !",
-                                      rewardImage: #imageLiteral(resourceName: "Seminar-2")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-seminar-2")),
                          rewardDetail(rewardTitle: "Donation",
                                       rewardDesc: "Coming Soon !",
-                                      rewardImage: #imageLiteral(resourceName: "Donation-2")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-donation-2")),
                          rewardDetail(rewardTitle: "Seminar",
                                       rewardDesc: "Coming Soon !",
-                                      rewardImage: #imageLiteral(resourceName: "Seminar-3")),
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-seminar-3")),
                          rewardDetail(rewardTitle: "Donation",
                                       rewardDesc: "Coming Soon !",
-                                      rewardImage: #imageLiteral(resourceName: "Donation-3"))
+                                      rewardImage: #imageLiteral(resourceName: "Rewards-donation-3"))
 ]
 
 
@@ -46,15 +46,29 @@ class RewardDetailViewController: UIViewController {
     @IBOutlet weak var imageDetail: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var rewardsLabel: UILabel!
     
     let AlertService = alertService()
     
     @IBAction func BuyButtonPressed(_ sender: UIButton) {
-        let alertVC = AlertService.alert()
-        present(alertVC, animated: true)
+        let alert = UIAlertController(title: "Thank you", message: "We are currently working on bringing you the rewards. Please stay tuned for when the reward is up and running!", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default) { (tap) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true)
+        
+//        let alertVC = AlertService.alert()
+//        present(alertVC, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+        rewardsLabel.font = UIFont(name: "HappyMonkey-Regular", size: 20)
+        rewardsLabel.textColor = .black
+        rewardsLabel.textAlignment = .right
+        
         buyButton.layer.cornerRadius = 10
         buyButton.clipsToBounds = true
         
@@ -80,6 +94,9 @@ class RewardDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindToRewardVC", sender: self)
+    }
     
     /*
      // MARK: - Navigation

@@ -18,8 +18,14 @@ class ShopAlertViewController: UIViewController {
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var okayButton: UIButton!
     
+    
     @IBAction func noPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func okBtnPressed(_ sender: UIButton) {
+//        performSegue(withIdentifier: "unwindToItemDetail", sender: nil)
+        performSegue(withIdentifier: "unwindToShopHomeVC", sender: self)
     }
     
     @IBAction func yesPressed(_ sender: UIButton) {

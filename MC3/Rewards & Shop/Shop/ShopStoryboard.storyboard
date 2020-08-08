@@ -238,6 +238,7 @@
                         <outlet property="detailLabel" destination="0b6-oN-qJ4" id="vEi-G3-8It"/>
                         <outlet property="imageDetail" destination="1DS-wV-CB2" id="Q66-Hr-yP0"/>
                         <outlet property="rewardsLabel" destination="7W7-Lb-O5S" id="qsK-xp-5Ji"/>
+                        <segue destination="oHE-RV-o9x" kind="unwind" identifier="unwindToShopHomeVC" unwindAction="unwindToShopHomeVC:" id="B8T-e1-IlG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3z-KY-BuQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

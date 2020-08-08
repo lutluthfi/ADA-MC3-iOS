@@ -181,6 +181,10 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
         shopCollectionView.reloadData()
     }
     
+    @IBAction func unwindToShopHomeVC(_ segue : UIStoryboardSegue) {
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bushButton.isSelected = true
@@ -195,10 +199,6 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
         rewardsLabel.textAlignment = .right
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
     }
     
     func buttonCondition () {

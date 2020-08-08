@@ -64,6 +64,7 @@
                                         </state>
                                         <connections>
                                             <action selector="noPressed:" destination="lNi-p4-7hD" eventType="touchUpInside" id="mne-k9-4pZ"/>
+                                            <action selector="okBtnPressed:" destination="lNi-p4-7hD" eventType="touchUpInside" id="ziX-6c-YHy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -79,9 +80,11 @@
                         <outlet property="noButton" destination="HWB-WF-o4k" id="sPj-IA-RW6"/>
                         <outlet property="okayButton" destination="0Gq-cc-eQB" id="PyW-Ys-aO9"/>
                         <outlet property="yesButton" destination="DUo-Hu-Gy1" id="z4g-Xp-jIQ"/>
+                        <segue destination="Lcc-a0-4D6" kind="unwind" identifier="unwindToShopHomeVC" unwindAction="unwindToShopHomeVC:" id="aYz-OW-9YQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7z-q1-OoQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Lcc-a0-4D6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-5" y="-70"/>
         </scene>

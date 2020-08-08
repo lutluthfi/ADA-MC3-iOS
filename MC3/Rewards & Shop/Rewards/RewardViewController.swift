@@ -12,6 +12,7 @@ var selectedReward = 0
 var selectedSegment = 0
 
 class RewardViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+    @IBOutlet weak var rewardsLabel: UILabel!
     @IBOutlet weak var rewardCollectionView: UICollectionView!
     
     @IBAction func redeemPressed(_ sender: UIButton) {
@@ -134,8 +135,19 @@ class RewardViewController: UIViewController, UICollectionViewDelegate,UICollect
         historyButton.isSelected = true
         buttonCondition()
     }
+    
+    @IBAction func unwindToRewardVC(_ segue : UIStoryboardSegue) {
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+        rewardsLabel.font = UIFont(name: "HappyMonkey-Regular", size: 20)
+        rewardsLabel.textColor = .black
+        rewardsLabel.textAlignment = .right
+        
         prizeButton.isSelected = true
         rewardCollectionView.delegate = self
         rewardCollectionView.dataSource = self
