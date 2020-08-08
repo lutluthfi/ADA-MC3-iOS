@@ -19,6 +19,7 @@ class AnimalRoomVC: UIViewController {
     var catPurr: AVAudioPlayer?
     var sleepingState: Bool = false
     var animator: UIDynamicAnimator?
+    var catName: String = ""
     
     //MARK: - Background Item
     let background: UIImageView = {
@@ -110,10 +111,10 @@ class AnimalRoomVC: UIViewController {
             self.z1Animation()
             
             let attributedTextFull = NSMutableAttributedString(
-                string: "Meoww is sleeping!",
+                string: "\(catName) is sleeping!",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
             attributedTextFull.append(NSAttributedString(
-                string: "\n\nYou earned $10 for giving Meoww time to sleep. Come back later to play with Meoww again. \nDid You Know? Adult cat mostly sleeps 12 to 19 hours per day!",
+                string: "\n\nYou earned $10 for giving \(catName) time to sleep. Come back later to play with \(catName) again. \nDid You Know? Adult cat mostly sleeps 12 to 19 hours per day!",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
             overlayText.attributedText = attributedTextFull
             overlayText.textAlignment = .center
@@ -219,10 +220,10 @@ class AnimalRoomVC: UIViewController {
     @objc func phoneAction(sender: UIButton) {
         if hunger > 0 {
             let attributedTextFull = NSMutableAttributedString(
-                string: "Meoww is currently healthy!",
+                string: "\(catName) is currently healthy!",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
             attributedTextFull.append(NSAttributedString(
-                string: "\n\nKeep Meoww healthy by feeding it properly, otherwise Meoww will be sick.",
+                string: "\n\nKeep \(catName) healthy by feeding it properly, otherwise \(catName) will be sick.",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
             overlayText.attributedText = attributedTextFull
             overlayText.textAlignment = .center
@@ -249,10 +250,10 @@ class AnimalRoomVC: UIViewController {
             present(alert, animated: true)
             
             let attributedTextFull = NSMutableAttributedString(
-                string: "Meoww is sick!",
+                string: "\(catName) is sick!",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
             attributedTextFull.append(NSAttributedString(
-                string: "\n\nYou just called the vet to make an appointment for Meoww.",
+                string: "\n\nYou just called the vet to make an appointment for \(catName).",
                 attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
             overlayText.attributedText = attributedTextFull
             overlayText.textAlignment = .center
@@ -359,8 +360,8 @@ class AnimalRoomVC: UIViewController {
                     
                     bowl.image = bowlIcons[0]
                     if hunger >= 1 {
-                        let attributedTextFull = NSMutableAttributedString(string: "Meoww is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-                        attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of food. Play game with Meoww to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                        let attributedTextFull = NSMutableAttributedString(string: "\(catName) is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                        attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving \(catName) the right amount of food. Play game with \(catName) to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
                         overlayText.attributedText = attributedTextFull
                         overlayText.textAlignment = .center
                         overlayAnimation()
@@ -376,8 +377,8 @@ class AnimalRoomVC: UIViewController {
                     },
                         completion: nil)
                 } else {
-                    let attributedTextFull = NSMutableAttributedString(string: "Meoww is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of food. Play game with Meoww to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                    let attributedTextFull = NSMutableAttributedString(string: "\(catName) is full!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving \(catName) the right amount of food. Play game with \(catName) to burn its calories.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
                     overlayText.attributedText = attributedTextFull
                     overlayText.textAlignment = .center
                     overlayAnimation()
@@ -428,8 +429,8 @@ class AnimalRoomVC: UIViewController {
                         spawnCoin()
                     }
                 } else {
-                    let attributedTextFull = NSMutableAttributedString(string: "Meoww is happy!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving Meoww the right amount of love.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+                    let attributedTextFull = NSMutableAttributedString(string: "\(catName) is happy!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+                    attributedTextFull.append(NSAttributedString(string: "\n\nYou earned $10 for giving \(catName) the right amount of love.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
                     overlayText.attributedText = attributedTextFull
                     overlayText.textAlignment = .center
                     overlayAnimation()
@@ -489,8 +490,8 @@ class AnimalRoomVC: UIViewController {
     
     var overlayText: UITextView = {
         let txt = UITextView()
-        let attributedText = NSMutableAttributedString(string: "Meoww is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
-        attributedText.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for Meoww.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
+        let attributedText = NSMutableAttributedString(string: "Your cat is sick!", attributes: [NSAttributedString.Key.font : UIFont(name: "HappyMonkey-Regular", size: 20)!])
+        attributedText.append(NSAttributedString(string: "\n\nYou just called the vet to make an appointment for your cat.", attributes: [NSAttributedString.Key.font : UIFont(name: "ChalkboardSE-Bold", size: 15)!]))
         txt.attributedText = attributedText
         txt.textAlignment = .center
         txt.isEditable = false
@@ -747,6 +748,9 @@ class AnimalRoomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.layout()
+        
+        catName = settingsDefaults.string(forKey: Keys.catName) ?? "Meoww"
+        print("cat name = \(catName)")
         
         loadDefaults()
         if hunger < 0 {

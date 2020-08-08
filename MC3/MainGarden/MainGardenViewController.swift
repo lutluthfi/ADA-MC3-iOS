@@ -319,8 +319,9 @@ extension MainGardenViewController {
         let petImageView = UIImageView()
         let xPositionRange = self.petPositionHolderView.frame.origin.x ..<
             self.petPositionHolderView.frame.width
-        let yPositionRange = self.petPositionHolderView.frame.origin.y ..<
-            (self.view.frame.height - self.petPositionHolderView.frame.height)
+//        let yPositionRange = self.petPositionHolderView.frame.origin.y ..<
+//            (self.view.frame.height - self.petPositionHolderView.frame.height)
+        let yPositionRange = self.petPositionHolderView.frame.origin.y ..< (self.mainGardenBackgroundImageView.frame.height - self.petPositionHolderView.frame.height)
         let xPosition = CGFloat.random(in: xPositionRange)
         let yPosition = CGFloat.random(in: yPositionRange)
         petImageView.frame = .init(x: xPosition, y: yPosition, width: 70, height: 90)

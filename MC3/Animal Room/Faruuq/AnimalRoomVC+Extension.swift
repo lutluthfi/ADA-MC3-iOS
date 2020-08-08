@@ -338,10 +338,10 @@ extension AnimalRoomVC {
     
     func notification() {
         let content = UNMutableNotificationContent()
-        content.title = "Feeden"
+        content.title = "Freeden"
         content.body = "Hi Hooman, wanna play with me for a sec?"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
         let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
