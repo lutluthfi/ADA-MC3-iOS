@@ -21,6 +21,12 @@ class AnimalRoomVC: UIViewController {
     var animator: UIDynamicAnimator?
     var catName: String = ""
     
+    var onBoardingStage: String = "food"
+    var onBoardingFoodBefore: Bool = false
+    var onBoardingSleepBefore: Bool = false
+    var onBoardingHealthBefore: Bool = false
+    var onBoardingLoveBefore: Bool = false
+    
     //MARK: - Background Item
     let background: UIImageView = {
         let img = UIImageView()
@@ -100,7 +106,6 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func lampAction(sender: UIButton) {
-    
         if sleepingState == false {
             sleepingState = true
             catNormal.isHidden = true
@@ -152,6 +157,10 @@ class AnimalRoomVC: UIViewController {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
+            }
         case 5:
             sleep += 0.3
             settingsDefaults.set(sleep, forKey: Keys.sleep)
@@ -159,12 +168,20 @@ class AnimalRoomVC: UIViewController {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
+            }
         case 8:
             sleep += 0.5
             settingsDefaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
+            }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
             }
         default:
             break
@@ -233,7 +250,7 @@ class AnimalRoomVC: UIViewController {
             settingsDefaults.set(health, forKey: Keys.health)
             progressBar.setProgress(health, animated: true)
             
-            let alert = UIAlertController(title: "Vet Phone Number", message: "Enter your vet number", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Enter Vet Phone Number", message: "Enter your vet number to be called", preferredStyle: .alert)
             alert.addTextField { (textField) in
                 textField.placeholder = "Vet number"
                 textField.keyboardType = .numberPad
@@ -338,22 +355,22 @@ class AnimalRoomVC: UIViewController {
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     default:
                         break
                     }
@@ -394,9 +411,14 @@ class AnimalRoomVC: UIViewController {
                     options: .curveEaseOut,
                     animations: {
                         self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
-                },
-                    completion: nil)
+//                },
+//                    completion: nil)
+                }) { (finished) in
+                    self.progressBarAnimate()
+                    self.progressBar.setProgress(hunger, animated: true)
+                }
             }
+            
         default:
             break
         }
@@ -529,6 +551,76 @@ class AnimalRoomVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let onBoardingTextFood: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap and hold the packaging to pour the food, the longer you hold, the more food you pour. \nTap the food icon on the right menu to change the bowl"
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextBowl: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Drag and drop the bowl to feed the cat."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextLamp: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap the lamp to lay the cat to sleep or to awake it."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextPhone: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap the phone to make an appointment with a vet."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextHand: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Drag the hand around to pet the cat."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
     //MARK: - Buttons
     
     //MARK: Back Button
@@ -563,6 +655,11 @@ class AnimalRoomVC: UIViewController {
         if sleepingState == true {
             catSleepingState()
         } else {
+            if onBoardingFoodBefore == settingsDefaults.bool(forKey: Keys.onBoardingFood) {
+                settingsDefaults.set(true, forKey: Keys.onBoardingFood)
+                onBoardingStage = "food"
+                onBoardingFood()
+            }
             catNormal.isHidden = false
             catHand.isHidden = false
             bowl.isHidden = false
@@ -588,6 +685,44 @@ class AnimalRoomVC: UIViewController {
         }
     }
     
+    @objc func tapOverlay(sender: UITapGestureRecognizer) {
+        switch onBoardingStage {
+        case "food":
+            onBoardingStage = "bowl"
+            onBoardingBowl()
+        case "bowl":
+            overlay.alpha = 0
+            bowl.layer.zPosition = 0
+            bowl.layer.shadowColor = .none
+            bowl.layer.shadowRadius = .zero
+            bowl.layer.shadowOpacity = 0
+            onBoardingTextBowl.alpha = 0
+        case "sleep":
+            overlay.alpha = 0
+            lamp.layer.zPosition = 0
+            lamp.layer.shadowColor = .none
+            lamp.layer.shadowRadius = .zero
+            lamp.layer.shadowOpacity = 0
+            onBoardingTextLamp.alpha = 0
+        case "health":
+            overlay.alpha = 0
+            phone.layer.zPosition = 0
+            phone.layer.shadowColor = .none
+            phone.layer.shadowRadius = .zero
+            phone.layer.shadowOpacity = 0
+            onBoardingTextPhone.alpha = 0
+        case "love":
+            overlay.alpha = 0
+            handCare.layer.zPosition = 0
+            handCare.layer.shadowColor = .none
+            handCare.layer.shadowRadius = .zero
+            handCare.layer.shadowOpacity = 0
+            onBoardingTextHand.alpha = 0
+        default:
+            break
+        }
+    }
+    
     //MARK: Zzz Button
     let zzzBtn: UIButton = {
         let btn = UIButton()
@@ -609,6 +744,11 @@ class AnimalRoomVC: UIViewController {
                 z1Animation()
                 lampAnimation()
             } else {
+                if onBoardingSleepBefore == settingsDefaults.bool(forKey: Keys.onBoardingSleep) {
+                    settingsDefaults.set(true, forKey: Keys.onBoardingSleep)
+                    onBoardingStage = "sleep"
+                    onBoardingSleep()
+                }
                 catSleeping.isHidden = false
                 catSleeping.image = UIImage(named: "Cat-Awake")
                 catNormal.isHidden = true
@@ -641,6 +781,11 @@ class AnimalRoomVC: UIViewController {
             progressBar.setProgress(health, animated: true)
             progressBarAnimate()
         } else {
+            if onBoardingHealthBefore == settingsDefaults.bool(forKey: Keys.onBoardingHealth) {
+                settingsDefaults.set(true, forKey: Keys.onBoardingHealth)
+                onBoardingStage = "health"
+                onBoardingHealth()
+            }
             if hunger > 0 {
                 health = 1
                 settingsDefaults.set(health, forKey: Keys.health)
@@ -692,13 +837,17 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func gameBtnAction(sender: UIButton) {
-        hunger -= 0.2
-        settingsDefaults.set(hunger, forKey: Keys.hunger)
-        sleep -= 0.2
-        settingsDefaults.set(sleep, forKey: Keys.sleep)
-        let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
-        self.present(vc, animated: true)
+        if sleepingState == true {
+            catSleepingState()
+        } else {
+            hunger -= 0.2
+            settingsDefaults.set(hunger, forKey: Keys.hunger)
+            sleep -= 0.2
+            settingsDefaults.set(sleep, forKey: Keys.sleep)
+            let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
+            self.present(vc, animated: true)
+        }
     }
     
     //MARK: Care button
@@ -720,6 +869,11 @@ class AnimalRoomVC: UIViewController {
         if sleepingState == true {
             catSleepingState()
         } else {
+            if onBoardingLoveBefore == settingsDefaults.bool(forKey: Keys.onBoardingLove) {
+                settingsDefaults.set(true, forKey: Keys.onBoardingLove)
+                onBoardingStage = "love"
+                onBoardingLove()
+            }
             catNormal.isHidden = false
             catHand.isHidden = false
             handCare.isHidden = false
@@ -742,6 +896,12 @@ class AnimalRoomVC: UIViewController {
         DispatchQueue.main.async {
             self.rewardsLabel.text = "\(rewardsValue)"
         }
+        fun = 1
+        settingsDefaults.set(fun, forKey: Keys.fun)
+        progressBarIcon.image = UIImage(systemName: "gamecontroller.fill")
+        progressBarIcon.tintColor = UIColor(named: "413834")
+        progressBar.setProgress(fun, animated: true)
+        progressBarAnimate()
     }
     
     //MARK: - ViedDidLoad

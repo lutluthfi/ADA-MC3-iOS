@@ -281,7 +281,6 @@ extension AnimalRoomVC {
                     self.progressBarBackgroundContainer.transform = .identity
             },
                 completion: nil)
-            
         }
     }
     
@@ -341,7 +340,7 @@ extension AnimalRoomVC {
         content.title = "Freeden"
         content.body = "Hi Hooman, wanna play with me for a sec?"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 7200, repeats: false)
         let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
@@ -355,6 +354,70 @@ extension AnimalRoomVC {
         health = settingsDefaults.float(forKey: Keys.health)
         fun = settingsDefaults.float(forKey: Keys.fun)
         love = settingsDefaults.float(forKey: Keys.love)
+    }
+    
+    func onBoardingFood() {
+        overlay.alpha = 1
+        catFood.layer.zPosition = 1
+        catFood.layer.shadowColor = UIColor.white.cgColor
+        catFood.layer.shadowRadius = 5
+        catFood.layer.shadowOpacity = 1
+    
+        onBoardingTextFood.alpha = 1
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOverlay))
+        overlay.addGestureRecognizer(tap)
+    }
+    
+    func onBoardingBowl() {
+        onBoardingTextFood.alpha = 0
+        
+        catFood.layer.zPosition = 0
+        catFood.layer.shadowColor = .none
+        catFood.layer.shadowRadius = .zero
+        catFood.layer.shadowOpacity = 0
+        
+        bowl.layer.zPosition = 1
+        bowl.layer.shadowColor = UIColor.white.cgColor
+        bowl.layer.shadowRadius = 5
+        bowl.layer.shadowOpacity = 1
+        onBoardingTextBowl.alpha = 1
+    }
+    
+    func onBoardingSleep() {
+        overlay.alpha = 1
+        lamp.layer.zPosition = 1
+        lamp.layer.shadowColor = UIColor.white.cgColor
+        lamp.layer.shadowRadius = 5
+        lamp.layer.shadowOpacity = 1
+        onBoardingTextLamp.alpha = 1
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOverlay))
+        overlay.addGestureRecognizer(tap)
+    }
+    
+    func onBoardingHealth() {
+        overlay.alpha = 1
+        phone.layer.zPosition = 1
+        phone.layer.shadowColor = UIColor.white.cgColor
+        phone.layer.shadowRadius = 5
+        phone.layer.shadowOpacity = 1
+        onBoardingTextPhone.alpha = 1
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOverlay))
+        overlay.addGestureRecognizer(tap)
+    }
+    
+    func onBoardingLove() {
+        overlay.alpha = 1
+        handCare.layer.zPosition = 1
+        handCare.layer.shadowColor = UIColor.white.cgColor
+        handCare.layer.shadowRadius = 5
+        handCare.layer.shadowOpacity = 1
+        onBoardingTextHand.alpha = 1
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOverlay))
+        overlay.addGestureRecognizer(tap)
     }
     
     //MARK: - Layouts
@@ -393,6 +456,11 @@ extension AnimalRoomVC {
         view.addSubview(stackView)
         stackView.addArrangedSubview(overlayText)
         stackView.addArrangedSubview(overlayBtn)
+        view.addSubview(onBoardingTextFood)
+        view.addSubview(onBoardingTextBowl)
+        view.addSubview(onBoardingTextLamp)
+        view.addSubview(onBoardingTextPhone)
+        view.addSubview(onBoardingTextHand)
         
         NSLayoutConstraint.activate([
             //MARK: - Item layout
@@ -470,7 +538,6 @@ extension AnimalRoomVC {
             lamp.widthAnchor.constraint(equalToConstant: 127),
             lamp.heightAnchor.constraint(equalToConstant: 207),
             
-            
             bowl.topAnchor.constraint(equalTo: view.bottomAnchor),
             bowl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
             bowl.widthAnchor.constraint(equalToConstant: 163),
@@ -521,7 +588,28 @@ extension AnimalRoomVC {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.widthAnchor.constraint(equalToConstant: 300),
-            stackView.heightAnchor.constraint(equalToConstant: 210)
+            stackView.heightAnchor.constraint(equalToConstant: 210),
+            
+            onBoardingTextFood.widthAnchor.constraint(equalToConstant: 150),
+            onBoardingTextFood.leadingAnchor.constraint(equalTo: catFood.trailingAnchor, constant: 30),
+            onBoardingTextFood.centerYAnchor.constraint(equalTo: catFood.centerYAnchor),
+            
+            onBoardingTextBowl.widthAnchor.constraint(equalToConstant: 100),
+            onBoardingTextBowl.centerXAnchor.constraint(equalTo: bowl.centerXAnchor),
+            onBoardingTextBowl.topAnchor.constraint(equalTo: catFood.bottomAnchor, constant: -10),
+            
+            onBoardingTextLamp.widthAnchor.constraint(equalToConstant: 100),
+            onBoardingTextLamp.centerXAnchor.constraint(equalTo: lamp.centerXAnchor),
+            onBoardingTextLamp.topAnchor.constraint(equalTo: lamp.bottomAnchor, constant: 8),
+            
+            onBoardingTextPhone.widthAnchor.constraint(equalToConstant: 110),
+            onBoardingTextPhone.centerXAnchor.constraint(equalTo: phone.centerXAnchor),
+            onBoardingTextPhone.bottomAnchor.constraint(equalTo: phone.topAnchor, constant: -20),
+            
+            onBoardingTextHand.widthAnchor.constraint(equalToConstant: 100),
+            onBoardingTextHand.centerXAnchor.constraint(equalTo: handCare.centerXAnchor),
+            onBoardingTextHand.bottomAnchor.constraint(equalTo: handCare.topAnchor, constant: -20)
+            
         ])
     }
     
