@@ -34,7 +34,7 @@
                                         <rect key="frame" x="64" y="88" width="123" height="151"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Five of Freedom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yej-qr-wc8">
-                                        <rect key="frame" x="123.5" y="29" width="192" height="29"/>
+                                        <rect key="frame" x="132.5" y="29" width="174" height="28"/>
                                         <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                         <color key="textColor" name="413834"/>
                                         <nil key="highlightedColor"/>

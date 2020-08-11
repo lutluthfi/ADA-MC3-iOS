@@ -102,6 +102,8 @@ class MainGardenViewController: UIViewController {
     @IBOutlet var imgTree1: UIImageView!
     @IBOutlet var imgBench1: UIImageView!
     
+    var petBaloon: UIImageView?
+    
     private var rewardsValue: Int = 0
     private let dialogPetNameId = UUID().uuidString
     
@@ -112,7 +114,7 @@ class MainGardenViewController: UIViewController {
         .reward,
         .shop,
         .inventory,
-        .animalRoom
+        .fivefreedom
     ]
     private var isCloudAnimating = false
     private var initialClouds: [(cloudImageView: UIImageView, velocityDuration: TimeInterval)] = []
@@ -127,6 +129,18 @@ class MainGardenViewController: UIViewController {
     func prepareData() {
         self.rewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
         self.coinAmountLabel.text = "\(rewardsValue)"
+        
+        let hunger = settingsDefaults.float(forKey: Keys.hunger)
+        let sleep = settingsDefaults.float(forKey: Keys.sleep)
+        let health = settingsDefaults.float(forKey: Keys.health)
+        let fun = settingsDefaults.float(forKey: Keys.fun)
+        let love = settingsDefaults.float(forKey: Keys.love)
+        
+        self.statusFoodProgressView.progress = hunger
+        self.statusSleepProgressView.progress = sleep
+        self.statusPlayProgressView.progress = fun
+        self.statusHealthProgressView.progress = health
+        self.statusPettingProgressView.progress = love
     }
     
     func prepareNameModal() {
@@ -272,36 +286,39 @@ extension MainGardenViewController {
                 self.opaqueView,
                 aboveSubview: self.mainGardenBackgroundImageView
             )
+        
+        if (isContainerViewShow) {
+            self.petBaloon?.isHidden = true
+        }
+        
         UIView.animate(withDuration: 0.75, animations: {
 
-            let hunger = settingsDefaults.float(forKey: Keys.hunger)
-            let sleep = settingsDefaults.float(forKey: Keys.sleep)
-            let health = settingsDefaults.float(forKey: Keys.health)
-            let fun = settingsDefaults.float(forKey: Keys.fun)
-            let love = settingsDefaults.float(forKey: Keys.love)
-            
-            self.statusFoodProgressView.progress = hunger
-            self.statusSleepProgressView.progress = sleep
-            self.statusPlayProgressView.progress = fun
-            self.statusHealthProgressView.progress = health
-            self.statusPettingProgressView.progress = love
+            self.prepareData()
             
             self.view.layoutIfNeeded()
         }, completion: { (_) in
             self.centerYPetAnimalInfoImageView.constant = isContainerViewShow ?
                 Constant.kHideCenterYPetAnimalInfoImageViewConstraint :
                 Constant.kShowCenterYPetAnimalInfoImageViewConstraint
+            
+            if (!isContainerViewShow) {
+                self.petBaloon?.isHidden = false
+            }
+            
             UIView.animate(withDuration: 0.25, animations: {
                 self.view.layoutIfNeeded()
             })
         })
     }
-
+    
+    @objc private func onPetBaloonTapped(_ sender: UITapGestureRecognizer) {
+        self.showAnimalRoomScene()
+    }
 }
 
 // MARK: - Private Function
 extension MainGardenViewController {
-
+    
     private func doGenerateCloudImageView(xPosition: CGFloat = .zero) -> UIImageView {
         let cgSize = Constant.kCloudSizes.randomElement() ?? .zero
         let yPositionRange = Constant.kYCloudPositionRange
@@ -317,6 +334,7 @@ extension MainGardenViewController {
     // Will generate position of pet as much as user have
     private func doGeneratePetImageView() {
         let petImageView = UIImageView()
+        
         let xPositionRange = self.petPositionHolderView.frame.origin.x ..<
             self.petPositionHolderView.frame.width
 //        let yPositionRange = self.petPositionHolderView.frame.origin.y ..<
@@ -333,8 +351,23 @@ extension MainGardenViewController {
                 action: #selector(self.onPetImageViewTapped(_:))
             )
         ]
+        
+        petBaloon = UIImageView()
+        petBaloon?.frame = .init(x: xPosition, y: yPosition - 80, width: 90, height: 68)
+        petBaloon?.image = UIImage(named: "Baloon")
+        petBaloon?.isHidden = true
+        petBaloon?.isUserInteractionEnabled = true
+        petBaloon?.gestureRecognizers = [
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(self.onPetBaloonTapped(_:))
+            )
+        ]
+        
         self.contentView.addSubview(petImageView)
+        self.contentView.addSubview(petBaloon!)
         self.contentView.bringSubviewToFront(petImageView)
+        self.contentView.bringSubviewToFront(petBaloon!)
     }
 
     private func doAnimateCloudImageView() {
@@ -453,8 +486,8 @@ extension MainGardenViewController: UICollectionViewDataSource, UICollectionView
     ) {
         let menu = self.displayedMenu[indexPath.row]
         switch menu {
-        case .animalRoom:
-            self.showAnimalRoomScene()
+        case .fivefreedom:
+            self.showFiveFreedomScene()
             break
         case .inventory:
             self.showInventoryScene()
@@ -477,6 +510,12 @@ extension MainGardenViewController: UICollectionViewDataSource, UICollectionView
 extension MainGardenViewController {
 
     private func showAnimalRoomScene() {
+        let storyboard = UIStoryboard(name: "AnimalRoomViewController", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AnimalRoomVC")
+        self.present(vc, animated: true)
+    }
+    
+    private func showFiveFreedomScene() {
         let storyboard = UIStoryboard(name: "FiveFreedom", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "FiveFreedomViewController")
         vc.modalTransitionStyle = .crossDissolve
