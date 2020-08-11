@@ -157,6 +157,10 @@ class AnimalRoomVC: UIViewController {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
+            }
         case 5:
             sleep += 0.3
             settingsDefaults.set(sleep, forKey: Keys.sleep)
@@ -164,12 +168,20 @@ class AnimalRoomVC: UIViewController {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
             }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
+            }
         case 8:
             sleep += 0.5
             settingsDefaults.set(sleep, forKey: Keys.sleep)
             if hunger > 0 {
                 hunger -= 0.1
                 settingsDefaults.set(hunger, forKey: Keys.hunger)
+            }
+            if fun > 0 {
+                fun -= 0.1
+                settingsDefaults.set(fun, forKey: Keys.fun)
             }
         default:
             break
@@ -825,13 +837,17 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func gameBtnAction(sender: UIButton) {
-        hunger -= 0.2
-        settingsDefaults.set(hunger, forKey: Keys.hunger)
-        sleep -= 0.2
-        settingsDefaults.set(sleep, forKey: Keys.sleep)
-        let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
-        self.present(vc, animated: true)
+        if sleepingState == true {
+            catSleepingState()
+        } else {
+            hunger -= 0.2
+            settingsDefaults.set(hunger, forKey: Keys.hunger)
+            sleep -= 0.2
+            settingsDefaults.set(sleep, forKey: Keys.sleep)
+            let storyboard = UIStoryboard(name: "TikusStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "TikusViewController")
+            self.present(vc, animated: true)
+        }
     }
     
     //MARK: Care button
@@ -880,6 +896,12 @@ class AnimalRoomVC: UIViewController {
         DispatchQueue.main.async {
             self.rewardsLabel.text = "\(rewardsValue)"
         }
+        fun = 1
+        settingsDefaults.set(fun, forKey: Keys.fun)
+        progressBarIcon.image = UIImage(systemName: "gamecontroller.fill")
+        progressBarIcon.tintColor = UIColor(named: "413834")
+        progressBar.setProgress(fun, animated: true)
+        progressBarAnimate()
     }
     
     //MARK: - ViedDidLoad
