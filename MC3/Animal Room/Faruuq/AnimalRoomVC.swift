@@ -238,7 +238,7 @@ class AnimalRoomVC: UIViewController {
             settingsDefaults.set(health, forKey: Keys.health)
             progressBar.setProgress(health, animated: true)
             
-            let alert = UIAlertController(title: "Vet Phone Number", message: "Enter your vet number", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Enter Vet Phone Number", message: "Enter your vet number to be called", preferredStyle: .alert)
             alert.addTextField { (textField) in
                 textField.placeholder = "Vet number"
                 textField.keyboardType = .numberPad
@@ -343,22 +343,22 @@ class AnimalRoomVC: UIViewController {
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[2]:
                         hunger += 0.2
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     case bowlIcons[3]:
                         hunger += 0.3
                         settingsDefaults.set(hunger, forKey: Keys.hunger)
                         sleep -= 0.1
                         settingsDefaults.set(sleep, forKey: Keys.sleep)
-                        progressBarAnimate()
-                        progressBar.setProgress(hunger, animated: true)
+//                        progressBarAnimate()
+//                        progressBar.setProgress(hunger, animated: true)
                     default:
                         break
                     }
@@ -399,9 +399,14 @@ class AnimalRoomVC: UIViewController {
                     options: .curveEaseOut,
                     animations: {
                         self.bowl.layer.position = CGPoint(x: 165.5, y: 460)
-                },
-                    completion: nil)
+//                },
+//                    completion: nil)
+                }) { (finished) in
+                    self.progressBarAnimate()
+                    self.progressBar.setProgress(hunger, animated: true)
+                }
             }
+            
         default:
             break
         }

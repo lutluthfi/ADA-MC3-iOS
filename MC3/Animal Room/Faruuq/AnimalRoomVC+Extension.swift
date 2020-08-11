@@ -281,7 +281,6 @@ extension AnimalRoomVC {
                     self.progressBarBackgroundContainer.transform = .identity
             },
                 completion: nil)
-            
         }
     }
     
