@@ -13,7 +13,7 @@ extension MenuMainGardenCollectionViewCell {
     struct Model {
 
         enum Menu: CaseIterable {
-            case animalRoom
+            case fivefreedom
             case inventory
             case reward
             case setting
@@ -117,7 +117,7 @@ extension MenuMainGardenCollectionViewCell {
 
     public func fill(withModel model: MenuMainGardenCollectionViewCell.Model) {
         switch model.menu {
-        case .animalRoom:
+        case .fivefreedom:
             self.iconImageView.image = UIImage(systemName: "sparkles")
             self.iconImageView.tintColor = #colorLiteral(red: 0.9959999919, green: 0.7609999776, blue: 0.3100000024, alpha: 1)
             break
