@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HappyMonkey-Regular.ttf">
+            <string>HappyMonkey-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Five Freedom View Controller-->
+        <scene sceneID="arg-Da-Lrb">
+            <objects>
+                <viewController storyboardIdentifier="FiveFreedomViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2l5-QS-uiM" customClass="FiveFreedomViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CLL-3e-RvL">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzI-io-Fzf">
+                                <rect key="frame" x="228.5" y="57.5" width="439" height="278"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50j-69-7Md">
+                                        <rect key="frame" x="202.5" y="82.5" width="170" height="153"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <color key="textColor" name="413834"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pYR-oP-JN1">
+                                        <rect key="frame" x="64" y="88" width="123" height="151"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Five of Freedom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yej-qr-wc8">
+                                        <rect key="frame" x="123.5" y="29" width="192" height="29"/>
+                                        <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
+                                        <color key="textColor" name="413834"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76A-ZK-rsZ">
+                                        <rect key="frame" x="33" y="143" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="CFM-MU-5XN"/>
+                                            <constraint firstAttribute="width" constant="22" id="YSj-ie-DDT"/>
+                                        </constraints>
+                                        <color key="tintColor" name="413834"/>
+                                        <state key="normal" image="chevron.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="onPressButton:" destination="2l5-QS-uiM" eventType="touchUpInside" id="cVt-bw-Q7d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-eD-qNx">
+                                        <rect key="frame" x="391" y="143" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="1OG-ub-qc3"/>
+                                            <constraint firstAttribute="height" constant="22" id="a2r-S3-49Y"/>
+                                        </constraints>
+                                        <color key="tintColor" name="413834"/>
+                                        <state key="normal" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="onPressButton:" destination="2l5-QS-uiM" eventType="touchUpInside" id="7KC-sh-9Qv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTA-wy-fIp">
+                                        <rect key="frame" x="389" y="29" width="19" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="ckP-bM-kZq"/>
+                                            <constraint firstAttribute="width" constant="19" id="rat-nS-Tha"/>
+                                        </constraints>
+                                        <color key="tintColor" name="413834"/>
+                                        <state key="normal" image="multiply" catalog="system"/>
+                                        <connections>
+                                            <action selector="onPressButton:" destination="2l5-QS-uiM" eventType="touchUpInside" id="aeC-DY-jxa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="BG"/>
+                                <constraints>
+                                    <constraint firstItem="pYR-oP-JN1" firstAttribute="width" secondItem="IzI-io-Fzf" secondAttribute="width" multiplier="0.280182" id="7by-t7-SI3"/>
+                                    <constraint firstItem="50j-69-7Md" firstAttribute="width" secondItem="IzI-io-Fzf" secondAttribute="width" multiplier="0.387244" id="C3J-Ok-u5Y"/>
+                                    <constraint firstItem="yej-qr-wc8" firstAttribute="centerX" secondItem="IzI-io-Fzf" secondAttribute="centerX" id="CTn-0K-FHm"/>
+                                    <constraint firstAttribute="trailing" secondItem="LTA-wy-fIp" secondAttribute="trailing" constant="31" id="Ccg-fh-qpL"/>
+                                    <constraint firstItem="LTA-wy-fIp" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="29" id="Mfe-WI-ECx"/>
+                                    <constraint firstAttribute="trailing" secondItem="50j-69-7Md" secondAttribute="trailing" constant="66.5" id="TUJ-mk-nye"/>
+                                    <constraint firstItem="50j-69-7Md" firstAttribute="height" secondItem="IzI-io-Fzf" secondAttribute="height" multiplier="0.55036" id="UBh-KS-sjR"/>
+                                    <constraint firstItem="76A-ZK-rsZ" firstAttribute="leading" secondItem="IzI-io-Fzf" secondAttribute="leading" constant="33" id="Ur6-oQ-B37"/>
+                                    <constraint firstAttribute="trailing" secondItem="uYh-eD-qNx" secondAttribute="trailing" constant="26" id="a9K-yQ-vBZ"/>
+                                    <constraint firstItem="uYh-eD-qNx" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="143" id="dfg-Uo-FlX"/>
+                                    <constraint firstItem="pYR-oP-JN1" firstAttribute="leading" secondItem="IzI-io-Fzf" secondAttribute="leading" constant="64" id="irO-lk-Ghf"/>
+                                    <constraint firstItem="50j-69-7Md" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="82.5" id="kAd-9y-jIg"/>
+                                    <constraint firstItem="pYR-oP-JN1" firstAttribute="height" secondItem="IzI-io-Fzf" secondAttribute="height" multiplier="0.543165" id="pAE-F0-Izh"/>
+                                    <constraint firstItem="pYR-oP-JN1" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="88" id="q9b-AK-MVJ"/>
+                                    <constraint firstItem="76A-ZK-rsZ" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="143" id="sdZ-gQ-GwH"/>
+                                    <constraint firstItem="yej-qr-wc8" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="29" id="yzJ-3W-5rJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="IzI-io-Fzf" firstAttribute="centerY" secondItem="CPg-aG-mi6" secondAttribute="centerY" id="0af-fL-kor"/>
+                            <constraint firstItem="IzI-io-Fzf" firstAttribute="width" secondItem="CLL-3e-RvL" secondAttribute="width" multiplier="0.489955" id="66G-Mo-H6r"/>
+                            <constraint firstItem="IzI-io-Fzf" firstAttribute="height" secondItem="CLL-3e-RvL" secondAttribute="height" multiplier="0.671498" id="HBJ-NB-jqc"/>
+                            <constraint firstItem="IzI-io-Fzf" firstAttribute="centerX" secondItem="CPg-aG-mi6" secondAttribute="centerX" id="qJO-ly-gMT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CPg-aG-mi6"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xC0-4r-6Wi" appends="YES" id="yOg-v8-avd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="IzI-io-Fzf" id="l3H-VC-v3l"/>
+                        <outlet property="closeBtn" destination="LTA-wy-fIp" id="664-Nf-Hv2"/>
+                        <outlet property="contentImg" destination="pYR-oP-JN1" id="sUD-9L-cpd"/>
+                        <outlet property="contentLabel" destination="50j-69-7Md" id="wOI-vD-JU5"/>
+                        <outlet property="nextBtn" destination="uYh-eD-qNx" id="sr8-kf-U1S"/>
+                        <outlet property="prevBtn" destination="76A-ZK-rsZ" id="44n-8e-DjK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDY-Gs-5Dt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xC0-4r-6Wi">
+                    <connections>
+                        <action selector="onTap:" destination="2l5-QS-uiM" id="Chn-2A-edZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="86" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <namedColor name="413834">
+            <color red="0.25499999523162842" green="0.2199999988079071" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BG">
+            <color red="1" green="0.97600001096725464" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

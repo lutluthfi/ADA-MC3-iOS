@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,8 @@
 		2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */; };
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
+		440EC15124E28F500099BA20 /* FiveFreedom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440EC15024E28F500099BA20 /* FiveFreedom.storyboard */; };
+		440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */; };
 		4417902124D4F87700C6C655 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902024D4F87700C6C655 /* AudioManager.swift */; };
 		4417902624D5106600C6C655 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902524D5106600C6C655 /* SoundManager.swift */; };
 		4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417902D24D51AD800C6C655 /* SoundEnum.swift */; };
@@ -120,6 +122,8 @@
 		2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoomVC.swift; sourceTree = "<group>"; };
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
+		440EC15024E28F500099BA20 /* FiveFreedom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FiveFreedom.storyboard; sourceTree = "<group>"; };
+		440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveFreedomViewController.swift; sourceTree = "<group>"; };
 		4417902024D4F87700C6C655 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		4417902524D5106600C6C655 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		4417902D24D51AD800C6C655 /* SoundEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEnum.swift; sourceTree = "<group>"; };
@@ -300,6 +304,15 @@
 				4F6FB30024D040DE0079AADB /* AnimalRoomViewController.storyboard */,
 			);
 			path = Faruuq;
+			sourceTree = "<group>";
+		};
+		440EC14F24E28F2F0099BA20 /* FiveFreedomPopup */ = {
+			isa = PBXGroup;
+			children = (
+				440EC15024E28F500099BA20 /* FiveFreedom.storyboard */,
+				440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */,
+			);
+			path = FiveFreedomPopup;
 			sourceTree = "<group>";
 		};
 		4417901D24D4F84900C6C655 /* Controllers */ = {
@@ -531,6 +544,7 @@
 		4F55F91A24BDBB9B000739E6 /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				440EC14F24E28F2F0099BA20 /* FiveFreedomPopup */,
 				2A49FA0D24DB840A004E8D22 /* Garden Inventory */,
 				4417902C24D51AC500C6C655 /* Model */,
 				4F35178324C1A2D0000E5E19 /* Agreement */,
@@ -594,7 +608,6 @@
 				F2BD760C6938A785C73DA3F1 /* Pods-MC3.debug.xcconfig */,
 				DFA14DB33EE557CC4CE79B68 /* Pods-MC3.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -675,6 +688,7 @@
 				4F35177C24C065C8000E5E19 /* IntroViewController.storyboard in Resources */,
 				4F35177524C020A6000E5E19 /* SplashViewController.storyboard in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
+				440EC15124E28F500099BA20 /* FiveFreedom.storyboard in Resources */,
 				4417903724D7244600C6C655 /* Cat-Meow-Angry.mp3 in Resources */,
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				2A1DBE6724DD435500B97B44 /* ShopStoryboard.storyboard in Resources */,
@@ -740,6 +754,7 @@
 				2A1DBE6A24DD435500B97B44 /* ItemDetailViewController.swift in Sources */,
 				44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
+				440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */,
 				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
 				2A1DBE6C24DD435500B97B44 /* ShopHomeViewController.swift in Sources */,

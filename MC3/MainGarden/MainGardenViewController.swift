@@ -477,8 +477,9 @@ extension MainGardenViewController: UICollectionViewDataSource, UICollectionView
 extension MainGardenViewController {
 
     private func showAnimalRoomScene() {
-        let storyboard = UIStoryboard(name: "AnimalRoomViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "AnimalRoomVC")
+        let storyboard = UIStoryboard(name: "FiveFreedom", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "FiveFreedomViewController")
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 
