@@ -142,7 +142,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         love = settingsDefaults.float(forKey: Keys.love)
         if hunger > 0 || sleep > 0 || fun > 0 || love > 0 {
             switch gapTime {
-            case 60...900: //1-15 menit
+            case 1800...2700: //30-45 menit
                 hunger -= 0.05
                 sleep -= 0.05
                 fun -= 0.05
@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 settingsDefaults.set(sleep, forKey: Keys.hunger)
                 settingsDefaults.set(fun, forKey: Keys.hunger)
                 settingsDefaults.set(love, forKey: Keys.hunger)
-            case 901...1800: //15-30 menit
+            case 2701...5400: //45-90 menit
                 hunger -= 0.1
                 sleep -= 0.1
                 fun -= 0.1
@@ -160,7 +160,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 settingsDefaults.set(sleep, forKey: Keys.hunger)
                 settingsDefaults.set(fun, forKey: Keys.hunger)
                 settingsDefaults.set(love, forKey: Keys.hunger)
-            case 1801...2700: //30-45 menit
+            case 5401...7200: //90-120 menit
                 hunger -= 0.2
                 sleep -= 0.2
                 fun -= 0.2
@@ -169,7 +169,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 settingsDefaults.set(sleep, forKey: Keys.hunger)
                 settingsDefaults.set(fun, forKey: Keys.hunger)
                 settingsDefaults.set(love, forKey: Keys.hunger)
-            case 2701...: //>45 menit
+            case 7201...: //>120 menit
                 hunger = 0
                 sleep = 0
                 fun = 0
