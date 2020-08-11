@@ -558,6 +558,7 @@ extension MainGardenViewController: InventoryDelegate {
         let itemPlaceholder3: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder3)
         switch itemPlaceholder3 {
         case InventoryList.bench1Flip:
+              imgBench1.image = #imageLiteral(resourceName: "Bench-Flip")
               imgBench1.isHidden = false
               imgBench1.layer.frame = InventoryPosition.benchFlip1Pos3Frame
               break
@@ -570,6 +571,7 @@ extension MainGardenViewController: InventoryDelegate {
         let itemPlaceholder4: String? = settingsDefaults.string(forKey: SettingsKey.itemPlaceholder4)
         switch itemPlaceholder4 {
         case InventoryList.bench1:
+              imgBench1.image = #imageLiteral(resourceName: "Bench")
               imgBench1.isHidden = false
               imgBench1.layer.frame = InventoryPosition.bench1Pos4Frame
               break
