@@ -591,7 +591,7 @@ extension AnimalRoomVC {
             stackView.widthAnchor.constraint(equalToConstant: 300),
             stackView.heightAnchor.constraint(equalToConstant: 210),
             
-            onBoardingTextFood.widthAnchor.constraint(equalToConstant: 100),
+            onBoardingTextFood.widthAnchor.constraint(equalToConstant: 150),
             onBoardingTextFood.leadingAnchor.constraint(equalTo: catFood.trailingAnchor, constant: 30),
             onBoardingTextFood.centerYAnchor.constraint(equalTo: catFood.centerYAnchor),
             

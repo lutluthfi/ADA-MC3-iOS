@@ -544,7 +544,7 @@ class AnimalRoomVC: UIViewController {
         txt.lineBreakMode = .byWordWrapping
         txt.layer.zPosition = 1
         txt.alpha = 0
-        txt.text = "Tap and hold the packaging to pour the food."
+        txt.text = "Tap and hold the packaging to pour the food, the longer you hold, the more food you pour. \nTap the food icon on the right menu to change the bowl"
         txt.translatesAutoresizingMaskIntoConstraints = false
         return txt
     }()
@@ -639,8 +639,7 @@ class AnimalRoomVC: UIViewController {
             catSleepingState()
         } else {
             if onBoardingFoodBefore == settingsDefaults.bool(forKey: Keys.onBoardingFood) {
-                onBoardingFoodBefore = true
-                settingsDefaults.set(onBoardingFoodBefore, forKey: Keys.onBoardingFood)
+                settingsDefaults.set(true, forKey: Keys.onBoardingFood)
                 onBoardingStage = "food"
                 onBoardingFood()
             }
@@ -729,8 +728,7 @@ class AnimalRoomVC: UIViewController {
                 lampAnimation()
             } else {
                 if onBoardingSleepBefore == settingsDefaults.bool(forKey: Keys.onBoardingSleep) {
-                    onBoardingSleepBefore = true
-                    settingsDefaults.set(onBoardingSleepBefore, forKey: Keys.onBoardingSleep)
+                    settingsDefaults.set(true, forKey: Keys.onBoardingSleep)
                     onBoardingStage = "sleep"
                     onBoardingSleep()
                 }
@@ -767,8 +765,7 @@ class AnimalRoomVC: UIViewController {
             progressBarAnimate()
         } else {
             if onBoardingHealthBefore == settingsDefaults.bool(forKey: Keys.onBoardingHealth) {
-                onBoardingHealthBefore = true
-                settingsDefaults.set(onBoardingHealthBefore, forKey: Keys.onBoardingHealth)
+                settingsDefaults.set(true, forKey: Keys.onBoardingHealth)
                 onBoardingStage = "health"
                 onBoardingHealth()
             }
@@ -852,8 +849,7 @@ class AnimalRoomVC: UIViewController {
             catSleepingState()
         } else {
             if onBoardingLoveBefore == settingsDefaults.bool(forKey: Keys.onBoardingLove) {
-                onBoardingLoveBefore = true
-                settingsDefaults.set(onBoardingLoveBefore, forKey: Keys.onBoardingLove)
+                settingsDefaults.set(true, forKey: Keys.onBoardingLove)
                 onBoardingStage = "love"
                 onBoardingLove()
             }
