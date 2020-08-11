@@ -38,6 +38,12 @@ struct Keys {
     static let isAgree = "isAgree"
     static let isStartGame = "isStartGame"
     static let catName = "catName"
+    
+    static let onBoardingFood = "savedFirstTimeFood"
+    static let onBoardingSleep = "savedFirstTimeSleep"
+    static let onBoardingHealth = "savedFirstTimeHealth"
+    static let onBoardingFun = "savedFirstTimeFun"
+    static let onBoardingLove = "savedFirstTimeLove"
 }
 
 @UIApplicationMain

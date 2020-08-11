@@ -21,6 +21,12 @@ class AnimalRoomVC: UIViewController {
     var animator: UIDynamicAnimator?
     var catName: String = ""
     
+    var onBoardingStage: String = "food"
+    var onBoardingFoodBefore: Bool = false
+    var onBoardingSleepBefore: Bool = false
+    var onBoardingHealthBefore: Bool = false
+    var onBoardingLoveBefore: Bool = false
+    
     //MARK: - Background Item
     let background: UIImageView = {
         let img = UIImageView()
@@ -100,7 +106,6 @@ class AnimalRoomVC: UIViewController {
     }()
     
     @objc func lampAction(sender: UIButton) {
-    
         if sleepingState == false {
             sleepingState = true
             catNormal.isHidden = true
@@ -529,6 +534,76 @@ class AnimalRoomVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let onBoardingTextFood: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap and hold the packaging to pour the food."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextBowl: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Drag and drop the bowl to feed the cat."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextLamp: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap the lamp to lay the cat to sleep or to awake it."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextPhone: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Tap the phone to make an appointment with a vet."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
+    
+    let onBoardingTextHand: UILabel = {
+        let txt = UILabel()
+        txt.textAlignment = .center
+        txt.textColor = .white
+        txt.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        txt.numberOfLines = 0
+        txt.lineBreakMode = .byWordWrapping
+        txt.layer.zPosition = 1
+        txt.alpha = 0
+        txt.text = "Drag the hand around to pet the cat."
+        txt.translatesAutoresizingMaskIntoConstraints = false
+        return txt
+    }()
     //MARK: - Buttons
     
     //MARK: Back Button
@@ -563,6 +638,12 @@ class AnimalRoomVC: UIViewController {
         if sleepingState == true {
             catSleepingState()
         } else {
+            if onBoardingFoodBefore == settingsDefaults.bool(forKey: Keys.onBoardingFood) {
+                onBoardingFoodBefore = true
+                settingsDefaults.set(onBoardingFoodBefore, forKey: Keys.onBoardingFood)
+                onBoardingStage = "food"
+                onBoardingFood()
+            }
             catNormal.isHidden = false
             catHand.isHidden = false
             bowl.isHidden = false
@@ -588,6 +669,44 @@ class AnimalRoomVC: UIViewController {
         }
     }
     
+    @objc func tapOverlay(sender: UITapGestureRecognizer) {
+        switch onBoardingStage {
+        case "food":
+            onBoardingStage = "bowl"
+            onBoardingBowl()
+        case "bowl":
+            overlay.alpha = 0
+            bowl.layer.zPosition = 0
+            bowl.layer.shadowColor = .none
+            bowl.layer.shadowRadius = .zero
+            bowl.layer.shadowOpacity = 0
+            onBoardingTextBowl.alpha = 0
+        case "sleep":
+            overlay.alpha = 0
+            lamp.layer.zPosition = 0
+            lamp.layer.shadowColor = .none
+            lamp.layer.shadowRadius = .zero
+            lamp.layer.shadowOpacity = 0
+            onBoardingTextLamp.alpha = 0
+        case "health":
+            overlay.alpha = 0
+            phone.layer.zPosition = 0
+            phone.layer.shadowColor = .none
+            phone.layer.shadowRadius = .zero
+            phone.layer.shadowOpacity = 0
+            onBoardingTextPhone.alpha = 0
+        case "love":
+            overlay.alpha = 0
+            handCare.layer.zPosition = 0
+            handCare.layer.shadowColor = .none
+            handCare.layer.shadowRadius = .zero
+            handCare.layer.shadowOpacity = 0
+            onBoardingTextHand.alpha = 0
+        default:
+            break
+        }
+    }
+    
     //MARK: Zzz Button
     let zzzBtn: UIButton = {
         let btn = UIButton()
@@ -609,6 +728,12 @@ class AnimalRoomVC: UIViewController {
                 z1Animation()
                 lampAnimation()
             } else {
+                if onBoardingSleepBefore == settingsDefaults.bool(forKey: Keys.onBoardingSleep) {
+                    onBoardingSleepBefore = true
+                    settingsDefaults.set(onBoardingSleepBefore, forKey: Keys.onBoardingSleep)
+                    onBoardingStage = "sleep"
+                    onBoardingSleep()
+                }
                 catSleeping.isHidden = false
                 catSleeping.image = UIImage(named: "Cat-Awake")
                 catNormal.isHidden = true
@@ -641,6 +766,12 @@ class AnimalRoomVC: UIViewController {
             progressBar.setProgress(health, animated: true)
             progressBarAnimate()
         } else {
+            if onBoardingHealthBefore == settingsDefaults.bool(forKey: Keys.onBoardingHealth) {
+                onBoardingHealthBefore = true
+                settingsDefaults.set(onBoardingHealthBefore, forKey: Keys.onBoardingHealth)
+                onBoardingStage = "health"
+                onBoardingHealth()
+            }
             if hunger > 0 {
                 health = 1
                 settingsDefaults.set(health, forKey: Keys.health)
@@ -720,6 +851,12 @@ class AnimalRoomVC: UIViewController {
         if sleepingState == true {
             catSleepingState()
         } else {
+            if onBoardingLoveBefore == settingsDefaults.bool(forKey: Keys.onBoardingLove) {
+                onBoardingLoveBefore = true
+                settingsDefaults.set(onBoardingLoveBefore, forKey: Keys.onBoardingLove)
+                onBoardingStage = "love"
+                onBoardingLove()
+            }
             catNormal.isHidden = false
             catHand.isHidden = false
             handCare.isHidden = false
