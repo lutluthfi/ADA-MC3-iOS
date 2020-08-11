@@ -19,13 +19,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		A9461A00F906E05248E4787B7CC64B38 /* Pods-MC3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE7F22ABE172F22A3FCB227758F688 /* Pods-MC3-dummy.m */; };
-		B3A3E48BF28E89A224F88782D2831A9C /* Pods-MC3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF383C98FBB7AC55C1486AAA3E46A75B /* Pods-MC3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F84CC9336FBE8CC8B58EDBC69F6E8C16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		B9B6E24DD83766B49D9AF64143FD0393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DDD71143E30EFCDF9B211F558DA29D1D /* Pods-MC3-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF383C98FBB7AC55C1486AAA3E46A75B /* Pods-MC3-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0E4BC4185249F3B5989D8D125AAC065 /* Pods-MC3-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE7F22ABE172F22A3FCB227758F688 /* Pods-MC3-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3AA200E154E5A6A7E8AA7C1E2640E205 /* PBXContainerItemProxy */ = {
+		9B264F47EBC3CC0CF8A8C97097CB7060 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -69,11 +69,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2CE1B44F2765C76A9AF4AD32E517CDD8 /* Frameworks */ = {
+		060EC7661A3EB08344D4B15FE77D766C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84CC9336FBE8CC8B58EDBC69F6E8C16 /* Foundation.framework in Frameworks */,
+				B9B6E24DD83766B49D9AF64143FD0393 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,11 +195,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		DD1D3389898A3FC02CEBC047A72F85B4 /* Headers */ = {
+		C7821624E018CF84B809E72F33A2AF8F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A3E48BF28E89A224F88782D2831A9C /* Pods-MC3-umbrella.h in Headers */,
+				DDD71143E30EFCDF9B211F558DA29D1D /* Pods-MC3-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,17 +208,17 @@
 /* Begin PBXNativeTarget section */
 		AAF7D2D6C3F5AF4CE61305E40F786BA0 /* Pods-MC3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB9D5D2205D801AFE77A07A29948B6A4 /* Build configuration list for PBXNativeTarget "Pods-MC3" */;
+			buildConfigurationList = 2EE9974D7551F1ECD75BAB28BFD0E643 /* Build configuration list for PBXNativeTarget "Pods-MC3" */;
 			buildPhases = (
-				DD1D3389898A3FC02CEBC047A72F85B4 /* Headers */,
-				779EA23D407D5D11352538732A9DCE43 /* Sources */,
-				2CE1B44F2765C76A9AF4AD32E517CDD8 /* Frameworks */,
-				4985971B35275374E0B7D543035896B9 /* Resources */,
+				C7821624E018CF84B809E72F33A2AF8F /* Headers */,
+				ED7C5DF8E90A9BC73FF2027636DF4028 /* Sources */,
+				060EC7661A3EB08344D4B15FE77D766C /* Frameworks */,
+				E2496996B98CC6A4F5169863BF8C4495 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A19E0E0C134F64272046EBE4C4293CB9 /* PBXTargetDependency */,
+				DE913807AC2B484082AF3F0EC5F6161A /* PBXTargetDependency */,
 			);
 			name = "Pods-MC3";
 			productName = "Pods-MC3";
@@ -254,7 +254,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4985971B35275374E0B7D543035896B9 /* Resources */ = {
+		E2496996B98CC6A4F5169863BF8C4495 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -264,22 +264,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		779EA23D407D5D11352538732A9DCE43 /* Sources */ = {
+		ED7C5DF8E90A9BC73FF2027636DF4028 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9461A00F906E05248E4787B7CC64B38 /* Pods-MC3-dummy.m in Sources */,
+				F0E4BC4185249F3B5989D8D125AAC065 /* Pods-MC3-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A19E0E0C134F64272046EBE4C4293CB9 /* PBXTargetDependency */ = {
+		DE913807AC2B484082AF3F0EC5F6161A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Instabug;
 			target = B593490A33943610DC035C394E10D07A /* Instabug */;
-			targetProxy = 3AA200E154E5A6A7E8AA7C1E2640E205 /* PBXContainerItemProxy */;
+			targetProxy = 9B264F47EBC3CC0CF8A8C97097CB7060 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -300,24 +300,7 @@
 			};
 			name = Debug;
 		};
-		6FE013EFABD562AE80E4F68AF32BC524 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A2046F608BD0E984EBAC65730ED4AAB /* Instabug.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		703EFD8C4C5172FCD541C027C44282E8 /* Release */ = {
+		319F2FAD1E16756887EE4A3550A28EE2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FDDA3E4450F5F3B6CA301B20FEA68ADB /* Pods-MC3.release.xcconfig */;
 			buildSettings = {
@@ -352,6 +335,60 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		637E45DB24F6FEB57C14A10408777488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 238C04DDEB562AD90D7829CEE1129906 /* Pods-MC3.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MC3/Pods-MC3-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MC3/Pods-MC3.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6FE013EFABD562AE80E4F68AF32BC524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A2046F608BD0E984EBAC65730ED4AAB /* Instabug.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -479,60 +516,23 @@
 			};
 			name = Debug;
 		};
-		E4A2B3F9293AFE3E6626B9E38356BC88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 238C04DDEB562AD90D7829CEE1129906 /* Pods-MC3.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MC3/Pods-MC3-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MC3/Pods-MC3.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2EE9974D7551F1ECD75BAB28BFD0E643 /* Build configuration list for PBXNativeTarget "Pods-MC3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637E45DB24F6FEB57C14A10408777488 /* Debug */,
+				319F2FAD1E16756887EE4A3550A28EE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AB9D5D2205D801AFE77A07A29948B6A4 /* Build configuration list for PBXNativeTarget "Pods-MC3" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4A2B3F9293AFE3E6626B9E38356BC88 /* Debug */,
-				703EFD8C4C5172FCD541C027C44282E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
