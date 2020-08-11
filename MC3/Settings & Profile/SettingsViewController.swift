@@ -26,10 +26,19 @@ class SettingsViewController: UIViewController {
     @IBOutlet var aboutCloseBtn: UIButton!
     
     @IBOutlet var aboutContentLabel: UILabel!
+    @IBOutlet var aboutNextBtn: UIButton!
+    @IBOutlet var aboutPrevBtn: UIButton!
     
     var musicStatus: Bool = true
     var soundStatus: Bool = true
     var notificationStatus: Bool = true
+    
+    var aboutContentIndex: Int = 0
+    let aboutContent: [String] = [
+        "Freeden was made with solely one simple purpose, which is to develop awareness on animal welfare through a way that is acceptable and able to reach anyone, with the \("Five of Freedom") principle as the basic guidelines. By playing the game, we hope that users will implement those principles to the animals that they encounter in real life.",
+        "Background music by:\nsyncopika\n\nSound effects by:\n\nFocus on Fun Games Company\nJesús Lastra\nVoltiment555\nfarfadet46",
+        "Icons by:\nYazmin Alanis from the Noun Project\n\nUnsplash Photos by:\nАлександр Гросс, Markus Winkler, Courtney Roberson, Matthew Cabret, Sergio Souza, Lydia Torrey, Daiga Ellaby, Japheth Mast, Ivan Rojas Urrea"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +47,6 @@ class SettingsViewController: UIViewController {
     }
     
     func prepareScreen() {
-//        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
         view.isOpaque = false
         contentView.layer.cornerRadius = 10
         settingsView.layer.cornerRadius = 10
@@ -124,6 +132,42 @@ class SettingsViewController: UIViewController {
             break
         case aboutBtn:
             aboutView.isHidden = false
+            aboutContentIndex = 0
+            prepareAboutScreen(index: 0)
+            break
+        case aboutNextBtn:
+            if (aboutContentIndex < 2) {
+                aboutContentIndex += 1
+                prepareAboutScreen(index: aboutContentIndex)
+            }
+            break
+        case aboutPrevBtn:
+            if (aboutContentIndex > 0) {
+                aboutContentIndex -= 1
+                prepareAboutScreen(index: aboutContentIndex)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    func prepareAboutScreen(index: Int) {
+        switch index {
+        case 0:
+            aboutPrevBtn.isHidden = true
+            aboutNextBtn.isHidden = false
+            aboutContentLabel.text = aboutContent[0]
+            break
+        case 1:
+            aboutPrevBtn.isHidden = false
+            aboutNextBtn.isHidden = false
+            aboutContentLabel.text = aboutContent[1]
+            break
+        case 2:
+            aboutPrevBtn.isHidden = false
+            aboutNextBtn.isHidden = true
+            aboutContentLabel.text = aboutContent[2]
             break
         default:
             break

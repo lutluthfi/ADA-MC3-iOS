@@ -16,7 +16,7 @@
         <!--Settings View Controller-->
         <scene sceneID="ajY-bv-OiU">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RqK-so-xaT" customClass="SettingsViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RqK-so-xaT" customClass="SettingsViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26t-Ks-t5J">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,21 +227,54 @@
                                                 <color key="textColor" name="413834"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vaf-rK-Zqd">
-                                                <rect key="frame" x="41" y="91" width="356" height="153"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">(App Name) was made with solely one simple purpose which is to develop awareness on animal welfare through a way that is acceptable and able to reach anyone, with the "Five of Freedom" principle as the basic guidelines. By playing the game, we hope that users will terlatih dan kemudian dapat implement those principles to the animals that they encounter in real life.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vaf-rK-Zqd">
+                                                <rect key="frame" x="88" y="77" width="263" height="162"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="162" id="IYp-Ll-IU0"/>
+                                                    <constraint firstAttribute="width" constant="263" id="mtN-ca-heI"/>
+                                                </constraints>
+                                                <string key="text">Freeden was made with solely one simple purpose, which is to develop awareness on animal welfare through a way that is acceptable and able to reach anyone, with the "Five of Freedom" principle as the basic guidelines. By playing the game, we hope that users will implement those principles to the animals that they encounter in real life.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" name="413834"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1b-5z-ndp">
+                                                <rect key="frame" x="390" y="143" width="21" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="GYo-8A-39J"/>
+                                                    <constraint firstAttribute="width" constant="21" id="nXq-7z-aCC"/>
+                                                </constraints>
+                                                <color key="tintColor" name="413834"/>
+                                                <state key="normal" image="chevron.right" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onButtonPress:" destination="RqK-so-xaT" eventType="touchUpInside" id="nCj-Jz-WT1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBi-v1-2dR">
+                                                <rect key="frame" x="32" y="143" width="21" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="99R-PY-dxm"/>
+                                                    <constraint firstAttribute="width" constant="21" id="Sfx-0r-22D"/>
+                                                </constraints>
+                                                <color key="tintColor" name="413834"/>
+                                                <state key="normal" image="chevron.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onButtonPress:" destination="RqK-so-xaT" eventType="touchUpInside" id="cY1-7j-wpC"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Vaf-rK-Zqd" firstAttribute="centerX" secondItem="0hb-j7-XT7" secondAttribute="centerX" id="2te-VX-Tda"/>
+                                            <constraint firstItem="hBi-v1-2dR" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" constant="143" id="6la-BX-WG8"/>
                                             <constraint firstItem="fWZ-Pd-w9b" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" constant="29" id="8l0-HH-YHn"/>
+                                            <constraint firstItem="hBi-v1-2dR" firstAttribute="leading" secondItem="0hb-j7-XT7" secondAttribute="leading" constant="32" id="HJb-qm-fml"/>
+                                            <constraint firstAttribute="trailing" secondItem="D1b-5z-ndp" secondAttribute="trailing" constant="28" id="HmJ-Rl-nad"/>
                                             <constraint firstItem="fWZ-Pd-w9b" firstAttribute="centerX" secondItem="0hb-j7-XT7" secondAttribute="centerX" id="Tbx-rP-Hqv"/>
+                                            <constraint firstItem="D1b-5z-ndp" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" constant="143" id="dlw-h2-mSs"/>
                                             <constraint firstAttribute="trailing" secondItem="9Ag-qz-r8f" secondAttribute="trailing" constant="28" id="vvW-Hi-1iz"/>
                                             <constraint firstItem="9Ag-qz-r8f" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" constant="29" id="xD3-pP-zky"/>
+                                            <constraint firstItem="Vaf-rK-Zqd" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" constant="77" id="yGd-DB-gEP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -271,6 +304,8 @@
                         <outlet property="aboutBtn" destination="4mE-Ka-SCN" id="zG7-gX-tyD"/>
                         <outlet property="aboutCloseBtn" destination="9Ag-qz-r8f" id="9XJ-ga-esp"/>
                         <outlet property="aboutContentLabel" destination="Vaf-rK-Zqd" id="DTu-e7-SuH"/>
+                        <outlet property="aboutNextBtn" destination="D1b-5z-ndp" id="A6o-lI-yn2"/>
+                        <outlet property="aboutPrevBtn" destination="hBi-v1-2dR" id="1tK-oV-Ft0"/>
                         <outlet property="aboutView" destination="0hb-j7-XT7" id="W53-IH-bh0"/>
                         <outlet property="backgroundView" destination="26t-Ks-t5J" id="5Xd-7L-pLG"/>
                         <outlet property="contentView" destination="DuL-d9-kcC" id="y6D-CG-kEC"/>
@@ -297,7 +332,7 @@
         <!--Help View Controller-->
         <scene sceneID="JIq-95-1Cc">
             <objects>
-                <viewController id="6hV-6e-Nyb" customClass="HelpViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6hV-6e-Nyb" customClass="HelpViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M5N-7A-8wq">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,7 +473,7 @@
         <!--Profile View Controller-->
         <scene sceneID="OoX-Tu-fw4">
             <objects>
-                <viewController id="7Bt-Pn-MPU" customClass="ProfileViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Bt-Pn-MPU" customClass="ProfileViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xZg-ZC-o0M">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -602,7 +637,7 @@
         <!--Profile Articles View Controller-->
         <scene sceneID="hzw-M4-c8V">
             <objects>
-                <viewController id="NIa-Ua-bvi" customClass="ProfileArticlesViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NIa-Ua-bvi" customClass="ProfileArticlesViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VaS-n3-RUD" customClass="ProfileP">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -730,7 +765,7 @@
         <!--Profile Pet View Controller-->
         <scene sceneID="i5j-e2-sgd">
             <objects>
-                <viewController id="Gjs-IG-KXl" customClass="ProfilePetViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gjs-IG-KXl" customClass="ProfilePetViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TLc-d8-8hP">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -958,7 +993,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1lS-4g-mLY"/>
+        <segue reference="gXf-Bw-Upw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Help-1" width="687" height="213"/>
