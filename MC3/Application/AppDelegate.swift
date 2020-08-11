@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Instabug
 
 let settingsDefaults = UserDefaults.standard
 let backgroundMusic = AudioManager.init(audioPath: "Background-Music.mp3")
@@ -54,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
+        //instabug
+        Instabug.start(withToken: "85e293e4ae4f0754d950722e683e0f10", invocationEvents: [.shake, .screenshot])
         
         // this code to check and set initial settings default
         let isInitSettingsDefault = settingsDefaults.bool(forKey: "init")
