@@ -256,11 +256,6 @@ class ShopHomeViewController: UIViewController, UICollectionViewDelegate, UIColl
             treeButton.layer.borderWidth = 5
         }
     }
-    
-    @IBAction func homeButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
 
     /*
     // MARK: - Navigation
