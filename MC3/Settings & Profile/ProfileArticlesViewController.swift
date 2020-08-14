@@ -18,7 +18,6 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         prepareScreen()
         // Do any additional setup after loading the view.
-        
         scrollView.delegate = self
     }
     
@@ -36,7 +35,7 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
     
     func updatePageNumber() {
         // If not case to `Int` will give an error.
-        let currentPage = Int(ceil(scrollView.contentOffset.x / scrollView.frame.size.width))
+        let currentPage = Int(ceil(scrollView.contentOffset.x / self.view.frame.width))
         pageControl.currentPage = currentPage
     }
     
@@ -51,15 +50,15 @@ class ProfileArticlesViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func onTapGesture(_ sender: UITapGestureRecognizer) {
         let location = sender.location(in: sender.view)
-        let frameWidth = self.view.frame.maxX
+        let frameWidth = self.view.frame.width
         let xPosition = location.x.truncatingRemainder(dividingBy: frameWidth)
         let currentPage = pageControl.currentPage
-        if (xPosition < 200 && currentPage > 0) {
+        if (xPosition < (self.view.frame.width * 0.40) && currentPage > 0) {
             let offset = CGPoint(x: (currentPage - 1) * Int(frameWidth), y: 0)
             self.scrollView.setContentOffset(offset, animated: true)
         }
         
-        if (xPosition > self.view.frame.maxX - 200 && currentPage < 6) {
+        if (xPosition > self.view.frame.width - (self.view.frame.width * 0.40) && currentPage < 6) {
             let offset = CGPoint(x: (currentPage + 1) * Int(frameWidth), y: 0)
             self.scrollView.setContentOffset(offset, animated: true)
         }
