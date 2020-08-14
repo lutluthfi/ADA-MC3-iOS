@@ -301,6 +301,7 @@ class AnimalRoomVC: UIViewController {
             
         case .began:
             catFoodAnimateStart()
+            emitter()
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerEnds), userInfo: nil, repeats: true)
         case .ended:
             catFoodAnimateStop()

@@ -67,7 +67,7 @@ extension AnimalRoomVC {
             animations: {
                 self.catFood.transform = CGAffineTransform(rotationAngle: 20)
         }) { (finished) in
-            self.emitter()
+//            self.emitter()
         }
     }
     
