@@ -15,14 +15,13 @@
         <!--Shop Alert View Controller-->
         <scene sceneID="HFw-Zu-eU7">
             <objects>
-                <viewController storyboardIdentifier="ShopAlertVC" id="lNi-p4-7hD" customClass="ShopAlertViewController" customModule="MC3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopAlertVC" id="lNi-p4-7hD" customClass="ShopAlertViewController" customModule="Freeden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ShopAlertVC" id="pfV-An-S0f">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XU7-o0-NiG">
-                                <rect key="frame" x="266" y="92" width="365" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XU7-o0-NiG">
+                                <rect key="frame" x="265.5" y="92" width="365" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-XS-rdM">
                                         <rect key="frame" x="8" y="8" width="349" height="117"/>
@@ -69,9 +68,17 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="365" id="Tue-oN-mKN"/>
+                                    <constraint firstAttribute="height" constant="230" id="nR8-ei-P06"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XU7-o0-NiG" firstAttribute="centerX" secondItem="pfV-An-S0f" secondAttribute="centerX" id="ax6-DB-dPy"/>
+                            <constraint firstItem="XU7-o0-NiG" firstAttribute="centerY" secondItem="pfV-An-S0f" secondAttribute="centerY" id="t5w-DJ-99i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z3t-dK-aaB"/>
                     </view>
                     <connections>
