@@ -28,7 +28,7 @@
                                         <rect key="frame" x="-0.5" y="-0.5" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
+                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,7 +501,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
+                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -547,7 +547,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="48" height="28"/>
+                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -821,19 +821,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="351" width="32" height="18"/>
+                                <rect key="frame" x="172" y="352" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="26" width="69" height="28"/>
+                                <rect key="frame" x="556" y="26" width="81" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -922,12 +922,12 @@
                             <constraint firstItem="Pc6-NG-pXC" firstAttribute="centerY" secondItem="qD4-1K-ut1" secondAttribute="centerY" id="0Fn-Ah-ewT"/>
                             <constraint firstItem="eoc-G0-w45" firstAttribute="leading" secondItem="eNw-f4-vlg" secondAttribute="trailing" constant="18.5" id="0db-45-3T0"/>
                             <constraint firstItem="SCh-Hu-BAh" firstAttribute="top" secondItem="tV6-rL-8N9" secondAttribute="bottom" constant="19.5" id="1Lq-eB-IDo"/>
+                            <constraint firstItem="qD4-1K-ut1" firstAttribute="leading" secondItem="5CM-EX-05s" secondAttribute="trailing" constant="111" id="1sa-od-iEY"/>
                             <constraint firstItem="sBL-Fl-gB4" firstAttribute="trailing" secondItem="Wnt-i6-29w" secondAttribute="trailing" constant="20" id="4WY-bM-nfB"/>
                             <constraint firstItem="d72-NA-uD8" firstAttribute="leading" secondItem="pe6-zH-5EC" secondAttribute="trailing" constant="19" id="6KI-ph-7k5"/>
                             <constraint firstItem="tV6-rL-8N9" firstAttribute="top" secondItem="qD4-1K-ut1" secondAttribute="bottom" constant="20" id="9Xd-bV-tai"/>
                             <constraint firstItem="up9-5K-vP4" firstAttribute="top" secondItem="Nic-uk-9g9" secondAttribute="bottom" constant="16" id="Bqw-61-Evm"/>
                             <constraint firstItem="GWx-ZU-IEo" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="512" id="D95-db-c0Q"/>
-                            <constraint firstItem="qD4-1K-ut1" firstAttribute="leading" secondItem="sBL-Fl-gB4" secondAttribute="leading" constant="414" id="GpA-DP-sBj"/>
                             <constraint firstItem="pjk-NV-Ecc" firstAttribute="top" secondItem="sBL-Fl-gB4" secondAttribute="top" constant="20" id="HTX-Bh-iip"/>
                             <constraint firstItem="up9-5K-vP4" firstAttribute="centerX" secondItem="Nic-uk-9g9" secondAttribute="centerX" id="Lbn-HC-vPM"/>
                             <constraint firstItem="Kay-J6-hOS" firstAttribute="centerY" secondItem="tV6-rL-8N9" secondAttribute="centerY" id="M3e-TA-j5T"/>
