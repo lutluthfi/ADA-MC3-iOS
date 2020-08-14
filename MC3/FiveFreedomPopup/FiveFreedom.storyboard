@@ -82,11 +82,13 @@
                                     <constraint firstItem="50j-69-7Md" firstAttribute="width" secondItem="IzI-io-Fzf" secondAttribute="width" multiplier="0.387244" id="C3J-Ok-u5Y"/>
                                     <constraint firstItem="yej-qr-wc8" firstAttribute="centerX" secondItem="IzI-io-Fzf" secondAttribute="centerX" id="CTn-0K-FHm"/>
                                     <constraint firstAttribute="trailing" secondItem="LTA-wy-fIp" secondAttribute="trailing" constant="31" id="Ccg-fh-qpL"/>
+                                    <constraint firstAttribute="width" constant="439" id="Ff1-Xt-vFn"/>
                                     <constraint firstItem="LTA-wy-fIp" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="29" id="Mfe-WI-ECx"/>
                                     <constraint firstAttribute="trailing" secondItem="50j-69-7Md" secondAttribute="trailing" constant="66.5" id="TUJ-mk-nye"/>
                                     <constraint firstItem="50j-69-7Md" firstAttribute="height" secondItem="IzI-io-Fzf" secondAttribute="height" multiplier="0.55036" id="UBh-KS-sjR"/>
                                     <constraint firstItem="76A-ZK-rsZ" firstAttribute="leading" secondItem="IzI-io-Fzf" secondAttribute="leading" constant="33" id="Ur6-oQ-B37"/>
                                     <constraint firstAttribute="trailing" secondItem="uYh-eD-qNx" secondAttribute="trailing" constant="26" id="a9K-yQ-vBZ"/>
+                                    <constraint firstAttribute="height" constant="278" id="bgF-Lq-7sN"/>
                                     <constraint firstItem="uYh-eD-qNx" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="143" id="dfg-Uo-FlX"/>
                                     <constraint firstItem="pYR-oP-JN1" firstAttribute="leading" secondItem="IzI-io-Fzf" secondAttribute="leading" constant="64" id="irO-lk-Ghf"/>
                                     <constraint firstItem="50j-69-7Md" firstAttribute="top" secondItem="IzI-io-Fzf" secondAttribute="top" constant="82.5" id="kAd-9y-jIg"/>
@@ -101,8 +103,6 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IzI-io-Fzf" firstAttribute="centerY" secondItem="CPg-aG-mi6" secondAttribute="centerY" id="0af-fL-kor"/>
-                            <constraint firstItem="IzI-io-Fzf" firstAttribute="width" secondItem="CLL-3e-RvL" secondAttribute="width" multiplier="0.489955" id="66G-Mo-H6r"/>
-                            <constraint firstItem="IzI-io-Fzf" firstAttribute="height" secondItem="CLL-3e-RvL" secondAttribute="height" multiplier="0.671498" id="HBJ-NB-jqc"/>
                             <constraint firstItem="IzI-io-Fzf" firstAttribute="centerX" secondItem="CPg-aG-mi6" secondAttribute="centerX" id="qJO-ly-gMT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CPg-aG-mi6"/>
