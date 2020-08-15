@@ -61,7 +61,7 @@ extension AnimalRoomVC {
     
     func catFoodAnimateStart() {
         UIView.animate(
-            withDuration: 0.5,
+            withDuration: 0.3,
             delay: 0,
             options: [.curveEaseInOut],
             animations: {
@@ -73,7 +73,7 @@ extension AnimalRoomVC {
     
     func catFoodAnimateStop() {
         UIView.animate(
-            withDuration: 0.5,
+            withDuration: 0.3,
             delay: 0,
             options: [.curveEaseInOut],
             animations: {

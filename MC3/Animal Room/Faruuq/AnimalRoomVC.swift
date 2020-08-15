@@ -928,7 +928,7 @@ class AnimalRoomVC: UIViewController {
         progressBar.setProgress(hunger, animated: true)
         
         let holdCatFood = UILongPressGestureRecognizer(target: self, action: #selector(catFoodTap))
-        holdCatFood.minimumPressDuration = 0.3
+        holdCatFood.minimumPressDuration = 0.1
         catFood.addGestureRecognizer(holdCatFood)
         
         let dragBowl = UIPanGestureRecognizer(target: self, action: #selector(bowlPan))
