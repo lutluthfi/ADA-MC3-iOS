@@ -19,12 +19,12 @@ class NewShopVC: UIViewController {
     @IBOutlet weak var lampBtn: UIButton!
     @IBOutlet weak var treeBtn: UIButton!
     @IBOutlet weak var shopCollectionView: UICollectionView!
-    @IBOutlet weak var rewardsValue: UILabel!
+    @IBOutlet weak var rewardsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rewardsValue.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+        rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
         presentItems = bushItems
         shopCollectionView.delegate = self
         shopCollectionView.dataSource = self
@@ -120,6 +120,10 @@ class NewShopVC: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func unwindToNewShopVC(_ segue: UIStoryboardSegue) {
+        rewardsLabel.text = "\(settingsDefaults.integer(forKey: Keys.rewards))"
     }
 }
 

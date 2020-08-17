@@ -41,13 +41,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ug-gy-Ekj">
-                                <rect key="frame" x="419.5" y="20" width="57" height="28"/>
+                                <rect key="frame" x="417" y="20" width="62.5" height="29"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-T1-HI6">
-                                <rect key="frame" x="229.5" y="63" width="437" height="30"/>
+                                <rect key="frame" x="229.5" y="64" width="437" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-zE-aO5">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="30"/>
@@ -119,7 +119,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dFM-W4-e6T">
-                                <rect key="frame" x="173.5" y="108" width="549" height="266"/>
+                                <rect key="frame" x="173.5" y="109" width="549" height="266"/>
                                 <color key="backgroundColor" red="1" green="0.97647058819999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="549" id="FFA-xs-SqY"/>
@@ -215,7 +215,7 @@
                                     <constraint firstAttribute="height" constant="44" id="mKU-oh-Jgd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osc-2O-28i" userLabel="RewardsValue">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osc-2O-28i" userLabel="RewardsLabel">
                                 <rect key="frame" x="137.5" y="34" width="24.5" height="18.5"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="15"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,7 +446,7 @@
                         <outlet property="bushBtn" destination="eqv-mE-9lp" id="Icx-gV-1f1"/>
                         <outlet property="flowerBtn" destination="mTu-He-ZDY" id="E92-Zb-BJ8"/>
                         <outlet property="lampBtn" destination="BKS-g7-q7t" id="aR6-kg-8iC"/>
-                        <outlet property="rewardsValue" destination="osc-2O-28i" id="ozX-91-kNa"/>
+                        <outlet property="rewardsLabel" destination="osc-2O-28i" id="Bfo-vJ-W8R"/>
                         <outlet property="shopCollectionView" destination="ej4-Lg-KmE" id="SI4-3f-XaL"/>
                         <outlet property="treeBtn" destination="YVD-Wb-Fjf" id="aHe-sv-11H"/>
                     </connections>
@@ -602,16 +602,16 @@
                                             <rect key="frame" x="265.5" y="91.5" width="365" height="231"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8wO-A7-Zmz">
-                                                    <rect key="frame" x="85.5" y="61" width="194" height="109"/>
+                                                    <rect key="frame" x="85.5" y="61" width="194" height="109.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 bush for $0?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sW-AW-Ya4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="194" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="194" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="17"/>
                                                             <color key="textColor" name="413834"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1t7-OG-VPk">
-                                                            <rect key="frame" x="0.0" y="70" width="194" height="39"/>
+                                                            <rect key="frame" x="0.0" y="70.5" width="194" height="39"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep7-tf-1RM">
                                                                     <rect key="frame" x="0.0" y="0.0" width="87" height="39"/>
@@ -698,9 +698,11 @@
                     <navigationItem key="navigationItem" id="jSs-30-qFG"/>
                     <connections>
                         <outlet property="confirmationText" destination="5sW-AW-Ya4" id="KOe-og-NX9"/>
+                        <segue destination="ITH-2n-O64" kind="unwind" identifier="unwindToNewShopVC" unwindAction="unwindToNewShopVC:" id="N5L-OS-lZi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icQ-f9-tyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ITH-2n-O64" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="624.77678571428567" y="853.62318840579712"/>
         </scene>

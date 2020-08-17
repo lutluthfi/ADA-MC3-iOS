@@ -12,14 +12,11 @@ class AlertConfirmation: UIViewController {
     
     var itemPrice: Int?
     var itemCategory: String = ""
-    var currentRewardsValue: Int = 0
     
     @IBOutlet weak var confirmationText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentRewardsValue = settingsDefaults.integer(forKey: Keys.rewards)
-        
         itemPrice = newSelectedItem!.price as Int
         itemCategory = category
         confirmationText.text = "Buy 1 \(itemCategory) for $\(itemPrice ?? 0)"
@@ -30,7 +27,17 @@ class AlertConfirmation: UIViewController {
         case "No":
             dismiss(animated: true, completion: nil)
         default:
-            break
+            if rewardsValue < itemPrice! {
+                let alert = UIAlertController(title: "Insufficient Balance", message: "You are running out of coins. Play with your cat to get more coins", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(ok)
+                present(alert, animated: true)
+
+            } else {
+                rewardsValue -= itemPrice!
+                settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
+                performSegue(withIdentifier: "unwindToNewShopVC", sender: self)
+            }
         }
     }
     
