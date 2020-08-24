@@ -8,75 +8,16 @@
 
 import UIKit
 
-
-
 class NewShopVC: UIViewController {
-    
-    var singleSelectedItem: ItemShop?
-    var category: String = "Bush"
 
     var presentItems: [ItemShop] = [] {
         didSet {
             shopCollectionView.reloadData()
         }
     }
-    var bushItems = [
-        ItemShop(image: "Bush-1", price: 20, isPurchased: false, isLocked: false, itemNumber: 0),
-        ItemShop(image: "Bush-2", price: 30, isPurchased: false, isLocked: false, itemNumber: 1),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
-    ]
-    var benchItems = [
-        ItemShop(image: "Bench", price: 40, isPurchased: false, isLocked: false, itemNumber: 0),
-        ItemShop(image: "Bench-Flip", price: 40, isPurchased: false, isLocked: false, itemNumber: 1),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7)
-    ]
-    var flowerItems = [
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 0),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 1),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
-    ]
-    var lampItems = [
-        ItemShop(image: "Reward-Lamp-1", price: 50, isPurchased: false, isLocked: false, itemNumber: 0),
-        ItemShop(image: "Reward-Lamp-2", price: 60, isPurchased: false, isLocked: false, itemNumber: 1),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
-    ]
-    var treeItems = [
-        ItemShop(image: "Tree", price: 70, isPurchased: false, isLocked: true, itemNumber: 0),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 1),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
-    ]
     
-    //    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("items.plist")
-    let bushFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("bush.plist")
-    let benchFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("bench.plist")
-    let flowerFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("flower.plist")
-    let lampFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("lamp.plist")
-    let treeFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("tree.plist")
+    var singleSelectedItem: ItemShop?
+    var category: String = "Bush"
     var arrayNumber: Int?
     
     @IBOutlet weak var bushBtn: UIButton!
@@ -87,6 +28,7 @@ class NewShopVC: UIViewController {
     @IBOutlet weak var shopCollectionView: UICollectionView!
     @IBOutlet weak var rewardsLabel: UILabel!
     @IBOutlet weak var alert: UIVisualEffectView!
+    @IBOutlet weak var confirmationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,8 +37,8 @@ class NewShopVC: UIViewController {
         category = "Bush"
         shopCollectionView.delegate = self
         shopCollectionView.dataSource = self
-        checkExistence(url: bushFilePath!, item: bushItems)
-        print("File Manager = \(bushFilePath!)")
+        checkExistence(url: DataModel.bushFilePath!, item: DataModel.bushItems)
+        print("File Manager = \(DataModel.bushFilePath!)")
     }
     
     @IBAction func categoryBtnAction(_ sender: UIButton) {
@@ -104,8 +46,7 @@ class NewShopVC: UIViewController {
         case "Bush":
             //show item
             category = sender.currentTitle!
-            checkExistence(url: bushFilePath!, item: bushItems)
-//            shopCollectionView.reloadData()
+            checkExistence(url: DataModel.bushFilePath!, item: DataModel.bushItems)
             
             //button appearance
             bushBtn.isSelected = true
@@ -121,8 +62,7 @@ class NewShopVC: UIViewController {
         case "Bench":
             //show item
             category = sender.currentTitle!
-            checkExistence(url: benchFilePath!, item: benchItems)
-//            shopCollectionView.reloadData()
+            checkExistence(url: DataModel.benchFilePath!, item: DataModel.benchItems)
             
             //button appearance
             benchBtn.isSelected = true
@@ -138,8 +78,7 @@ class NewShopVC: UIViewController {
         case "Flower":
             //show item
             category = sender.currentTitle!
-            checkExistence(url: flowerFilePath!, item: flowerItems)
-//            shopCollectionView.reloadData()
+            checkExistence(url: DataModel.flowerFilePath!, item: DataModel.flowerItems)
             
             //button appearance
             flowerBtn.isSelected = true
@@ -155,8 +94,7 @@ class NewShopVC: UIViewController {
         case "Lamp":
             //show item
             category = sender.currentTitle!
-            checkExistence(url: lampFilePath!, item: lampItems)
-//            shopCollectionView.reloadData()
+            checkExistence(url: DataModel.lampFilePath!, item: DataModel.lampItems)
             
             //button appearance
             lampBtn.isSelected = true
@@ -172,8 +110,7 @@ class NewShopVC: UIViewController {
         case "Tree":
             //show item
             category = sender.currentTitle!
-            checkExistence(url: treeFilePath!, item: treeItems)
-//            shopCollectionView.reloadData()
+            checkExistence(url: DataModel.treeFilePath!, item: DataModel.treeItems)
             
             //button appearance
             treeBtn.isSelected = true
@@ -210,19 +147,22 @@ class NewShopVC: UIViewController {
             } else {
                 rewardsValue -= singleSelectedItem!.price
                 settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
+                DispatchQueue.main.async {
+                    self.rewardsLabel.text = ("\(settingsDefaults.integer(forKey: Keys.rewards))")
+                }
                 singleSelectedItem?.isPurchased = true
                 presentItems[arrayNumber!] = singleSelectedItem!
                 switch category {
                 case "Bush":
-                    saveItems(item: presentItems, url: bushFilePath!)
+                    saveItems(item: presentItems, url: DataModel.bushFilePath!)
                 case "Bench":
-                    saveItems(item: benchItems, url: benchFilePath!)
+                    saveItems(item: presentItems, url: DataModel.benchFilePath!)
                 case "Flower":
-                    saveItems(item: presentItems, url: flowerFilePath!)
+                    saveItems(item: presentItems, url: DataModel.flowerFilePath!)
                 case "Lamp":
-                    saveItems(item: presentItems, url: lampFilePath!)
+                    saveItems(item: presentItems, url: DataModel.lampFilePath!)
                 case "Tree":
-                    saveItems(item: presentItems, url: treeFilePath!)
+                    saveItems(item: presentItems, url: DataModel.treeFilePath!)
                 default:
                     break
                 }
@@ -239,7 +179,7 @@ class NewShopVC: UIViewController {
         } catch {
             print("Error encoding data array, \(error)")
         }
-        shopCollectionView.reloadData()
+//        shopCollectionView.reloadData()
     }
     
     func loadItems(url: URL) {
@@ -298,6 +238,7 @@ extension NewShopVC: UICollectionViewDataSource, UICollectionViewDelegate, UICol
             singleSelectedItem = presentItems[indexPath.item]
             arrayNumber = presentItems[indexPath.item].itemNumber
             print("selected item = \(String(describing: singleSelectedItem)), item number = \(String(describing: arrayNumber))")
+            confirmationLabel.text = "Buy 1 \(category) for $\(presentItems[indexPath.item].price)?"
             UIView.animate(withDuration: 0.3) {
                 self.alert.alpha = 1
             }

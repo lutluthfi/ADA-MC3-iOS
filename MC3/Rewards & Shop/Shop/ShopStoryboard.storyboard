@@ -544,6 +544,7 @@
                         <outlet property="alert" destination="Wsu-n5-eer" id="nlI-t8-xg1"/>
                         <outlet property="benchBtn" destination="0R0-wd-1pm" id="egj-8H-AWy"/>
                         <outlet property="bushBtn" destination="eqv-mE-9lp" id="Icx-gV-1f1"/>
+                        <outlet property="confirmationLabel" destination="9VU-KF-ZGu" id="HF2-Wi-tdi"/>
                         <outlet property="flowerBtn" destination="mTu-He-ZDY" id="E92-Zb-BJ8"/>
                         <outlet property="lampBtn" destination="BKS-g7-q7t" id="aR6-kg-8iC"/>
                         <outlet property="rewardsLabel" destination="osc-2O-28i" id="Bfo-vJ-W8R"/>

@@ -328,7 +328,7 @@ extension AnimalRoomVC {
                 sender.view?.alpha = 0
         },
             completion: nil)
-        rewardsValue += 100
+        rewardsValue += 1
         settingsDefaults.set(rewardsValue, forKey: Keys.rewards)
         DispatchQueue.main.async {
             self.rewardsLabel.text = "\(rewardsValue)"
