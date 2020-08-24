@@ -8,16 +8,18 @@
 
 import UIKit
 
-struct ItemShop {
+struct ItemShop: Codable {
     var image: String
     var price: Int
     var isPurchased: Bool
     var isLocked: Bool
+    var itemNumber: Int
     
-    init(image: String, price: Int, isPurchased: Bool, isLocked: Bool) {
+    init(image: String, price: Int, isPurchased: Bool, isLocked: Bool, itemNumber: Int) {
         self.image = image
         self.price = price
         self.isPurchased = isPurchased
         self.isLocked = isLocked
+        self.itemNumber = itemNumber
     }
 }

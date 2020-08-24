@@ -14,7 +14,7 @@ let backgroundMusic = AudioManager.init(audioPath: "Background-Music.mp3")
 let soundManager = SoundManager.init()
 
 //Logic Animal Room
-var rewardsValue: Int = 0
+var rewardsValue: Int = settingsDefaults.integer(forKey: Keys.rewards)
 var hunger: Float = 0.0
 var sleep: Float = 0.0
 var health: Float = 0.0
@@ -47,57 +47,7 @@ struct Keys {
 }
 
 //Logic Shop
-var presentItems: [ItemShop] = []
-var bushItems = [
-    ItemShop(image: "Bush-1", price: 20, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bush-2", price: 30, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-]
-var benchItems = [
-    ItemShop(image: "Bench", price: 40, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bench-Flip", price: 40, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true)
-]
-var flowerItems = [
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-]
-var lampItems = [
-    ItemShop(image: "Reward-Lamp-1", price: 50, isPurchased: false, isLocked: true),
-    ItemShop(image: "Reward-Lamp-2", price: 60, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-]
-var treeItems = [
-    ItemShop(image: "Tree", price: 70, isPurchased: false, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-    ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true),
-]
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

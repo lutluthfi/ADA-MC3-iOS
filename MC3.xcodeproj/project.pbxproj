@@ -32,7 +32,6 @@
 		2AAED7C224E94003008130E4 /* NewShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C124E94003008130E4 /* NewShopVC.swift */; };
 		2AAED7C424EA064F008130E4 /* NewShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C324EA064F008130E4 /* NewShopCell.swift */; };
 		2AAED7C624EA06DF008130E4 /* ItemShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C524EA06DF008130E4 /* ItemShop.swift */; };
-		2AAED7C824EA7D8C008130E4 /* AlertConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C724EA7D8C008130E4 /* AlertConfirmation.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
 		440EC15124E28F500099BA20 /* FiveFreedom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440EC15024E28F500099BA20 /* FiveFreedom.storyboard */; };
 		440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */; };
@@ -128,7 +127,6 @@
 		2AAED7C124E94003008130E4 /* NewShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopVC.swift; sourceTree = "<group>"; };
 		2AAED7C324EA064F008130E4 /* NewShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCell.swift; sourceTree = "<group>"; };
 		2AAED7C524EA06DF008130E4 /* ItemShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShop.swift; sourceTree = "<group>"; };
-		2AAED7C724EA7D8C008130E4 /* AlertConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfirmation.swift; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
 		440EC15024E28F500099BA20 /* FiveFreedom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FiveFreedom.storyboard; sourceTree = "<group>"; };
 		440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveFreedomViewController.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */,
 				2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */,
 				2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */,
-				2AAED7C724EA7D8C008130E4 /* AlertConfirmation.swift */,
 				2AAED7C124E94003008130E4 /* NewShopVC.swift */,
 				2AAED7C324EA064F008130E4 /* NewShopCell.swift */,
 				2AAED7C524EA06DF008130E4 /* ItemShop.swift */,
@@ -824,7 +821,6 @@
 				4F2144BE24CD671C007DAAA8 /* UIViewController+Keyboard.swift in Sources */,
 				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
 				4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */,
-				2AAED7C824EA7D8C008130E4 /* AlertConfirmation.swift in Sources */,
 				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
 				2A1DBE6924DD435500B97B44 /* ShopAlertViewController.swift in Sources */,
 				2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */,
