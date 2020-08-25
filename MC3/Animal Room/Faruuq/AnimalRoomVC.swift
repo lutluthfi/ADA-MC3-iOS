@@ -460,6 +460,7 @@ class AnimalRoomVC: UIViewController {
                 }
             }
         case .ended:
+            soundManager.stop(soundType: .catPurr)
             progressBarAnimate()
             progressBar.setProgress(love, animated: true)
         default:
