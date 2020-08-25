@@ -18,12 +18,6 @@
 		2A1DBE5D24DD434100B97B44 /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE5324DD434100B97B44 /* RewardCollectionViewCell.swift */; };
 		2A1DBE5E24DD434100B97B44 /* RedeemHistoryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE5424DD434100B97B44 /* RedeemHistoryAlertViewController.swift */; };
 		2A1DBE6724DD435500B97B44 /* ShopStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */; };
-		2A1DBE6824DD435500B97B44 /* ShopAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */; };
-		2A1DBE6924DD435500B97B44 /* ShopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */; };
-		2A1DBE6A24DD435500B97B44 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */; };
-		2A1DBE6B24DD435500B97B44 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */; };
-		2A1DBE6C24DD435500B97B44 /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */; };
-		2A1DBE6D24DD435500B97B44 /* ShopAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */; };
 		2A3F206524F479930037AEE4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F206424F479930037AEE4 /* DataModel.swift */; };
 		2A49FA1624DB8445004E8D22 /* InventoryVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */; };
 		2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA1024DB8445004E8D22 /* InventoryVC.swift */; };
@@ -114,12 +108,6 @@
 		2A1DBE5324DD434100B97B44 /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A1DBE5424DD434100B97B44 /* RedeemHistoryAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemHistoryAlertViewController.swift; sourceTree = "<group>"; };
 		2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShopStoryboard.storyboard; sourceTree = "<group>"; };
-		2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShopAlertStoryboard.storyboard; sourceTree = "<group>"; };
-		2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopAlertViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
-		2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopAlertService.swift; sourceTree = "<group>"; };
 		2A3F206424F479930037AEE4 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryVC+Extension.swift"; sourceTree = "<group>"; };
 		2A49FA1024DB8445004E8D22 /* InventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
@@ -235,12 +223,6 @@
 		2A1DBE5F24DD434500B97B44 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */,
-				2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */,
-				2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */,
-				2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */,
-				2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */,
-				2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */,
 				2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */,
 				2AAED7C124E94003008130E4 /* NewShopVC.swift */,
 				2A3F206424F479930037AEE4 /* DataModel.swift */,
@@ -705,7 +687,6 @@
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				2A1DBE6724DD435500B97B44 /* ShopStoryboard.storyboard in Resources */,
 				4417903D24D7244600C6C655 /* Cat-Eating.mp3 in Resources */,
-				2A1DBE6824DD435500B97B44 /* ShopAlertStoryboard.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 				4417903A24D7244600C6C655 /* Cat-Pouring-Food.mp3 in Resources */,
 				4417903924D7244600C6C655 /* Button.mp3 in Resources */,
@@ -763,14 +744,11 @@
 			files = (
 				2A1DBE5C24DD434100B97B44 /* RewardViewController.swift in Sources */,
 				2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */,
-				2A1DBE6A24DD435500B97B44 /* ItemDetailViewController.swift in Sources */,
 				44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */,
 				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
-				2A1DBE6C24DD435500B97B44 /* ShopHomeViewController.swift in Sources */,
-				2A1DBE6D24DD435500B97B44 /* ShopAlertService.swift in Sources */,
 				44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */,
 				2AAED7C224E94003008130E4 /* NewShopVC.swift in Sources */,
 				2AAED7C424EA064F008130E4 /* NewShopCell.swift in Sources */,
@@ -778,7 +756,6 @@
 				2A1DBE5E24DD434100B97B44 /* RedeemHistoryAlertViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
-				2A1DBE6B24DD435500B97B44 /* ShopCollectionViewCell.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
 				4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */,
 				4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */,
@@ -825,7 +802,6 @@
 				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
 				4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */,
 				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
-				2A1DBE6924DD435500B97B44 /* ShopAlertViewController.swift in Sources */,
 				2A3F206524F479930037AEE4 /* DataModel.swift in Sources */,
 				2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */,
 				4F2144BC24CD5D1C007DAAA8 /* DialogFactory.swift in Sources */,

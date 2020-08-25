@@ -22,7 +22,7 @@ class DataModel {
     ]
     static var benchItems = [
         ItemShop(image: "Bench", price: 40, isPurchased: false, isLocked: false, itemNumber: 0),
-        ItemShop(image: "Bench-Flip", price: 40, isPurchased: false, isLocked: false, itemNumber: 1),
+        ItemShop(image: "Bench-Disable", price: 40, isPurchased: false, isLocked: false, itemNumber: 1),
         ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
         ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
         ItemShop(image: "Bench-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
@@ -43,12 +43,12 @@ class DataModel {
     static var lampItems = [
         ItemShop(image: "Reward-Lamp-1", price: 50, isPurchased: false, isLocked: false, itemNumber: 0),
         ItemShop(image: "Reward-Lamp-2", price: 60, isPurchased: false, isLocked: false, itemNumber: 1),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
-        ItemShop(image: "Bush-2-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 2),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 3),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 4),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 5),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 6),
+        ItemShop(image: "Reward-Lamp-Disable", price: 0, isPurchased: true, isLocked: true, itemNumber: 7),
     ]
     static var treeItems = [
         ItemShop(image: "Tree", price: 70, isPurchased: false, isLocked: true, itemNumber: 0),

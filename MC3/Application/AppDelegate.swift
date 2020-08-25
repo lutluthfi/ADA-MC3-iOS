@@ -44,10 +44,14 @@ struct Keys {
     static let onBoardingHealth = "savedFirstTimeHealth"
     static let onBoardingFun = "savedFirstTimeFun"
     static let onBoardingLove = "savedFirstTimeLove"
+    
+    static let bush1Purchased = "savedBush1Purchased"
+    static let bush2Purchased = "savedBush2Purchased"
+    static let benchPurchased = "savedBenchPurchased"
+    static let lamp1Purchased = "savedLamp1Purchased"
+    static let lamp2Purchased = "savedLamp2Purchased"
+    static let treePurchased = "savedTreePurchased"
 }
-
-//Logic Shop
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

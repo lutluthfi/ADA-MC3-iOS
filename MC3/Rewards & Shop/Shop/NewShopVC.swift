@@ -9,6 +9,14 @@
 import UIKit
 
 class NewShopVC: UIViewController {
+    
+    static var bush1Purchased: Bool = false
+    static var bush2Purchased: Bool = false
+    static var benchPurchased: Bool = false
+    static var flowePurchased: Bool = false
+    static var lamp1Purchased: Bool = false
+    static var lamp2Purchased: Bool = false
+    static var treePurchased: Bool = false
 
     var presentItems: [ItemShop] = [] {
         didSet {
@@ -155,14 +163,32 @@ class NewShopVC: UIViewController {
                 switch category {
                 case "Bush":
                     saveItems(item: presentItems, url: DataModel.bushFilePath!)
+                    if arrayNumber == 0 {
+                        NewShopVC.bush1Purchased = true
+                        settingsDefaults.set(NewShopVC.bush1Purchased, forKey: Keys.bush1Purchased)
+                    } else if arrayNumber == 1 {
+                        NewShopVC.bush2Purchased = true
+                        settingsDefaults.set(NewShopVC.bush2Purchased, forKey: Keys.bush2Purchased)
+                    }
                 case "Bench":
                     saveItems(item: presentItems, url: DataModel.benchFilePath!)
+                    NewShopVC.benchPurchased = true
+                    settingsDefaults.set(NewShopVC.benchPurchased, forKey: Keys.benchPurchased)
                 case "Flower":
                     saveItems(item: presentItems, url: DataModel.flowerFilePath!)
                 case "Lamp":
                     saveItems(item: presentItems, url: DataModel.lampFilePath!)
+                    if arrayNumber == 0 {
+                        NewShopVC.lamp1Purchased = true
+                        settingsDefaults.set(NewShopVC.lamp1Purchased, forKey: Keys.lamp1Purchased)
+                    } else if arrayNumber == 1 {
+                        NewShopVC.lamp2Purchased = true
+                        settingsDefaults.set(NewShopVC.lamp2Purchased, forKey: Keys.lamp2Purchased)
+                    }
                 case "Tree":
                     saveItems(item: presentItems, url: DataModel.treeFilePath!)
+                    NewShopVC.treePurchased = true
+                    settingsDefaults.set(NewShopVC.treePurchased, forKey: Keys.treePurchased)
                 default:
                     break
                 }
@@ -179,7 +205,6 @@ class NewShopVC: UIViewController {
         } catch {
             print("Error encoding data array, \(error)")
         }
-//        shopCollectionView.reloadData()
     }
     
     func loadItems(url: URL) {
@@ -191,7 +216,6 @@ class NewShopVC: UIViewController {
                 print("Error decoding data array, \(error)")
             }
         }
-//        shopCollectionView.reloadData()
     }
     
     func checkExistence(url: URL, item: [ItemShop]) {
@@ -200,7 +224,6 @@ class NewShopVC: UIViewController {
         } else {
             loadItems(url: url)
         }
-//        shopCollectionView.reloadData()
     }
 }
 
