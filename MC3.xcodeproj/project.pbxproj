@@ -18,17 +18,15 @@
 		2A1DBE5D24DD434100B97B44 /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE5324DD434100B97B44 /* RewardCollectionViewCell.swift */; };
 		2A1DBE5E24DD434100B97B44 /* RedeemHistoryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE5424DD434100B97B44 /* RedeemHistoryAlertViewController.swift */; };
 		2A1DBE6724DD435500B97B44 /* ShopStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */; };
-		2A1DBE6824DD435500B97B44 /* ShopAlertStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */; };
-		2A1DBE6924DD435500B97B44 /* ShopAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */; };
-		2A1DBE6A24DD435500B97B44 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */; };
-		2A1DBE6B24DD435500B97B44 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */; };
-		2A1DBE6C24DD435500B97B44 /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */; };
-		2A1DBE6D24DD435500B97B44 /* ShopAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */; };
+		2A3F206524F479930037AEE4 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F206424F479930037AEE4 /* DataModel.swift */; };
 		2A49FA1624DB8445004E8D22 /* InventoryVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */; };
 		2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A49FA1024DB8445004E8D22 /* InventoryVC.swift */; };
 		2A49FA1C24DB8445004E8D22 /* InventoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A49FA1424DB8445004E8D22 /* InventoryStoryboard.storyboard */; };
 		2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */; };
 		2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */; };
+		2AAED7C224E94003008130E4 /* NewShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C124E94003008130E4 /* NewShopVC.swift */; };
+		2AAED7C424EA064F008130E4 /* NewShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C324EA064F008130E4 /* NewShopCell.swift */; };
+		2AAED7C624EA06DF008130E4 /* ItemShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAED7C524EA06DF008130E4 /* ItemShop.swift */; };
 		2AD1427324C9BC1B008160A3 /* Cat-Purr.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */; };
 		440EC15124E28F500099BA20 /* FiveFreedom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 440EC15024E28F500099BA20 /* FiveFreedom.storyboard */; };
 		440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */; };
@@ -110,17 +108,15 @@
 		2A1DBE5324DD434100B97B44 /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A1DBE5424DD434100B97B44 /* RedeemHistoryAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedeemHistoryAlertViewController.swift; sourceTree = "<group>"; };
 		2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShopStoryboard.storyboard; sourceTree = "<group>"; };
-		2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShopAlertStoryboard.storyboard; sourceTree = "<group>"; };
-		2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopAlertViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
-		2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
-		2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopAlertService.swift; sourceTree = "<group>"; };
+		2A3F206424F479930037AEE4 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		2A49FA0E24DB8445004E8D22 /* InventoryVC+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryVC+Extension.swift"; sourceTree = "<group>"; };
 		2A49FA1024DB8445004E8D22 /* InventoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
 		2A49FA1424DB8445004E8D22 /* InventoryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InventoryStoryboard.storyboard; sourceTree = "<group>"; };
 		2A8CDD3D24C013DE00DB3E4F /* AnimalRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRoomVC.swift; sourceTree = "<group>"; };
 		2A92F84324CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimalRoomVC+Extension.swift"; sourceTree = "<group>"; };
+		2AAED7C124E94003008130E4 /* NewShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopVC.swift; sourceTree = "<group>"; };
+		2AAED7C324EA064F008130E4 /* NewShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewShopCell.swift; sourceTree = "<group>"; };
+		2AAED7C524EA06DF008130E4 /* ItemShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemShop.swift; sourceTree = "<group>"; };
 		2AD1427224C9BC1B008160A3 /* Cat-Purr.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cat-Purr.mp3"; sourceTree = "<group>"; };
 		440EC15024E28F500099BA20 /* FiveFreedom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FiveFreedom.storyboard; sourceTree = "<group>"; };
 		440EC15224E28FB60099BA20 /* FiveFreedomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveFreedomViewController.swift; sourceTree = "<group>"; };
@@ -227,13 +223,11 @@
 		2A1DBE5F24DD434500B97B44 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				2A1DBE6324DD435400B97B44 /* ItemDetailViewController.swift */,
-				2A1DBE6624DD435500B97B44 /* ShopAlertService.swift */,
-				2A1DBE6124DD435400B97B44 /* ShopAlertStoryboard.storyboard */,
-				2A1DBE6224DD435400B97B44 /* ShopAlertViewController.swift */,
-				2A1DBE6424DD435500B97B44 /* ShopCollectionViewCell.swift */,
-				2A1DBE6524DD435500B97B44 /* ShopHomeViewController.swift */,
 				2A1DBE6024DD435400B97B44 /* ShopStoryboard.storyboard */,
+				2AAED7C124E94003008130E4 /* NewShopVC.swift */,
+				2A3F206424F479930037AEE4 /* DataModel.swift */,
+				2AAED7C324EA064F008130E4 /* NewShopCell.swift */,
+				2AAED7C524EA06DF008130E4 /* ItemShop.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -693,7 +687,6 @@
 				4F6FB2F824D03F020079AADB /* Assets.xcassets in Resources */,
 				2A1DBE6724DD435500B97B44 /* ShopStoryboard.storyboard in Resources */,
 				4417903D24D7244600C6C655 /* Cat-Eating.mp3 in Resources */,
-				2A1DBE6824DD435500B97B44 /* ShopAlertStoryboard.storyboard in Resources */,
 				4F1E7DE924CAE0B300C300F8 /* MainGardenViewController.storyboard in Resources */,
 				4417903A24D7244600C6C655 /* Cat-Pouring-Food.mp3 in Resources */,
 				4417903924D7244600C6C655 /* Button.mp3 in Resources */,
@@ -751,20 +744,18 @@
 			files = (
 				2A1DBE5C24DD434100B97B44 /* RewardViewController.swift in Sources */,
 				2A92F84424CBAC2600CAAA36 /* AnimalRoomVC+Extension.swift in Sources */,
-				2A1DBE6A24DD435500B97B44 /* ItemDetailViewController.swift in Sources */,
 				44B1551A24DC213D00F6AD69 /* InventoryPosition.swift in Sources */,
 				2A8CDD3E24C013DE00DB3E4F /* AnimalRoomVC.swift in Sources */,
 				440EC15324E28FB60099BA20 /* FiveFreedomViewController.swift in Sources */,
 				4417904224D72B5200C6C655 /* UICollectionViewCell+Extension.swift in Sources */,
 				4F3517A824C372B2000E5E19 /* CoreDataStorage.swift in Sources */,
-				2A1DBE6C24DD435500B97B44 /* ShopHomeViewController.swift in Sources */,
-				2A1DBE6D24DD435500B97B44 /* ShopAlertService.swift in Sources */,
 				44B2083024C5882900474342 /* ProfileArticlesViewController.swift in Sources */,
+				2AAED7C224E94003008130E4 /* NewShopVC.swift in Sources */,
+				2AAED7C424EA064F008130E4 /* NewShopCell.swift in Sources */,
 				2A1DBE5A24DD434100B97B44 /* RewardBuyAlertViewController.swift in Sources */,
 				2A1DBE5E24DD434100B97B44 /* RedeemHistoryAlertViewController.swift in Sources */,
 				4F35177E24C065D7000E5E19 /* IntroViewController.swift in Sources */,
 				4F3517BD24C6E2A6000E5E19 /* MCTransitionCoordinator.swift in Sources */,
-				2A1DBE6B24DD435500B97B44 /* ShopCollectionViewCell.swift in Sources */,
 				4F3517B324C6CC68000E5E19 /* PetDisease.swift in Sources */,
 				4F3517BF24C6E2DD000E5E19 /* UINavigationController+MCTransition.swift in Sources */,
 				4417904024D728DE00C6C655 /* UIButton+Extension.swift in Sources */,
@@ -791,6 +782,7 @@
 				4417902E24D51AD800C6C655 /* SoundEnum.swift in Sources */,
 				4F3517AD24C373BB000E5E19 /* GameplayStorage.swift in Sources */,
 				4F6FB31124D0449C0079AADB /* SettingLauncher.swift in Sources */,
+				2AAED7C624EA06DF008130E4 /* ItemShop.swift in Sources */,
 				4F6FB33A24D491A70079AADB /* CircleContainerStatusAnimalInfoView.swift in Sources */,
 				44B1551E24DD4E5900F6AD69 /* OnBoardViewController.swift in Sources */,
 				4F6FB2F424D03ED20079AADB /* AppDelegate.swift in Sources */,
@@ -810,7 +802,7 @@
 				44B2082C24C5873A00474342 /* HelpViewController.swift in Sources */,
 				4F2144B724CD5268007DAAA8 /* DialogAnimalInfoView.swift in Sources */,
 				44B2082E24C5881300474342 /* ProfilePetViewController.swift in Sources */,
-				2A1DBE6924DD435500B97B44 /* ShopAlertViewController.swift in Sources */,
+				2A3F206524F479930037AEE4 /* DataModel.swift in Sources */,
 				2A49FA1824DB8445004E8D22 /* InventoryVC.swift in Sources */,
 				4F2144BC24CD5D1C007DAAA8 /* DialogFactory.swift in Sources */,
 			);
@@ -958,7 +950,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.freeden;
 				PRODUCT_NAME = Freeden;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -981,7 +973,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.MC3.freeden;
 				PRODUCT_NAME = Freeden;
 				PROVISIONING_PROFILE_SPECIFIER = "";
