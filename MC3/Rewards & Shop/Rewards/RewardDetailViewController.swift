@@ -82,6 +82,7 @@ class RewardDetailViewController: UIViewController {
             detailLabel.text = rewardDetailArray[selectedReward].rewardDesc
             imageDetail.image = rewardDetailArray[selectedReward].rewardImage
         } else {
+            imageDetail.image = rewardDetailArray[selectedReward].rewardImage
             titleLabel.text = "Coming Soon !"
             detailLabel.text = "Coming Soon !"
         }
