@@ -24,11 +24,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuL-d9-kcC">
                                 <rect key="frame" x="228.5" y="57.5" width="439" height="278"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-TW-Fhj">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="439" height="278"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-TW-Fhj">
+                                        <rect key="frame" x="0.0" y="0.0" width="439" height="278"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-5P-RG4">
-                                                <rect key="frame" x="169.5" y="29" width="100.5" height="29"/>
+                                                <rect key="frame" x="175.5" y="29" width="88.5" height="28"/>
                                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <color key="highlightedColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,8 +200,8 @@
                                             <constraint firstItem="ktO-8i-OUp" firstAttribute="leading" secondItem="eQp-aK-IhU" secondAttribute="trailing" constant="41.5" id="xkA-Ye-mDf"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hb-j7-XT7">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="439" height="278"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hb-j7-XT7">
+                                        <rect key="frame" x="0.0" y="0.0" width="439" height="278"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ag-qz-r8f">
                                                 <rect key="frame" x="392" y="29" width="19" height="19"/>
@@ -282,9 +282,13 @@
                                 <constraints>
                                     <constraint firstItem="0hb-j7-XT7" firstAttribute="height" secondItem="DuL-d9-kcC" secondAttribute="height" id="4Ou-If-kDl"/>
                                     <constraint firstItem="0hb-j7-XT7" firstAttribute="width" secondItem="DuL-d9-kcC" secondAttribute="width" id="Qyi-tB-zsI"/>
+                                    <constraint firstItem="ZGs-TW-Fhj" firstAttribute="top" secondItem="0hb-j7-XT7" secondAttribute="top" id="bdM-XW-uzH"/>
                                     <constraint firstItem="ZGs-TW-Fhj" firstAttribute="width" secondItem="DuL-d9-kcC" secondAttribute="width" id="cuA-y9-HXh"/>
                                     <constraint firstAttribute="height" constant="278" id="jVO-Xv-c4e"/>
+                                    <constraint firstItem="ZGs-TW-Fhj" firstAttribute="leading" secondItem="0hb-j7-XT7" secondAttribute="leading" id="k4u-LA-ANc"/>
                                     <constraint firstItem="ZGs-TW-Fhj" firstAttribute="height" secondItem="DuL-d9-kcC" secondAttribute="height" id="luy-S3-SIp"/>
+                                    <constraint firstItem="ZGs-TW-Fhj" firstAttribute="centerX" secondItem="DuL-d9-kcC" secondAttribute="centerX" id="syR-KT-ysu"/>
+                                    <constraint firstItem="ZGs-TW-Fhj" firstAttribute="centerY" secondItem="DuL-d9-kcC" secondAttribute="centerY" id="uw5-OG-FU0"/>
                                     <constraint firstAttribute="width" constant="439" id="xTK-HC-xlj"/>
                                 </constraints>
                             </view>
@@ -482,8 +486,8 @@
                                     <constraint firstAttribute="height" constant="166" id="DUf-OF-O31"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
-                                <rect key="frame" x="122.5" y="280" width="153.5" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-Gr-rbt">
+                                <rect key="frame" x="128.5" y="280" width="141" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -529,7 +533,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-JV-C1x">
-                                <rect key="frame" x="387" y="26" width="53.5" height="29"/>
+                                <rect key="frame" x="387" y="26" width="48" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
@@ -803,19 +807,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 days with owner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OF-P3-rKJ">
-                                <rect key="frame" x="120.5" y="326" width="135" height="18"/>
+                                <rect key="frame" x="120.5" y="325" width="135" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-o5-oWh">
-                                <rect key="frame" x="172" y="352" width="32" height="18"/>
+                                <rect key="frame" x="172" y="351" width="32" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWx-ZU-IEo">
-                                <rect key="frame" x="556" y="26" width="81" height="29"/>
+                                <rect key="frame" x="556" y="26" width="69" height="28"/>
                                 <fontDescription key="fontDescription" name="HappyMonkey-Regular" family="Happy Monkey" pointSize="24"/>
                                 <color key="textColor" name="413834"/>
                                 <nil key="highlightedColor"/>
