@@ -187,10 +187,26 @@ class InventoryVC: UIViewController {
             reward1.isEnabled = true
             reward1.setImage(UIImage(named: "Reward-Bush-1"), for: .normal)
             setImageDisable(reward: reward2)
+            
+            if (placeholderItem1 == InventoryList.bush1 || placeholderItem2 == InventoryList.bush1) {
+                reward1.isEnabled = false
+                reward1.setImage(#imageLiteral(resourceName: "Reward-Disable-1"), for: .disabled)
+            } else {
+                reward1.isEnabled = true
+                reward1.setImage(UIImage(named: "Reward-Bush-1"), for: .normal)
+            }
         } else if NewShopVC.bush1Purchased == false && NewShopVC.bush2Purchased == true {
             reward2.isEnabled = true
             reward2.setImage(UIImage(named: "Reward-Bush-2"), for: .normal)
             setImageDisable(reward: reward1)
+            
+            if (placeholderItem1 == InventoryList.bush2 || placeholderItem2 == InventoryList.bush2) {
+                reward2.isEnabled = false
+                reward2.setImage(#imageLiteral(resourceName: "Reward-Disable-2"), for: .disabled)
+            } else {
+                reward2.isEnabled = true
+                reward2.setImage(UIImage(named: "Reward-Bush-2"), for: .normal)
+            }
         } else {
             if (placeholderItem1 == InventoryList.bush1 || placeholderItem2 == InventoryList.bush1) {
                 reward1.isEnabled = false
@@ -262,10 +278,26 @@ class InventoryVC: UIViewController {
             reward1.isEnabled = true
             reward1.setImage(UIImage(named: "Reward-Lamp-1"), for: .normal)
             setImageDisable(reward: reward2)
+            
+            if (placeholderItem5 == InventoryList.lamp1 || placeholderItem6 == InventoryList.lamp1) {
+                           reward1.isEnabled = false
+                           reward1.setImage(UIImage(named: "Reward-Lamp-Disable"), for: .disabled)
+                       } else {
+                           reward1.isEnabled = true
+                           reward1.setImage(UIImage(named: "Reward-Lamp-1"), for: .normal)
+                       }
         } else if NewShopVC.lamp1Purchased == false && NewShopVC.lamp2Purchased == true {
             reward2.isEnabled = true
             reward2.setImage(UIImage(named: "Reward-Lamp-2"), for: .normal)
             setImageDisable(reward: reward1)
+            
+            if (placeholderItem5 == InventoryList.lamp2 || placeholderItem6 == InventoryList.lamp2) {
+                reward2.isEnabled = false
+                reward2.setImage(UIImage(named: "Reward-Lamp-Disable"), for: .disabled)
+            } else {
+                reward2.isEnabled = true
+                reward2.setImage(UIImage(named: "Reward-Lamp-2"), for: .normal)
+            }
         } else {
             if (placeholderItem5 == InventoryList.lamp1 || placeholderItem6 == InventoryList.lamp1) {
                 reward1.isEnabled = false
